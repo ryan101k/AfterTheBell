@@ -20,7 +20,7 @@ jobs:
     runs-on: windows-latest
     steps:
       - name: Check out game source
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           lfs: true
 
@@ -48,9 +48,10 @@ jobs:
           Copy-Item -LiteralPath './pages/index.html' -Destination $siteRoot
           New-Item -ItemType File -Force -Path (Join-Path $siteRoot '.nojekyll') | Out-Null
 
-          $gameHtml = Get-Content -Raw -LiteralPath './build/index.html'
+          $storySource = (Get-ChildItem './src' -Recurse -File |
+            ForEach-Object { Get-Content -Raw -LiteralPath $_.FullName }) -join "`n"
           $assetPattern = [regex]'\.\./assets/images/([^"''\)]+)'
-          $assetNames = $assetPattern.Matches($gameHtml) |
+          $assetNames = $assetPattern.Matches($storySource) |
             ForEach-Object { [Uri]::UnescapeDataString($_.Groups[1].Value) } |
             Sort-Object -Unique
 
