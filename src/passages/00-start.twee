@@ -58,7 +58,7 @@
     <p class="title-copy">시장은 닫혔지만<br>끝내 정리하지 못한 관계는 그제야 움직이기 시작했다.</p>
     <nav class="title-menu" aria-label="시작 메뉴">
       <button type="button" class="title-menu__primary" data-vn-passage="프롤로그 · 폐장">새 게임</button>
-      <<if Save.browser.size > 0>>
+      <<if Save.browser && Save.browser.size > 0>>
         <button type="button" data-vn-action="continue">이어하기</button>
       <<else>>
         <button type="button" disabled>이어하기</button>

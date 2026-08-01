@@ -28,10 +28,14 @@ jobs:
         shell: pwsh
         run: |
           $archive = Join-Path $env:RUNNER_TEMP 'tweego.zip'
+          $sugarCubeArchive = Join-Path $env:RUNNER_TEMP 'sugarcube.zip'
           $downloadUrl = 'https://github.com/tmedwards/tweego/releases/download/v2.1.1/tweego-2.1.1-windows-x64.zip'
+          $sugarCubeUrl = 'https://github.com/tmedwards/sugarcube-2/releases/download/v2.37.3/sugarcube-2.37.3-for-twine-2.1-local.zip'
           Invoke-WebRequest -Uri $downloadUrl -OutFile $archive
           New-Item -ItemType Directory -Force -Path './tools/tweego' | Out-Null
           Expand-Archive -LiteralPath $archive -DestinationPath './tools/tweego' -Force
+          Invoke-WebRequest -Uri $sugarCubeUrl -OutFile $sugarCubeArchive
+          Expand-Archive -LiteralPath $sugarCubeArchive -DestinationPath './tools/tweego/storyformats' -Force
 
       - name: Build Twine game
         shell: pwsh

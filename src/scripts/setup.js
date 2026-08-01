@@ -17,7 +17,7 @@ setup.openSaves = function () {
 };
 
 setup.continueGame = function () {
-  if (Save.browser.size < 1) {
+  if (!Save.browser || Save.browser.size < 1) {
     return;
   }
   Save.browser.continue().catch(function (error) {
@@ -45,4 +45,3 @@ $(document).on(':passagedisplay.vnui', function () {
   const chapter = State.variables.chapter || 0;
   $('[data-vn-chapter]').text(chapter);
 });
-
