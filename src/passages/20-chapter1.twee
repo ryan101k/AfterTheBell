@@ -42,6 +42,9 @@
     <p>새라에게 침대를 내주고 나는 책상 앞에 앉았다.</p>
     <p>새벽 두 시, 뒤를 돌아보니 새라는 눈을 감은 채 가방 손잡이를 잡고 있었다.</p>
     <p>새벽 네 시에는 손이 이불 밖으로 나와 있었다. 나는 가방을 조금 가까이 밀어주었다.</p>
+    <figure class="vn-cutscene">
+      <img src="../assets/images/event-sera-bed-lite.webp" alt="낯선 방에서 쉽게 잠들지 못하는 윤새라">
+    </figure>
     <p>아침이 되자 싱크대가 정리되어 있었다. 내 것 옆에는 포장을 갓 벗긴 칫솔 하나가 놓여 있었다.</p>
     <p>하룻밤만 있겠다는 사람이 언제 준비했는지는 묻지 못했다.</p>
     [[아침을 마주한다->1장 · 아침의 경계]]
@@ -141,6 +144,9 @@
   <div class="vn-dialogue vn-dialogue--narration">
     <p>경찰 두 명이 현관을 확인한 뒤 한 여자가 마지막으로 들어왔다.</p>
     <p>강유진 경위. 명함의 이름보다 먼저 보인 것은 내 손목에 남은 붉은 자국이었다.</p>
+    <figure class="vn-cutscene">
+      <img src="../assets/images/event-yujin-emergency-entry.webp" alt="사건 현장인 은호의 집에 들어온 강유진">
+    </figure>
     <div class="phone-message">
       <b>강유진</b>
       <span>누가 잡았습니까?</span>
@@ -183,6 +189,9 @@
   <div class="vn-dialogue vn-dialogue--narration">
     <p>검사는 금방 끝났다. 가벼운 염좌와 수면 부족. 의사는 내가 이미 아는 말을 진단명처럼 읽었다.</p>
     <p>병실 밖에는 유진이 아직 앉아 있었다. 사건 서류를 보는 척하면서 같은 페이지를 오래 넘기지 않았다.</p>
+    <figure class="vn-cutscene">
+      <img src="../assets/images/event-yujin-secret-hospital.webp" alt="병원에서 은호를 기다리는 강유진">
+    </figure>
     <p>“이제 가셔도 되잖아요.”</p>
     <p>“경찰로서는 그렇죠.”</p>
     <p>유진이 입술 안쪽을 한 번 깨물었다.</p>
@@ -300,6 +309,9 @@
     <p>원본 계약은 공개되지 않았다. 주최 측은 권한을 핑계로 시간을 끌었고, 연회장 안의 목소리는 점점 높아졌다.</p>
     <p>그 소란을 가르며 사진 속 여자가 내려왔다.</p>
     <p>한채린은 누구에게도 길을 비켜달라고 하지 않았다. 사람들이 먼저 비켰다.</p>
+    <figure class="vn-cutscene">
+      <img src="../assets/images/event-chaerin-elevator-lite.webp" alt="위층 엘리베이터에서 은호를 기다리는 한채린">
+    </figure>
     <p>그녀는 새라가 내민 장부 사본보다 내 명찰을 먼저 봤다.</p>
     <p>“최은호.”</p>
     <p>성을 확인한 순간 채린의 눈빛이 아주 조금 달라졌다. 하지만 아는 체하지 않았다.</p>
@@ -380,6 +392,9 @@
       <p>보호 담당자 곁에 있던 새라가 장부 사본을 들고 다가왔다. 채린의 브로치를 보자 걸음이 멎었다.</p>
     <</if>>
     <p>유진도 곧 우리 사이에 섰다.</p>
+    <figure class="vn-cutscene">
+      <img src="../assets/images/event-trio-first-crossing.webp" alt="처음으로 한자리에 선 강유진, 한채린, 윤새라">
+    </figure>
     <div class="phone-message">
       <b>강유진</b>
       <span>한채린 씨, 참고인에게 수사 자료를 따로 보여줬다면 제출해주십시오.</span>
@@ -408,10 +423,9 @@
     <p>방 안에 두고 왔다고 생각한 다섯 사람의 흔적이, 내가 처음 나온 장소에서 기다리고 있었다.</p>
     <p class="chapter-end">CHAPTER 1 · 찢어진 계약서</p>
     <<if $chapter1.chaerinRefused && $romanceOpen.sera && $romanceOpen.yujin>>
-      <p class="chapter-end__next">세 사람의 공동 루트 조건이 이어집니다.</p>
       [[다시 시장을 연다->2장 · 폐장 뒤의 일]]
     <<else>>
-      <p class="chapter-end__next">선택하지 않은 개인 순애 루트는 이후 작성됩니다.</p>
+      <p class="chapter-end__next">그날 이후 연락은 사건에 필요한 만큼만 이어졌다.</p>
     <</if>>
   </div>
 </section>

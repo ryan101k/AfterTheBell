@@ -115,8 +115,9 @@
   <div class="vn-dialogue vn-dialogue--narration">
     <p>답장은 바로 왔다. 장소와 차량 번호, 지켜야 할 복장까지 적혀 있었다.</p>
     <p>채린에게 나는 아직 부르면 오는 사람 중 하나였다. 필요한 정보는 얻을 수 있겠지만, 그녀가 스스로 다시 부를 이유는 사라졌다.</p>
-    <p class="chapter-end">ROUTE HOLD · 응답한 초대</p>
-    <p class="chapter-end__next">한채린 개인 순애 경로는 이후 작성됩니다.</p>
+    <p>그날 이후에도 채린은 필요한 자료를 보냈다. 다만 사적인 초대는 다시 오지 않았다.</p>
+    <p class="chapter-end">CHAPTER 2 · 부르면 오는 사람</p>
+    <p class="chapter-end__next">거래는 성립했고, 관심은 거기서 멈췄다.</p>
   </div>
 </section>
 
@@ -228,6 +229,9 @@
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
     <p>개인실에는 창문보다 큰 야경과 사람 수보다 많은 의자가 있었다.</p>
+    <figure class="vn-cutscene">
+      <img src="../assets/images/event-trio-private-room-lite.webp" alt="개인실에 모인 강유진, 한채린, 윤새라">
+    </figure>
     <p>채린은 가장 안쪽 자리에 앉아 있었다. 두 번이나 답하지 않은 사람을 기다렸으면서도 늦었다는 말은 하지 않았다.</p>
     <p>새라는 장부 원본을 확인할 증인으로, 유진은 압수 절차를 감독할 수사관으로 왔다. 나래는 회의 기록을 맡았다.</p>
     <p>채린은 내 앞에 새 계약서를 밀었다.</p>
@@ -360,6 +364,6 @@
     </div>
     <p>문제는 거절할 힘을 얻을수록, 세 사람이 내 곁에 남을 이유도 함께 강해지고 있다는 것이었다.</p>
     <p class="chapter-end">CHAPTER 2 · 세 개의 결핍</p>
-    <p class="chapter-end__next">광기 3인 공동 루트가 열렸습니다.</p>
+    <p class="chapter-end__next">그날부터 세 사람은 서로를 모른 척할 수 없게 되었다.</p>
   </div>
 </section>
