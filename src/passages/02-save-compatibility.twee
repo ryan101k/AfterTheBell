@@ -1,0 +1,21 @@
+:: PassageHeader [nobr]
+<<set $chapter = $chapter ?? 0>>
+<<set $scene = $scene ?? "unknown">>
+<<set $playerPattern = Object.assign({
+  "face": 0,
+  "delegate": 0,
+  "avoid": 0
+}, $playerPattern ?? {})>>
+<<set $prologue = Object.assign({
+  "openedSiwooMessage": false,
+  "answeredSiwoo": false,
+  "heardHallway": false,
+  "openedDoor": false
+}, $prologue ?? {})>>
+<<set $routeUnlocks = Object.assign({
+  "dangerous": false,
+  "freedom": false,
+  "childhood": false,
+  "business": false
+}, $routeUnlocks ?? {})>>
+<<set $clearedEndings = $clearedEndings ?? {}>>
