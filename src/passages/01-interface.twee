@@ -1,0 +1,13 @@
+:: StoryInterface
+<div id="vn-app">
+  <header class="vn-toolbar">
+    <div class="vn-toolbar__brand"><span>AFTER THE BELL</span><strong>폐장 후, 우리</strong></div>
+    <div class="vn-toolbar__chapter">CH. <span data-vn-chapter>0</span></div>
+    <div class="vn-toolbar__actions">
+      <button type="button" data-vn-action="saves">저장 · 불러오기</button>
+      <button type="button" data-vn-action="restart">타이틀</button>
+    </div>
+  </header>
+  <main id="passages"></main>
+</div>
+

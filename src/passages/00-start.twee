@@ -1,53 +1,39 @@
 :: StoryInit
 <<set $chapter = 0>>
-<<set $stress = 0>>
-<<set $affection = {
-  "강유진": 0,
-  "한채린": 0,
-  "윤세라": 0
+<<set $scene = "title">>
+<<set $playerPattern = {
+  "face": 0,
+  "delegate": 0,
+  "avoid": 0
 }>>
+<<set $prologue = {
+  "openedSiwooMessage": false,
+  "answeredSiwoo": false
+}>>
+<<set $routeUnlocks = {
+  "dangerous": false,
+  "freedom": false,
+  "childhood": false,
+  "business": false
+}>>
+<<set $clearedEndings = {}>>
 
-:: 시작
-<div class="story-card opening-card">
-  <img class="scene-image" src="../assets/images/event-trio-first-crossing.webp" alt="불이 꺼진 거래실">
-  <p class="eyebrow">AFTER THE CLOSING BELL</p>
-  <h1>폐장 후, 우리</h1>
-  <p>시장은 닫혔지만, 끝내 정리하지 못한 관계는 그제야 움직이기 시작했다.</p>
-</div>
-
-[[이야기를 시작한다->첫 번째 밤]]
-
-:: 첫 번째 밤
-<<set $chapter = 1>>
-마지막 시세창이 검게 식은 뒤에도 휴대전화는 세 번 울렸다.
-
-누구의 연락부터 확인할까?
-
-* [[강유진의 부재중 전화를 확인한다->강유진·부재중 전화]]
-* [[한채린이 보낸 초대장을 연다->한채린·초대장]]
-* [[현관 앞의 윤세라를 확인한다->윤세라·문 앞]]
-
-:: 강유진·부재중 전화
-<<set $affection["강유진"] += 1>>
-“다친 곳은 없죠? 확인만 하고 끊겠습니다.”
-
-확인만 하겠다는 사람의 목소리는 전혀 끝날 기색이 없었다.
-
-[[첫 번째 밤으로 돌아간다->첫 번째 밤]]
-
-:: 한채린·초대장
-<<set $affection["한채린"] += 1>>
-초대장 아래에는 장소보다 짧은 문장이 먼저 적혀 있었다.
-
-“이번에는 도망가지 마.”
-
-[[첫 번째 밤으로 돌아간다->첫 번째 밤]]
-
-:: 윤세라·문 앞
-<<set $affection["윤세라"] += 1>>
-문을 열자 윤세라는 기다렸다는 말 대신 젖은 우산을 접었다.
-
-“늦었네요. 그래도 열어 줬으니까 됐어요.”
-
-[[첫 번째 밤으로 돌아간다->첫 번째 밤]]
-
+:: 시작 [title menu nobr]
+<section class="title-screen">
+  <div class="title-screen__shade"></div>
+  <div class="title-screen__content">
+    <p class="title-kicker">AFTER THE CLOSING BELL</p>
+    <h1>폐장 후, 우리</h1>
+    <p class="title-copy">시장은 닫혔지만<br>끝내 정리하지 못한 관계는 그제야 움직이기 시작했다.</p>
+    <nav class="title-menu" aria-label="시작 메뉴">
+      <button type="button" class="title-menu__primary" data-vn-passage="프롤로그 · 폐장">새 게임</button>
+      <<if Save.browser.size > 0>>
+        <button type="button" data-vn-action="continue">이어하기</button>
+      <<else>>
+        <button type="button" disabled>이어하기</button>
+      <</if>>
+      <button type="button" data-vn-action="saves">불러오기</button>
+    </nav>
+  </div>
+  <p class="title-version">PROLOGUE 0.1</p>
+</section>

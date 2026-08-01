@@ -1,0 +1,129 @@
+:: 프롤로그 · 폐장 [prologue autosave nobr]
+<<set $chapter = 0>>
+<<set $scene = "closed-room">>
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p class="vn-label">PROLOGUE · 폐장</p>
+    <p>오후 세 시 삼십 분.</p>
+    <p>마지막 숫자가 멈추자 방 안에서 움직이는 것은 컴퓨터 팬과 커튼 틈의 먼지뿐이었다.</p>
+    <p>돈은 벌 수 있었다. 사람을 만나지 않고도.</p>
+    [[모니터를 끈다->프롤로그 · 닫힌 방]]
+  </div>
+</section>
+
+:: 프롤로그 · 닫힌 방 [prologue autosave nobr]
+<<set $scene = "shut-in">>
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>모니터가 검게 식으면 가끔 교실 창문이 비쳤다.</p>
+    <p>생활경제연구회. 여섯 개의 의자. 다섯 사람이 대신 정해 준 일정과 약, 사진, 동선, 비밀번호.</p>
+    <p>그날 이후 나는 누군가가 나를 필요로 한다는 말을 믿지 않았다.</p>
+    <p>정확히는, 믿고 싶어지는 순간부터 피했다.</p>
+    [[휴대전화를 확인한다->프롤로그 · 남겨진 생활]]
+  </div>
+</section>
+
+:: 프롤로그 · 남겨진 생활 [prologue autosave nobr]
+<<set $scene = "daily-room">>
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>아버지가 보낸 생활비 입금 알림 아래로 사흘 전 메시지가 남아 있었다.</p>
+    <div class="phone-message phone-message--father">
+      <b>아버지</b>
+      <span>밥은 챙겨 먹어라. 나가라는 말은 이번 주엔 안 하마. 대신 살아 있다는 답은 해.</span>
+    </div>
+    <p>답장을 쓰다 지웠다. 괜찮다는 말은 너무 길고, 살아 있다는 말은 너무 정확했다.</p>
+    [[휴대전화를 뒤집어 놓는다->프롤로그 · 첫 진동]]
+  </div>
+</section>
+
+:: 프롤로그 · 첫 진동 [prologue autosave nobr]
+<<set $scene = "message">>
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--phone">
+    <p>탁자 위에서 휴대전화가 한 번 짧게 울렸다.</p>
+    <div class="phone-message phone-message--siwoo">
+      <b>시우</b>
+      <span>야, 살아 있냐.</span>
+      <span>취업 얘기 안 할 테니까 읽기라도 해.</span>
+    </div>
+    <div class="vn-choices">
+      <<link "바로 메시지를 연다">>
+        <<set $prologue.openedSiwooMessage = true>>
+        <<set $playerPattern.face += 1>>
+        <<goto "프롤로그 · 친구의 연락">>
+      <</link>>
+      <<link "알림만 보고 화면을 뒤집는다">>
+        <<set $prologue.openedSiwooMessage = false>>
+        <<set $playerPattern.avoid += 1>>
+        <<goto "프롤로그 · 두 번째 진동">>
+      <</link>>
+    </div>
+  </div>
+</section>
+
+:: 프롤로그 · 두 번째 진동 [prologue autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--phone">
+    <p>삼 분 뒤, 같은 이름이 다시 화면에 떴다.</p>
+    <div class="phone-message phone-message--siwoo">
+      <b>시우</b>
+      <span>안 읽은 척하는 것도 알림에 뜬다.</span>
+      <span>이번엔 진짜 부탁 하나만 할게.</span>
+    </div>
+    [[결국 메시지를 연다->프롤로그 · 친구의 연락]]
+  </div>
+</section>
+
+:: 프롤로그 · 친구의 연락 [prologue autosave nobr]
+<<set $scene = "invitation">>
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--phone">
+    <<if $prologue.openedSiwooMessage>>
+      <p>읽음 표시가 뜨자마자 시우의 메시지가 이어졌다.</p>
+    <<else>>
+      <p>읽음 표시를 확인한 시우는 기다렸다는 듯 다음 문장을 보냈다.</p>
+    <</if>>
+    <div class="phone-message phone-message--siwoo">
+      <b>시우</b>
+      <span>내가 하던 온라인 게임 기억하지?</span>
+      <span>오늘 레이드 한 자리 비었어. 말 안 해도 되고 얼굴도 안 보여도 돼.</span>
+      <span>이상한 사람 셋 있긴 한데, 너처럼 갑자기 사라지지는 않아.</span>
+    </div>
+    <p>첨부된 초대 링크 아래에는 처음 보는 닉네임 세 개가 접속 중이었다.</p>
+    <p class="prologue-hook">막차요정 · 무보정 · 쉼표</p>
+    <div class="vn-choices">
+      <<link "초대를 받는다">>
+        <<set $prologue.answeredSiwoo = true>>
+        <<set $playerPattern.face += 1>>
+        <<goto "프롤로그 · 접속">>
+      <</link>>
+      <<link "대답 없이 링크만 저장한다">>
+        <<set $prologue.answeredSiwoo = false>>
+        <<set $playerPattern.delegate += 1>>
+        <<goto "프롤로그 · 접속">>
+      <</link>>
+    </div>
+  </div>
+</section>
+
+:: 프롤로그 · 접속 [prologue autosave nobr]
+<section class="vn-scene vn-scene--room vn-scene--ending">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <<if $prologue.answeredSiwoo>>
+      <p>나는 오랜만에 누군가에게 먼저 ‘알겠어’라고 보냈다.</p>
+    <<else>>
+      <p>대답은 보내지 않았지만, 초대 링크는 닫지 않았다.</p>
+    <</if>>
+    <p>잠시 뒤, 꺼진 모니터 한쪽에 작은 접속 창이 떠올랐다.</p>
+    <p class="chapter-end">PROLOGUE 0 · 친구의 연락</p>
+    <p class="chapter-end__next">다음 장 · 문 앞의 사람</p>
+  </div>
+</section>
