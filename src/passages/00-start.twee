@@ -1,4 +1,5 @@
 :: StoryInit
+<<set $playerName = "최은호">>
 <<set $chapter = 0>>
 <<set $scene = "title">>
 <<set $playerPattern = {

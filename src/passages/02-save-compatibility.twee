@@ -1,4 +1,5 @@
 :: PassageHeader [nobr]
+<<set $playerName = $playerName ?? "최은호">>
 <<set $chapter = $chapter ?? 0>>
 <<set $scene = $scene ?? "unknown">>
 <<set $playerPattern = Object.assign({
