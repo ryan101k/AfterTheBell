@@ -1,0 +1,45 @@
+:root {
+  --ink: #eee9df;
+  --muted: #aaa399;
+  --panel: rgba(18, 18, 22, 0.92);
+  --accent: #c99b62;
+}
+
+body {
+  background: #0d0d10;
+  color: var(--ink);
+  font-family: "Pretendard", "Noto Sans KR", sans-serif;
+}
+
+#passages {
+  max-width: 760px;
+}
+
+.story-card {
+  padding: 1.5rem;
+  border: 1px solid rgba(201, 155, 98, 0.35);
+  border-radius: 14px;
+  background: var(--panel);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+}
+
+.scene-image {
+  display: block;
+  width: 100%;
+  max-height: 430px;
+  object-fit: cover;
+  border-radius: 9px;
+  margin-bottom: 1.25rem;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+}
+
+a.link-internal {
+  color: #e0b37a;
+}
+
