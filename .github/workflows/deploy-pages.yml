@@ -24,6 +24,15 @@ jobs:
         with:
           lfs: true
 
+      - name: Install Tweego
+        shell: pwsh
+        run: |
+          $archive = Join-Path $RUNNER_TEMP 'tweego.zip'
+          $downloadUrl = 'https://github.com/tmedwards/tweego/releases/download/v2.1.1/tweego-2.1.1-windows-x64.zip'
+          Invoke-WebRequest -Uri $downloadUrl -OutFile $archive
+          New-Item -ItemType Directory -Force -Path './tools/tweego' | Out-Null
+          Expand-Archive -LiteralPath $archive -DestinationPath './tools/tweego' -Force
+
       - name: Build Twine game
         shell: pwsh
         run: ./tools/build.ps1
