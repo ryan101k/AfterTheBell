@@ -1,0 +1,405 @@
+:: 1장 · 하룻밤만 [chapter1 autosave nobr]
+<<set $chapter = 1>>
+<<set $scene = "sera-entry">>
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p class="vn-label">CHAPTER 1 · 문을 연 사람</p>
+    <p>여자를 안으로 들인 뒤에도 나는 현관문을 한동안 닫지 못했다.</p>
+    <p>닫으면 보호하는 것 같았고, 열어두면 언제든 내보낼 생각인 것 같았다.</p>
+    <p>여자는 문턱 안쪽에 앉아 검은 가방을 무릎 위에 올렸다. 손잡이를 쥔 손에는 눌린 자국이 선명했다.</p>
+    <div class="phone-message phone-message--father">
+      <b>낯선 여자</b>
+      <span>윤새라예요. 하룻밤만 재워주시면 아침에 나갈게요.</span>
+    </div>
+    <p>처음 보는 사람에게는 너무 큰 부탁이었고, 거절하기에는 너무 작은 목소리였다.</p>
+    [[수건과 물을 내준다->1장 · 검은 가방]]
+  </div>
+</section>
+
+:: 1장 · 검은 가방 [chapter1 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>새라는 물을 두 손으로 받아 마셨다. 소매 아래로 멍이 보였지만 내가 보는 것을 알아차리자 곧 가렸다.</p>
+    <p>경찰을 부르겠다고 하자 고개를 너무 빨리 저었다.</p>
+    <div class="phone-message phone-message--father">
+      <b>윤새라</b>
+      <span>찾는 건 제가 아니라 이거예요. 경찰에 가도 누구에게 보여줘야 하는지 모르겠어요.</span>
+    </div>
+    <p>가방 안에는 회사 이름과 계좌번호가 빼곡한 장부가 있었다. 맨 위 봉투에는 낯익은 주문 시각이 인쇄되어 있었다.</p>
+    <p>내가 학창 시절 모의투자에서 썼던 주문 간격과 같았다.</p>
+    <p>새라는 내 표정을 보더니 가방을 닫았다.</p>
+    <p>“역시 아는 거네요.”</p>
+    [[아무것도 모른다고 답한다->1장 · 잠들지 못한 밤]]
+  </div>
+</section>
+
+:: 1장 · 잠들지 못한 밤 [chapter1 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>새라에게 침대를 내주고 나는 책상 앞에 앉았다.</p>
+    <p>새벽 두 시, 뒤를 돌아보니 새라는 눈을 감은 채 가방 손잡이를 잡고 있었다.</p>
+    <p>새벽 네 시에는 손이 이불 밖으로 나와 있었다. 나는 가방을 조금 가까이 밀어주었다.</p>
+    <p>아침이 되자 싱크대가 정리되어 있었다. 내 것 옆에는 포장을 갓 벗긴 칫솔 하나가 놓여 있었다.</p>
+    <p>하룻밤만 있겠다는 사람이 언제 준비했는지는 묻지 못했다.</p>
+    [[아침을 마주한다->1장 · 아침의 경계]]
+  </div>
+</section>
+
+:: 1장 · 아침의 경계 [chapter1 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>새라는 현관 앞에서 신발을 신었다. 약속을 지키는 사람처럼 굴었지만, 끈을 묶는 손은 같은 자리만 맴돌았다.</p>
+    <div class="vn-choices">
+      <<link "‘당분간 여기 있어요.’">>
+        <<set $chapter1.seraStayed = true>>
+        <<set $chapter1.seraAccompanies = true>>
+        <<set $romanceOpen.sera = true>>
+        <<set $playerPattern.delegate += 1>>
+        <<goto "1장 · 남겨 둔 칫솔">>
+      <</link>>
+      <<link "나래에게 연락해 보호 장소를 부탁한다">>
+        <<set $chapter1.seraStayed = false>>
+        <<set $chapter1.seraAccompanies = false>>
+        <<set $romanceOpen.sera = false>>
+        <<set $playerPattern.face += 1>>
+        <<goto "1장 · 돌려보낼 준비">>
+      <</link>>
+    </div>
+  </div>
+</section>
+
+:: 1장 · 남겨 둔 칫솔 [chapter1 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>새라는 고개를 들지 않았다.</p>
+    <p>“며칠이나 있어도 돼요?”</p>
+    <p>“안전한 곳을 찾을 때까지만요.”</p>
+    <p>그제야 새라가 웃었다. 안도라기에는 기쁨이 너무 컸다.</p>
+    <p>“그럼 안전한 곳은 천천히 찾아도 되겠네요.”</p>
+    <p>농담처럼 들렸지만, 새라는 벗었던 신발을 신발장 가장 안쪽에 넣었다.</p>
+    [[현관에서 전자음이 울린다->1장 · 틀린 비밀번호]]
+  </div>
+</section>
+
+:: 1장 · 돌려보낼 준비 [chapter1 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>차단했던 번호를 풀고 나래에게 짧게 사정을 보냈다.</p>
+    <div class="phone-message">
+      <b>윤나래</b>
+      <span>잘하셨습니다. 위치는 묻지 않겠습니다. 한 시간 뒤 제가 지정한 지구대로 오세요.</span>
+    </div>
+    <p>새라는 서운한 기색을 감추지 못했지만 고개를 끄덕였다.</p>
+    <p>“어젯밤은 고마웠어요. 더 욕심내면 안 되는 거니까.”</p>
+    <p>그 말이 내 선택을 비난하지 않아서 오히려 죄책감이 들었다.</p>
+    [[현관에서 전자음이 울린다->1장 · 틀린 비밀번호]]
+  </div>
+</section>
+
+:: 1장 · 틀린 비밀번호 [chapter1 autosave nobr]
+<<set $chapter1.hasLedger = true>>
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>삐, 삐, 삐.</p>
+    <p>현관 잠금장치에 틀린 번호가 세 번 입력됐다.</p>
+    <p>새라가 검은 가방을 끌어안았다. 방금 전까지의 표정은 흔적도 없이 사라졌다.</p>
+    <p>문밖에서 남자 목소리가 들렸다.</p>
+    <div class="phone-message phone-message--father">
+      <b>문밖의 남자</b>
+      <span>윤새라 씨. 회사 물건만 돌려주면 됩니다. 안에 있는 분까지 곤란하게 만들 필요는 없잖아요.</span>
+    </div>
+    <p>처음 듣는 목소리였다. 그런데 그는 내가 안에 있다는 것을 알고 있었다.</p>
+    [[경찰에 신고한다->1장 · 돌아갈 수 없는 주문]]
+  </div>
+</section>
+
+:: 1장 · 돌아갈 수 없는 주문 [chapter1 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>신고 통화를 하는 동안 문밖의 사람은 사라졌다.</p>
+    <p>엘리베이터가 내려가는 소리를 듣고도 새라는 한동안 움직이지 못했다.</p>
+    <p>가방에서 삐져나온 종이 한 장이 바닥에 떨어졌다. 태양캐피탈이라는 이름 아래 수십 개의 차명계좌가 연결되어 있었다.</p>
+    <p>마지막 줄에는 내 이름이 있었다.</p>
+    <p>최은호. 사용 중지. 원권리자 확인 필요.</p>
+    <p>도망친 뒤 한 번도 쓰지 않은 계좌였다. 그런데 거래 기록은 지난달까지 이어져 있었다.</p>
+    [[사이렌 소리를 듣는다->1장 · 담당 수사관]]
+  </div>
+</section>
+
+:: 1장 · 담당 수사관 [chapter1 autosave nobr]
+<<set $scene = "yujin-entry">>
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>경찰 두 명이 현관을 확인한 뒤 한 여자가 마지막으로 들어왔다.</p>
+    <p>강유진 경위. 명함의 이름보다 먼저 보인 것은 내 손목에 남은 붉은 자국이었다.</p>
+    <div class="phone-message">
+      <b>강유진</b>
+      <span>누가 잡았습니까?</span>
+    </div>
+    <p>문을 막다 내가 스스로 부딪친 것이라고 말하자 유진은 내 대답을 기록했다. 믿는 표정은 아니었다.</p>
+    <p>새라에게는 더 차가웠다.</p>
+    <div class="phone-message">
+      <b>강유진</b>
+      <span>윤새라 씨는 피해자이면서 증거 반출자입니다. 지금부터 가방을 임의로 열거나 최은호 씨에게 맡기면 안 됩니다.</span>
+    </div>
+    <<if $chapter1.seraStayed>>
+      <p>“이 사람 이름을 그렇게 쉽게 부르지 마세요.” 새라가 말했다.</p>
+      <p>유진은 눈썹만 조금 움직였다. “어제 처음 만난 분보다야 신원 확인은 많이 했습니다.”</p>
+    <<else>>
+      <p>새라는 반박하지 않고 가방을 내놓았다. 대신 경찰이 봉인하는 마지막 순간까지 손을 떼지 않았다.</p>
+    <</if>>
+    [[지구대로 동행한다->1장 · 형식적인 조사]]
+  </div>
+</section>
+
+:: 1장 · 형식적인 조사 [chapter1 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>조사는 두 시간 동안 이어졌다. 유진은 같은 질문을 단어만 바꿔 세 번씩 물었다.</p>
+    <p>새라를 왜 들였는지, 장부를 왜 알아봤는지, 정지된 계좌가 왜 아직 움직이는지.</p>
+    <p>모두 설명하고 나니 내가 숨긴 것보다 아버지가 숨긴 것이 더 많다는 사실만 또렷해졌다.</p>
+    <p>조사실에서 일어서다 시야가 기울었다. 책상 모서리를 짚은 손을 유진이 먼저 붙잡았다.</p>
+    <p>“조사는 끝났습니다. 병원으로 가죠.”</p>
+    <p>“혼자 갈 수 있습니다.”</p>
+    <p>“그 말이 사실인지 확인하는 것도 제 일입니다.”</p>
+    [[조사실을 나선다->1장 · 조사 뒤의 병원]]
+  </div>
+</section>
+
+:: 1장 · 조사 뒤의 병원 [chapter1 autosave nobr]
+<<set $scene = "hospital">>
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>검사는 금방 끝났다. 가벼운 염좌와 수면 부족. 의사는 내가 이미 아는 말을 진단명처럼 읽었다.</p>
+    <p>병실 밖에는 유진이 아직 앉아 있었다. 사건 서류를 보는 척하면서 같은 페이지를 오래 넘기지 않았다.</p>
+    <p>“이제 가셔도 되잖아요.”</p>
+    <p>“경찰로서는 그렇죠.”</p>
+    <p>유진이 입술 안쪽을 한 번 깨물었다.</p>
+    <p>“그런데 다친 사람을 혼자 보내는 건 제가 싫습니다.”</p>
+    <div class="vn-choices">
+      <<link "‘그럼 조금만 같이 있어주세요.’">>
+        <<set $chapter1.yujinStayed = true>>
+        <<set $romanceOpen.yujin = true>>
+        <<set $playerPattern.delegate += 1>>
+        <<goto "1장 · 필요한 사람">>
+      <</link>>
+      <<link "‘괜찮습니다. 조사만 마무리해주세요.’">>
+        <<set $chapter1.yujinStayed = false>>
+        <<set $romanceOpen.yujin = false>>
+        <<set $playerPattern.face += 1>>
+        <<goto "1장 · 선을 지킨 수사관">>
+      <</link>>
+    </div>
+  </div>
+</section>
+
+:: 1장 · 필요한 사람 [chapter1 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>유진의 얼굴에 안도감이 번졌다. 내가 다치지 않았다는 말을 들었을 때보다 훨씬 분명한 표정이었다.</p>
+    <p>그녀도 그 사실을 알아차린 모양이었다. 곧 입가를 굳히고 물컵의 눈금만 확인했다.</p>
+    <p>“잠들 때까지만 있겠습니다.”</p>
+    <p>“업무 시간 아닙니까?”</p>
+    <p>“지금부터 개인 시간입니다.”</p>
+    <p>기댈 사람이 필요하다고 말한 것은 나였는데, 필요한 사람이 된 쪽이 더 편안해 보였다.</p>
+    [[사흘 뒤->1장 · 두 번째 연락]]
+  </div>
+</section>
+
+:: 1장 · 선을 지킨 수사관 [chapter1 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>유진은 잠깐 나를 바라보다 자리에서 일어났다.</p>
+    <p>“알겠습니다. 담당자로서 필요한 연락만 드리겠습니다.”</p>
+    <p>명함을 침대 옆에 놓는 손길은 정확했다. 문이 닫힐 때까지 한 번도 뒤를 돌아보지 않았다.</p>
+    <p>서운해하지도, 붙잡히기를 기다리지도 않았다. 그래서 오히려 내가 먼저 선을 그었다는 사실이 분명해졌다.</p>
+    [[사흘 뒤->1장 · 두 번째 연락]]
+  </div>
+</section>
+
+:: 1장 · 두 번째 연락 [chapter1 autosave nobr]
+<<set $scene = "briefing-invite">>
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--phone">
+    <p>사흘 뒤, 나래에게 두 번째 연락이 왔다.</p>
+    <div class="phone-message">
+      <b>윤나래</b>
+      <span>태양캐피탈 피해 채권자 비공개 설명회가 열립니다. 장부의 원본 계약을 확인할 수 있는 자리입니다.</span>
+      <span>참석자 중 한채린 씨가 있습니다. 이 이름은 미리 아셔야 합니다.</span>
+    </div>
+    <p>첨부된 참석자 자료에는 검은 정장을 입은 여자의 사진이 있었다. 그 아래 적힌 재단 문양은 새라의 장부 봉투와 같았다.</p>
+    <<if $chapter1.seraStayed>>
+      <p>내 어깨 너머로 화면을 보던 새라가 사진을 눌러 확대했다.</p>
+      <p>“증거를 보러 가는 거라면서요. 그런데 왜 이 여자 사진이 필요해요?”</p>
+    <<else>>
+      <p>나래는 새라가 보호 장소에서 증인 자격으로 직접 참석한다고 덧붙였다.</p>
+    <</if>>
+    [[설명회 참석을 수락한다->1장 · 나갈 이유]]
+  </div>
+</section>
+
+:: 1장 · 나갈 이유 [chapter1 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>사람이 많은 곳은 아직 싫었다. 아버지가 보낸 사람과 함께 가는 것은 더 싫었다.</p>
+    <p>하지만 내 이름으로 움직이는 계좌를 모른 척하면, 방 안에 있어도 도망친 것이 아니게 되지는 않는다.</p>
+    <<if $chapter1.seraStayed>>
+      <p>새라는 자신도 피해자이자 증인이라며 동행을 고집했다.</p>
+      <p>“혼자 두고 가면 얌전히 기다릴게요.”</p>
+      <p>그렇게 말하면서 내 휴대전화에서 행사 주소를 자기 번호로 보내고 있었다.</p>
+      <p>결국 나는 같이 가자고 말했다. 새라는 승낙을 얻은 사람보다 허락을 확인한 사람처럼 웃었다.</p>
+    <<else>>
+      <p>나래는 건물 앞에서 만나자고 했다. 새라와도 그곳에서 다시 만나게 될 것이라고 했다.</p>
+    <</if>>
+    [[사흘 만에 현관 밖으로 나간다->1장 · 비공개 설명회]]
+  </div>
+</section>
+
+:: 1장 · 비공개 설명회 [chapter1 autosave nobr]
+<<set $scene = "creditor-briefing">>
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>설명회는 호텔 지하 연회장에 마련되어 있었다. 아래층에는 피해자 명찰을 단 사람들이, 위층에는 이름 대신 회사 문양을 단 사람들이 모였다.</p>
+    <p>입구에서 처음 만난 나래는 예상보다 젊었고, 예상한 그대로 빈틈없는 정장을 입고 있었다.</p>
+    <p>“최은호 님. 와주셔서 감사합니다.”</p>
+    <p>“아버지께 보고하려고요?”</p>
+    <p>“오늘 본 일을 전부 보고하지 않는 것이 제 첫 번째 독단입니다.”</p>
+    <p>그때 유진이 행사장 안쪽에서 걸어왔다. 장부 탈취 시도 때문에 공식 수사 협조를 나온 것이었다.</p>
+    <<if $chapter1.seraStayed>>
+      <p>유진은 내 옆에 선 새라를 보고 시선을 좁혔다.</p>
+      <p>“보호 장소로 옮기지 않으셨군요.”</p>
+      <p>새라가 내 팔에 조금 더 가까이 붙었다. “은호 씨가 있으라고 했어요.”</p>
+    <<else>>
+      <p>보호 담당자와 함께 온 새라는 유진에게 먼저 진술 확인서를 건넸다. 나를 보고 웃었지만 다가오지는 않았다.</p>
+    <</if>>
+    [[장부의 원본을 확인한다->1장 · 위층의 여자]]
+  </div>
+</section>
+
+:: 1장 · 위층의 여자 [chapter1 autosave nobr]
+<<set $scene = "chaerin-entry">>
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>원본 계약은 공개되지 않았다. 주최 측은 권한을 핑계로 시간을 끌었고, 연회장 안의 목소리는 점점 높아졌다.</p>
+    <p>그 소란을 가르며 사진 속 여자가 내려왔다.</p>
+    <p>한채린은 누구에게도 길을 비켜달라고 하지 않았다. 사람들이 먼저 비켰다.</p>
+    <p>그녀는 새라가 내민 장부 사본보다 내 명찰을 먼저 봤다.</p>
+    <p>“최은호.”</p>
+    <p>성을 확인한 순간 채린의 눈빛이 아주 조금 달라졌다. 하지만 아는 체하지 않았다.</p>
+    <div class="phone-message phone-message--father">
+      <b>한채린</b>
+      <span>원본을 보고 싶으면 위로 오세요. 여기서는 당신이 들을 만한 말이 없으니까.</span>
+    </div>
+    <p>채린이 엘리베이터 호출 버튼을 눌렀다. 나래는 주최 측과 통화하느라 자리를 비운 상태였다.</p>
+    <div class="vn-choices">
+      <<link "한채린을 따라 엘리베이터에 탄다">>
+        <<set $chapter1.chaerinRefused = false>>
+        <<set $romanceOpen.chaerin = false>>
+        <<set $playerPattern.delegate += 1>>
+        <<goto "1장 · 열린 엘리베이터">>
+      <</link>>
+      <<link "‘나래 씨를 기다리겠습니다.’">>
+        <<set $chapter1.chaerinRefused = true>>
+        <<set $romanceOpen.chaerin = true>>
+        <<set $playerPattern.face += 1>>
+        <<goto "1장 · 거절당한 초대">>
+      <</link>>
+    </div>
+  </div>
+</section>
+
+:: 1장 · 열린 엘리베이터 [chapter1 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>엘리베이터 안에는 우리 둘뿐이었다. 채린은 내가 질문하기 전에 태블릿으로 계약서 한 장을 보여주었다.</p>
+    <p>“당신 계좌가 담보 묶음에 들어간 건 사실이에요. 하지만 이 장부는 누군가 진짜 계약과 가짜 명단을 섞은 겁니다.”</p>
+    <p>“왜 저한테 보여주는 겁니까?”</p>
+    <p>“따라왔으니까요.”</p>
+    <p>채린은 기대했던 답을 확인한 사람처럼 흥미를 거뒀다. 필요한 정보는 주었지만, 내 이름을 다시 부르지는 않았다.</p>
+    <p>엘리베이터가 다시 아래층에 멈췄다.</p>
+    [[문이 열린다->1장 · 세 사람]]
+  </div>
+</section>
+
+:: 1장 · 거절당한 초대 [chapter1 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>채린의 미소가 아주 조금 굳었다.</p>
+    <p>“나를 거절하고 그 직원을 기다리겠다고요?”</p>
+    <p>“저를 여기까지 데려온 사람입니다.”</p>
+    <p>엘리베이터 문이 열렸다가 아무도 타지 않아 다시 닫혔다.</p>
+    <p>채린은 닫힌 문에 비친 나를 한참 보았다.</p>
+    <p>“좋아요. 다음에는 당신이 장소를 정하게 해드리죠.”</p>
+    <p>허락을 구하는 말투가 아니었다. 거절당한 사람이 아니라 다음 차례를 예약한 사람의 말투였다.</p>
+    [[뒤에서 두 사람의 목소리가 들린다->1장 · 세 사람]]
+  </div>
+</section>
+
+:: 1장 · 세 사람 [chapter1 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <<if $chapter1.seraStayed>>
+      <p>“은호 씨.”</p>
+      <p>새라는 내 이름을 불렀지만 채린을 보고 있었다. 장부 봉투의 문양과 채린의 브로치가 같다는 것을 확인한 얼굴이었다.</p>
+    <<else>>
+      <p>보호 담당자 곁에 있던 새라가 장부 사본을 들고 다가왔다. 채린의 브로치를 보자 걸음이 멎었다.</p>
+    <</if>>
+    <p>유진도 곧 우리 사이에 섰다.</p>
+    <div class="phone-message">
+      <b>강유진</b>
+      <span>한채린 씨, 참고인에게 수사 자료를 따로 보여줬다면 제출해주십시오.</span>
+    </div>
+    <p>채린은 유진의 신분증을 보고, 새라의 가방을 보고, 마지막으로 나를 보았다.</p>
+    <p>“도망친 직원, 그 직원을 숨긴 계좌 주인, 그리고 둘을 보호하겠다는 경찰.”</p>
+    <p>새라가 낮게 대꾸했다. “당신만 빠지면 정리가 잘되겠네요.”</p>
+    <p>유진은 새라를 제지하면서도 채린에게서 시선을 떼지 않았다.</p>
+    <p>세 사람은 그날 처음 서로의 이름을 들었다.</p>
+    <p>아직 누구도 연적은 아니었다. 한 사람은 증인이었고, 한 사람은 수사관이었으며, 한 사람은 계약의 이해관계자였다.</p>
+    <p>그런데 셋 모두 사건보다 먼저 내가 누구 편에 서 있는지를 확인하고 있었다.</p>
+    [[나래가 가져온 원본을 본다->1장 · 찢어진 계약서]]
+  </div>
+</section>
+
+:: 1장 · 찢어진 계약서 [chapter1 autosave nobr]
+<section class="vn-scene vn-scene--room vn-scene--ending">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>돌아온 나래가 우리 사이에 투명 파일을 내려놓았다.</p>
+    <p>원본 계약서의 마지막 장은 절반이 찢겨 있었다. 남은 쪽에는 태양캐피탈의 인장과 내 옛날 서명이 겹쳐 있었다.</p>
+    <p>내가 한 적 없는 서명이었다. 하지만 획의 꺾임까지 내 글씨와 같았다.</p>
+    <p>채린이 먼저 말했다.</p>
+    <p>“이 서명을 만들 수 있는 사람은 당신을 아주 오래 본 사람이겠네요.”</p>
+    <p>새라의 손이 내 소매를 잡았고, 유진은 그 손을 보았다. 나래는 아무 말 없이 계약서를 덮었다.</p>
+    <p>방 안에 두고 왔다고 생각한 다섯 사람의 흔적이, 내가 처음 나온 장소에서 기다리고 있었다.</p>
+    <<if $chapter1.chaerinRefused>>
+      <p>그날 밤 모르는 번호로 메시지가 왔다.</p>
+      <div class="phone-message phone-message--father">
+        <b>한채린</b>
+        <span>번호를 어떻게 알았느냐고 물을 생각이라면 대답하지 않겠습니다.</span>
+        <span>대신 다음 장소는 당신이 정해요.</span>
+      </div>
+    <</if>>
+    <p class="chapter-end">CHAPTER 1 · 찢어진 계약서</p>
+    <p class="chapter-end__next">윤새라 · 강유진 · 한채린이 공동 사건에 합류했습니다.</p>
+  </div>
+</section>

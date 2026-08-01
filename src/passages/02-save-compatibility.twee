@@ -19,4 +19,17 @@
   "childhood": false,
   "business": false
 }, $routeUnlocks ?? {})>>
+<<set $romanceOpen = Object.assign({
+  "sera": false,
+  "yujin": false,
+  "chaerin": false
+}, $romanceOpen ?? {})>>
+<<set $chapter1 = Object.assign({
+  "recognizedNarae": false,
+  "hasLedger": false,
+  "seraStayed": false,
+  "seraAccompanies": false,
+  "yujinStayed": false,
+  "chaerinRefused": false
+}, $chapter1 ?? {})>>
 <<set $clearedEndings = $clearedEndings ?? {}>>

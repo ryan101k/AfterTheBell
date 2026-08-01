@@ -62,7 +62,7 @@
       <b>아버지</b>
       <span>밥은 챙겨 먹어라. 나가라는 말은 이번 주엔 안 하마. 대신 살아 있다는 답은 해.</span>
     </div>
-    <p>답장을 쓰다 지웠다. 괜찮다는 말은 너무 길고, 살아 있다는 말은 너무 정확했다.</p>
+    <p>답장을 쓰다 지웠다. 아버지는 늘 필요한 것을 보냈고, 내가 무엇을 원하는지는 묻지 않았다.</p>
     [[휴대전화를 뒤집어 놓는다->프롤로그 · 첫 진동]]
   </div>
 </section>
@@ -76,7 +76,7 @@
     <div class="phone-message phone-message--siwoo">
       <b>시우</b>
       <span>야, 살아 있냐.</span>
-      <span>취업 얘기 안 할 테니까 읽기라도 해.</span>
+      <span>네 아버지가 사람 하나 보냈어. 이름은 윤나래.</span>
     </div>
     <div class="vn-choices">
       <<link "바로 메시지를 연다">>
@@ -100,15 +100,15 @@
     <p>삼 분 뒤, 같은 이름이 다시 화면에 떴다.</p>
     <div class="phone-message phone-message--siwoo">
       <b>시우</b>
-      <span>안 읽은 척하는 것도 알림에 뜬다.</span>
-      <span>이번엔 진짜 부탁 하나만 할게.</span>
+      <span>싫으면 만나지 마. 나도 아저씨 편드는 거 아니야.</span>
+      <span>그래도 이번엔 끊기 전에 무슨 일인지만 들어봐.</span>
     </div>
     [[결국 메시지를 연다->프롤로그 · 친구의 연락]]
   </div>
 </section>
 
 :: 프롤로그 · 친구의 연락 [prologue autosave nobr]
-<<set $scene = "invitation">>
+<<set $scene = "narae-warning">>
 <section class="vn-scene vn-scene--room">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--phone">
@@ -119,24 +119,74 @@
     <</if>>
     <div class="phone-message phone-message--siwoo">
       <b>시우</b>
-      <span>내가 하던 온라인 게임 기억하지?</span>
-      <span>오늘 레이드 한 자리 비었어. 말 안 해도 되고 얼굴도 안 보여도 돼.</span>
-      <span>이상한 사람 셋 있긴 한데, 너처럼 갑자기 사라지지는 않아.</span>
+      <span>아저씨 회사 직원이래. 네 옛날 계좌 때문에 왔다는데 자세한 건 나도 못 들었어.</span>
+      <span>번호 넘긴 건 미안하다. 네 집 주소는 안 줬어.</span>
     </div>
-    <p>첨부된 초대 링크 아래에는 처음 보는 닉네임 세 개가 접속 중이었다.</p>
+    <p>곧 모르는 번호에서 메시지가 도착했다.</p>
+    <div class="phone-message">
+      <b>윤나래</b>
+      <span>개인 투자 피해 기록 확인을 위해 연락드렸습니다. 최은호 님 명의 계좌 끝자리 0719와 관련된 일입니다.</span>
+    </div>
+    <p>0719는 공개한 적 없는 번호였다. 아버지와 그 다섯을 제외하면 알 사람이 없었다.</p>
+    <div class="vn-choices">
+      <<link "‘아버지가 보냈죠?’라고 묻는다">>
+        <<set $chapter1.recognizedNarae = true>>
+        <<set $playerPattern.face += 1>>
+        <<goto "프롤로그 · 너무 뻔한 거짓말">>
+      <</link>>
+      <<link "답하지 않고 차단한다">>
+        <<set $chapter1.recognizedNarae = false>>
+        <<set $playerPattern.avoid += 1>>
+        <<goto "프롤로그 · 너무 뻔한 거짓말">>
+      <</link>>
+    </div>
+  </div>
+</section>
+
+:: 프롤로그 · 너무 뻔한 거짓말 [prologue autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--phone">
+    <<if $chapter1.recognizedNarae>>
+      <div class="phone-message">
+        <b>윤나래</b>
+        <span>그 질문에는 문자로 답하기 어렵습니다.</span>
+        <span>다만 이번 일은 회장님과 별개로 확인할 필요가 있습니다.</span>
+      </div>
+      <p>회장님. 직함 하나가 거짓말의 절반을 자백했다.</p>
+    <<else>>
+      <p>번호를 차단하자 곧 시우에게 메시지가 왔다.</p>
+      <div class="phone-message phone-message--siwoo">
+        <b>시우</b>
+        <span>역시 바로 차단했지. 윤나래 씨가 그럴 줄 알았대.</span>
+        <span>필요하면 이 파일만 보래.</span>
+      </div>
+      <p>전달된 문서에는 내 계좌 끝자리와 아버지 회사의 내부 문서 양식이 함께 찍혀 있었다.</p>
+    <</if>>
+    <p>나는 만나지 않겠다고 답했다. 상대는 더 설득하지 않았다. 그 침착함이 오히려 아버지의 방식과 닮아 불쾌했다.</p>
+    [[대화창을 닫는다->프롤로그 · 도피처]]
+  </div>
+</section>
+
+:: 프롤로그 · 도피처 [prologue autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>나는 늘 하던 게임을 켰다. 누가 권해서 시작한 취미가 아니라, 아무도 내 본명을 묻지 않는 오래된 도피처였다.</p>
+    <p>친구 목록에는 시우와 몇 번 파티에서 마주친 세 닉네임이 떠 있었다.</p>
     <p class="prologue-hook">막차요정 · 무보정 · 쉼표</p>
     <div class="vn-choices">
-      <<link "게임에 접속한다">>
+      <<link "파티 참가 요청을 받아들인다">>
         <<set $prologue.answeredSiwoo = true>>
         <<set $routeUnlocks.freedom = true>>
         <<set $playerPattern.face += 1>>
         <<goto "프롤로그 · 게임 접속">>
       <</link>>
-      <<link "대답 없이 링크만 저장한다">>
+      <<link "접속 상태를 숨긴다">>
         <<set $prologue.answeredSiwoo = false>>
         <<set $routeUnlocks.freedom = false>>
         <<set $playerPattern.avoid += 1>>
-        <<goto "프롤로그 · 남겨 둔 초대">>
+        <<goto "프롤로그 · 숨김 상태">>
       <</link>>
     </div>
   </div>
@@ -146,26 +196,23 @@
 <section class="vn-scene vn-scene--room">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--phone">
-    <p>오랜만에 헤드셋을 쓰자 시우의 목소리 뒤로 낯선 세 사람이 겹쳐 들렸다.</p>
-    <div class="phone-message phone-message--siwoo">
-      <b>시우</b>
-      <span>말했지? 얘가 내가 얘기하던 그 친구야.</span>
-    </div>
-    <p>막차요정이 먼저 인사했고, 무보정은 마이크 상태부터 확인했다. 쉼표는 한 박자 늦게 내 닉네임을 불렀다.</p>
+    <p>헤드셋을 쓰자 막차요정이 먼저 인사했고, 무보정은 마이크 상태부터 확인했다. 쉼표는 한 박자 늦게 내 닉네임을 불렀다.</p>
     <p>대답은 짧았지만 아무도 이유를 묻지 않았다. 그게 생각보다 편했다.</p>
     [[그때 헤드셋 바깥에서 소리가 난다->프롤로그 · 복도 소리]]
   </div>
 </section>
 
-:: 프롤로그 · 남겨 둔 초대 [prologue autosave nobr]
+:: 프롤로그 · 숨김 상태 [prologue autosave nobr]
 <section class="vn-scene vn-scene--room">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
-    <p>초대 링크를 저장하고 대화창을 닫았다.</p>
-    <p>막차요정, 무보정, 쉼표. 세 이름은 화면에서 사라졌고 방은 다시 조용해졌다.</p>
+    <p>접속 상태를 숨기고 혼자 게임을 시작했다. 채팅창의 세 이름도 곧 화면 밖으로 밀려났다.</p>
     [[그때 현관 밖에서 소리가 난다->프롤로그 · 복도 소리]]
   </div>
 </section>
+
+:: 프롤로그 · 남겨 둔 초대 [nobr]
+<<goto "프롤로그 · 숨김 상태">>
 
 :: 프롤로그 · 복도 소리 [prologue autosave nobr]
 <<set $prologue.heardHallway = true>>
@@ -178,7 +225,7 @@
       <p>컴퓨터 팬 소리 사이로 아주 작은 숨소리가 섞였다.</p>
     <</if>>
     <p>처음에는 배관이 우는 소리라고 생각했다.</p>
-    <p>두 번째에는 알 수 있었다. 누군가 울음을 삼키다가, 숨을 한 번 잘못 들이켠 소리였다.</p>
+    <p>두 번째에는 알 수 있었다. 누군가 울음을 삼키다가 숨을 한 번 잘못 들이켠 소리였다.</p>
     <p>소리는 현관문 바로 밖에서 들렸다.</p>
     <div class="vn-choices">
       <<link "문을 열고 밖으로 나간다">>
@@ -202,11 +249,11 @@
 </section>
 
 :: 프롤로그 · 문밖의 사람 [prologue autosave nobr]
-<section class="vn-scene vn-scene--room vn-scene--ending">
+<section class="vn-scene vn-scene--room">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
     <p>문고리를 잡은 손에 힘이 들어갔다. 잠금장치가 풀리는 소리가 유난히 크게 났다.</p>
-    <p>문을 열자 계단참에 한 여자가 웅크리고 앉아 있었다. 울고 있는 사람은 조용했고, 그래서 더 위태로워 보였다.</p>
+    <p>문을 열자 계단참에 한 여자가 웅크리고 앉아 있었다. 검은 가방을 품에 끌어안은 채였다.</p>
     <p>내 기척에 여자가 고개를 들었다. 눈이 마주치자 먼저 입을 연 건 그쪽이었다.</p>
     <div class="phone-message phone-message--father">
       <b>낯선 여자</b>
@@ -216,8 +263,7 @@
       <p>꺼 둔 헤드셋에서는 시우와 세 사람이 내가 돌아오기를 기다리고 있었다.</p>
     <</if>>
     <p>나는 방 밖으로 한 걸음 나와 있었다.</p>
-    <p class="chapter-end">PROLOGUE 0 · 문을 연 사람</p>
-    <p class="chapter-end__next">다음 장 · 윤새라</p>
+    [[문을 더 연다->1장 · 하룻밤만]]
   </div>
 </section>
 
@@ -229,7 +275,7 @@
     <p>막차요정이 내 이름을 다시 불렀고, 무보정은 아무 일도 없었다는 듯 다음 순서를 설명했다. 쉼표가 조용히 기다려 주었다.</p>
     <p>문밖으로 나가지는 못했다. 그래도 오늘은 누군가의 목소리 곁에 남았다.</p>
     <p class="chapter-end">PROLOGUE 0 · 화면 안의 사람들</p>
-    <p class="chapter-end__next">다음 장 · 첫 번째 파티</p>
+    <p class="chapter-end__next">자유인 3인 줄기는 이후 장에서 이어집니다.</p>
   </div>
 </section>
 
@@ -239,7 +285,7 @@
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
     <p>복도의 흐느낌은 한동안 이어지다가 멎었다.</p>
-    <p>게임 초대도, 현관 밖의 사람도 다시 나를 부르지 않았다.</p>
+    <p>게임 속 사람들도, 현관 밖의 사람도 다시 나를 부르지 않았다.</p>
     <p>아무 일도 일어나지 않았다. 내가 원한 그대로였다.</p>
     <p>그런데 방은 어제보다 조금 더 좁아져 있었다.</p>
     <p class="chapter-end">EARLY END · 닫힌 방</p>

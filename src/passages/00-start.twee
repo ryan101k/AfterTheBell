@@ -19,6 +19,19 @@
   "childhood": false,
   "business": false
 }>>
+<<set $romanceOpen = {
+  "sera": false,
+  "yujin": false,
+  "chaerin": false
+}>>
+<<set $chapter1 = {
+  "recognizedNarae": false,
+  "hasLedger": false,
+  "seraStayed": false,
+  "seraAccompanies": false,
+  "yujinStayed": false,
+  "chaerinRefused": false
+}>>
 <<set $clearedEndings = {}>>
 
 :: 시작 [title menu nobr]
@@ -38,5 +51,5 @@
       <button type="button" data-vn-action="saves">불러오기</button>
     </nav>
   </div>
-  <p class="title-version">PROLOGUE 0.1</p>
+  <p class="title-version">CHAPTER 1 · 0.2</p>
 </section>
