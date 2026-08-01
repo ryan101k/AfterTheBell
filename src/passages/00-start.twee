@@ -8,7 +8,9 @@
 }>>
 <<set $prologue = {
   "openedSiwooMessage": false,
-  "answeredSiwoo": false
+  "answeredSiwoo": false,
+  "heardHallway": false,
+  "openedDoor": false
 }>>
 <<set $routeUnlocks = {
   "dangerous": false,
