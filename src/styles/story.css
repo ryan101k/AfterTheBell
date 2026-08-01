@@ -313,6 +313,56 @@ body[data-tags~="title"] .vn-toolbar {
   letter-spacing: 0.08em;
 }
 
+.resource-card {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  margin: 18px 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--line);
+}
+
+.resource-card > span {
+  display: grid;
+  gap: 3px;
+  padding: 11px 13px;
+  background: rgba(11, 14, 19, 0.94);
+}
+
+.resource-card small {
+  color: var(--muted);
+  font-size: 0.67rem;
+  letter-spacing: 0.1em;
+}
+
+.resource-card strong {
+  color: var(--accent-bright);
+  font-size: 0.9rem;
+}
+
+.vn-cutscene {
+  margin: 18px 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: #05070a;
+}
+
+.vn-cutscene img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.vn-cutscene figcaption {
+  padding: 8px 12px;
+  color: var(--muted);
+  font-size: 0.72rem;
+  text-align: right;
+}
+
 .vn-scene--ending .vn-dialogue {
   text-align: center;
 }
@@ -368,5 +418,9 @@ body[data-tags~="title"] .vn-toolbar {
   .vn-dialogue {
     padding: 20px 18px;
     font-size: 0.92rem;
+  }
+
+  .resource-card {
+    grid-template-columns: 1fr;
   }
 }

@@ -32,6 +32,21 @@
   "yujinStayed": false,
   "chaerinRefused": false
 }>>
+<<set $economy = {
+  "cash": 12800000,
+  "earned": 0,
+  "evidence": 1
+}>>
+<<set $chapter2 = {
+  "chaerinIgnores": 0,
+  "marketApproach": "",
+  "analysisPaid": false,
+  "tradingPaid": false,
+  "trioRoute": false,
+  "seraAwakened": false,
+  "yujinAwakened": false,
+  "chaerinAwakened": false
+}>>
 <<set $clearedEndings = {}>>
 
 :: 시작 [title menu nobr]
@@ -51,5 +66,5 @@
       <button type="button" data-vn-action="saves">불러오기</button>
     </nav>
   </div>
-  <p class="title-version">CHAPTER 1 · 0.2</p>
+  <p class="title-version">CHAPTER 2 · 0.3</p>
 </section>

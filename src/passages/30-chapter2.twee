@@ -1,0 +1,365 @@
+:: 2장 · 폐장 뒤의 일 [chapter2 autosave nobr]
+<<set $chapter = 2>>
+<<set $scene = "market-return">>
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p class="vn-label">CHAPTER 2 · 자기 돈으로 서는 사람</p>
+    <p>설명회 다음 날에도 시장은 같은 시각에 열렸다.</p>
+    <p>사람의 서명은 훔칠 수 있어도 주문 습관까지 완벽하게 흉내 내기는 어려웠다. 나는 장부와 내 옛 계좌의 체결 기록을 화면 양쪽에 띄웠다.</p>
+    <p>새라는 부엌에서 커피를 내렸고, 유진은 사건 진행 상황이라는 명목으로 아침부터 전화를 걸었다.</p>
+    <p>한채린에게서는 아무 연락도 없었다. 거절 한 번으로 흥미를 잃었다면 그게 가장 편한 결말이었다.</p>
+    <p>오전 아홉 시 십 분, 나래가 암호화된 파일 하나를 보냈다.</p>
+    [[파일을 연다->2장 · 깨끗한 계좌]]
+  </div>
+</section>
+
+:: 2장 · 깨끗한 계좌 [chapter2 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--phone">
+    <div class="phone-message">
+      <b>윤나래</b>
+      <span>피해자 협의회가 거래 기록 분석을 의뢰했습니다. 정식 보수 계약입니다.</span>
+      <span>회장님 지원금도 별도로 준비되어 있지만, 원하지 않으실 것 같아 계약서에는 넣지 않았습니다.</span>
+    </div>
+    <p>분석 보수는 백이십만 원. 큰돈은 아니었다. 하지만 아버지에게서 온 생활비가 아니라 내가 한 일의 가격이었다.</p>
+    <p>나는 분쟁 중인 옛 계좌와 별개로, 내 이름만 들어간 운용 계좌를 열었다.</p>
+    <div class="resource-card">
+      <span><small>독립 운용자금</small><strong><<print $economy.cash.toLocaleString()>>원</strong></span>
+      <span><small>누적 수입</small><strong><<print $economy.earned.toLocaleString()>>원</strong></span>
+      <span><small>확보 증거</small><strong><<print $economy.evidence>>건</strong></span>
+    </div>
+    [[분석 계약에 서명한다->2장 · 반복되는 간격]]
+  </div>
+</section>
+
+:: 2장 · 반복되는 간격 [chapter2 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>거래 기록에는 수천 개의 숫자가 있었지만, 봐야 할 것은 세 가지뿐이었다.</p>
+    <p>누가 가장 많이 샀는지가 아니라, 서로 다른 계좌가 왜 같은 간격으로 움직였는지.</p>
+    <p>새라가 가져온 장부에는 금액이 컸고, 내 옛 기록에는 시간이 정확했다.</p>
+    <div class="vn-choices">
+      <<link "종목명보다 주문 간격을 먼저 맞춘다">>
+        <<set $chapter2.marketApproach = "interval">>
+        <<set $economy.evidence += 2>>
+        <<goto "2장 · 분석의 가격">>
+      <</link>>
+      <<link "거래 금액이 큰 계좌부터 추린다">>
+        <<set $chapter2.marketApproach = "amount">>
+        <<set $economy.evidence += 1>>
+        <<goto "2장 · 분석의 가격">>
+      <</link>>
+    </div>
+  </div>
+</section>
+
+:: 2장 · 분석의 가격 [chapter2 autosave nobr]
+<<if !$chapter2.analysisPaid>>
+  <<set $economy.cash += 1200000>>
+  <<set $economy.earned += 1200000>>
+  <<set $chapter2.analysisPaid = true>>
+<</if>>
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <<if $chapter2.marketApproach is "interval">>
+      <p>십칠 초, 삼십사 초, 다시 십칠 초. 다른 이름의 계좌 여섯 개가 같은 사람의 호흡으로 움직였다.</p>
+      <p>나는 계좌 명의가 아니라 반복 간격을 묶어 보고서 첫 장에 올렸다. 나래는 수정 없이 피해자 협의회에 전달했다.</p>
+    <<else>>
+      <p>큰 금액부터 추리자 법인 계좌 셋이 남았다. 하지만 그 뒤의 작은 계좌가 보이지 않았다.</p>
+      <p>나래가 시간대별로 다시 펼쳐보자고 제안했고, 우리는 같은 주문 간격으로 움직인 여섯 개의 계좌를 찾아냈다.</p>
+    <</if>>
+    <p>오후 네 시 이십 분, 분석 보수가 입금됐다.</p>
+    <div class="resource-card">
+      <span><small>독립 운용자금</small><strong><<print $economy.cash.toLocaleString()>>원</strong></span>
+      <span><small>이번 수입</small><strong>+1,200,000원</strong></span>
+      <span><small>확보 증거</small><strong><<print $economy.evidence>>건</strong></span>
+    </div>
+    <p>숫자가 늘어난 것보다, 입금자 이름에 아버지 회사가 없다는 사실이 오래 남았다.</p>
+    [[첫 보고서를 닫는다->2장 · 첫 번째 호출]]
+  </div>
+</section>
+
+:: 2장 · 첫 번째 호출 [chapter2 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--phone">
+    <p>보고서를 보낸 지 십 분 뒤 모르는 번호에서 메시지가 왔다.</p>
+    <div class="phone-message phone-message--father">
+      <b>한채린</b>
+      <span>오늘 여덟 시. 지난번 호텔 위층 개인실.</span>
+      <span>당신 보고서에 값을 매기고 싶어요.</span>
+    </div>
+    <p>번호를 어떻게 알았느냐는 질문은 할 필요도 없었다.</p>
+    <div class="vn-choices">
+      <<link "읽고도 답하지 않는다">>
+        <<set $chapter2.chaerinIgnores += 1>>
+        <<set $playerPattern.face += 1>>
+        <<goto "2장 · 저녁 식탁">>
+      <</link>>
+      <<link "‘몇 시까지 가면 됩니까?’라고 답한다">>
+        <<set $romanceOpen.chaerin = false>>
+        <<set $playerPattern.delegate += 1>>
+        <<goto "2장 · 응답한 초대">>
+      <</link>>
+    </div>
+  </div>
+</section>
+
+:: 2장 · 응답한 초대 [chapter2 autosave nobr]
+<section class="vn-scene vn-scene--room vn-scene--ending">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>답장은 바로 왔다. 장소와 차량 번호, 지켜야 할 복장까지 적혀 있었다.</p>
+    <p>채린에게 나는 아직 부르면 오는 사람 중 하나였다. 필요한 정보는 얻을 수 있겠지만, 그녀가 스스로 다시 부를 이유는 사라졌다.</p>
+    <p class="chapter-end">ROUTE HOLD · 응답한 초대</p>
+    <p class="chapter-end__next">한채린 개인 순애 경로는 이후 작성됩니다.</p>
+  </div>
+</section>
+
+:: 2장 · 저녁 식탁 [chapter2 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>저녁에는 새라가 영수증을 날짜별로 나누고 있었다.</p>
+    <p>내가 몇 시에 장을 보고 언제 커피를 마시는지, 어떤 소리에 집중이 끊기는지 새라는 묻지 않고 익혔다.</p>
+    <p>“내일도 같은 시간에 깨워드릴까요?”</p>
+    <p>“네. 그리고 새라 씨 것도 같이 주문해요. 아침마다 제 것만 먹는 거 불편하잖아요.”</p>
+    <p>새라는 잠깐 대답하지 못했다. ‘내일도’라는 말을 확인하듯 입술만 움직였다.</p>
+    <p>며칠째 공동현관 앞에서 나를 기다리게 한 것이 마음에 걸려, 나는 예비 열쇠를 하나 복사해 지갑에 넣었다. 건네는 때만 정하지 못했다.</p>
+    <p>그때 유진에게 전화가 왔다.</p>
+    [[전화를 받는다->2장 · 정의를 위한 확인]]
+  </div>
+</section>
+
+:: 2장 · 정의를 위한 확인 [chapter2 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--phone">
+    <div class="phone-message">
+      <b>강유진</b>
+      <span>보고서 확인했습니다. 내일부터 혼자 외출하지 마세요.</span>
+    </div>
+    <p>“그건 수사 지침입니까?”</p>
+    <p>“증인 보호를 위한 권고입니다.”</p>
+    <p>“새라 씨가 아니라 저한테만 하는 권고네요.”</p>
+    <p>전화기 너머가 잠시 조용해졌다.</p>
+    <p>“최은호 씨 계좌가 사건 중심에 있으니까요. 정의를 실현하려면 핵심 참고인이 안전해야 합니다.”</p>
+    <p>정의라는 단어가 두 번 나올 때마다 유진의 말은 사적인 쪽으로 한 걸음씩 가까워졌다.</p>
+    [[다음 거래일로 넘어간다->2장 · 자기 돈]]
+  </div>
+</section>
+
+:: 2장 · 자기 돈 [chapter2 autosave nobr]
+<<if !$chapter2.tradingPaid>>
+  <<set $economy.cash += 640000>>
+  <<set $economy.earned += 640000>>
+  <<set $chapter2.tradingPaid = true>>
+<</if>>
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>그 뒤 닷새 동안 나는 장부에 적힌 종목을 거래하지 않았다. 미공개 자료로 돈을 벌면 독립이 아니라 다른 종류의 빚이 된다.</p>
+    <p>대신 공개 공시와 오래 쓰던 원칙만으로 거래했다. 수익은 크지 않았고, 손실 난 날도 있었다.</p>
+    <p>닷새를 정산하고 남은 돈은 육십사만 원이었다.</p>
+    <div class="resource-card">
+      <span><small>독립 운용자금</small><strong><<print $economy.cash.toLocaleString()>>원</strong></span>
+      <span><small>누적 수입</small><strong><<print $economy.earned.toLocaleString()>>원</strong></span>
+      <span><small>확보 증거</small><strong><<print $economy.evidence>>건</strong></span>
+    </div>
+    <p>아버지의 생활비를 당장 끊을 정도는 아니었다. 그래도 누군가의 보호를 거절하고 한 달을 버틸 돈은 조금 늘었다.</p>
+    [[장 마감 알림을 끈다->2장 · 두 번째 호출]]
+  </div>
+</section>
+
+:: 2장 · 두 번째 호출 [chapter2 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--phone">
+    <p>장 마감 직후 한채린의 두 번째 메시지가 도착했다.</p>
+    <div class="phone-message phone-message--father">
+      <b>한채린</b>
+      <span>분석 보수의 세 배를 드리죠.</span>
+      <span>차도 보내겠습니다. 이번에는 답 정도는 해요.</span>
+    </div>
+    <p>첫 메시지에는 명령만 있었다. 두 번째에는 보상과 부탁을 흉내 낸 문장이 붙었다.</p>
+    <div class="vn-choices">
+      <<link "이번에도 답하지 않는다">>
+        <<set $chapter2.chaerinIgnores += 1>>
+        <<set $romanceOpen.chaerin = true>>
+        <<set $chapter2.trioRoute = true>>
+        <<set $playerPattern.face += 1>>
+        <<goto "2장 · 세 번째 초대">>
+      <</link>>
+      <<link "보수 조건을 묻는다">>
+        <<set $romanceOpen.chaerin = false>>
+        <<set $chapter2.trioRoute = false>>
+        <<set $playerPattern.delegate += 1>>
+        <<goto "2장 · 응답한 초대">>
+      <</link>>
+    </div>
+  </div>
+</section>
+
+:: 2장 · 세 번째 초대 [chapter2 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--phone">
+    <p>채린에게서는 더 이상 메시지가 오지 않았다.</p>
+    <p>대신 다음 날 나래가 정식 회의 요청서를 보냈다.</p>
+    <div class="phone-message">
+      <b>윤나래</b>
+      <span>피해자 협의회 분석자, 핵심 증인, 담당 수사관이 함께 원본 계약을 검토하는 자리입니다.</span>
+      <span>장소는 한채린 씨 개인실입니다. 또 거절하셔도 됩니다. 괜찮으시겠어요?</span>
+    </div>
+    <p>세 번째 초대에는 채린의 명령도, 차도, 돈도 없었다. 내가 거절하기 어려운 이유 대신 참석해야 할 이유만 적혀 있었다.</p>
+    <p>“이번에는 제 일로 가는 겁니다.”</p>
+    <p>나래는 짧게 “알겠습니다”라고 답했다.</p>
+    [[내 돈으로 택시를 부른다->2장 · 개인실]]
+  </div>
+</section>
+
+:: 2장 · 개인실 [chapter2 autosave nobr]
+<<set $scene = "private-room">>
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>개인실에는 창문보다 큰 야경과 사람 수보다 많은 의자가 있었다.</p>
+    <p>채린은 가장 안쪽 자리에 앉아 있었다. 두 번이나 답하지 않은 사람을 기다렸으면서도 늦었다는 말은 하지 않았다.</p>
+    <p>새라는 장부 원본을 확인할 증인으로, 유진은 압수 절차를 감독할 수사관으로 왔다. 나래는 회의 기록을 맡았다.</p>
+    <p>채린은 내 앞에 새 계약서를 밀었다.</p>
+    <p>“당신 보고서를 독점으로 넘겨요. 여기 있는 두 사람의 보호 비용도 내가 내죠.”</p>
+    <p>“보호를 조건으로 사람을 묶는 계약은 안 합니다.”</p>
+    <p>“아버지에게 배운 말인가요?”</p>
+    <p>나는 계약서를 덮었다. 방 안의 공기가 그 한마디에서 멈췄다.</p>
+    [[각자의 자리를 확인한다->2장 · 집으로 돌아오는 사람]]
+  </div>
+</section>
+
+:: 2장 · 집으로 돌아오는 사람 [chapter2 autosave nobr]
+<<set $chapter2.seraAwakened = true>>
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>새라는 문가에 선 채 앉지 않았다. 채린의 개인실에서는 자기가 어디까지 들어와도 되는지 알 수 없는 얼굴이었다.</p>
+    <p>나는 빈 의자를 당겨 내 옆에 붙였다.</p>
+    <p>“새라야, 거기 서 있지 말고 여기 앉아.”</p>
+    <p>처음으로 성도 존댓말도 빼고 불렀다. 학창 시절에는 다섯 사람의 자리를 정리하느라 이런 말을 아무렇지 않게 했었다.</p>
+    <p>주머니에 있던 예비 열쇠를 새라의 손에 쥐여줬다.</p>
+    <p>“오늘 돌아가면 문 먼저 열어. 내일 장 시작 전에 깨워주고.”</p>
+    <figure class="vn-cutscene">
+      <img src="../assets/images/event-trio-sera-awakening-v1.webp" alt="집 열쇠를 쥔 채 멍하니 은호를 바라보는 윤새라">
+      <figcaption>윤새라 · 돌아갈 곳이 과거형이 아닌 순간</figcaption>
+    </figure>
+    <p>새라는 열쇠를 쥔 채 한동안 아무 말도 하지 못했다.</p>
+    <p>“왜 그래?”</p>
+    <p>“아니…… 내일도 있는 것처럼 말해서요.”</p>
+    <p>눈은 나를 보고 있었지만 초점은 그보다 먼 곳에 걸려 있었다. 허락받은 하룻밤이 반복되는 생활로 바뀌는 순간이었다.</p>
+    [[유진이 끼어든다->2장 · 정의를 위한 포옹]]
+  </div>
+</section>
+
+:: 2장 · 정의를 위한 포옹 [chapter2 autosave nobr]
+<<set $chapter2.yujinAwakened = true>>
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>유진은 새라의 열쇠를 보자 곧바로 증인 보호 규정을 꺼냈다.</p>
+    <p>말은 단정했지만 서류를 넘기는 손끝이 떨렸다. 밤샘 수사를 마치고 그대로 온 사람이었다.</p>
+    <p>나는 유진의 파일을 빼앗듯 받아 나래에게 넘겼다.</p>
+    <p>“유진 씨는 이제 앉아요. 오늘은 내가 챙길 테니까.”</p>
+    <p>“저는 보호하러 온 사람입니다.”</p>
+    <p>“그러니까 지금은 쉬어요. 쓰러지는 경찰까지 책임질 여유는 없습니다.”</p>
+    <p>그 말이 끝나기도 전에 유진이 나를 끌어안았다.</p>
+    <figure class="vn-cutscene">
+      <img src="../assets/images/event-trio-yujin-awakening-v1.webp" alt="은호를 갑자기 끌어안은 강유진">
+      <figcaption>강유진 · 구하는 사람이 기대어버린 순간</figcaption>
+    </figure>
+    <p>유진 자신도 무엇을 했는지 뒤늦게 알아차린 듯 팔에 힘이 멎었다.</p>
+    <p>“이건 보호 조치입니다.”</p>
+    <p>“지금 안긴 쪽은 저인데요.”</p>
+    <p>“균형을 잃는지 확인한 겁니다. 사건 관계자를 안전하게 유지하는 것도 정의 실현의 일부고요.”</p>
+    <p>유진은 놓아주지 않은 채 끝까지 정의를 말했다. 새라는 열쇠를 더 세게 쥐었다.</p>
+    [[채린이 웃는다->2장 · 장난감이 아닌 사람]]
+  </div>
+</section>
+
+:: 2장 · 장난감이 아닌 사람 [chapter2 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>채린이 낮게 웃었다.</p>
+    <p>“열쇠 하나 받은 여자와, 제복 입고 매달리는 여자. 취향이 생각보다 단순하네요.”</p>
+    <p>새라의 표정이 굳었고 유진이 몸을 떼려 했다. 나는 먼저 채린을 봤다.</p>
+    <p>“사과하세요.”</p>
+    <p>“내 개인실에서 나한테 명령해요?”</p>
+    <p>“둘을 장난감처럼 불렀으니까.”</p>
+    <p>채린은 자리에서 일어나 내 앞까지 왔다. 화가 난 얼굴이었지만 눈은 이상할 만큼 맑았다.</p>
+    <p>“화났으면 때려봐요. 그것도 못하면서 주인인 척하지 말고.”</p>
+    <p>“한 번 더 말하면 그대로 합니다.”</p>
+    <p>“해봐요.”</p>
+    [[채린의 도발을 그대로 받아들인다->2장 · 붉어진 뺨]]
+  </div>
+</section>
+
+:: 2장 · 붉어진 뺨 [chapter2 autosave nobr]
+<<set $chapter2.chaerinAwakened = true>>
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>손바닥이 뺨에 닿는 소리가 개인실의 음악보다 선명했다.</p>
+    <p>세게 때리지는 않았다. 하지만 채린이 지금까지 받아본 거절 중 가장 직접적인 것이었다.</p>
+    <p>채린은 고개가 돌아간 채 움직이지 않았다.</p>
+    <p>곧 손으로 자기 뺨을 감쌌다. 붉어진 곳보다 얼굴 전체가 더 빠르게 달아올랐다.</p>
+    <figure class="vn-cutscene">
+      <img src="../assets/images/event-trio-chaerin-awakening-v1.webp" alt="붉어진 뺨을 붙잡고 혼란스러운 얼굴로 은호를 보는 한채린">
+      <figcaption>한채린 · 명령이 아니라 요청이 이루어진 순간</figcaption>
+    </figure>
+    <p>“당신…… 다른 사람한테도 이렇게 함부로 굴어요?”</p>
+    <p>“요청한 건 채린 씨입니다.”</p>
+    <p>“불쾌해요.”</p>
+    <p>그렇게 말하면서도 채린은 물러나지 않았다. 오히려 내가 가리킨 의자에 천천히 앉았다.</p>
+    <p>“앉으라고 말한 적은 없는데요.”</p>
+    <p>채린의 얼굴이 더 붉어졌다.</p>
+    [[세 사람을 바라본다->2장 · 연쇄 반응]]
+  </div>
+</section>
+
+:: 2장 · 연쇄 반응 [chapter2 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>새라는 채린이 내 말에 앉는 모습을 보며 자기 손의 열쇠를 감췄다. 유진은 나를 놓고도 한 걸음 이상 떨어지지 않았다.</p>
+    <p>채린은 두 사람의 자리를 번갈아 보았다. 방의 주인은 자신이었지만, 자리를 정한 사람은 내가 되어 있었다.</p>
+    <p>한 사람의 결핍이 다른 두 사람에게 허락처럼 보였다.</p>
+    <p>새라는 유진이 기대는 것을 보고 자기도 더 오래 머물러도 된다고 배웠다.</p>
+    <p>유진은 새라에게 돌아갈 열쇠가 생긴 것을 보고 보호해야 할 이유를 더 많이 만들었다.</p>
+    <p>채린은 두 사람이 내 일상에 들어가는 모습을 보고, 자신만 밖에 남았다는 사실을 처음 견디지 못했다.</p>
+    <p>나래가 정적을 깨고 물었다.</p>
+    <p>“지금부터 회의록에 뭐라고 적으면 될까요?”</p>
+    <p>새라는 동거인이라고 했고, 유진은 담당 수사관이라고 했으며, 채린은 아무 관계도 아니라고 말했다.</p>
+    <p>세 대답이 동시에 나왔다.</p>
+    [[찢어진 계약을 다시 펼친다->2장 · 세 개의 결핍]]
+  </div>
+</section>
+
+:: 2장 · 세 개의 결핍 [chapter2 autosave nobr]
+<section class="vn-scene vn-scene--room vn-scene--ending">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>나는 독점 조항을 찢어내고 분석 보수 조항만 남겼다.</p>
+    <p>채린은 찢어진 계약을 회수하지 않았다. 유진은 위법 여부를 확인한다며 남았고, 새라는 집에 돌아갈 시간을 정했다.</p>
+    <p>돈은 조금 늘었고 증거도 생겼다. 무엇보다 이제 아버지의 보호가 아니어도 거절할 수 있는 근거가 생기고 있었다.</p>
+    <div class="resource-card">
+      <span><small>독립 운용자금</small><strong><<print $economy.cash.toLocaleString()>>원</strong></span>
+      <span><small>누적 수입</small><strong><<print $economy.earned.toLocaleString()>>원</strong></span>
+      <span><small>확보 증거</small><strong><<print $economy.evidence>>건</strong></span>
+    </div>
+    <p>문제는 거절할 힘을 얻을수록, 세 사람이 내 곁에 남을 이유도 함께 강해지고 있다는 것이었다.</p>
+    <p class="chapter-end">CHAPTER 2 · 세 개의 결핍</p>
+    <p class="chapter-end__next">광기 3인 공동 루트가 열렸습니다.</p>
+  </div>
+</section>

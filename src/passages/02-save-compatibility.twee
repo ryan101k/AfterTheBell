@@ -32,4 +32,19 @@
   "yujinStayed": false,
   "chaerinRefused": false
 }, $chapter1 ?? {})>>
+<<set $economy = Object.assign({
+  "cash": 12800000,
+  "earned": 0,
+  "evidence": 1
+}, $economy ?? {})>>
+<<set $chapter2 = Object.assign({
+  "chaerinIgnores": 0,
+  "marketApproach": "",
+  "analysisPaid": false,
+  "tradingPaid": false,
+  "trioRoute": false,
+  "seraAwakened": false,
+  "yujinAwakened": false,
+  "chaerinAwakened": false
+}, $chapter2 ?? {})>>
 <<set $clearedEndings = $clearedEndings ?? {}>>
