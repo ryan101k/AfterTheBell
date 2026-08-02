@@ -36,10 +36,13 @@
   "route": "",
   "seraBoundary": false,
   "seraAsked": false,
+  "seraReturnedByChoice": false,
   "yujinEqual": false,
   "yujinReleased": false,
+  "yujinReturnedOffDuty": false,
   "chaerinPublicBoundary": false,
-  "chaerinStop": false
+  "chaerinStop": false,
+  "chaerinAcceptedConsequence": false
 }, $dangerousSolo ?? {})>>
 <<set $affectionNotice = $affectionNotice ?? "">>
 <<set $freedom = Object.assign({

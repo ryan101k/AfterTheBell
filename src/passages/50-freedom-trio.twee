@@ -589,6 +589,14 @@
     <p>다음 토요일 밤 아홉 시.</p>
     <p>약속은 누구의 집도 요구하지 않았다. 채원은 돌아오는 비행 시간을 확인했고, 유나는 공개 일정을 비워 뒀다. 소희는 공연 뒤 한 마디를 남겨 두었다.</p>
     <<if _freedomPassed gte 3 && $freedom.disclosedExisting && _freedomAffinity gte 30>>
+      <figure class="vn-cutscene">
+        <img src="../assets/images/event-freedom-true-next-meeting.png" alt="각자의 일정을 마치고 토요일 밤 카페에 다시 모인 채원, 유나, 소희">
+        <<if $freedomMode is "friend">>
+          <figcaption>같은 파티 · 스스로 정한 다음 약속</figcaption>
+        <<else>>
+          <figcaption>서로 다른 집에서 출발한 같은 토요일</figcaption>
+        <</if>>
+      </figure>
       <<if $freedomMode is "friend">>
         <<set $clearedEndings.freedomFriends = true>>
         <p>우리는 연인이 되지 않았다. 대신 친구라는 말을 핑계로 사라지지도 않았다.</p>
