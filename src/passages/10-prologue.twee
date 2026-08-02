@@ -93,7 +93,7 @@
     <div class="phone-message phone-message--siwoo">
       <b>시우</b>
       <span>야, 살아 있냐.</span>
-      <span>네 아버지가 사람 하나 보냈어. 이름은 윤나래.</span>
+      <span>아저씨가 너 연락 안 된다고 나한테까지 전화했어. 주소는 안 알려 줬다.</span>
     </div>
     <div class="vn-choices">
       <<link "바로 메시지를 연다">>
@@ -117,15 +117,15 @@
     <p>삼 분 뒤, 같은 이름이 다시 화면에 떴다.</p>
     <div class="phone-message phone-message--siwoo">
       <b>시우</b>
-      <span>싫으면 만나지 마. 나도 아저씨 편드는 거 아니야.</span>
-      <span>그래도 이번엔 끊기 전에 무슨 일인지만 들어봐.</span>
+      <span>답하기 싫으면 긴말 안 해도 돼.</span>
+      <span>점 하나만 보내. 그럼 살아 있다고만 전할게.</span>
     </div>
     [[결국 메시지를 연다->프롤로그 · 친구의 연락]]
   </div>
 </section>
 
 :: 프롤로그 · 친구의 연락 [prologue autosave nobr]
-<<set $scene = "narae-warning">>
+<<set $scene = "siwoo-check-in">>
 <section class="vn-scene vn-scene--room">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--phone">
@@ -136,52 +136,22 @@
     <</if>>
     <div class="phone-message phone-message--siwoo">
       <b>시우</b>
-      <span>아저씨가 보낸 사람 같더라. 네 옛날 계좌 때문에 왔다는데 자세한 건 나도 못 들었어.</span>
-      <span>번호 넘긴 건 미안하다. 네 집 주소는 안 줬어.</span>
+      <span>아저씨한테는 내가 알아서 둘러댈게.</span>
+      <span>오늘 밤에 게임은 들어올 거냐. 말하기 싫으면 듣고만 있어도 돼.</span>
     </div>
-    <p>곧 모르는 번호에서 메시지가 도착했다.</p>
-    <div class="phone-message">
-      <b>윤나래</b>
-      <span>개인 투자 피해 기록 확인을 위해 연락드렸습니다. 최은호 님 명의 계좌 끝자리 0719와 관련된 일입니다.</span>
-    </div>
-    <p>0719는 공개한 적 없는 번호였다. 아버지와 그 다섯을 제외하면 알 사람이 없었다.</p>
+    <p>시우는 이유를 묻지 않았다. 대신 내가 대답할 수 있는 가장 작은 질문만 남겼다.</p>
     <div class="vn-choices">
-      <<link "‘아버지가 보냈죠?’라고 묻는다">>
-        <<set $chapter1.recognizedNarae = true>>
+      <<link "살아 있다는 점 하나를 보낸다">>
+        <<set $prologue.answeredSiwoo = true>>
         <<set $playerPattern.face += 1>>
-        <<goto "프롤로그 · 너무 뻔한 거짓말">>
+        <<goto "프롤로그 · 도피처">>
       <</link>>
-      <<link "답하지 않고 차단한다">>
-        <<set $chapter1.recognizedNarae = false>>
+      <<link "답하지 않고 대화창을 닫는다">>
+        <<set $prologue.answeredSiwoo = false>>
         <<set $playerPattern.avoid += 1>>
-        <<goto "프롤로그 · 너무 뻔한 거짓말">>
+        <<goto "프롤로그 · 도피처">>
       <</link>>
     </div>
-  </div>
-</section>
-
-:: 프롤로그 · 너무 뻔한 거짓말 [prologue autosave nobr]
-<section class="vn-scene vn-scene--room">
-  <div class="vn-scene__shade"></div>
-  <div class="vn-dialogue vn-dialogue--phone">
-    <<if $chapter1.recognizedNarae>>
-      <div class="phone-message">
-        <b>윤나래</b>
-        <span>그 질문에는 문자로 답하기 어렵습니다.</span>
-        <span>다만 이번 일은 아버님과 별개로 확인할 필요가 있습니다.</span>
-      </div>
-      <p>아버님. 그 한마디가, 이 사람이 어디서 왔는지 절반을 자백했다.</p>
-    <<else>>
-      <p>번호를 차단하자 곧 시우에게 메시지가 왔다.</p>
-      <div class="phone-message phone-message--siwoo">
-        <b>시우</b>
-        <span>역시 바로 차단했지. 윤나래 씨가 그럴 줄 알았대.</span>
-        <span>필요하면 이 파일만 보래.</span>
-      </div>
-      <p>전달된 문서에는 내 계좌 끝자리와, 예전에 아버지 쪽에서 본 적 있는 낯익은 서식이 함께 찍혀 있었다.</p>
-    <</if>>
-    <p>나는 만나지 않겠다고 답했다. 상대는 더 설득하지 않았다. 그 침착함이 오히려 아버지의 방식과 닮아 불쾌했다.</p>
-    [[대화창을 닫는다->프롤로그 · 도피처]]
   </div>
 </section>
 

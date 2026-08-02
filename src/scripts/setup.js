@@ -68,29 +68,194 @@ setup.standeeScenes = {
   'sohee-thread': 'sohee'
 };
 
+setup.resolveStandeeCharacters = function () {
+  const title = passage();
+
+  if (/^1장 · /.test(title)) {
+    if (/닫힌 작업실|처음 저장한 번호/.test(title)) {
+      return ['sera', 'yujin'];
+    }
+    if (/열흘째의 초인종|두 개의 진술|제복을 벗지 않은 차/.test(title)) {
+      return ['yujin'];
+    }
+    return ['sera'];
+  }
+
+  if (/^2장 · /.test(title)) {
+    if (/아직 고백하지 않은 사람들/.test(title)) {
+      return ['sera', 'yujin', 'chaerin'];
+    }
+    if (/자기 이름의 그림|불이 꺼진 전시장/.test(title)) {
+      return ['sera', 'chaerin'];
+    }
+    if (/사건 없는 확인|제복 없는 저녁|구조받지 않은 사람|지키지 않는 밤|현관의 흔적|묻지 않은 이름/.test(title)) {
+      return ['yujin'];
+    }
+    if (/로비의 한채린|값을 매기지 않은 초대|예약 없는 저녁|약속된 한 시간/.test(title)) {
+      return ['chaerin'];
+    }
+    return ['sera'];
+  }
+
+  if (/^광기 3인 · /.test(title)) {
+    return ['sera', 'yujin', 'chaerin'];
+  }
+  if (/^3S · /.test(title)) {
+    return ['sera'];
+  }
+  if (/^3Y · /.test(title)) {
+    return ['yujin'];
+  }
+  if (/^3C · /.test(title)) {
+    return ['chaerin'];
+  }
+
+  if (/^3장 · /.test(title)) {
+    if (/하나뿐인 열쇠|여덟 시의 초인종/.test(title)) {
+      return ['sera'];
+    }
+    if (/비상 연락망의 첫째|꺼진 위치 표시/.test(title)) {
+      return ['yujin'];
+    }
+    if (/비어 있지 않은 일정표|값이 없는 부탁/.test(title)) {
+      return ['chaerin'];
+    }
+    return ['sera', 'yujin', 'chaerin'];
+  }
+
+  const sceneCharacter = setup.standeeScenes[State.variables.scene];
+  return sceneCharacter ? [sceneCharacter] : [];
+};
+
 setup.updateStandee = function () {
-  const characterKey = setup.standeeScenes[State.variables.scene];
-  const character = setup.standeeCharacters[characterKey];
+  const characterKeys = setup.resolveStandeeCharacters();
   const $scene = $('#passages .vn-scene').last();
 
-  if (!character || !$scene.length) {
+  if (!characterKeys.length || !$scene.length) {
     return;
   }
 
-  const $standee = $('<div>', {
-    class: 'vn-standee vn-standee--' + characterKey,
+  const $stage = $('<div>', {
+    class: 'vn-standee-stage vn-standee-stage--count-' + characterKeys.length,
     'aria-hidden': 'true'
   });
-  const $image = $('<img>', {
-    src: '../assets/images/standing/' + character.file,
-    alt: '',
-    loading: 'eager',
-    decoding: 'async'
+
+  characterKeys.forEach(function (characterKey, index) {
+    const character = setup.standeeCharacters[characterKey];
+    if (!character) {
+      return;
+    }
+    const $standee = $('<div>', {
+      class: 'vn-standee vn-standee--' + characterKey + ' vn-standee--slot-' + index
+    });
+    const $image = $('<img>', {
+      src: '../assets/images/standing/' + character.file,
+      alt: '',
+      loading: 'eager',
+      decoding: 'async'
+    });
+    $standee.append($image);
+    $stage.append($standee);
   });
 
-  $standee.append($image);
   $scene.addClass('has-standee');
-  $standee.insertBefore($scene.children('.vn-dialogue').first());
+  $stage.insertBefore($scene.children('.vn-dialogue').first());
+};
+
+setup.captureBacklog = function () {
+  if (tags().includes('menu') || tags().includes('title')) {
+    return;
+  }
+
+  const $dialogue = $('#passages .vn-dialogue').last();
+  if (!$dialogue.length) {
+    return;
+  }
+
+  const lines = [];
+  $dialogue.find('p, .phone-message b, .phone-message span').each(function () {
+    const line = $(this).text().replace(/\s+/g, ' ').trim();
+    if (line && lines[lines.length - 1] !== line) {
+      lines.push(line);
+    }
+  });
+
+  if (!lines.length) {
+    return;
+  }
+
+  const log = Array.isArray(State.variables.dialogueLog) ? State.variables.dialogueLog : [];
+  const signature = lines.join('\n');
+  const previous = log[log.length - 1];
+  if (previous && previous.passage === passage() && (previous.lines || []).join('\n') === signature) {
+    State.variables.dialogueLog = log;
+    return;
+  }
+
+  log.push({
+    passage: passage(),
+    chapter: State.variables.chapter || 0,
+    lines: lines,
+    choice: ''
+  });
+  if (log.length > 120) {
+    log.splice(0, log.length - 120);
+  }
+  State.variables.dialogueLog = log;
+};
+
+setup.rememberBacklogChoice = function (choiceText) {
+  const log = State.variables.dialogueLog;
+  if (!Array.isArray(log) || !log.length) {
+    return;
+  }
+  log[log.length - 1].choice = choiceText.replace(/\s+/g, ' ').trim();
+};
+
+setup.renderBacklog = function () {
+  const log = Array.isArray(State.variables.dialogueLog) ? State.variables.dialogueLog : [];
+  const $body = $('[data-vn-backlog-body]').empty();
+
+  if (!log.length) {
+    $('<p>', { class: 'vn-backlog__empty', text: '아직 기록된 대화가 없습니다.' }).appendTo($body);
+    return;
+  }
+
+  log.forEach(function (entry) {
+    const $entry = $('<article>', { class: 'vn-backlog__entry' });
+    $('<p>', {
+      class: 'vn-backlog__meta',
+      text: 'CH. ' + entry.chapter + ' · ' + entry.passage
+    }).appendTo($entry);
+    (entry.lines || []).forEach(function (line) {
+      $('<p>', { class: 'vn-backlog__line', text: line }).appendTo($entry);
+    });
+    if (entry.choice) {
+      $('<p>', {
+        class: 'vn-backlog__choice',
+        text: '선택 · ' + entry.choice
+      }).appendTo($entry);
+    }
+    $entry.appendTo($body);
+  });
+};
+
+setup.openBacklog = function () {
+  setup.renderBacklog();
+  const $backlog = $('[data-vn-backlog]');
+  $backlog.prop('hidden', false).addClass('is-open');
+  $('body').addClass('vn-backlog-open');
+  const body = $('[data-vn-backlog-body]')[0];
+  if (body) {
+    body.scrollTop = body.scrollHeight;
+  }
+  $backlog.find('[data-vn-backlog-close]').trigger('focus');
+};
+
+setup.closeBacklog = function () {
+  $('[data-vn-backlog]').removeClass('is-open').prop('hidden', true);
+  $('body').removeClass('vn-backlog-open');
+  $('[data-vn-action="backlog"]').trigger('focus');
 };
 
 $(document).on('click.vnui', '[data-vn-action]', function () {
@@ -101,9 +266,34 @@ $(document).on('click.vnui', '[data-vn-action]', function () {
     setup.continueGame();
   } else if (action === 'restart') {
     UI.restart();
+  } else if (action === 'backlog') {
+    setup.openBacklog();
   } else if (action === 'bgm' && setup.bgm) {
     setup.bgm.toggle();
   }
+});
+
+$(document).on('click.vnbacklog', '[data-vn-backlog-close]', function () {
+  setup.closeBacklog();
+});
+
+$(document).on('click.vnbacklog', '[data-vn-backlog]', function (event) {
+  if (event.target === this) {
+    setup.closeBacklog();
+  }
+});
+
+$(document).on('keydown.vnbacklog', function (event) {
+  if (event.key === 'Escape' && !$('[data-vn-backlog]').prop('hidden')) {
+    setup.closeBacklog();
+  }
+});
+
+$(document).on('pointerdown.vnbacklog keydown.vnbacklog', '#passages .vn-choices a, #passages .vn-choices button', function (event) {
+  if (event.type === 'keydown' && event.key !== 'Enter' && event.key !== ' ') {
+    return;
+  }
+  setup.rememberBacklogChoice($(this).text());
 });
 
 $(document).on('click.vnui', '[data-vn-passage]', function () {
@@ -113,6 +303,7 @@ $(document).on('click.vnui', '[data-vn-passage]', function () {
 $(document).on(':passagedisplay.vnui', function () {
   setup.hideChoiceScores();
   setup.updateStandee();
+  setup.captureBacklog();
 
   const chapter = State.variables.chapter || 0;
   $('[data-vn-chapter]').text(chapter);

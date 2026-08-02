@@ -64,29 +64,24 @@
   "chaerin": false
 }>>
 <<set $chapter1 = {
-  "recognizedNarae": false,
-  "hasLedger": false,
   "seraStayed": false,
-  "seraAccompanies": false,
-  "yujinStayed": false,
-  "chaerinRefused": false,
-  "seraFirstDistance": "",
-  "crisisResponse": ""
-}>>
-<<set $economy = {
-  "cash": 12800000,
-  "earned": 0,
-  "evidence": 1
+  "seraDoorClosed": false,
+  "seraAskedBeforeTouching": false,
+  "seraWaitedOutside": false,
+  "seraCameBack": false,
+  "yujinOffDutyTea": false,
+  "sharedHospitalChoice": false
 }>>
 <<set $chapter2 = {
-  "chaerinIgnores": 0,
-  "marketApproach": "",
-  "analysisPaid": false,
-  "tradingPaid": false,
   "trioRoute": false,
-  "seraAwakened": false,
-  "yujinAwakened": false,
-  "chaerinAwakened": false
+  "seraWorkTrusted": false,
+  "seraSpokeForHerself": false,
+  "yujinOffDuty": false,
+  "yujinAcceptedCare": false,
+  "yujinDidNotInspect": false,
+  "chaerinHeardNo": false,
+  "chaerinWalked": false,
+  "chaerinWaited": false
 }>>
 <<set $clearedEndings = {}>>
 
