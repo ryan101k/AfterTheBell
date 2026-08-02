@@ -275,6 +275,7 @@
 </section>
 
 :: 프롤로그 · 화면 안의 사람들 [prologue autosave nobr]
+<<set $dangerousOutcome = "none">>
 <section class="vn-scene vn-scene--room vn-scene--ending">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
@@ -283,6 +284,7 @@
     <p>문밖으로 나가지는 못했다. 그래도 오늘은 누군가의 목소리 곁에 남았다.</p>
     <p class="chapter-end">PROLOGUE 0 · 화면 안의 사람들</p>
     <p class="chapter-end__next">문밖의 울음은 더 이상 들리지 않았다.</p>
+    [[다음 접속을 기다린다->4장 · 다음 접속]]
   </div>
 </section>
 

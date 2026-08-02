@@ -1,6 +1,7 @@
 :: 1장 · 하룻밤만 [chapter1 autosave nobr]
 <<set $chapter = 1>>
 <<set $scene = "sera-entry">>
+<<set $dangerousAffection = { "sera": 0, "yujin": 0, "chaerin": 0 }>>
 <section class="vn-scene vn-scene--room">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
@@ -100,19 +101,30 @@
 <section class="vn-scene vn-scene--room">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
-    <p>새라는 현관 앞에서 신발을 신었다. 약속을 지키는 사람처럼 굴었지만, 끈을 묶는 손은 같은 자리만 맴돌았다.</p>
+    <div class="vn-character-card">
+      <figure class="vn-character-card__portrait"><img src="../assets/images/event-sera-5.png" alt="현관 앞에서 떠나지 못하는 윤새라"></figure>
+      <div class="vn-character-card__body">
+        <p class="vn-character-card__name">윤새라 · 아침의 경계</p>
+        <p class="vn-character-card__line">“약속대로 아침이니까 갈게요.”</p>
+        <p class="vn-beat">신발 끈을 묶는 손은 같은 자리만 맴돌았다.</p>
+      </div>
+    </div>
     <div class="vn-choices">
-      <<link "‘당분간 여기 있어요.’">>
+      <<link "당분간 여기 있어요.  [새라 ♥ +12]">>
         <<set $chapter1.seraStayed = true>>
         <<set $chapter1.seraAccompanies = true>>
         <<set $romanceOpen.sera = true>>
+        <<set $dangerousAffection.sera += 12>>
+        <<set $affectionNotice = "♥ 새라 호감도 +12 · 돌아올 곳을 허락했다">>
         <<set $playerPattern.delegate += 1>>
         <<goto "1장 · 남겨 둔 칫솔">>
       <</link>>
-      <<link "나래에게 연락해 보호 장소를 부탁한다">>
+      <<link "나래에게 보호 장소를 부탁한다  [새라 ♥ -4]">>
         <<set $chapter1.seraStayed = false>>
         <<set $chapter1.seraAccompanies = false>>
         <<set $romanceOpen.sera = false>>
+        <<set $dangerousAffection.sera -= 4>>
+        <<set $affectionNotice = "♡ 새라 호감도 -4 · 안전하지만 내 곁은 아니다">>
         <<set $playerPattern.face += 1>>
         <<goto "1장 · 돌려보낼 준비">>
       <</link>>
@@ -335,19 +347,28 @@
     </figure>
     <p>병원까지 오는 동안 유진은 사건 이야기를 하지 않았다. 신호가 걸릴 때마다 내가 깨어 있는지만 확인했다.</p>
     <p>“이제 가셔도 되잖아요.”</p>
-    <p>“경찰로서는 그렇죠.”</p>
-    <p>유진이 입술 안쪽을 한 번 깨물었다.</p>
-    <p>“그런데 다친 사람을 혼자 보내는 건 제가 싫습니다.”</p>
+    <div class="vn-character-card">
+      <figure class="vn-character-card__portrait"><img src="../assets/images/event-yujin-14.png" alt="병상 곁을 떠나지 못하는 강유진"></figure>
+      <div class="vn-character-card__body">
+        <p class="vn-character-card__name">강유진 · 조사 뒤의 병원</p>
+        <p class="vn-character-card__line">“경찰로서는 조사가 끝났습니다.”</p>
+        <p class="vn-character-card__line">“그런데 다친 사람을 혼자 보내는 건 제가 싫습니다.”</p>
+      </div>
+    </div>
     <div class="vn-choices">
-      <<link "‘어지럼이 가라앉을 때까지만 부탁합니다.’">>
+      <<link "어지럼이 가라앉을 때까지만 부탁합니다.  [유진 ♥ +12]">>
         <<set $chapter1.yujinStayed = true>>
         <<set $romanceOpen.yujin = true>>
+        <<set $dangerousAffection.yujin += 12>>
+        <<set $affectionNotice = "♥ 유진 호감도 +12 · 필요한 사람으로 남겼다">>
         <<set $playerPattern.delegate += 1>>
         <<goto "1장 · 필요한 사람">>
       <</link>>
-      <<link "‘괜찮습니다. 조사만 마무리해주세요.’">>
+      <<link "괜찮습니다. 조사만 마무리해주세요.  [유진 ♥ -4]">>
         <<set $chapter1.yujinStayed = false>>
         <<set $romanceOpen.yujin = false>>
+        <<set $dangerousAffection.yujin -= 4>>
+        <<set $affectionNotice = "♡ 유진 호감도 -4 · 역할 밖으로 밀어냈다">>
         <<set $playerPattern.face += 1>>
         <<goto "1장 · 선을 지킨 수사관">>
       <</link>>
@@ -492,17 +513,28 @@
       <b>한채린</b>
       <span>원본을 보고 싶으면 위로 오세요. 여기서는 당신이 들을 만한 말이 없으니까.</span>
     </div>
-    <p>채린이 엘리베이터 호출 버튼을 눌렀다. 나래는 주최 측과 통화하느라 자리를 비운 상태였다.</p>
+    <div class="vn-character-card">
+      <figure class="vn-character-card__portrait"><img src="../assets/images/event-chaerin-10.png" alt="개인실로 은호를 부르는 한채린"></figure>
+      <div class="vn-character-card__body">
+        <p class="vn-character-card__name">한채린 · 열린 엘리베이터</p>
+        <p class="vn-character-card__line">“원본을 보고 싶으면 위로 오세요.”</p>
+        <p class="vn-beat">채린이 명령하듯 엘리베이터를 열었다.</p>
+      </div>
+    </div>
     <div class="vn-choices">
-      <<link "한채린을 따라 엘리베이터에 탄다">>
+      <<link "한채린을 따라 엘리베이터에 탄다  [채린 ♥ +2]">>
         <<set $chapter1.chaerinRefused = false>>
         <<set $romanceOpen.chaerin = false>>
+        <<set $dangerousAffection.chaerin += 2>>
+        <<set $affectionNotice = "♥ 채린 호감도 +2 · 예상한 복종이었다">>
         <<set $playerPattern.delegate += 1>>
         <<goto "1장 · 열린 엘리베이터">>
       <</link>>
-      <<link "‘나래 씨를 기다리겠습니다.’">>
+      <<link "나래 씨를 기다리겠습니다.  [채린 ♥ +12]">>
         <<set $chapter1.chaerinRefused = true>>
         <<set $romanceOpen.chaerin = false>>
+        <<set $dangerousAffection.chaerin += 12>>
+        <<set $affectionNotice = "♥ 채린 호감도 +12 · 처음으로 명령을 거절했다">>
         <<set $playerPattern.face += 1>>
         <<goto "1장 · 거절당한 초대">>
       <</link>>
@@ -594,6 +626,12 @@
     <p class="chapter-end">CHAPTER 1 · 찢어진 계약서</p>
     <<if $chapter1.chaerinRefused && $romanceOpen.sera && $romanceOpen.yujin>>
       [[다시 시장을 연다->2장 · 폐장 뒤의 일]]
+    <<elseif !$chapter1.chaerinRefused && !$romanceOpen.sera && !$romanceOpen.yujin>>
+      <<set $dangerousOutcome = "none">>
+      <p class="chapter-end__next">그날 이후 연락은 사건에 필요한 만큼만 이어졌다.</p>
+      <<if $routeUnlocks.freedom>>
+        [[화면에 남은 세 사람에게 돌아간다->4장 · 다음 접속]]
+      <</if>>
     <<else>>
       <p class="chapter-end__next">그날 이후 연락은 사건에 필요한 만큼만 이어졌다.</p>
     <</if>>

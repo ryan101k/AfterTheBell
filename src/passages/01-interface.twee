@@ -4,10 +4,16 @@
     <div class="vn-toolbar__brand"><span>AFTER THE BELL</span><strong>폐장 후, 우리</strong></div>
     <div class="vn-toolbar__chapter">CH. <span data-vn-chapter>0</span></div>
     <div class="vn-toolbar__actions">
+      <button type="button" class="vn-bgm-toggle" data-vn-action="bgm" aria-pressed="false" aria-label="배경음악 켜기" title="배경음악 켜기"><span data-bgm-icon aria-hidden="true">♪×</span><span>BGM</span></button>
       <button type="button" data-vn-action="saves">저장 · 불러오기</button>
       <button type="button" data-vn-action="restart">타이틀</button>
     </div>
   </header>
+  <aside class="affection-hud" data-affection-hud hidden aria-label="인물별 호감도">
+    <span><i>♥</i> <em data-affection-label="0">채원</em> <strong data-affection-value="0">0</strong></span>
+    <span><i>♥</i> <em data-affection-label="1">유나</em> <strong data-affection-value="1">0</strong></span>
+    <span><i>♥</i> <em data-affection-label="2">소희</em> <strong data-affection-value="2">0</strong></span>
+  </aside>
+  <div class="affection-toast" data-affection-toast hidden role="status" aria-live="polite"></div>
   <main id="passages"></main>
 </div>
-

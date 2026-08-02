@@ -19,6 +19,41 @@
   "childhood": false,
   "business": false
 }, $routeUnlocks ?? {})>>
+<<set $dangerousOutcome = $dangerousOutcome ?? "unresolved">>
+<<set $freedomMode = $freedomMode ?? "locked">>
+<<set $affection = Object.assign({
+  "chaewon": 0,
+  "yuna": 0,
+  "sohee": 0
+}, $affection ?? {})>>
+<<set $dangerousAffection = Object.assign({
+  "sera": 0,
+  "yujin": 0,
+  "chaerin": 0
+}, $dangerousAffection ?? {})>>
+<<set $dangerousSolo = Object.assign({
+  "route": "",
+  "seraBoundary": false,
+  "seraAsked": false,
+  "yujinEqual": false,
+  "yujinReleased": false,
+  "chaerinPublicBoundary": false,
+  "chaerinStop": false
+}, $dangerousSolo ?? {})>>
+<<set $affectionNotice = $affectionNotice ?? "">>
+<<set $freedom = Object.assign({
+  "concreteInvite": false,
+  "chaewonRoom": false,
+  "yunaSpace": false,
+  "soheePresence": false,
+  "morningPromise": false,
+  "disclosedExisting": false,
+  "disclosureRewarded": false,
+  "chaewonAsked": false,
+  "yunaClarified": false,
+  "soheeStayed": false,
+  "nextMeetingChosen": false
+}, $freedom ?? {})>>
 <<set $romanceOpen = Object.assign({
   "sera": false,
   "yujin": false,

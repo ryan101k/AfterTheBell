@@ -19,6 +19,41 @@
   "childhood": false,
   "business": false
 }>>
+<<set $dangerousOutcome = "unresolved">>
+<<set $freedomMode = "locked">>
+<<set $affection = {
+  "chaewon": 0,
+  "yuna": 0,
+  "sohee": 0
+}>>
+<<set $dangerousAffection = {
+  "sera": 0,
+  "yujin": 0,
+  "chaerin": 0
+}>>
+<<set $dangerousSolo = {
+  "route": "",
+  "seraBoundary": false,
+  "seraAsked": false,
+  "yujinEqual": false,
+  "yujinReleased": false,
+  "chaerinPublicBoundary": false,
+  "chaerinStop": false
+}>>
+<<set $affectionNotice = "">>
+<<set $freedom = {
+  "concreteInvite": false,
+  "chaewonRoom": false,
+  "yunaSpace": false,
+  "soheePresence": false,
+  "morningPromise": false,
+  "disclosedExisting": false,
+  "disclosureRewarded": false,
+  "chaewonAsked": false,
+  "yunaClarified": false,
+  "soheeStayed": false,
+  "nextMeetingChosen": false
+}>>
 <<set $romanceOpen = {
   "sera": false,
   "yujin": false,

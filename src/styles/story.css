@@ -93,6 +93,81 @@ body[data-tags~="title"] .vn-toolbar {
   gap: 7px;
 }
 
+.affection-hud {
+  position: fixed;
+  z-index: 19;
+  top: 66px;
+  right: 18px;
+  display: flex;
+  gap: 7px;
+  padding: 8px;
+  border: 1px solid rgba(233, 151, 172, 0.3);
+  border-radius: 999px;
+  background: rgba(9, 11, 16, 0.84);
+  box-shadow: 0 10px 32px rgba(0, 0, 0, 0.34);
+  backdrop-filter: blur(12px);
+}
+
+.affection-hud[hidden] {
+  display: none;
+}
+
+.affection-hud span {
+  padding: 4px 9px;
+  color: #ded8d0;
+  font-size: 0.74rem;
+  white-space: nowrap;
+}
+
+.affection-hud i {
+  color: #ef91aa;
+  font-style: normal;
+}
+
+.affection-hud em {
+  font-style: normal;
+}
+
+.affection-hud[data-mode="dangerous"] {
+  border-color: rgba(205, 90, 95, 0.42);
+  background: rgba(28, 10, 14, 0.88);
+}
+
+.affection-hud[data-mode="dangerous"] i,
+.affection-hud[data-mode="dangerous"] strong {
+  color: #f29a9e;
+}
+
+.affection-hud strong {
+  margin-left: 3px;
+  color: #ffd1dc;
+  font-variant-numeric: tabular-nums;
+}
+
+.affection-toast {
+  position: fixed;
+  z-index: 50;
+  top: 122px;
+  left: 50%;
+  padding: 11px 20px;
+  transform: translate(-50%, -10px);
+  border: 1px solid rgba(239, 145, 170, 0.58);
+  border-radius: 999px;
+  background: rgba(40, 18, 27, 0.94);
+  box-shadow: 0 14px 44px rgba(0, 0, 0, 0.44);
+  color: #ffd6e0;
+  font-size: 0.83rem;
+  font-weight: 700;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.affection-toast.is-visible {
+  transform: translate(-50%, 0);
+  opacity: 1;
+}
+
 .vn-toolbar button,
 .title-menu button {
   border: 1px solid rgba(255, 255, 255, 0.16);
@@ -243,6 +318,73 @@ body[data-tags~="title"] .vn-toolbar {
 
 .vn-dialogue p {
   margin: 0.4em 0;
+}
+
+.vn-character-card {
+  display: grid;
+  grid-template-columns: 210px minmax(0, 1fr);
+  min-height: 270px;
+  margin: 14px 0 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.vn-character-card__portrait {
+  position: relative;
+  min-height: 270px;
+  margin: 0;
+  overflow: hidden;
+  background: #080a0e;
+}
+
+.vn-character-card__portrait::after {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 45%, rgba(5, 7, 10, 0.72));
+  content: "";
+}
+
+.vn-character-card__portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 24%;
+}
+
+.vn-character-card__body {
+  align-self: center;
+  padding: 24px 26px;
+}
+
+.vn-character-card__name {
+  margin: 0 0 12px !important;
+  color: var(--accent-bright);
+  font-size: 0.77rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+}
+
+.vn-character-card__line {
+  margin: 0 0 10px !important;
+  color: #fff;
+  font-family: "Noto Serif KR", serif;
+  font-size: clamp(1.02rem, 2vw, 1.22rem);
+  line-height: 1.65;
+}
+
+.vn-beat {
+  margin: 10px 0 !important;
+  color: #c5beb5;
+  font-size: 0.86rem;
+  line-height: 1.65;
+}
+
+.choice-effect {
+  color: #f3a8ba;
+  font-size: 0.74rem;
+  font-weight: 750;
 }
 
 .vn-dialogue a.link-internal,
@@ -406,7 +548,7 @@ body[data-tags~="title"] .vn-toolbar {
     display: none;
   }
 
-  .vn-toolbar__actions button {
+.vn-toolbar__actions button {
     padding: 7px 8px;
     font-size: 0.68rem;
   }
@@ -420,7 +562,63 @@ body[data-tags~="title"] .vn-toolbar {
     font-size: 0.92rem;
   }
 
+  .affection-hud {
+    top: 62px;
+    right: 8px;
+    left: 8px;
+    justify-content: center;
+  }
+
+  .affection-hud span {
+    padding: 3px 6px;
+    font-size: 0.68rem;
+  }
+
+  .affection-toast {
+    top: 110px;
+  }
+
+  .vn-character-card {
+    grid-template-columns: 112px minmax(0, 1fr);
+    min-height: 190px;
+  }
+
+  .vn-character-card__portrait {
+    min-height: 190px;
+  }
+
+  .vn-character-card__body {
+    padding: 16px;
+  }
+
+  .vn-character-card__line {
+    font-size: 0.95rem;
+  }
+
   .resource-card {
     grid-template-columns: 1fr;
   }
+}
+
+.vn-toolbar__actions .vn-bgm-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-width: 58px;
+  justify-content: center;
+}
+
+.vn-bgm-toggle [data-bgm-icon] {
+  color: var(--accent-bright);
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+.vn-bgm-toggle.is-muted {
+  color: var(--muted);
+  opacity: 0.72;
+}
+
+.vn-bgm-toggle.is-muted [data-bgm-icon] {
+  color: var(--muted);
 }

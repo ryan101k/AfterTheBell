@@ -34,6 +34,8 @@ $(document).on('click.vnui', '[data-vn-action]', function () {
     setup.continueGame();
   } else if (action === 'restart') {
     UI.restart();
+  } else if (action === 'bgm' && setup.bgm) {
+    setup.bgm.toggle();
   }
 });
 
@@ -44,4 +46,39 @@ $(document).on('click.vnui', '[data-vn-passage]', function () {
 $(document).on(':passagedisplay.vnui', function () {
   const chapter = State.variables.chapter || 0;
   $('[data-vn-chapter]').text(chapter);
+
+  const freedomAffection = State.variables.affection || {};
+  const dangerousAffection = State.variables.dangerousAffection || {};
+  const freedomMode = chapter >= 4 && chapter <= 7 && State.variables.freedomMode !== 'locked';
+  const dangerousMode = chapter >= 1 && chapter <= 3 && State.variables.dangerousOutcome !== 'none';
+  const showAffection = freedomMode || dangerousMode;
+  const cast = dangerousMode
+    ? [['새라', dangerousAffection.sera], ['유진', dangerousAffection.yujin], ['채린', dangerousAffection.chaerin]]
+    : [['채원', freedomAffection.chaewon], ['유나', freedomAffection.yuna], ['소희', freedomAffection.sohee]];
+  const $hud = $('[data-affection-hud]');
+  $hud.prop('hidden', !showAffection);
+  $hud.attr('data-mode', dangerousMode ? 'dangerous' : 'freedom');
+  cast.forEach(function (character, index) {
+    $('[data-affection-label="' + index + '"]').text(character[0]);
+    $('[data-affection-value="' + index + '"]').text(character[1] || 0);
+  });
+
+  const notice = State.variables.affectionNotice;
+  if (notice) {
+    const $toast = $('[data-affection-toast]');
+    window.clearTimeout(setup.affectionToastTimer);
+    window.clearTimeout(setup.affectionToastHideTimer);
+    $toast.stop(true, true).text(notice).prop('hidden', false).addClass('is-visible');
+    setup.affectionToastTimer = window.setTimeout(function () {
+      $toast.removeClass('is-visible');
+      setup.affectionToastHideTimer = window.setTimeout(function () {
+        $toast.prop('hidden', true);
+      }, 220);
+    }, 1600);
+    State.variables.affectionNotice = '';
+  }
+
+  if (setup.bgm) {
+    setup.bgm.sync();
+  }
 });

@@ -42,14 +42,16 @@
     <p>누가 가장 많이 샀는지가 아니라, 서로 다른 계좌가 왜 같은 간격으로 움직였는지.</p>
     <p>새라가 가져온 장부에는 금액이 컸고, 내 옛 기록에는 시간이 정확했다.</p>
     <div class="vn-choices">
-      <<link "종목명보다 주문 간격을 먼저 맞춘다">>
+      <<link "종목명보다 주문 간격을 먼저 맞춘다  [증거 +2]">>
         <<set $chapter2.marketApproach = "interval">>
         <<set $economy.evidence += 2>>
+        <<set $affectionNotice = "분석 적중 · 확보 증거 +2">>
         <<goto "2장 · 분석의 가격">>
       <</link>>
-      <<link "거래 금액이 큰 계좌부터 추린다">>
+      <<link "거래 금액이 큰 계좌부터 추린다  [증거 +1]">>
         <<set $chapter2.marketApproach = "amount">>
         <<set $economy.evidence += 1>>
+        <<set $affectionNotice = "분석 진행 · 확보 증거 +1">>
         <<goto "2장 · 분석의 가격">>
       <</link>>
     </div>
@@ -87,21 +89,26 @@
 <section class="vn-scene vn-scene--room">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--phone">
-    <p>보고서를 보낸 지 십 분 뒤 모르는 번호에서 메시지가 왔다.</p>
-    <div class="phone-message phone-message--father">
-      <b>한채린</b>
-      <span>오늘 여덟 시. 지난번 호텔 위층 개인실.</span>
-      <span>당신 보고서에 값을 매기고 싶어요.</span>
+    <div class="vn-character-card">
+      <figure class="vn-character-card__portrait"><img src="../assets/images/event-chaerin-private-command.png" alt="은호에게 일방적인 호출을 보내는 한채린"></figure>
+      <div class="vn-character-card__body">
+        <p class="vn-character-card__name">한채린 · 첫 번째 호출</p>
+        <p class="vn-character-card__line">“오늘 여덟 시. 지난번 호텔 위층 개인실.”</p>
+        <p class="vn-character-card__line">“당신 보고서에 값을 매기고 싶어요.”</p>
+      </div>
     </div>
-    <p>번호를 어떻게 알았느냐는 질문은 할 필요도 없었다.</p>
     <div class="vn-choices">
-      <<link "읽고도 답하지 않는다">>
+      <<link "읽고도 답하지 않는다  [채린 ♥ +6]">>
         <<set $chapter2.chaerinIgnores += 1>>
+        <<set $dangerousAffection.chaerin += 6>>
+        <<set $affectionNotice = "♥ 채린 호감도 +6 · 뜻대로 움직이지 않는 사람">>
         <<set $playerPattern.face += 1>>
         <<goto "2장 · 대답 없는 하루">>
       <</link>>
-      <<link "‘몇 시까지 가면 됩니까?’라고 답한다">>
+      <<link "몇 시까지 가면 됩니까?  [채린 ♥ +1]">>
         <<set $romanceOpen.chaerin = false>>
+        <<set $dangerousAffection.chaerin += 1>>
+        <<set $affectionNotice = "♥ 채린 호감도 +1 · 예상한 대답이었다">>
         <<set $playerPattern.delegate += 1>>
         <<goto "2장 · 응답한 초대">>
       <</link>>
@@ -249,24 +256,30 @@
 <section class="vn-scene vn-scene--room">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--phone">
-    <p>장 마감 직후 한채린의 두 번째 메시지가 도착했다.</p>
-    <div class="phone-message phone-message--father">
-      <b>한채린</b>
-      <span>분석 보수의 세 배를 드리죠.</span>
-      <span>차도 보내겠습니다. 이번에는 답 정도는 해요.</span>
+    <div class="vn-character-card">
+      <figure class="vn-character-card__portrait"><img src="../assets/images/event-chaerin-contract.png" alt="수정된 조건으로 다시 은호를 부르는 한채린"></figure>
+      <div class="vn-character-card__body">
+        <p class="vn-character-card__name">한채린 · 두 번째 호출</p>
+        <p class="vn-character-card__line">“분석 보수의 세 배를 드리죠.”</p>
+        <p class="vn-character-card__line">“차도 보내겠습니다. 이번에는 답 정도는 해요.”</p>
+      </div>
     </div>
     <p>지난번엔 명령만 던지더니, 이번엔 그 아래에 값과 부탁 비슷한 문장이 붙어 있었다.</p>
     <div class="vn-choices">
-      <<link "이번에도 답하지 않는다">>
+      <<link "이번에도 답하지 않는다  [채린 ♥ +12]">>
         <<set $chapter2.chaerinIgnores += 1>>
         <<set $romanceOpen.chaerin = true>>
         <<set $chapter2.trioRoute = true>>
+        <<set $dangerousAffection.chaerin += 12>>
+        <<set $affectionNotice = "♥ 채린 호감도 +12 · 명령을 부탁으로 바꾸게 했다">>
         <<set $playerPattern.face += 1>>
         <<goto "2장 · 초대받지 않은 자리">>
       <</link>>
-      <<link "보수 조건을 묻는다">>
+      <<link "보수 조건을 묻는다  [채린 ♥ -4]">>
         <<set $romanceOpen.chaerin = false>>
         <<set $chapter2.trioRoute = false>>
+        <<set $dangerousAffection.chaerin -= 4>>
+        <<set $affectionNotice = "♡ 채린 호감도 -4 · 다시 값으로 계산되는 관계">>
         <<set $playerPattern.delegate += 1>>
         <<goto "2장 · 응답한 초대">>
       <</link>>
@@ -631,7 +644,22 @@
     </div>
     <p>문제는 거절할 힘을 얻을수록, 세 사람이 내 곁에 남을 이유도 함께 강해지고 있다는 것이었다.</p>
     <p class="chapter-end">CHAPTER 2 · 세 개의 결핍</p>
-    <p class="chapter-end__next">그날부터 세 사람은 서로를 모른 척할 수 없게 되었다.</p>
-    [[다시 문을 연다->3장 · 들켜버린 것]]
+    <p class="chapter-end__next">누구의 문을 다시 열 것인가.</p>
+    <div class="vn-choices">
+      <<if $romanceOpen.sera>>
+        [[새라와 임시가 아닌 내일을 정한다  [새라 개인 루트]->3S · 비가 그친 뒤]]
+      <</if>>
+      <<if $romanceOpen.yujin>>
+        [[유진에게 보호가 아닌 관계를 묻는다  [유진 개인 루트]->3Y · 비 오는 구조]]
+      <</if>>
+      <<if $romanceOpen.chaerin>>
+        [[채린의 값 없는 부탁을 듣는다  [채린 개인 루트]->3C · 찢어진 계약]]
+      <</if>>
+      <<if $romanceOpen.sera && $romanceOpen.yujin && $romanceOpen.chaerin && $chapter2.trioRoute>>
+        [[세 사람 모두와 퇴로를 정한다  [광기 3인 공동 루트]->3장 · 들켜버린 것]]
+      <<elseif !$romanceOpen.sera && !$romanceOpen.yujin && !$romanceOpen.chaerin>>
+        [[사건만 끝내고 관계에서는 물러난다->3장 · 들켜버린 것]]
+      <</if>>
+    </div>
   </div>
 </section>
