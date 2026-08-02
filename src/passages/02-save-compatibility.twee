@@ -32,6 +32,12 @@
   "yujin": 0,
   "chaerin": 0
 }, $dangerousAffection ?? {})>>
+<<if $dangerousAffectionVersion is undefined>>
+  <<set $dangerousAffection.sera = Math.min(100, Math.round($dangerousAffection.sera * 100 / 30))>>
+  <<set $dangerousAffection.yujin = Math.min(100, Math.round($dangerousAffection.yujin * 100 / 30))>>
+  <<set $dangerousAffection.chaerin = Math.min(100, Math.round($dangerousAffection.chaerin * 100 / 30))>>
+  <<set $dangerousAffectionVersion = 2>>
+<</if>>
 <<set $dangerousSolo = Object.assign({
   "route": "",
   "seraBoundary": false,
@@ -84,11 +90,23 @@
   "yujinAcceptedCare": false,
   "yujinDidNotInspect": false,
   "eunhoFirstContact": "",
+  "seraLaundryChoice": "",
+  "seraLunchChoice": "",
+  "seraRainChoice": "",
+  "yujinMovieChoice": "",
+  "yujinConvenienceChoice": "",
+  "yujinCancelledChoice": "",
+  "yujinSickChoice": "",
   "chaerinHeardNo": false,
   "chaerinWalked": false,
   "chaerinWaited": false,
   "eunhoCheckedChaerin": "",
   "chaerinUnplannedVisit": "",
+  "chaerinWalkChoice": "",
+  "chaerinGiftChoice": "",
+  "chaerinBusChoice": "",
+  "chaerinRejectedChoice": "",
+  "chaerinUmbrellaChoice": "",
   "eunhoFeelingsNamed": false
 }, $chapter2 ?? {})>>
 <<set $chapter3 = Object.assign({

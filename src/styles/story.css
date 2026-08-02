@@ -144,6 +144,16 @@ body[data-tags~="title"] .vn-toolbar {
   font-variant-numeric: tabular-nums;
 }
 
+.affection-hud small {
+  margin-left: 4px;
+  color: rgba(244, 216, 220, 0.72);
+  font-size: 0.64rem;
+}
+
+.affection-hud small:empty {
+  display: none;
+}
+
 .affection-toast {
   position: fixed;
   z-index: 50;

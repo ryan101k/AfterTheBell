@@ -32,6 +32,7 @@
   "yujin": 0,
   "chaerin": 0
 }>>
+<<set $dangerousAffectionVersion = 2>>
 <<set $dangerousSolo = {
   "route": "",
   "seraBoundary": false,
@@ -83,11 +84,23 @@
   "yujinAcceptedCare": false,
   "yujinDidNotInspect": false,
   "eunhoFirstContact": "",
+  "seraLaundryChoice": "",
+  "seraLunchChoice": "",
+  "seraRainChoice": "",
+  "yujinMovieChoice": "",
+  "yujinConvenienceChoice": "",
+  "yujinCancelledChoice": "",
+  "yujinSickChoice": "",
   "chaerinHeardNo": false,
   "chaerinWalked": false,
   "chaerinWaited": false,
   "eunhoCheckedChaerin": "",
   "chaerinUnplannedVisit": "",
+  "chaerinWalkChoice": "",
+  "chaerinGiftChoice": "",
+  "chaerinBusChoice": "",
+  "chaerinRejectedChoice": "",
+  "chaerinUmbrellaChoice": "",
   "eunhoFeelingsNamed": false
 }>>
 <<set $clearedEndings = {}>>
@@ -109,5 +122,5 @@
       <button type="button" data-vn-action="saves">불러오기</button>
     </nav>
   </div>
-  <p class="title-version">CHAPTER 2 · 0.3</p>
+  <p class="title-version">CHAPTER 2 · 0.4</p>
 </section>

@@ -180,7 +180,7 @@
 </section>
 
 :: 3S · 임시가 아닌 주소 [chapter3 autosave nobr]
-<<if $dangerousSolo.seraBoundary && $dangerousSolo.seraAsked && $dangerousSolo.seraReturnedByChoice && $dangerousAffection.sera gte 30>>
+<<if $dangerousSolo.seraBoundary && $dangerousSolo.seraAsked && $dangerousSolo.seraReturnedByChoice && $dangerousAffection.sera gte 80>>
   <<set $dangerousOutcome = "solo_true_sera">>
   <<set $clearedEndings.dangerousSeraTrue = true>>
 <<else>>
@@ -388,7 +388,7 @@
 </section>
 
 :: 3Y · 사건 없는 내일 [chapter3 autosave nobr]
-<<if $dangerousSolo.yujinEqual && $dangerousSolo.yujinReleased && $dangerousSolo.yujinReturnedOffDuty && $dangerousAffection.yujin gte 30>>
+<<if $dangerousSolo.yujinEqual && $dangerousSolo.yujinReleased && $dangerousSolo.yujinReturnedOffDuty && $dangerousAffection.yujin gte 80>>
   <<set $dangerousOutcome = "solo_true_yujin">>
   <<set $clearedEndings.dangerousYujinTrue = true>>
 <<else>>
@@ -623,7 +623,7 @@
 </section>
 
 :: 3C · 왕관을 내려놓은 밤 [chapter3 autosave nobr]
-<<if $dangerousSolo.chaerinPublicBoundary && $dangerousSolo.chaerinStop && $dangerousSolo.chaerinAcceptedConsequence && $dangerousAffection.chaerin gte 30>>
+<<if $dangerousSolo.chaerinPublicBoundary && $dangerousSolo.chaerinStop && $dangerousSolo.chaerinAcceptedConsequence && $dangerousAffection.chaerin gte 80>>
   <<set $dangerousOutcome = "solo_true_chaerin">>
   <<set $clearedEndings.dangerousChaerinTrue = true>>
 <<else>>

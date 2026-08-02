@@ -11,9 +11,9 @@
     </div>
   </header>
   <aside class="affection-hud" data-affection-hud hidden aria-label="인물별 호감도">
-    <span><i>♥</i> <em data-affection-label="0">채원</em> <strong data-affection-value="0">0</strong></span>
-    <span><i>♥</i> <em data-affection-label="1">유나</em> <strong data-affection-value="1">0</strong></span>
-    <span><i>♥</i> <em data-affection-label="2">소희</em> <strong data-affection-value="2">0</strong></span>
+    <span><i>♥</i> <em data-affection-label="0">채원</em> <strong data-affection-value="0">0</strong><small data-affection-stage="0"></small></span>
+    <span><i>♥</i> <em data-affection-label="1">유나</em> <strong data-affection-value="1">0</strong><small data-affection-stage="1"></small></span>
+    <span><i>♥</i> <em data-affection-label="2">소희</em> <strong data-affection-value="2">0</strong><small data-affection-stage="2"></small></span>
   </aside>
   <div class="affection-toast" data-affection-toast hidden role="status" aria-live="polite"></div>
   <section class="vn-backlog" data-vn-backlog hidden role="dialog" aria-modal="true" aria-labelledby="vn-backlog-title">

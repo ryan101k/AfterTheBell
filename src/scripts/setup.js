@@ -1,5 +1,5 @@
 /* 폐장 후, 우리 — 공통 UI와 저장 설정 */
-Config.history.maxStates = 80;
+Config.history.maxStates = 140;
 Config.saves.maxAutoSaves = 3;
 Config.saves.maxSlotSaves = 8;
 Config.saves.descriptions = function () {
@@ -52,6 +52,18 @@ setup.standeeCharacters = {
   sohee: { file: 'sohee-neutral.png', name: '윤소희' }
 };
 
+setup.dangerousAffectionStage = function (value) {
+  const score = Math.min(100, Math.max(0, Number(value) || 0));
+  if (score >= 100) return '확신';
+  if (score >= 90) return '사랑';
+  if (score >= 80) return '호감';
+  if (score >= 65) return '특별함';
+  if (score >= 50) return '신뢰';
+  if (score >= 30) return '친구';
+  if (score >= 10) return '익숙함';
+  return '낯섦';
+};
+
 setup.standeeScenes = {
   'sera-entry': 'sera',
   'sera-test': 'sera',
@@ -88,10 +100,10 @@ setup.resolveStandeeCharacters = function () {
     if (/자기 이름의 그림|불이 꺼진 전시장/.test(title)) {
       return ['sera', 'chaerin'];
     }
-    if (/사건 없는 확인|제복 없는 저녁|오지 않은 안부|먼저 온 답장|구조받지 않은 사람|지키지 않는 밤|현관의 흔적|묻지 않은 이름/.test(title)) {
+    if (/사건 없는 확인|제복 없는 저녁|오지 않은 안부|먼저 온 답장|비번의 영화|엔딩 크레딧|구조받지 않은 사람|지키지 않는 밤|야간 순찰의 편의점|캔커피 두 개|현관의 흔적|묻지 않은 이름|먼저 취소한 약속|미룬 저녁|열이 나는 비번|진통제 봉투/.test(title)) {
       return ['yujin'];
     }
-    if (/로비의 한채린|값을 매기지 않은 초대|예약 없는 저녁|답장이 늦은 밤|예약하지 않은 답장|약속된 한 시간|준비되지 않은 방문|값이 없는 라면/.test(title)) {
+    if (/로비의 한채린|값을 매기지 않은 초대|예약 없는 저녁|가격 없는 산책|육교 위의 십 분|답장이 늦은 밤|예약하지 않은 답장|직접 고른 선물|영수증 없는 화분|약속된 한 시간|수행원 없는 버스|두 정거장|준비되지 않은 방문|값이 없는 라면|거절된 예약|비어 있는 토요일|편의점 우산|천 원짜리 비닐/.test(title)) {
       return ['chaerin'];
     }
     return ['sera'];
@@ -321,7 +333,8 @@ $(document).on(':passagedisplay.vnui', function () {
   $hud.attr('data-mode', dangerousMode ? 'dangerous' : 'freedom');
   cast.forEach(function (character, index) {
     $('[data-affection-label="' + index + '"]').text(character[0]);
-    $('[data-affection-value="' + index + '"]').text(Math.min(30, character[1] || 0));
+    $('[data-affection-value="' + index + '"]').text(Math.min(100, character[1] || 0));
+    $('[data-affection-stage="' + index + '"]').text(dangerousMode ? setup.dangerousAffectionStage(character[1]) : '');
   });
 
   const notice = State.variables.affectionNotice;
@@ -329,7 +342,17 @@ $(document).on(':passagedisplay.vnui', function () {
     const $toast = $('[data-affection-toast]');
     window.clearTimeout(setup.affectionToastTimer);
     window.clearTimeout(setup.affectionToastHideTimer);
-    $toast.stop(true, true).text(notice).prop('hidden', false).addClass('is-visible');
+    let noticeText = notice;
+    if (dangerousMode) {
+      const noticeCharacter = cast.find(function (character) {
+        return notice.indexOf(character[0]) !== -1;
+      });
+      if (noticeCharacter) {
+        const score = Math.min(100, noticeCharacter[1] || 0);
+        noticeText += ' · 현재 ' + score + '/100 ' + setup.dangerousAffectionStage(score);
+      }
+    }
+    $toast.stop(true, true).text(noticeText).prop('hidden', false).addClass('is-visible');
     setup.affectionToastTimer = window.setTimeout(function () {
       $toast.removeClass('is-visible');
       setup.affectionToastHideTimer = window.setTimeout(function () {

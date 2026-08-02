@@ -41,14 +41,14 @@
     <div class="vn-choices">
       <<link "방을 보여 주고 문은 안에서 잠그라고 말한다.">>
         <<set $chapter1.seraDoorClosed = true>>
-        <<set $dangerousAffection.sera += 4>>
-        <<set $affectionNotice = "♥ 새라 관계도 +4 · 닫을 수 있는 문을 건넸다">>
+        <<set $dangerousAffection.sera += 10>>
+        <<set $affectionNotice = "♥ 새라 관계도 +10 · 닫을 수 있는 문을 건넸다">>
         <<goto "1장 · 닫힌 방문">>
       <</link>>
       <<link "문을 닫기 전 필요한 게 있으면 부르라고 말한다.">>
         <<set $chapter1.seraDoorClosed = false>>
-        <<set $dangerousAffection.sera += 3>>
-        <<set $affectionNotice = "♥ 새라 관계도 +3 · 문은 열어 두되 선택은 새라에게 남겼다">>
+        <<set $dangerousAffection.sera += 8>>
+        <<set $affectionNotice = "♥ 새라 관계도 +8 · 문은 열어 두되 선택은 새라에게 남겼다">>
         <<goto "1장 · 닫힌 방문">>
       <</link>>
     </div>
@@ -97,14 +97,14 @@
     <div class="vn-choices">
       <<link "달걀을 써도 되는지 먼저 묻는다.">>
         <<set $chapter1.seraAskedBeforeTouching = true>>
-        <<set $dangerousAffection.sera += 4>>
-        <<set $affectionNotice = "♥ 새라 관계도 +4 · 허락을 묻는 생활이 시작됐다">>
+        <<set $dangerousAffection.sera += 10>>
+        <<set $affectionNotice = "♥ 새라 관계도 +10 · 허락을 묻는 생활이 시작됐다">>
         <<goto "1장 · 두 사람분의 저녁">>
       <</link>>
       <<link "내 것부터 만들고, 먹고 싶으면 달걀을 건네 달라고 한다.">>
         <<set $chapter1.seraAskedBeforeTouching = false>>
-        <<set $dangerousAffection.sera += 3>>
-        <<set $affectionNotice = "♥ 새라 관계도 +3 · 말 대신 고를 수 있는 자리를 남겼다">>
+        <<set $dangerousAffection.sera += 8>>
+        <<set $affectionNotice = "♥ 새라 관계도 +8 · 말 대신 고를 수 있는 자리를 남겼다">>
         <<goto "1장 · 두 사람분의 저녁">>
       <</link>>
     </div>
@@ -146,14 +146,14 @@
     <div class="vn-choices">
       <<link "사람이 적은 밤을 기다렸다가 새라와 골목 끝까지 걷는다.">>
         <<set $chapter1.eunhoWentOutside = true>>
-        <<set $dangerousAffection.sera += 5>>
-        <<set $affectionNotice = "♥ 윤새라 관계도 +5 · 서로를 끌지 않고 같은 속도로 걸었다">>
+        <<set $dangerousAffection.sera += 10>>
+        <<set $affectionNotice = "♥ 윤새라 관계도 +10 · 서로를 끌지 않고 같은 속도로 걸었다">>
         <<goto "1장 · 네 번째 밤의 봉투">>
       <</link>>
       <<link "배달을 시키고, 물건을 받는 현관 앞까지만 함께 나간다.">>
         <<set $chapter1.eunhoWentOutside = false>>
-        <<set $dangerousAffection.sera += 4>>
-        <<set $affectionNotice = "♥ 윤새라 관계도 +4 · 멀리 가지 않아도 문턱은 함께 넘었다">>
+        <<set $dangerousAffection.sera += 8>>
+        <<set $affectionNotice = "♥ 윤새라 관계도 +8 · 멀리 가지 않아도 문턱은 함께 넘었다">>
         <<goto "1장 · 네 번째 밤의 봉투">>
       <</link>>
     </div>
@@ -185,14 +185,14 @@
     <div class="vn-choices">
       <<link "문밖에 앉아 대답할 때까지 기다린다.">>
         <<set $chapter1.seraWaitedOutside = true>>
-        <<set $dangerousAffection.sera += 4>>
-        <<set $affectionNotice = "♥ 새라 관계도 +4 · 열지 않고 기다렸다">>
+        <<set $dangerousAffection.sera += 10>>
+        <<set $affectionNotice = "♥ 새라 관계도 +10 · 열지 않고 기다렸다">>
         <<goto "1장 · 처음 들은 이름">>
       <</link>>
       <<link "문을 두드리며 대답이 없으면 열겠다고 미리 알린다.">>
         <<set $chapter1.seraWaitedOutside = false>>
-        <<set $dangerousAffection.sera += 2>>
-        <<set $affectionNotice = "♥ 새라 관계도 +2 · 안전을 확인하되 먼저 경고했다">>
+        <<set $dangerousAffection.sera += 8>>
+        <<set $affectionNotice = "♥ 새라 관계도 +8 · 안전을 확인하되 먼저 경고했다">>
         <<goto "1장 · 처음 들은 이름">>
       <</link>>
     </div>
@@ -249,14 +249,14 @@
     <div class="vn-choices">
       <<link "언제까지 머물지 일주일 뒤 다시 정하자고 한다.">>
         <<set $chapter1.seraCameBack = true>>
-        <<set $dangerousAffection.sera += 4>>
-        <<set $affectionNotice = "♥ 새라 관계도 +4 · 영원 대신 다음 대화 날짜를 정했다">>
+        <<set $dangerousAffection.sera += 10>>
+        <<set $affectionNotice = "♥ 새라 관계도 +10 · 영원 대신 다음 대화 날짜를 정했다">>
         <<goto "1장 · 돌아온 뒤의 정적">>
       <</link>>
       <<link "갈 곳을 찾는 동안 방값 대신 저녁을 번갈아 만들자고 한다.">>
         <<set $chapter1.seraCameBack = false>>
-        <<set $dangerousAffection.sera += 3>>
-        <<set $affectionNotice = "♥ 새라 관계도 +3 · 기한 대신 함께 지킬 생활 규칙을 만들었다">>
+        <<set $dangerousAffection.sera += 8>>
+        <<set $affectionNotice = "♥ 새라 관계도 +8 · 기한 대신 함께 지킬 생활 규칙을 만들었다">>
         <<goto "1장 · 돌아온 뒤의 정적">>
       <</link>>
     </div>
@@ -307,14 +307,14 @@
     <div class="vn-choices">
       <<link "근무가 끝난 뒤라면 차 한 잔은 괜찮다고 말한다.">>
         <<set $chapter1.yujinOffDutyTea = true>>
-        <<set $dangerousAffection.yujin += 4>>
-        <<set $affectionNotice = "♥ 유진 관계도 +4 · 직무와 개인 시간을 구분했다">>
+        <<set $dangerousAffection.yujin += 12>>
+        <<set $affectionNotice = "♥ 유진 관계도 +12 · 직무와 개인 시간을 구분했다">>
         <<goto "1장 · 제복을 벗지 않은 차">>
       <</link>>
       <<link "오늘은 어렵지만 다음 확인 때는 차를 준비하겠다고 한다.">>
         <<set $chapter1.yujinOffDutyTea = false>>
-        <<set $dangerousAffection.yujin += 3>>
-        <<set $affectionNotice = "♥ 유진 관계도 +3 · 거절하면서도 다음 만남은 남겼다">>
+        <<set $dangerousAffection.yujin += 8>>
+        <<set $affectionNotice = "♥ 유진 관계도 +8 · 거절하면서도 다음 만남은 남겼다">>
         <<goto "1장 · 제복을 벗지 않은 차">>
       <</link>>
     </div>
@@ -349,14 +349,14 @@
     <div class="vn-choices">
       <<link "실종이 아니라 걱정이라고 솔직하게 말하고 도움을 청한다.">>
         <<set $chapter1.sharedHospitalChoice = true>>
-        <<set $dangerousAffection.yujin += 4>>
-        <<set $affectionNotice = "♥ 유진 관계도 +4 · 위험을 과장하지 않고 도움을 청했다">>
+        <<set $dangerousAffection.yujin += 12>>
+        <<set $affectionNotice = "♥ 유진 관계도 +12 · 위험을 과장하지 않고 도움을 청했다">>
         <<goto "1장 · 닫힌 작업실">>
       <</link>>
       <<link "새라의 전원이 꺼졌다고 사실만 말하고 판단을 부탁한다.">>
         <<set $chapter1.sharedHospitalChoice = false>>
-        <<set $dangerousAffection.yujin += 2>>
-        <<set $affectionNotice = "♥ 유진 관계도 +2 · 감정을 숨겼지만 거짓 신고는 하지 않았다">>
+        <<set $dangerousAffection.yujin += 8>>
+        <<set $affectionNotice = "♥ 유진 관계도 +8 · 감정을 숨겼지만 거짓 신고는 하지 않았다">>
         <<goto "1장 · 닫힌 작업실">>
       <</link>>
     </div>

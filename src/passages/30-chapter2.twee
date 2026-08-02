@@ -10,11 +10,23 @@
   "yujinAcceptedCare": false,
   "yujinDidNotInspect": false,
   "eunhoFirstContact": "",
+  "seraLaundryChoice": "",
+  "seraLunchChoice": "",
+  "seraRainChoice": "",
+  "yujinMovieChoice": "",
+  "yujinConvenienceChoice": "",
+  "yujinCancelledChoice": "",
+  "yujinSickChoice": "",
   "chaerinHeardNo": false,
   "chaerinWalked": false,
   "chaerinWaited": false,
   "eunhoCheckedChaerin": "",
   "chaerinUnplannedVisit": "",
+  "chaerinWalkChoice": "",
+  "chaerinGiftChoice": "",
+  "chaerinBusChoice": "",
+  "chaerinRejectedChoice": "",
+  "chaerinUmbrellaChoice": "",
   "eunhoFeelingsNamed": false
 }>>
 <section class="vn-scene vn-scene--room">
@@ -46,14 +58,14 @@
     <div class="vn-choices">
       <<link "판단을 대신하지 않고, 새라가 싫은 지점부터 묻는다.">>
         <<set $chapter2.seraWorkTrusted = true>>
-        <<set $dangerousAffection.sera += 7>>
-        <<set $affectionNotice = "♥ 윤새라 관계도 +7 · 대신 결정하지 않고 자기 말을 찾게 했다">>
+        <<set $dangerousAffection.sera += 10>>
+        <<set $affectionNotice = "♥ 윤새라 관계도 +10 · 대신 결정하지 않고 자기 말을 찾게 했다">>
         <<goto "2장 · 새라의 문장">>
       <</link>>
       <<link "싫다는 답장을 먼저 써 보고, 보낼지는 새라가 정하게 한다.">>
         <<set $chapter2.seraWorkTrusted = false>>
-        <<set $dangerousAffection.sera += 5>>
-        <<set $affectionNotice = "♥ 윤새라 관계도 +5 · 먼저 문장을 빌려주고 결정은 돌려줬다">>
+        <<set $dangerousAffection.sera += 8>>
+        <<set $affectionNotice = "♥ 윤새라 관계도 +8 · 먼저 문장을 빌려주고 결정은 돌려줬다">>
         <<goto "2장 · 새라의 문장">>
       <</link>>
     </div>
@@ -74,6 +86,46 @@
     <</if>>
     <figure class="vn-cutscene"><img src="../assets/images/event-sera-7.png" alt="식탁에서 다시 그림을 시작한 윤새라"></figure>
     <p>그 뒤로 새라는 방문을 닫지 않고 작업하는 날이 조금씩 늘었다.</p>
+    [[말이 없는 일요일을 보낸다->2장 · 일요일의 빨래]]
+  </div>
+</section>
+
+:: 2장 · 일요일의 빨래 [chapter2 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>일요일 오후, 세탁기 앞 바구니에 내 셔츠와 새라의 수건이 섞여 있었다.</p>
+    <p>새라는 수건 한 장을 들고 한참 고민했다.</p>
+    <p>“같이 돌리면… 너무 가족 같나요?”</p>
+    <p>같이 산다는 말과 같은 사람이 된다는 말은 달랐다. 나는 우리가 지킬 생활의 모양부터 골랐다.</p>
+    <div class="vn-choices">
+      <<link "빨래는 각자 돌리고, 마른 옷은 식탁에서 함께 갠다.">>
+        <<set $chapter2.seraLaundryChoice = "separate">>
+        <<set $dangerousAffection.sera += 8>>
+        <<set $affectionNotice = "♥ 윤새라 관계도 +8 · 각자의 몫을 지키며 같은 시간을 보냈다">>
+        <<goto "2장 · 세탁기 앞의 약속">>
+      <</link>>
+      <<link "한 번에 돌리되, 서로의 옷은 각자가 꺼내기로 한다.">>
+        <<set $chapter2.seraLaundryChoice = "shared">>
+        <<set $dangerousAffection.sera += 8>>
+        <<set $affectionNotice = "♥ 윤새라 관계도 +8 · 섞인 생활 안에도 각자의 손을 남겼다">>
+        <<goto "2장 · 세탁기 앞의 약속">>
+      <</link>>
+    </div>
+  </div>
+</section>
+
+:: 2장 · 세탁기 앞의 약속 [chapter2 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <<if $chapter2.seraLaundryChoice is "separate">>
+      <p>세탁기는 두 번 돌아갔다. 기다리는 동안 우리는 같은 식탁에서 서로 다른 옷을 갰다.</p>
+    <<else>>
+      <p>세탁기는 한 번 돌아갔다. 새라는 내 셔츠를 꺼내 주지 않았고, 나도 새라의 수건을 대신 정리하지 않았다.</p>
+    <</if>>
+    <p>새라는 내게 모든 걸 맡기지 않았고, 나는 필요한 사람이 되려고 새라의 몫을 빼앗지 않았다.</p>
+    <p class="vn-beat">말이 없는 날에도 관계는 조금씩 움직였다.</p>
     [[회의 전날 밤을 보낸다->2장 · 식지 않은 의자]]
   </div>
 </section>
@@ -88,14 +140,14 @@
     <div class="vn-choices">
       <<link "괜찮지 않아서 건물 앞에서 기다리고 싶다고 말한다.">>
         <<set $chapter2.eunhoWaitedForSera = "honest">>
-        <<set $dangerousAffection.sera += 5>>
-        <<set $affectionNotice = "♥ 윤새라 관계도 +5 · 책임이 아니라 기다리고 싶은 마음을 말했다">>
+        <<set $dangerousAffection.sera += 10>>
+        <<set $affectionNotice = "♥ 윤새라 관계도 +10 · 책임이 아니라 기다리고 싶은 마음을 말했다">>
         <<goto "2장 · 사건 없는 확인">>
       <</link>>
       <<link "혼자 다녀오되 끝나면 먼저 연락해 달라고 부탁한다.">>
         <<set $chapter2.eunhoWaitedForSera = "message">>
-        <<set $dangerousAffection.sera += 4>>
-        <<set $affectionNotice = "♥ 윤새라 관계도 +4 · 떨어져 있어도 기다리는 방법을 만들었다">>
+        <<set $dangerousAffection.sera += 8>>
+        <<set $affectionNotice = "♥ 윤새라 관계도 +8 · 떨어져 있어도 기다리는 방법을 만들었다">>
         <<goto "2장 · 사건 없는 확인">>
       <</link>>
     </div>
@@ -111,14 +163,14 @@
     <div class="vn-choices">
       <<link "‘경위님’ 대신 ‘유진 씨’에게 오라고 답한다.">>
         <<set $chapter2.yujinOffDuty = true>>
-        <<set $dangerousAffection.yujin += 8>>
-        <<set $affectionNotice = "♥ 강유진 관계도 +8 · 직무가 아닌 사람을 초대했다">>
+        <<set $dangerousAffection.yujin += 12>>
+        <<set $affectionNotice = "♥ 강유진 관계도 +12 · 직무가 아닌 사람을 초대했다">>
         <<goto "2장 · 제복 없는 저녁">>
       <</link>>
       <<link "말할 게 없어도 괜찮다면 잠깐 들르라고 답한다.">>
         <<set $chapter2.yujinOffDuty = false>>
-        <<set $dangerousAffection.yujin += 5>>
-        <<set $affectionNotice = "♥ 강유진 관계도 +5 · 침묵도 만남의 이유가 될 수 있었다">>
+        <<set $dangerousAffection.yujin += 8>>
+        <<set $affectionNotice = "♥ 강유진 관계도 +8 · 침묵도 만남의 이유가 될 수 있었다">>
         <<goto "2장 · 제복 없는 저녁">>
       <</link>>
     </div>
@@ -152,14 +204,14 @@
     <div class="vn-choices">
       <<link "‘오늘은 안 옵니까’라고 먼저 묻는다.">>
         <<set $chapter2.eunhoFirstContact = "direct">>
-        <<set $dangerousAffection.yujin += 6>>
-        <<set $affectionNotice = "♥ 강유진 관계도 +6 · 필요한 일이 없어도 먼저 찾았다">>
+        <<set $dangerousAffection.yujin += 12>>
+        <<set $affectionNotice = "♥ 강유진 관계도 +12 · 필요한 일이 없어도 먼저 찾았다">>
         <<goto "2장 · 먼저 온 답장">>
       <</link>>
       <<link "전에 말했던 영화의 제목을 찾아 보내 준다.">>
         <<set $chapter2.eunhoFirstContact = "movie">>
-        <<set $dangerousAffection.yujin += 5>>
-        <<set $affectionNotice = "♥ 강유진 관계도 +5 · 사건 대신 함께 기억한 이야기를 보냈다">>
+        <<set $dangerousAffection.yujin += 8>>
+        <<set $affectionNotice = "♥ 강유진 관계도 +8 · 사건 대신 함께 기억한 이야기를 보냈다">>
         <<goto "2장 · 먼저 온 답장">>
       <</link>>
     </div>
@@ -176,7 +228,45 @@
       <div class="phone-message"><b>강유진</b><span>그 영화 맞습니다. 결말은 별로였는데 아직 기억하고 있었군요.</span><span>다음에는 같이 다시 봅시다.</span></div>
     <</if>>
     <p class="vn-beat">답장을 기다렸다는 걸 인정하자, 경찰이라는 명분 없이도 유진을 떠올렸다는 사실이 남았다.</p>
-    [[유진이 돌아간 뒤 일주일을 보낸다->2장 · 혼자 가는 작업실]]
+    [[사건 없는 약속을 하나 더 만든다->2장 · 비번의 영화]]
+  </div>
+</section>
+
+:: 2장 · 비번의 영화 [chapter2 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>다음 비번 저녁, 유진이 전에 말했던 영화를 같이 보자고 했다.</p>
+    <p>“집에 가도 됩니까?” 유진은 물은 뒤 곧바로 덧붙였다. “불편하면 각자 봐도 됩니다. 시작 시간만 맞추죠.”</p>
+    <p>초대와 허락을 구분하려는 말이 지나치게 정확해서 조금 웃음이 났다.</p>
+    <div class="vn-choices">
+      <<link "각자의 집에서 같은 시간에 재생하고 메시지로 이야기한다.">>
+        <<set $chapter2.yujinMovieChoice = "remote">>
+        <<set $dangerousAffection.yujin += 8>>
+        <<set $affectionNotice = "♥ 강유진 관계도 +8 · 떨어진 자리에서도 사건 없는 시간을 나눴다">>
+        <<goto "2장 · 엔딩 크레딧">>
+      <</link>>
+      <<link "거실에서 함께 보되 영화가 끝나면 오늘 약속도 끝내기로 한다.">>
+        <<set $chapter2.yujinMovieChoice = "home">>
+        <<set $dangerousAffection.yujin += 8>>
+        <<set $affectionNotice = "♥ 강유진 관계도 +8 · 초대 안에 돌아갈 시간을 함께 넣었다">>
+        <<goto "2장 · 엔딩 크레딧">>
+      <</link>>
+    </div>
+  </div>
+</section>
+
+:: 2장 · 엔딩 크레딧 [chapter2 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <<if $chapter2.yujinMovieChoice is "remote">>
+      <p>엔딩 크레딧이 올라가는 동안 유진에게서 메시지가 열두 개 왔다. 사건 보고보다 길고, 결론은 하나도 없었다.</p>
+    <<else>>
+      <p>엔딩 크레딧이 끝나자 유진은 약속대로 일어났다. 현관 앞에서 다음 영화는 자기가 고르겠다고만 말했다.</p>
+    <</if>>
+    <p>유진과 처음으로 아무도 구하지 않은 두 시간을 보냈다.</p>
+    [[그 뒤 일주일을 보낸다->2장 · 혼자 가는 작업실]]
   </div>
 </section>
 
@@ -190,14 +280,14 @@
     <div class="vn-choices">
       <<link "건물 앞까지만 함께 가고, 회의실에는 새라 혼자 들여보낸다.">>
         <<set $chapter2.seraSpokeForHerself = true>>
-        <<set $dangerousAffection.sera += 7>>
-        <<set $affectionNotice = "♥ 윤새라 관계도 +7 · 기다리되 대신 싸우지 않았다">>
+        <<set $dangerousAffection.sera += 10>>
+        <<set $affectionNotice = "♥ 윤새라 관계도 +10 · 기다리되 대신 싸우지 않았다">>
         <<goto "2장 · 로비의 한채린">>
       <</link>>
       <<link "회의실 문 앞까지 함께 가고, 부르면 들어가겠다고 한다.">>
         <<set $chapter2.seraSpokeForHerself = false>>
-        <<set $dangerousAffection.sera += 5>>
-        <<set $affectionNotice = "♥ 윤새라 관계도 +5 · 가까이 기다리되 들어갈지는 새라가 정했다">>
+        <<set $dangerousAffection.sera += 8>>
+        <<set $affectionNotice = "♥ 윤새라 관계도 +8 · 가까이 기다리되 들어갈지는 새라가 정했다">>
         <<goto "2장 · 로비의 한채린">>
       <</link>>
     </div>
@@ -222,14 +312,14 @@
     <div class="vn-choices">
       <<link "“아뇨. 새라 씨가 부탁하면 기다리는 사람입니다.”">>
         <<set $chapter2.chaerinHeardNo = true>>
-        <<set $dangerousAffection.chaerin += 7>>
-        <<set $affectionNotice = "♥ 한채린 관계도 +7 · 소유하지 않고도 곁에 있는 답을 들었다">>
+        <<set $dangerousAffection.chaerin += 12>>
+        <<set $affectionNotice = "♥ 한채린 관계도 +12 · 소유하지 않고도 곁에 있는 답을 들었다">>
         <<goto "2장 · 자기 이름의 그림">>
       <</link>>
       <<link "“같이 왔지만, 대답은 윤 작가가 합니다.”">>
         <<set $chapter2.chaerinHeardNo = false>>
-        <<set $dangerousAffection.chaerin += 5>>
-        <<set $affectionNotice = "♥ 한채린 관계도 +5 · 곁에 있는 것과 대신 말하는 일을 구분했다">>
+        <<set $dangerousAffection.chaerin += 8>>
+        <<set $affectionNotice = "♥ 한채린 관계도 +8 · 곁에 있는 것과 대신 말하는 일을 구분했다">>
         <<goto "2장 · 자기 이름의 그림">>
       <</link>>
     </div>
@@ -249,6 +339,44 @@
     <</if>>
     <p>채린은 계약서를 고쳐 담당자에게 돌려줬다. 새라에게 호의를 보인 게 아니라, 자기 행사의 수준을 지킨다는 얼굴이었다.</p>
     <p>그러면서도 로비를 나가는 나를 두 번 돌아봤다.</p>
+    [[전시 준비가 시작된 평일을 보낸다->2장 · 닫힌 작업실의 점심]]
+  </div>
+</section>
+
+:: 2장 · 닫힌 작업실의 점심 [chapter2 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>전시 준비가 시작되자 새라는 작업실 문을 다시 닫았다. 점심이 지나도 안에서는 펜 긁는 소리만 들렸다.</p>
+    <p>예전 같으면 문이 닫힌 이유부터 내 잘못인지 계산했을 것이다. 이번에는 식어 가는 국과 새라의 집중 중 무엇을 먼저 존중할지 생각했다.</p>
+    <div class="vn-choices">
+      <<link "식사는 문 앞에 두고, 먹고 싶을 때 알려 달라는 메시지만 보낸다.">>
+        <<set $chapter2.seraLunchChoice = "door">>
+        <<set $dangerousAffection.sera += 8>>
+        <<set $affectionNotice = "♥ 윤새라 관계도 +8 · 닫힌 문을 거절로 해석하지 않았다">>
+        <<goto "2장 · 식은 국">>
+      <</link>>
+      <<link "한 번만 두드려 같이 먹자고 묻고, 대답이 없으면 먼저 먹는다.">>
+        <<set $chapter2.seraLunchChoice = "ask">>
+        <<set $dangerousAffection.sera += 8>>
+        <<set $affectionNotice = "♥ 윤새라 관계도 +8 · 초대하되 침묵도 대답으로 받아들였다">>
+        <<goto "2장 · 식은 국">>
+      <</link>>
+    </div>
+  </div>
+</section>
+
+:: 2장 · 식은 국 [chapter2 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <<if $chapter2.seraLunchChoice is "door">>
+      <p>두 시간이 지나 빈 그릇과 짧은 메모가 문밖에 놓였다. <span class="vn-beat">저녁은 같이 먹어요.</span></p>
+    <<else>>
+      <p>대답은 없었다. 저녁이 되자 새라가 먼저 방문을 열고 물었다. “점심, 혼자 먹어서 화났어요?”</p>
+      <p>“아니요. 저녁은 같이 먹고 싶습니다.”</p>
+    <</if>>
+    <p>서로의 침묵을 버림이나 벌로 만들지 않은 첫날이었다.</p>
     [[각자의 일상으로 돌아간다->2장 · 구조받지 않은 사람]]
   </div>
 </section>
@@ -263,14 +391,14 @@
     <div class="vn-choices">
       <<link "이유를 캐묻지 않고 수건과 따뜻한 국을 내준다.">>
         <<set $chapter2.yujinAcceptedCare = true>>
-        <<set $dangerousAffection.yujin += 7>>
-        <<set $affectionNotice = "♥ 강유진 관계도 +7 · 구조하지 않는 방식으로 곁에 있었다">>
+        <<set $dangerousAffection.yujin += 12>>
+        <<set $affectionNotice = "♥ 강유진 관계도 +12 · 구조하지 않는 방식으로 곁에 있었다">>
         <<goto "2장 · 지키지 않는 밤">>
       <</link>>
       <<link "씻을지 먹을지 먼저 고르게 하고, 필요하면 나중에 이유를 듣는다.">>
         <<set $chapter2.yujinAcceptedCare = false>>
-        <<set $dangerousAffection.yujin += 5>>
-        <<set $affectionNotice = "♥ 강유진 관계도 +5 · 유진이 받을 돌봄의 순서를 고르게 했다">>
+        <<set $dangerousAffection.yujin += 8>>
+        <<set $affectionNotice = "♥ 강유진 관계도 +8 · 유진이 받을 돌봄의 순서를 고르게 했다">>
         <<goto "2장 · 지키지 않는 밤">>
       <</link>>
     </div>
@@ -289,6 +417,43 @@
       <p>유진은 괜찮다는 말을 세 번 한 뒤에야 눈을 감았다. 손은 끝까지 휴대전화 위에 놓여 있었다.</p>
     <</if>>
     <p>새라는 그날 작업실에서 밤을 새워 두 사람은 마주치지 않았다. 아침에 돌아온 새라는 소파에 접힌 담요를 보고도 묻지 않았다.</p>
+    [[일주일 뒤 밤 산책을 나간다->2장 · 야간 순찰의 편의점]]
+  </div>
+</section>
+
+:: 2장 · 야간 순찰의 편의점 [chapter2 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>일주일 뒤, 나는 혼자 편의점까지 걸었다. 계산을 마치고 나오자 순찰차 옆에 유진이 서 있었다.</p>
+    <p>유진은 나를 발견하고도 곧장 다가오지 않았다. 근무 중인 사람과 보고 싶었던 사람이 같은 얼굴에 겹쳐 있었다.</p>
+    <div class="vn-choices">
+      <<link "따뜻한 캔커피를 하나 건네고 순찰이 끝나기 전에 먼저 돌아간다.">>
+        <<set $chapter2.yujinConvenienceChoice = "coffee">>
+        <<set $dangerousAffection.yujin += 8>>
+        <<set $affectionNotice = "♥ 강유진 관계도 +8 · 근무를 방해하지 않고 보고 싶은 마음을 전했다">>
+        <<goto "2장 · 캔커피 두 개">>
+      <</link>>
+      <<link "길 건너 벤치에서 쉬는 시간 십 분만 함께 보내자고 묻는다.">>
+        <<set $chapter2.yujinConvenienceChoice = "break">>
+        <<set $dangerousAffection.yujin += 8>>
+        <<set $affectionNotice = "♥ 강유진 관계도 +8 · 직무 밖의 짧은 시간을 직접 부탁했다">>
+        <<goto "2장 · 캔커피 두 개">>
+      <</link>>
+    </div>
+  </div>
+</section>
+
+:: 2장 · 캔커피 두 개 [chapter2 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <<if $chapter2.yujinConvenienceChoice is "coffee">>
+      <p>유진은 커피를 받으며 내 귀가 방향만 확인했다. 따라오지 않았고, 집에 도착했냐는 문자는 순찰이 끝난 뒤에 왔다.</p>
+    <<else>>
+      <p>유진은 무전으로 쉬는 시간을 알리고 벤치에 앉았다. 십 분이 끝나자 먼저 일어났고 나는 붙잡지 않았다.</p>
+    <</if>>
+    <p class="vn-beat">밖에서 우연히 마주쳐도 구조와 보호가 없어야 함께 있을 수 있었다.</p>
     [[며칠 뒤 채린의 초대장을 받는다->2장 · 값을 매기지 않은 초대]]
   </div>
 </section>
@@ -303,14 +468,14 @@
     <div class="vn-choices">
       <<link "예약을 취소하게 하고 함께 골목 식당까지 걷는다.">>
         <<set $chapter2.chaerinWalked = true>>
-        <<set $dangerousAffection.chaerin += 7>>
-        <<set $affectionNotice = "♥ 한채린 관계도 +7 · 준비된 무대 밖에서 같은 속도로 걸었다">>
+        <<set $dangerousAffection.chaerin += 12>>
+        <<set $affectionNotice = "♥ 한채린 관계도 +12 · 준비된 무대 밖에서 같은 속도로 걸었다">>
         <<goto "2장 · 예약 없는 저녁">>
       <</link>>
       <<link "호텔 식사는 받고, 다음 만남은 내가 정하겠다고 한다.">>
         <<set $chapter2.chaerinWalked = false>>
-        <<set $dangerousAffection.chaerin += 5>>
-        <<set $affectionNotice = "♥ 한채린 관계도 +5 · 준비를 존중하면서 다음 선택권을 나눴다">>
+        <<set $dangerousAffection.chaerin += 8>>
+        <<set $affectionNotice = "♥ 한채린 관계도 +8 · 준비를 존중하면서 다음 선택권을 나눴다">>
         <<goto "2장 · 예약 없는 저녁">>
       <</link>>
     </div>
@@ -331,6 +496,44 @@
       <p>호텔 식사는 완벽했다. 채린도 완벽하게 웃었다. 그래서 둘 사이에는 준비되지 않은 말이 하나도 나오지 않았다.</p>
     <</if>>
     <p>그 뒤 채린은 일주일에 한 번, 이유 없는 메시지를 보냈다. 답이 늦어도 재촉하지 않는 데 한 달이 걸렸다.</p>
+    [[식당에서 나온 뒤 조금 더 걷는다->2장 · 가격 없는 산책]]
+  </div>
+</section>
+
+:: 2장 · 가격 없는 산책 [chapter2 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>식당을 나온 채린은 대기 중인 차를 보고도 타지 않았다.</p>
+    <p>“데이트라는 건 보통 다음 장소가 정해져 있지 않나요?”</p>
+    <p>“오늘은 데이트라고 정하지 않았습니다. 더 걷고 싶으면 걸어도 되고요.”</p>
+    <div class="vn-choices">
+      <<link "채린이 가 본 적 없는 주택가 길을 목적지 없이 걷는다.">>
+        <<set $chapter2.chaerinWalkChoice = "wander">>
+        <<set $dangerousAffection.chaerin += 8>>
+        <<set $affectionNotice = "♥ 한채린 관계도 +8 · 결과가 없는 시간을 함께 썼다">>
+        <<goto "2장 · 육교 위의 십 분">>
+      <</link>>
+      <<link "십 분만 걷고 헤어지자고 먼저 끝을 정한다.">>
+        <<set $chapter2.chaerinWalkChoice = "ten-minutes">>
+        <<set $dangerousAffection.chaerin += 8>>
+        <<set $affectionNotice = "♥ 한채린 관계도 +8 · 짧은 시간도 실패가 아닌 약속이 됐다">>
+        <<goto "2장 · 육교 위의 십 분">>
+      <</link>>
+    </div>
+  </div>
+</section>
+
+:: 2장 · 육교 위의 십 분 [chapter2 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <<if $chapter2.chaerinWalkChoice is "wander">>
+      <p>채린은 목적지를 세 번 물었고, 네 번째에는 묻지 않았다. 육교 위에서 아래로 흐르는 차만 봤다.</p>
+    <<else>>
+      <p>십 분이 되자 내가 먼저 멈췄다. 채린은 아쉬워했지만 차를 더 대기시키지 않고 돌아갔다.</p>
+    <</if>>
+    <p>돈도 성과도 없는 시간이 채린의 일정표에 처음 남았다.</p>
     [[답장이 오지 않는 밤을 보낸다->2장 · 답장이 늦은 밤]]
   </div>
 </section>
@@ -345,14 +548,14 @@
     <div class="vn-choices">
       <<link "‘오늘은 왜 조용합니까’라고 먼저 안부를 묻는다.">>
         <<set $chapter2.eunhoCheckedChaerin = "direct">>
-        <<set $dangerousAffection.chaerin += 6>>
-        <<set $affectionNotice = "♥ 한채린 관계도 +6 · 초대가 아니라 사람의 안부를 먼저 찾았다">>
+        <<set $dangerousAffection.chaerin += 12>>
+        <<set $affectionNotice = "♥ 한채린 관계도 +12 · 초대가 아니라 사람의 안부를 먼저 찾았다">>
         <<goto "2장 · 예약하지 않은 답장">>
       <</link>>
       <<link "지난번 식당의 사진과 다음에는 내가 고르겠다는 말을 보낸다.">>
         <<set $chapter2.eunhoCheckedChaerin = "photo">>
-        <<set $dangerousAffection.chaerin += 5>>
-        <<set $affectionNotice = "♥ 한채린 관계도 +5 · 다음 만남을 은호 쪽에서 제안했다">>
+        <<set $dangerousAffection.chaerin += 8>>
+        <<set $affectionNotice = "♥ 한채린 관계도 +8 · 다음 만남을 은호 쪽에서 제안했다">>
         <<goto "2장 · 예약하지 않은 답장">>
       <</link>>
     </div>
@@ -365,6 +568,44 @@
   <div class="vn-dialogue vn-dialogue--phone">
     <div class="phone-message"><b>한채린</b><span>회의가 길어졌어요. 당신이 먼저 연락할 가능성은 일정표에 없었는데.</span><span>다음에는 비워 둘게요. 당신이 고를 자리를.</span></div>
     <p class="vn-beat">채린에게 관심이 생긴 건 거절했기 때문만이 아니었다. 기다리는 법을 서툴게 배우는 얼굴을 한 번 더 보고 싶었다.</p>
+    [[채린이 처음 직접 고른 물건을 받는다->2장 · 직접 고른 선물]]
+  </div>
+</section>
+
+:: 2장 · 직접 고른 선물 [chapter2 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>다음 주, 채린은 비서 없이 작은 화분 하나를 들고 왔다.</p>
+    <p>“가격표도 뗐고 영수증도 버렸어요. 내가 직접 골랐다는 것만 알아요.”</p>
+    <p>선물을 받는 일보다, 선물이 관계의 값을 대신하지 못하게 하는 일이 더 어려웠다.</p>
+    <div class="vn-choices">
+      <<link "화분을 받고, 다음에는 내가 고른 작은 물건을 주겠다고 한다.">>
+        <<set $chapter2.chaerinGiftChoice = "exchange">>
+        <<set $dangerousAffection.chaerin += 12>>
+        <<set $affectionNotice = "♥ 한채린 관계도 +12 · 선물을 빚이 아니라 서로의 취향으로 받았다">>
+        <<goto "2장 · 영수증 없는 화분">>
+      <</link>>
+      <<link "화분은 함께 키우되 누구의 소유인지 정하지 말자고 한다.">>
+        <<set $chapter2.chaerinGiftChoice = "shared">>
+        <<set $dangerousAffection.chaerin += 12>>
+        <<set $affectionNotice = "♥ 한채린 관계도 +12 · 소유보다 돌보는 시간을 나눴다">>
+        <<goto "2장 · 영수증 없는 화분">>
+      <</link>>
+    </div>
+  </div>
+</section>
+
+:: 2장 · 영수증 없는 화분 [chapter2 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <<if $chapter2.chaerinGiftChoice is "exchange">>
+      <p>나는 다음 만남에 편의점에서 산 작은 컵을 건넸다. 채린은 가격을 묻지 않고 자기 사무실에 두었다.</p>
+    <<else>>
+      <p>물을 주는 요일을 번갈아 정했다. 채린은 못 오는 날에도 사람을 보내지 않고 먼저 연락했다.</p>
+    <</if>>
+    <p>누가 더 비싼 것을 줬는지 계산할 수 없는 관계가 하나 생겼다.</p>
     [[한 달째의 일요일로 간다->2장 · 현관의 흔적]]
   </div>
 </section>
@@ -385,14 +626,14 @@
     <div class="vn-choices">
       <<link "알고 싶은 이유를 먼저 묻고, 내 관계는 내가 설명하겠다고 한다.">>
         <<set $chapter2.yujinDidNotInspect = true>>
-        <<set $dangerousAffection.yujin += 7>>
-        <<set $affectionNotice = "♥ 강유진 관계도 +7 · 확인할 권리와 알고 싶은 마음을 구분했다">>
+        <<set $dangerousAffection.yujin += 12>>
+        <<set $affectionNotice = "♥ 강유진 관계도 +12 · 확인할 권리와 알고 싶은 마음을 구분했다">>
         <<goto "2장 · 묻지 않은 이름">>
       <</link>>
       <<link "채린을 어떻게 알게 됐는지 말하고, 유진이 왜 궁금한지도 듣는다.">>
         <<set $chapter2.yujinDidNotInspect = false>>
-        <<set $dangerousAffection.yujin += 5>>
-        <<set $affectionNotice = "♥ 강유진 관계도 +5 · 정보를 숨기지 않고 감정도 함께 물었다">>
+        <<set $dangerousAffection.yujin += 8>>
+        <<set $affectionNotice = "♥ 강유진 관계도 +8 · 정보를 숨기지 않고 감정도 함께 물었다">>
         <<goto "2장 · 묻지 않은 이름">>
       <</link>>
     </div>
@@ -411,6 +652,44 @@
     <</if>>
     <p>저녁에 돌아온 새라는 유진이 두고 간 캔커피를 보았다. 새라는 상표만 오래 읽고 냉장고에 넣었다.</p>
     <p>누구도 누구를 캐묻지 않았다. 그래서 질투는 아직 이름 없는 불편함으로만 남았다.</p>
+    [[유진과 잡은 저녁 약속을 기다린다->2장 · 먼저 취소한 약속]]
+  </div>
+</section>
+
+:: 2장 · 먼저 취소한 약속 [chapter2 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--phone">
+    <p>유진과 저녁을 먹기로 한 날, 약속 한 시간 전에 메시지가 왔다.</p>
+    <div class="phone-message"><b>강유진</b><span>사건이 생겼습니다. 오늘은 못 갑니다.</span><span>기다리지 마십시오.</span></div>
+    <p>업무가 우선인 건 알고 있었다. 그래도 실망하지 않은 척 답하면, 다시 사건이 있어야만 유진을 만나는 관계가 될 것 같았다.</p>
+    <div class="vn-choices">
+      <<link "아쉽다고 솔직히 말하고, 다음 날짜는 유진이 먼저 고르게 한다.">>
+        <<set $chapter2.yujinCancelledChoice = "reschedule">>
+        <<set $dangerousAffection.yujin += 8>>
+        <<set $affectionNotice = "♥ 강유진 관계도 +8 · 실망을 숨기지 않고 다음 약속의 책임을 나눴다">>
+        <<goto "2장 · 미룬 저녁">>
+      <</link>>
+      <<link "답장은 필요 없다며 늦게라도 먹을 수 있는 식사 쿠폰을 보낸다.">>
+        <<set $chapter2.yujinCancelledChoice = "meal">>
+        <<set $dangerousAffection.yujin += 8>>
+        <<set $affectionNotice = "♥ 강유진 관계도 +8 · 기다림을 압박 대신 돌봄으로 남겼다">>
+        <<goto "2장 · 미룬 저녁">>
+      <</link>>
+    </div>
+  </div>
+</section>
+
+:: 2장 · 미룬 저녁 [chapter2 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--phone">
+    <<if $chapter2.yujinCancelledChoice is "reschedule">>
+      <div class="phone-message"><b>강유진</b><span>아쉬웠다는 말, 기억하겠습니다.</span><span>다음 수요일은 제가 먼저 비워 두겠습니다.</span></div>
+    <<else>>
+      <div class="phone-message"><b>강유진</b><span>새벽에 먹었습니다. 다음에는 쿠폰 말고 같이 먹겠습니다.</span></div>
+    <</if>>
+    <p>약속은 취소됐지만 관계까지 취소되지는 않았다.</p>
     [[전시 개막일로 간다->2장 · 약속된 한 시간]]
   </div>
 </section>
@@ -424,14 +703,14 @@
     <div class="vn-choices">
       <<link "약속한 한 시간이 끝났다고 먼저 돌아간다.">>
         <<set $chapter2.chaerinWaited = true>>
-        <<set $dangerousAffection.chaerin += 7>>
-        <<set $affectionNotice = "♥ 한채린 관계도 +7 · 붙잡지 않아도 다시 만날 수 있음을 남겼다">>
+        <<set $dangerousAffection.chaerin += 12>>
+        <<set $affectionNotice = "♥ 한채린 관계도 +12 · 붙잡지 않아도 다시 만날 수 있음을 남겼다">>
         <<goto "2장 · 불이 꺼진 전시장">>
       <</link>>
       <<link "십 분만 더 남되, 미뤄야 할 약속은 직접 설명하게 한다.">>
         <<set $chapter2.chaerinWaited = false>>
-        <<set $dangerousAffection.chaerin += 5>>
-        <<set $affectionNotice = "♥ 한채린 관계도 +5 · 함께 있고 싶은 마음과 약속의 책임을 나눴다">>
+        <<set $dangerousAffection.chaerin += 8>>
+        <<set $affectionNotice = "♥ 한채린 관계도 +8 · 함께 있고 싶은 마음과 약속의 책임을 나눴다">>
         <<goto "2장 · 불이 꺼진 전시장">>
       <</link>>
     </div>
@@ -451,7 +730,44 @@
     <</if>>
     <p>새라는 폐장 뒤 자기 그림 앞에 섰다. 유진은 그날 오지 않았다. 채린도 사무실로 돌아갔다.</p>
     <p class="vn-beat">세 사람은 끝내 같은 방에 모이지 않았다. 대신 서로가 남긴 흔적을 하나씩 보았다.</p>
-    [[예고 없는 초인종을 듣는다->2장 · 준비되지 않은 방문]]
+    [[전시장을 나온 채린과 정류장으로 간다->2장 · 수행원 없는 버스]]
+  </div>
+</section>
+
+:: 2장 · 수행원 없는 버스 [chapter2 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>전시장을 나온 채린은 차를 먼저 보냈다. 버스를 타 본 지 오래됐다며 교통카드를 어느 쪽에 대는지 물었다.</p>
+    <p>채린이 모르는 것을 모른다고 말한 건 처음이었다. 대신 해 주면 편했지만, 다음에도 나 없이는 못 하게 될 것 같았다.</p>
+    <div class="vn-choices">
+      <<link "내가 먼저 찍는 모습을 보여 주고 채린이 직접 따라 하게 한다.">>
+        <<set $chapter2.chaerinBusChoice = "follow">>
+        <<set $dangerousAffection.chaerin += 8>>
+        <<set $affectionNotice = "♥ 한채린 관계도 +8 · 모르는 일을 대신하지 않고 함께 배웠다">>
+        <<goto "2장 · 두 정거장">>
+      <</link>>
+      <<link "이번에는 내 카드로 찍고, 돌아올 때는 채린이 해 보기로 한다.">>
+        <<set $chapter2.chaerinBusChoice = "return">>
+        <<set $dangerousAffection.chaerin += 8>>
+        <<set $affectionNotice = "♥ 한채린 관계도 +8 · 도움을 받는 일과 스스로 하는 일을 이어 붙였다">>
+        <<goto "2장 · 두 정거장">>
+      <</link>>
+    </div>
+  </div>
+</section>
+
+:: 2장 · 두 정거장 [chapter2 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <<if $chapter2.chaerinBusChoice is "follow">>
+      <p>채린은 한 번에 카드를 찍었다. 성공한 뒤 내 칭찬보다 단말기의 소리를 더 오래 들었다.</p>
+    <<else>>
+      <p>돌아오는 버스에서는 채린이 먼저 카드를 꺼냈다. 내 손을 찾지 않고도 같은 자리에 앉았다.</p>
+    <</if>>
+    <p>두 정거장뿐이었지만 채린이 준비한 차 밖에서 함께 움직인 첫날이었다.</p>
+    [[열흘 뒤 예고 없는 초인종을 듣는다->2장 · 준비되지 않은 방문]]
   </div>
 </section>
 
@@ -472,14 +788,14 @@
     <div class="vn-choices">
       <<link "집에 있는 라면뿐이라고 말하고, 그래도 괜찮으면 들어오게 한다.">>
         <<set $chapter2.chaerinUnplannedVisit = "home">>
-        <<set $dangerousAffection.chaerin += 6>>
-        <<set $affectionNotice = "♥ 한채린 관계도 +6 · 준비하지 않은 모습으로 평범한 생활에 들어왔다">>
+        <<set $dangerousAffection.chaerin += 12>>
+        <<set $affectionNotice = "♥ 한채린 관계도 +12 · 준비하지 않은 모습으로 평범한 생활에 들어왔다">>
         <<goto "2장 · 값이 없는 라면">>
       <</link>>
       <<link "오늘은 집이 어렵다고 말하고, 아래층 카페에서 삼십 분만 만난다.">>
         <<set $chapter2.chaerinUnplannedVisit = "cafe">>
-        <<set $dangerousAffection.chaerin += 5>>
-        <<set $affectionNotice = "♥ 한채린 관계도 +5 · 거절과 만남이 동시에 가능하다는 걸 보여 줬다">>
+        <<set $dangerousAffection.chaerin += 8>>
+        <<set $affectionNotice = "♥ 한채린 관계도 +8 · 거절과 만남이 동시에 가능하다는 걸 보여 줬다">>
         <<goto "2장 · 값이 없는 라면">>
       <</link>>
     </div>
@@ -498,6 +814,157 @@
       <p>“다음에는 미리 물을게요.” 그 말이 채린에게는 비싼 선물보다 어려워 보였다.</p>
     <</if>>
     <p class="vn-beat">채린이 돌아간 뒤 현관 앞에 잠깐 서 있었다. 예전의 나는 사람이 오지 못하게 문을 닫았다. 이제는 누가 다시 올지를 생각하고 있었다.</p>
+    [[장마가 시작된 저녁을 보낸다->2장 · 비 오는 귀가 연습]]
+  </div>
+</section>
+
+:: 2장 · 비 오는 귀가 연습 [chapter2 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>장마 첫날, 새라의 귀가가 한 시간 늦었다. 예전처럼 연락이 끊긴 것은 아니었다. 작업이 늦는다는 메시지도 와 있었다.</p>
+    <p>그래도 창밖의 비를 보며 현관을 세 번 확인했다. 걱정과 통제를 구분하려면 내가 무엇을 원하는지부터 말해야 했다.</p>
+    <div class="vn-choices">
+      <<link "역 앞까지 마중 나가고 싶다고 물은 뒤 대답을 기다린다.">>
+        <<set $chapter2.seraRainChoice = "meet">>
+        <<set $dangerousAffection.sera += 8>>
+        <<set $affectionNotice = "♥ 윤새라 관계도 +8 · 걱정을 허락 없는 행동으로 바꾸지 않았다">>
+        <<goto "2장 · 우산 두 개">>
+      <</link>>
+      <<link "집에서 기다리며 현관에 마른 수건과 따뜻한 물을 준비한다.">>
+        <<set $chapter2.seraRainChoice = "home">>
+        <<set $dangerousAffection.sera += 8>>
+        <<set $affectionNotice = "♥ 윤새라 관계도 +8 · 돌아올 사람의 자리를 조용히 준비했다">>
+        <<goto "2장 · 우산 두 개">>
+      <</link>>
+    </div>
+  </div>
+</section>
+
+:: 2장 · 우산 두 개 [chapter2 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <<if $chapter2.seraRainChoice is "meet">>
+      <p>새라는 와도 된다고 답했다. 역 앞에는 투명 우산과 검은 우산이 나란히 섰고, 우리는 서로를 끌어당기지 않고 집까지 걸었다.</p>
+    <<else>>
+      <p>새라는 젖은 채 돌아와 현관의 수건을 먼저 봤다. “안 나와서 서운하지 않았어요. 기다린 건 알았으니까.”</p>
+    <</if>>
+    <p class="vn-beat">돌아오는 길을 대신 정하지 않아도, 돌아오기를 바란다고 말할 수 있었다.</p>
+    [[며칠 뒤 유진이 약속을 취소한다->2장 · 열이 나는 비번]]
+  </div>
+</section>
+
+:: 2장 · 열이 나는 비번 [chapter2 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--phone">
+    <div class="phone-message"><b>강유진</b><span>감기입니다. 위험한 상황 아닙니다.</span><span>오늘 약속은 취소하겠습니다.</span></div>
+    <p>유진은 아픈 날에도 도움을 요청하는 대신 상황을 보고했다. 내가 할 수 있는 일과 유진이 원하지 않는 일을 나눠 물었다.</p>
+    <div class="vn-choices">
+      <<link "필요한 약이 있는지 묻고, 원하면 현관 앞에 두겠다고 한다.">>
+        <<set $chapter2.yujinSickChoice = "medicine">>
+        <<set $dangerousAffection.yujin += 8>>
+        <<set $affectionNotice = "♥ 강유진 관계도 +8 · 도움을 강요하지 않고 필요한 것을 물었다">>
+        <<goto "2장 · 진통제 봉투">>
+      <</link>>
+      <<link "오늘은 쉬고 내일 아침 상태만 알려 달라고 부탁한다.">>
+        <<set $chapter2.yujinSickChoice = "morning">>
+        <<set $dangerousAffection.yujin += 8>>
+        <<set $affectionNotice = "♥ 강유진 관계도 +8 · 즉시 확인하는 대신 다시 연락할 약속을 믿었다">>
+        <<goto "2장 · 진통제 봉투">>
+      <</link>>
+    </div>
+  </div>
+</section>
+
+:: 2장 · 진통제 봉투 [chapter2 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--phone">
+    <<if $chapter2.yujinSickChoice is "medicine">>
+      <div class="phone-message"><b>강유진</b><span>해열제만 부탁합니다. 초인종은 누르지 마십시오.</span></div>
+      <p>나는 봉투만 두고 돌아왔다. 유진은 문이 닫힌 뒤 고맙다고 보냈다.</p>
+    <<else>>
+      <div class="phone-message"><b>강유진</b><span>내일 아침 아홉 시에 연락하겠습니다.</span></div>
+      <p>아홉 시 정각, 열이 내렸다는 메시지가 왔다. 유진이 약속한 안부를 기다려 본 첫날이었다.</p>
+    <</if>>
+    <p>서로를 걱정해도 누군가의 상태를 소유할 필요는 없었다.</p>
+    [[다음 토요일 채린의 연락을 받는다->2장 · 거절된 예약]]
+  </div>
+</section>
+
+:: 2장 · 거절된 예약 [chapter2 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--phone">
+    <div class="phone-message"><b>한채린</b><span>다음 토요일 오후를 비워 뒀어요.</span><span>이번에는 예약하기 전에 먼저 묻는 거예요.</span></div>
+    <p>그날은 혼자 있고 싶었다. 예전 같으면 이유를 만들어 피했겠지만, 채린은 거절을 대답으로 듣는 연습을 하고 있었다.</p>
+    <div class="vn-choices">
+      <<link "토요일은 혼자 보내고 싶다고 말한 뒤 다음 주를 내가 먼저 제안한다.">>
+        <<set $chapter2.chaerinRejectedChoice = "next-week">>
+        <<set $dangerousAffection.chaerin += 8>>
+        <<set $affectionNotice = "♥ 한채린 관계도 +8 · 거절 뒤의 다음 약속을 은호가 먼저 만들었다">>
+        <<goto "2장 · 비어 있는 토요일">>
+      <</link>>
+      <<link "이번 주는 어렵다고만 말하고, 다음 연락은 채린이 하고 싶을 때 하게 둔다.">>
+        <<set $chapter2.chaerinRejectedChoice = "space">>
+        <<set $dangerousAffection.chaerin += 8>>
+        <<set $affectionNotice = "♥ 한채린 관계도 +8 · 빈 시간을 불안으로 채우지 않게 두었다">>
+        <<goto "2장 · 비어 있는 토요일">>
+      <</link>>
+    </div>
+  </div>
+</section>
+
+:: 2장 · 비어 있는 토요일 [chapter2 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--phone">
+    <<if $chapter2.chaerinRejectedChoice is "next-week">>
+      <p>채린은 다음 주 날짜를 확인하고 그날의 빈칸은 그대로 두었다. 무엇을 했는지 묻지 않았다.</p>
+    <<else>>
+      <p>토요일 밤까지 연락은 오지 않았다. 일요일 아침, 채린은 어제 혼자 본 영화가 형편없었다는 메시지만 보냈다.</p>
+    <</if>>
+    <p>만나지 않은 하루가 관계의 손실로 기록되지 않았다.</p>
+    [[며칠 뒤 집 앞 편의점으로 간다->2장 · 편의점 우산]]
+  </div>
+</section>
+
+:: 2장 · 편의점 우산 [chapter2 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>며칠 뒤 집 앞 편의점에서 채린을 우연히 만났다. 수행원 없이 나온 채린은 천 원짜리 비닐우산을 들고 있었다.</p>
+    <p>“근처에 온 김에 들렀어요. 연락하면 또 예약 같을까 봐.”</p>
+    <p>우연을 가장한 것인지 정말 우연인지 캐묻는 대신, 지금 함께할 시간을 골랐다.</p>
+    <div class="vn-choices">
+      <<link "편의점 앞 의자에서 컵커피를 다 마실 때까지만 같이 앉는다.">>
+        <<set $chapter2.chaerinUmbrellaChoice = "coffee">>
+        <<set $dangerousAffection.chaerin += 8>>
+        <<set $affectionNotice = "♥ 한채린 관계도 +8 · 짧은 우연을 소유하지 않고 함께 보냈다">>
+        <<goto "2장 · 천 원짜리 비닐">>
+      <</link>>
+      <<link "집까지 같은 길만 걷고 현관 앞에서 헤어진다.">>
+        <<set $chapter2.chaerinUmbrellaChoice = "walk-home">>
+        <<set $dangerousAffection.chaerin += 8>>
+        <<set $affectionNotice = "♥ 한채린 관계도 +8 · 목적지가 같아도 문 안의 자리는 요구하지 않았다">>
+        <<goto "2장 · 천 원짜리 비닐">>
+      <</link>>
+    </div>
+  </div>
+</section>
+
+:: 2장 · 천 원짜리 비닐 [chapter2 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <<if $chapter2.chaerinUmbrellaChoice is "coffee">>
+      <p>커피가 식자 채린은 먼저 일어났다. 다음 약속도, 차도 부르지 않았다.</p>
+    <<else>>
+      <p>현관 앞에서 채린은 우산을 접었다. “오늘은 여기까지네요.” 말은 아쉬웠지만 발은 멈추지 않았다.</p>
+    <</if>>
+    <p class="vn-beat">비싼 초대가 없어도 보고 싶은 사람이 될 수 있다는 걸 채린도, 나도 알기 시작했다.</p>
     [[세 사람을 기다린 시간을 돌아본다->2장 · 세 이름을 기다린 날]]
   </div>
 </section>
@@ -511,18 +978,39 @@
     <p>처음 세 사람은 전부 부담이었다. 또 누군가의 기대를 받고, 또 잘못 선택할까 봐 문을 닫고 싶었다.</p>
     <p>그런데 부담이 사라지기 전에 기다림이 생겼다. 기다림 뒤에는 내가 먼저 만나고 싶은 마음이 남았다.</p>
     <p>학교 때처럼 여자들이 나를 둘러싸서 고를 수 없게 된 것이 아니었다. 이번에는 내가 각자의 이름을 먼저 떠올렸다.</p>
+    <<if $dangerousAffection.sera gte 100>>
+      <p>새라에게는 이미 확신이 있었다. 같은 집이 아니라 각자의 문을 지키면서도 계속 돌아오기를 바랐다.</p>
+    <<elseif $dangerousAffection.sera gte 90>>
+      <p>새라의 빈 의자가 신경 쓰이는 정도는 호감을 넘어섰다. 사랑이라고 말해도 도망치고 싶지 않았다.</p>
+    <<else>>
+      <p>새라가 돌아오는 시간을 기다렸다. 아직 사랑이라 단정하지 않아도, 좋아한다는 말은 숨길 수 없었다.</p>
+    <</if>>
+    <<if $dangerousAffection.yujin gte 100>>
+      <p>유진은 위험한 날보다 평범한 날 먼저 떠오르는 사람이 됐다. 그 감정에는 더 이상 직무라는 핑계가 필요 없었다.</p>
+    <<elseif $dangerousAffection.yujin gte 90>>
+      <p>유진에게 사건 없는 약속을 계속 만들고 싶었다. 그것을 사랑이라고 부를 준비가 되어 있었다.</p>
+    <<else>>
+      <p>유진의 연락을 기다리고 내가 먼저 연락했다. 보호받고 싶은 마음보다 만나고 싶은 마음이 더 컸다.</p>
+    <</if>>
+    <<if $dangerousAffection.chaerin gte 100>>
+      <p>채린이 준비하지 않은 얼굴까지 보고 싶었다. 비싼 초대가 없어도 다시 만날 거라는 확신이 생겼다.</p>
+    <<elseif $dangerousAffection.chaerin gte 90>>
+      <p>채린이 비워 둔 시간을 내가 먼저 채우고 싶었다. 기다리는 채린을 사랑한다고 말할 수 있었다.</p>
+    <<else>>
+      <p>채린의 초대보다 채린의 안부가 궁금해졌다. 그 변화만으로도 호감이라는 이름은 충분했다.</p>
+    <</if>>
     <p class="vn-beat">좋아한다는 말은 아직 하지 않았다. 다만 그 말을 피하기 위해 방에 숨는 것도 이제는 거짓말이었다.</p>
     [[세 사람에게 어떤 마음인지 정리한다->2장 · 아직 고백하지 않은 사람들]]
   </div>
 </section>
 
 :: 2장 · 아직 고백하지 않은 사람들 [chapter2 autosave nobr]
-<<set $dangerousAffection.sera = Math.min(30, $dangerousAffection.sera)>>
-<<set $dangerousAffection.yujin = Math.min(30, $dangerousAffection.yujin)>>
-<<set $dangerousAffection.chaerin = Math.min(30, $dangerousAffection.chaerin)>>
-<<set $romanceOpen.sera = $dangerousAffection.sera gte 30>>
-<<set $romanceOpen.yujin = $dangerousAffection.yujin gte 30>>
-<<set $romanceOpen.chaerin = $dangerousAffection.chaerin gte 30>>
+<<set $dangerousAffection.sera = Math.min(100, $dangerousAffection.sera)>>
+<<set $dangerousAffection.yujin = Math.min(100, $dangerousAffection.yujin)>>
+<<set $dangerousAffection.chaerin = Math.min(100, $dangerousAffection.chaerin)>>
+<<set $romanceOpen.sera = $dangerousAffection.sera gte 80>>
+<<set $romanceOpen.yujin = $dangerousAffection.yujin gte 80>>
+<<set $romanceOpen.chaerin = $dangerousAffection.chaerin gte 80>>
 <section class="vn-scene vn-scene--room">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
@@ -530,11 +1018,11 @@
     <p>새라는 이제 늦으면 먼저 연락했다. 유진은 사건 없이 찾아왔다. 채린은 답장이 올 때까지 기다렸다.</p>
     <p>그리고 나도 세 사람이 오지 않는 날을 구분하게 됐다.</p>
     <div class="relationship-grid" aria-label="광기 3인 관계도">
-      <div><strong>윤새라</strong><span><<print $dangerousAffection.sera>> / 30</span></div>
-      <div><strong>강유진</strong><span><<print $dangerousAffection.yujin>> / 30</span></div>
-      <div><strong>한채린</strong><span><<print $dangerousAffection.chaerin>> / 30</span></div>
+      <div><strong>윤새라</strong><span><<print $dangerousAffection.sera>> / 100 · <<print setup.dangerousAffectionStage($dangerousAffection.sera)>></span></div>
+      <div><strong>강유진</strong><span><<print $dangerousAffection.yujin>> / 100 · <<print setup.dangerousAffectionStage($dangerousAffection.yujin)>></span></div>
+      <div><strong>한채린</strong><span><<print $dangerousAffection.chaerin>> / 100 · <<print setup.dangerousAffectionStage($dangerousAffection.chaerin)>></span></div>
     </div>
-    <p class="vn-beat">개인 루트와 3인 루트는 관계도 30에 도달한 사람만 열린다.</p>
+    <p class="vn-beat">관계도 80부터 연애 감정을 선택할 수 있다. 100은 입장 조건이 아니라 오래 쌓인 확신이다.</p>
     <div class="vn-choices">
       <<if $romanceOpen.sera>>
         <<link "새라와 단둘이, 임시가 아닌 생활을 시작한다.">><<set $dangerousSolo.route = "sera">><<goto "3S · 비가 그친 뒤">><</link>>
