@@ -65,7 +65,13 @@ jobs:
             if (-not (Test-Path -LiteralPath $sourceAsset)) {
               throw "Referenced image is missing: $assetName"
             }
-            Copy-Item -LiteralPath $sourceAsset -Destination $siteImages
+            if (Test-Path -LiteralPath $sourceAsset -PathType Container) {
+              continue
+            }
+            $destinationAsset = Join-Path $siteImages $assetName
+            $destinationDirectory = Split-Path -Parent $destinationAsset
+            New-Item -ItemType Directory -Force -Path $destinationDirectory | Out-Null
+            Copy-Item -LiteralPath $sourceAsset -Destination $destinationAsset -Force
           }
 
       - name: Configure GitHub Pages
