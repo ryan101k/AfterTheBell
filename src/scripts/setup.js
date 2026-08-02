@@ -26,6 +26,23 @@ setup.continueGame = function () {
   });
 };
 
+setup.hideChoiceScores = function () {
+  $('#passages a, #passages button').each(function () {
+    const $choice = $(this);
+    const original = $choice.text();
+    const softened = original
+      .replace(/\[(전원|새라|유진|채린|채원|유나|소희)\s*♥\s*[+-]\d+\]/g, function (match, name) {
+        return name === '전원' ? '[관계가 움직인다]' : '[' + name + '의 마음이 움직인다]';
+      })
+      .replace(/\[증거\s*[+-]\d+\]/g, '[다른 단서를 좇는다]')
+      .replace(/\[감금 분기\]/g, '[서로에게 전부를 맡긴다]')
+      .replace(/\[변화 없음\]/g, '[아무것도 정하지 않는다]');
+    if (softened !== original) {
+      $choice.text(softened);
+    }
+  });
+};
+
 $(document).on('click.vnui', '[data-vn-action]', function () {
   const action = this.dataset.vnAction;
   if (action === 'saves') {
@@ -44,6 +61,8 @@ $(document).on('click.vnui', '[data-vn-passage]', function () {
 });
 
 $(document).on(':passagedisplay.vnui', function () {
+  setup.hideChoiceScores();
+
   const chapter = State.variables.chapter || 0;
   $('[data-vn-chapter]').text(chapter);
 

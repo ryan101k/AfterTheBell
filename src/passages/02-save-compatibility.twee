@@ -11,7 +11,8 @@
   "openedSiwooMessage": false,
   "answeredSiwoo": false,
   "heardHallway": false,
-  "openedDoor": false
+  "openedDoor": false,
+  "memoryStance": ""
 }, $prologue ?? {})>>
 <<set $routeUnlocks = Object.assign({
   "dangerous": false,
@@ -65,7 +66,9 @@
   "seraStayed": false,
   "seraAccompanies": false,
   "yujinStayed": false,
-  "chaerinRefused": false
+  "chaerinRefused": false,
+  "seraFirstDistance": "",
+  "crisisResponse": ""
 }, $chapter1 ?? {})>>
 <<set $economy = Object.assign({
   "cash": 12800000,

@@ -155,6 +155,9 @@
       <p>새라는 열쇠를 하나만 가졌다. 복사하지 않는 대신, 매달 마지막 날 계속 살지 다시 물었다.</p>
       <p class="chapter-end">SOLO TRUE · 임시가 아닌 주소</p>
       <p class="chapter-end__next">남는 일도 매번 다시 고를 수 있었다.</p>
+      <<if $routeUnlocks.freedom>>
+        [[혼자 보내는 밤의 다음 접속을 기다린다->4장 · 다음 접속]]
+      <</if>>
     <<else>>
       <p>문은 잠그지 않았지만, 새라는 아직 내가 보이지 않는 시간을 견디지 못했다.</p>
       <p class="chapter-end">SOLO FRAGILE · 열린 문 앞</p>
@@ -309,6 +312,9 @@
       <p>유진은 비상 연락망 첫 줄에서 내 이름을 내렸다. 대신 퇴근 뒤 약속표 첫 줄에 내 이름을 적었다.</p>
       <p class="chapter-end">SOLO TRUE · 사건 없는 내일</p>
       <p class="chapter-end__next">필요하지 않은 날에도 만나는 사람.</p>
+      <<if $routeUnlocks.freedom>>
+        [[사건 없는 밤의 다음 접속을 기다린다->4장 · 다음 접속]]
+      <</if>>
     <<else>>
       <p>유진은 제복을 벗었지만, 전화가 늦으면 여전히 모든 병원을 먼저 확인했다.</p>
       <p class="chapter-end">SOLO FRAGILE · 근무 종료 전</p>
@@ -492,6 +498,9 @@
       <p>채린은 열쇠를 사지 않았다. 올 때마다 초인종을 눌렀고, 싫다는 대답을 들을 때마다 돌아갔다가 다시 물었다.</p>
       <p class="chapter-end">SOLO TRUE · 내려놓은 왕관</p>
       <p class="chapter-end__next">명령하지 않아도 선택받을 수 있는 사람.</p>
+      <<if $routeUnlocks.freedom>>
+        [[값을 매기지 않은 다음 접속을 기다린다->4장 · 다음 접속]]
+      <</if>>
     <<else>>
       <p>채린은 멈추는 법을 배웠지만, 아직 거절을 자기 패배로 받아들였다.</p>
       <p class="chapter-end">SOLO FRAGILE · 값 없는 저녁</p>

@@ -11,7 +11,8 @@
   "openedSiwooMessage": false,
   "answeredSiwoo": false,
   "heardHallway": false,
-  "openedDoor": false
+  "openedDoor": false,
+  "memoryStance": ""
 }>>
 <<set $routeUnlocks = {
   "dangerous": false,
@@ -65,7 +66,9 @@
   "seraStayed": false,
   "seraAccompanies": false,
   "yujinStayed": false,
-  "chaerinRefused": false
+  "chaerinRefused": false,
+  "seraFirstDistance": "",
+  "crisisResponse": ""
 }>>
 <<set $economy = {
   "cash": 12800000,

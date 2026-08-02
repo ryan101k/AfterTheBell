@@ -14,7 +14,22 @@
       <span>윤새라예요. 하룻밤만 재워주시면 아침에 나갈게요.</span>
     </div>
     <p>거절하려고 입을 열었다가, 너무 작은 목소리에 도로 다물었다.</p>
-    [[수건과 물을 내준다->1장 · 현관의 규칙]]
+    <div class="vn-choices">
+      <<link "수건과 물을 현관에 두고 한 걸음 물러난다  [새라 ♥ +2]">>
+        <<set $chapter1.seraFirstDistance = "boundary">>
+        <<set $dangerousAffection.sera += 2>>
+        <<set $affectionNotice = "♥ 새라 호감도 +2 · 가까이 오지 않아도 머물 수 있게 했다">>
+        <<set $playerPattern.face += 1>>
+        <<goto "1장 · 현관의 규칙">>
+      <</link>>
+      <<link "수건을 직접 건네고 다친 곳부터 묻는다  [새라 ♥ +2]">>
+        <<set $chapter1.seraFirstDistance = "warmth">>
+        <<set $dangerousAffection.sera += 2>>
+        <<set $affectionNotice = "♥ 새라 호감도 +2 · 먼저 손을 내밀었다">>
+        <<set $playerPattern.delegate += 1>>
+        <<goto "1장 · 현관의 규칙">>
+      <</link>>
+    </div>
   </div>
 </section>
 
@@ -22,7 +37,11 @@
 <section class="vn-scene vn-scene--room">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
-    <p>나는 새 수건과 생수병을 현관 바닥에 내려놓았다. 새라는 그것부터 집지 않고 내 얼굴을 살폈다.</p>
+    <<if $chapter1.seraFirstDistance is "warmth">>
+      <p>새라는 내가 건넨 수건보다 손을 먼저 봤다. 잡지 않아도 된다는 걸 확인한 뒤에야 조심스럽게 받아 들었다.</p>
+    <<else>>
+      <p>나는 새 수건과 생수병을 현관 바닥에 내려놓고 한 걸음 물러났다. 새라는 그 빈 간격을 확인한 뒤에야 물을 집었다.</p>
+    <</if>>
     <p>“들어가도 된다는 뜻인가요?”</p>
     <p>“오늘 밤까지만입니다. 가방은 제가 보이는 곳에 두고, 저 책상 서랍은 열지 마세요.”</p>
     <p>“전화는요?”</p>
@@ -232,7 +251,22 @@
       <span>윤새라 씨. 회사 물건만 돌려주면 됩니다. 안에 있는 분까지 곤란하게 만들 필요는 없잖아요.</span>
     </div>
     <p>처음 듣는 목소리였다. 그런데 그는 내가 안에 있다는 것을 알고 있었다.</p>
-    [[경찰에 신고한다->1장 · 돌아갈 수 없는 주문]]
+    <div class="vn-choices">
+      <<link "가방을 안고 방 안으로 들어가 있으라고 한다  [새라 ♥ +2]">>
+        <<set $chapter1.crisisResponse = "protect">>
+        <<set $dangerousAffection.sera += 2>>
+        <<set $affectionNotice = "♥ 새라 호감도 +2 · 위험에서 먼저 떼어 놓았다">>
+        <<set $playerPattern.delegate += 1>>
+        <<goto "1장 · 돌아갈 수 없는 주문">>
+      <</link>>
+      <<link "문에서 떨어져 직접 신고 내용을 말해 달라고 한다  [새라 ♥ +2]">>
+        <<set $chapter1.crisisResponse = "agency">>
+        <<set $dangerousAffection.sera += 2>>
+        <<set $affectionNotice = "♥ 새라 호감도 +2 · 자기 일을 직접 말할 자리를 남겼다">>
+        <<set $playerPattern.face += 1>>
+        <<goto "1장 · 돌아갈 수 없는 주문">>
+      <</link>>
+    </div>
   </div>
 </section>
 
@@ -240,7 +274,11 @@
 <section class="vn-scene vn-scene--room">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
-    <p>신고 통화를 하는 동안 문밖의 사람은 사라졌다.</p>
+    <<if $chapter1.crisisResponse is "agency">>
+      <p>새라는 떨리는 목소리로 회사 이름과 가방의 출처를 직접 말했다. 신고 통화가 끝날 즈음 문밖의 사람은 사라져 있었다.</p>
+    <<else>>
+      <p>새라가 방 안으로 물러난 뒤 나는 혼자 신고 내용을 말했다. 통화를 하는 동안 문밖의 사람은 사라졌다.</p>
+    <</if>>
     <p>엘리베이터가 내려가는 소리를 듣고도 새라는 한동안 움직이지 못했다.</p>
     <p>가방에서 삐져나온 종이 한 장이 바닥에 떨어졌다. 태양캐피탈이라는 이름 아래 수십 개의 차명계좌가 연결되어 있었다.</p>
     <p>마지막 줄에는 내 이름이 있었다.</p>
@@ -624,7 +662,7 @@
     <p>새라가 반사적으로 한 걸음 다가왔다가, 자기 자리가 아니라는 듯 멈췄다. 유진은 계약서에서 눈을 떼지 않았다. 나래는 아무 말 없이 계약서를 덮었다.</p>
     <p>방 안에 두고 왔다고 생각한 다섯 사람의 흔적이, 내가 처음 나온 장소에서 기다리고 있었다.</p>
     <p class="chapter-end">CHAPTER 1 · 찢어진 계약서</p>
-    <<if $chapter1.chaerinRefused && $romanceOpen.sera && $romanceOpen.yujin>>
+    <<if $chapter1.chaerinRefused || $romanceOpen.sera || $romanceOpen.yujin>>
       [[다시 시장을 연다->2장 · 폐장 뒤의 일]]
     <<elseif !$chapter1.chaerinRefused && !$romanceOpen.sera && !$romanceOpen.yujin>>
       <<set $dangerousOutcome = "none">>
