@@ -16,6 +16,7 @@
 <<set $affectionNotice = "">>
 <<set $freedom = {
   "concreteInvite": false,
+  "firstSeat": "",
   "chaewonRoom": false,
   "yunaSpace": false,
   "soheePresence": false,
@@ -112,7 +113,30 @@
     <p class="vn-beat">밝게 손을 흔드는 채원. 카메라를 엎어 둔 유나. 빈 의자를 확인하고 앉는 소희.</p>
     <p>“최은호 씨?”</p>
     <p>목소리와 이름이 같은 얼굴에 붙었다.</p>
-    [[한 시간이 지난다->4장 · 세 번의 작별]]
+    <p class="vn-beat">네 자리 중 하나를 내가 골라야 했다.</p>
+    <div class="vn-choices">
+      <<link "먼저 일어나려는 채원의 옆자리에 앉는다.  [채원 ♥ +6]">>
+        <<set $freedom.firstSeat = "chaewon">>
+        <<set $scene = "chaewon-thread">>
+        <<set $affection.chaewon += 6>>
+        <<set $affectionNotice = "♥ 채원 호감도 +6 · 먼저 떠날 사람의 옆을 골랐다">>
+        <<goto "4장 · 세 번의 작별">>
+      <</link>>
+      <<link "엎어 둔 카메라를 밀어 주며 유나 맞은편에 앉는다.  [유나 ♥ +6]">>
+        <<set $freedom.firstSeat = "yuna">>
+        <<set $scene = "yuna-thread">>
+        <<set $affection.yuna += 6>>
+        <<set $affectionNotice = "♥ 유나 호감도 +6 · 보이는 얼굴보다 숨긴 물건을 먼저 봤다">>
+        <<goto "4장 · 세 번의 작별">>
+      <</link>>
+      <<link "말없이 비워 둔 소희의 옆자리에 앉는다.  [소희 ♥ +6]">>
+        <<set $freedom.firstSeat = "sohee">>
+        <<set $scene = "sohee-thread">>
+        <<set $affection.sohee += 6>>
+        <<set $affectionNotice = "♥ 소희 호감도 +6 · 말하지 않은 초대에 답했다">>
+        <<goto "4장 · 세 번의 작별">>
+      <</link>>
+    </div>
   </div>
 </section>
 
@@ -120,16 +144,37 @@
 <section class="vn-scene vn-scene--room">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
-    <div class="vn-character-card">
-      <figure class="vn-character-card__portrait"><img src="../assets/images/event-chaewon-1.png" alt="밝게 웃는 채원"></figure>
-      <div class="vn-character-card__body">
-        <p class="vn-character-card__name">채원</p>
-        <p class="vn-character-card__line">“저 먼저 가도 괜찮죠? 진짜 괜찮아요.”</p>
-        <p class="vn-beat">괜찮다는 말을 두 번 한 사람이 출입문 앞에 가장 오래 서 있었다.</p>
+    <<if $freedom.firstSeat is "chaewon">>
+      <div class="vn-character-card">
+        <figure class="vn-character-card__portrait"><img src="../assets/images/event-chaewon-1.png" alt="밝게 웃는 채원"></figure>
+        <div class="vn-character-card__body">
+          <p class="vn-character-card__name">채원 · 고른 첫 자리</p>
+          <p class="vn-character-card__line">“옆에 앉을 줄은 몰랐어요. 제가 먼저 갈 사람처럼 보였죠?”</p>
+          <p class="vn-beat">채원은 떠날 시간을 두 번 확인했지만, 의자를 뒤로 빼지는 않았다.</p>
+        </div>
       </div>
-    </div>
-    <p>유나: “사진 안 올라오게 해줘서 고마워요.”</p>
-    <p>소희: “다음에 봬요.”</p>
+    <<elseif $freedom.firstSeat is "yuna">>
+      <div class="vn-character-card">
+        <figure class="vn-character-card__portrait"><img src="../assets/images/event-yuna-2.png" alt="카메라를 치우고 마주 앉은 유나"></figure>
+        <div class="vn-character-card__body">
+          <p class="vn-character-card__name">유나 · 고른 첫 자리</p>
+          <p class="vn-character-card__line">“내 얼굴보다 카메라부터 봤네요.”</p>
+          <p class="vn-beat">유나는 엎어 둔 카메라를 가방에 넣었다. 처음으로 렌즈 없는 대화가 시작됐다.</p>
+        </div>
+      </div>
+    <<elseif $freedom.firstSeat is "sohee">>
+      <div class="vn-character-card">
+        <figure class="vn-character-card__portrait"><img src="../assets/images/event-freedom-chat-sohee.png" alt="말없이 옆자리를 비워 둔 소희"></figure>
+        <div class="vn-character-card__body">
+          <p class="vn-character-card__name">소희 · 고른 첫 자리</p>
+          <p class="vn-character-card__line">“비워 둔 거, 어떻게 알았어요?”</p>
+          <p class="vn-beat">소희는 대답을 재촉하지 않았다. 대신 네 사람 몫의 물을 천천히 나눠 따랐다.</p>
+        </div>
+      </div>
+    <<else>>
+      <p class="vn-beat">저장된 약속에는 첫 자리가 남아 있지 않았다. 네 사람은 원래 앉던 자리에서 한 시간을 보냈다.</p>
+    <</if>>
+    <p>한 시간이 지나자 채원은 비행 시간을, 유나는 공개 일정을, 소희는 다음 연습 시간을 확인했다.</p>
     <p class="vn-beat">언제인지는 아무도 말하지 않았다.</p>
     [[세 사람의 퇴근을 본다->5장 · 마지막 비행의 죽]]
   </div>
@@ -588,6 +633,13 @@
   <div class="vn-dialogue vn-dialogue--narration">
     <p>다음 토요일 밤 아홉 시.</p>
     <p>약속은 누구의 집도 요구하지 않았다. 채원은 돌아오는 비행 시간을 확인했고, 유나는 공개 일정을 비워 뒀다. 소희는 공연 뒤 한 마디를 남겨 두었다.</p>
+    <<if $freedom.firstSeat is "chaewon">>
+      <p class="vn-beat">처음 만난 날에는 가장 먼저 떠날 사람의 옆을 골랐다. 이번에는 채원이 돌아올 시간을 직접 말했다.</p>
+    <<elseif $freedom.firstSeat is "yuna">>
+      <p class="vn-beat">처음 만난 날에는 카메라를 엎어 둔 사람을 골랐다. 이번 약속에는 공개할 사진도, 숨길 목격자도 없었다.</p>
+    <<elseif $freedom.firstSeat is "sohee">>
+      <p class="vn-beat">처음 만난 날에는 말없이 비워 둔 자리를 골랐다. 이번에는 소희가 먼저 자기 몫의 시간을 남겼다.</p>
+    <</if>>
     <<if _freedomPassed gte 3 && $freedom.disclosedExisting && _freedomAffinity gte 30>>
       <figure class="vn-cutscene">
         <img src="../assets/images/event-freedom-true-next-meeting.png" alt="각자의 일정을 마치고 토요일 밤 카페에 다시 모인 채원, 유나, 소희">

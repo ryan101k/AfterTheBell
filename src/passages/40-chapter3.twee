@@ -3,6 +3,7 @@
 <<set $scene = "trio-route">>
 <<set $chapter3 = {
   "sharedThreat": false,
+  "firstCall": "",
   "yujinReleased": false,
   "chaerinAsked": false,
   "seraWaited": false
@@ -66,7 +67,77 @@
     <</if>>
     <p class="vn-beat">유진은 새라의 장부를 보호했고, 새라는 유진의 진술을 가렸으며, 채린은 자기 약점을 먼저 공개했다.</p>
     <p>그날 처음으로 셋은 나를 사이에 두고도 서로를 적으로 보지 않았다.</p>
-    [[밤이 온다->3장 · 먼저 부르지 않은 밤]]
+    [[현관 밖의 소리를 확인한다->3장 · 문 앞의 봉투]]
+  </div>
+</section>
+
+:: 3장 · 문 앞의 봉투 [chapter3 autosave nobr]
+<<set $scene = "trio-route">>
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>새벽 한 시 십칠 분.</p>
+    <p>현관 밖에서 종이 한 장이 바닥을 긁었다.</p>
+    <p>문을 열지 않고 카메라부터 확인했다. 복도에는 아무도 없었다. 검은 봉투와, 세 사람의 이름이 적힌 사진만 놓여 있었다.</p>
+    <p class="vn-beat">메일은 경고였다. 이건 누군가 현관까지 왔다는 증거였다.</p>
+    <p>휴대전화에는 세 사람의 번호가 나란히 떠 있었다.</p>
+    <div class="vn-choices">
+      <<link "새라에게 사진을 보낸다. 이 흔적을 알아볼 사람이다.  [새라 ♥ +8]">>
+        <<set $chapter3.firstCall = "sera">>
+        <<set $scene = "sera-test">>
+        <<set $dangerousAffection.sera += 8>>
+        <<set $affectionNotice = "♥ 새라 호감도 +8 · 가장 먼저 기억을 믿었다">>
+        <<goto "3장 · 첫 번째 응답">>
+      <</link>>
+      <<link "유진에게 전화한다. 문을 열기 전에 현장을 맡긴다.  [유진 ♥ +8]">>
+        <<set $chapter3.firstCall = "yujin">>
+        <<set $scene = "yujin-test">>
+        <<set $dangerousAffection.yujin += 8>>
+        <<set $affectionNotice = "♥ 유진 호감도 +8 · 첫 번째 구조 요청을 건넸다">>
+        <<goto "3장 · 첫 번째 응답">>
+      <</link>>
+      <<link "채린에게 봉투의 문양을 확인시킨다. 배후부터 끊는다.  [채린 ♥ +8]">>
+        <<set $chapter3.firstCall = "chaerin">>
+        <<set $scene = "chaerin-test">>
+        <<set $dangerousAffection.chaerin += 8>>
+        <<set $affectionNotice = "♥ 채린 호감도 +8 · 힘이 아니라 판단을 먼저 빌렸다">>
+        <<goto "3장 · 첫 번째 응답">>
+      <</link>>
+    </div>
+  </div>
+</section>
+
+:: 3장 · 첫 번째 응답 [chapter3 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <<if $chapter3.firstCall is "sera">>
+      <figure class="vn-cutscene">
+        <img src="../assets/images/event-sera-doorstep.png" alt="현관 앞의 흔적을 확인하는 윤새라">
+        <figcaption>새라가 알아본 접힌 모서리</figcaption>
+      </figure>
+      <p>새라는 사진을 확대하자마자 봉투의 오른쪽 아래를 짚었다.</p>
+      <p>“이렇게 두 번 접는 사람, 알아요.”</p>
+      <p>목소리는 떨렸지만 이름은 정확했다. 새라는 기억을 숨기지 않았고, 나는 그 기억을 의심하지 않았다.</p>
+    <<elseif $chapter3.firstCall is "yujin">>
+      <figure class="vn-cutscene">
+        <img src="../assets/images/event-yujin-emergency-entry.webp" alt="현관에 도착해 상황을 확인하는 강유진">
+        <figcaption>신고가 아니라 구조 요청으로 부른 밤</figcaption>
+      </figure>
+      <p>유진은 질문을 세 개만 했다. 문은 잠겼는지, 다친 사람은 없는지, 내가 혼자인지.</p>
+      <p>“문 열지 마세요. 이번에는 제가 들어가기 전에 먼저 말하겠습니다.”</p>
+      <p>유진은 십 분 만에 도착했지만, 내 허락이 떨어질 때까지 손잡이를 잡지 않았다.</p>
+    <<else>>
+      <figure class="vn-cutscene">
+        <img src="../assets/images/event-chaerin-contract.png" alt="봉투의 문양과 계약 관계를 추적하는 한채린">
+        <figcaption>돈으로 사람 대신 퇴로를 산 밤</figcaption>
+      </figure>
+      <p>채린은 봉투보다 인쇄 잉크를 먼저 봤다.</p>
+      <p>“두 시간만 줘요. 회사는 지우지 않고, 당신 집으로 이어지는 계약만 끊을게요.”</p>
+      <p>채린은 해결해 주겠다고 하지 않았다. 어디까지 해도 되는지 먼저 물었다.</p>
+    <</if>>
+    <p class="vn-beat">나머지 두 사람에게도 곧 연락했다. 하지만 첫 번째 이름은 내가 직접 골랐다.</p>
+    [[밤이 더 깊어진다->3장 · 먼저 부르지 않은 밤]]
   </div>
 </section>
 
@@ -286,6 +357,13 @@
   <div class="vn-dialogue vn-dialogue--narration">
     <p>나는 처음으로, 내가 무엇을 못 견디는지부터 말했다.</p>
     <p>“나는 세 사람이 다 필요해요. 그게 문제라는 것도 압니다. 그러니까 규칙을 정합시다. 누구든 언제든 나갈 수 있고, 나도 그럴 수 있어요. 잠글 수 있는 문은, 안에서만 잠급니다.”</p>
+    <<if $chapter3.firstCall is "sera">>
+      <p class="vn-beat">현관 앞 봉투가 왔던 밤, 가장 먼저 새라의 기억을 믿었다. 그 선택을 다른 두 사람에게도 숨기지 않았다.</p>
+    <<elseif $chapter3.firstCall is "yujin">>
+      <p class="vn-beat">현관 앞 봉투가 왔던 밤, 가장 먼저 유진에게 구조를 요청했다. 다만 문을 여는 결정은 끝까지 내 손에 두었다.</p>
+    <<elseif $chapter3.firstCall is "chaerin">>
+      <p class="vn-beat">현관 앞 봉투가 왔던 밤, 가장 먼저 채린의 판단을 빌렸다. 무엇을 끊을지는 채린이 아니라 내가 정했다.</p>
+    <</if>>
     <<if _passed gte 3 && _dangerousAffinity gte 30>>
       <<set $dangerousOutcome = "harem_true">>
       <<set $clearedEndings.dangerousHaremTrue = true>>
