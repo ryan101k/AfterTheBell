@@ -50,6 +50,7 @@ jobs:
           New-Item -ItemType Directory -Force -Path $siteBuild, $siteImages | Out-Null
           Copy-Item -LiteralPath './build/index.html' -Destination $siteBuild
           Copy-Item -LiteralPath './pages/index.html' -Destination $siteRoot
+          Copy-Item -LiteralPath './assets/images/standing' -Destination $siteImages -Recurse -Force
           New-Item -ItemType File -Force -Path (Join-Path $siteRoot '.nojekyll') | Out-Null
 
           $storySource = (Get-ChildItem './src' -Recurse -File |

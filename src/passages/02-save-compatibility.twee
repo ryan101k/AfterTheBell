@@ -70,6 +70,8 @@
   "seraAskedBeforeTouching": false,
   "seraWaitedOutside": false,
   "seraCameBack": false,
+  "eunhoWentOutside": false,
+  "eunhoWantedReturn": false,
   "yujinOffDutyTea": false,
   "sharedHospitalChoice": false
 }, $chapter1 ?? {})>>
@@ -77,18 +79,24 @@
   "trioRoute": false,
   "seraWorkTrusted": false,
   "seraSpokeForHerself": false,
+  "eunhoWaitedForSera": "",
   "yujinOffDuty": false,
   "yujinAcceptedCare": false,
   "yujinDidNotInspect": false,
+  "eunhoFirstContact": "",
   "chaerinHeardNo": false,
   "chaerinWalked": false,
-  "chaerinWaited": false
+  "chaerinWaited": false,
+  "eunhoCheckedChaerin": "",
+  "chaerinUnplannedVisit": "",
+  "eunhoFeelingsNamed": false
 }, $chapter2 ?? {})>>
 <<set $chapter3 = Object.assign({
-  "equalAnswer": false,
-  "seraWaited": false,
-  "yujinReleased": false,
-  "chaerinAsked": false,
-  "spokeForSelf": false
+  "answerStyle": "",
+  "seraBoundaryStyle": "",
+  "yujinBoundaryStyle": "",
+  "chaerinBoundaryStyle": "",
+  "conversationStyle": "",
+  "rivalsMetAlone": false
 }, $chapter3 ?? {})>>
 <<set $clearedEndings = $clearedEndings ?? {}>>

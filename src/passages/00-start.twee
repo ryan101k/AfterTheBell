@@ -69,6 +69,8 @@
   "seraAskedBeforeTouching": false,
   "seraWaitedOutside": false,
   "seraCameBack": false,
+  "eunhoWentOutside": false,
+  "eunhoWantedReturn": false,
   "yujinOffDutyTea": false,
   "sharedHospitalChoice": false
 }>>
@@ -76,12 +78,17 @@
   "trioRoute": false,
   "seraWorkTrusted": false,
   "seraSpokeForHerself": false,
+  "eunhoWaitedForSera": "",
   "yujinOffDuty": false,
   "yujinAcceptedCare": false,
   "yujinDidNotInspect": false,
+  "eunhoFirstContact": "",
   "chaerinHeardNo": false,
   "chaerinWalked": false,
-  "chaerinWaited": false
+  "chaerinWaited": false,
+  "eunhoCheckedChaerin": "",
+  "chaerinUnplannedVisit": "",
+  "eunhoFeelingsNamed": false
 }>>
 <<set $clearedEndings = {}>>
 

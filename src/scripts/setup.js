@@ -82,16 +82,16 @@ setup.resolveStandeeCharacters = function () {
   }
 
   if (/^2장 · /.test(title)) {
-    if (/아직 고백하지 않은 사람들/.test(title)) {
+    if (/세 이름을 기다린 날|아직 고백하지 않은 사람들/.test(title)) {
       return ['sera', 'yujin', 'chaerin'];
     }
     if (/자기 이름의 그림|불이 꺼진 전시장/.test(title)) {
       return ['sera', 'chaerin'];
     }
-    if (/사건 없는 확인|제복 없는 저녁|구조받지 않은 사람|지키지 않는 밤|현관의 흔적|묻지 않은 이름/.test(title)) {
+    if (/사건 없는 확인|제복 없는 저녁|오지 않은 안부|먼저 온 답장|구조받지 않은 사람|지키지 않는 밤|현관의 흔적|묻지 않은 이름/.test(title)) {
       return ['yujin'];
     }
-    if (/로비의 한채린|값을 매기지 않은 초대|예약 없는 저녁|약속된 한 시간/.test(title)) {
+    if (/로비의 한채린|값을 매기지 않은 초대|예약 없는 저녁|답장이 늦은 밤|예약하지 않은 답장|약속된 한 시간|준비되지 않은 방문|값이 없는 라면/.test(title)) {
       return ['chaerin'];
     }
     return ['sera'];
@@ -111,13 +111,13 @@ setup.resolveStandeeCharacters = function () {
   }
 
   if (/^3장 · /.test(title)) {
-    if (/하나뿐인 열쇠|여덟 시의 초인종/.test(title)) {
+    if (/새라에게 한 고백|하나뿐인 열쇠|새라가 여는 문/.test(title)) {
       return ['sera'];
     }
-    if (/비상 연락망의 첫째|꺼진 위치 표시/.test(title)) {
+    if (/유진에게 한 고백|비상 연락망의 첫째|유진에게 보내는 신호/.test(title)) {
       return ['yujin'];
     }
-    if (/비어 있지 않은 일정표|값이 없는 부탁/.test(title)) {
+    if (/채린에게 한 고백|비어 있지 않은 일정표|채린이 비운 토요일/.test(title)) {
       return ['chaerin'];
     }
     return ['sera', 'yujin', 'chaerin'];
@@ -321,7 +321,7 @@ $(document).on(':passagedisplay.vnui', function () {
   $hud.attr('data-mode', dangerousMode ? 'dangerous' : 'freedom');
   cast.forEach(function (character, index) {
     $('[data-affection-label="' + index + '"]').text(character[0]);
-    $('[data-affection-value="' + index + '"]').text(character[1] || 0);
+    $('[data-affection-value="' + index + '"]').text(Math.min(30, character[1] || 0));
   });
 
   const notice = State.variables.affectionNotice;
