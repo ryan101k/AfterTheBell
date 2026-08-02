@@ -43,6 +43,56 @@ setup.hideChoiceScores = function () {
   });
 };
 
+setup.standeeCharacters = {
+  sera: { file: 'sera-neutral.png', name: '윤새라' },
+  yujin: { file: 'yujin-neutral.png', name: '강유진' },
+  chaerin: { file: 'chaerin-neutral.png', name: '한채린' },
+  chaewon: { file: 'chaewon-neutral.png', name: '서채원' },
+  yuna: { file: 'yuna-neutral.png', name: '강유나' },
+  sohee: { file: 'sohee-neutral.png', name: '윤소희' }
+};
+
+setup.standeeScenes = {
+  'sera-entry': 'sera',
+  'sera-test': 'sera',
+  'sera-solo': 'sera',
+  'yujin-entry': 'yujin',
+  hospital: 'yujin',
+  'yujin-test': 'yujin',
+  'yujin-solo': 'yujin',
+  'chaerin-entry': 'chaerin',
+  'chaerin-test': 'chaerin',
+  'chaerin-solo': 'chaerin',
+  'chaewon-thread': 'chaewon',
+  'yuna-thread': 'yuna',
+  'sohee-thread': 'sohee'
+};
+
+setup.updateStandee = function () {
+  const characterKey = setup.standeeScenes[State.variables.scene];
+  const character = setup.standeeCharacters[characterKey];
+  const $scene = $('#passages .vn-scene').last();
+
+  if (!character || !$scene.length) {
+    return;
+  }
+
+  const $standee = $('<div>', {
+    class: 'vn-standee vn-standee--' + characterKey,
+    'aria-hidden': 'true'
+  });
+  const $image = $('<img>', {
+    src: '../assets/images/standing/' + character.file,
+    alt: '',
+    loading: 'eager',
+    decoding: 'async'
+  });
+
+  $standee.append($image);
+  $scene.addClass('has-standee');
+  $standee.insertBefore($scene.children('.vn-dialogue').first());
+};
+
 $(document).on('click.vnui', '[data-vn-action]', function () {
   const action = this.dataset.vnAction;
   if (action === 'saves') {
@@ -62,6 +112,7 @@ $(document).on('click.vnui', '[data-vn-passage]', function () {
 
 $(document).on(':passagedisplay.vnui', function () {
   setup.hideChoiceScores();
+  setup.updateStandee();
 
   const chapter = State.variables.chapter || 0;
   $('[data-vn-chapter]').text(chapter);
