@@ -134,17 +134,17 @@
   <div class="vn-dialogue vn-dialogue--narration">
     <p>넷째 날, 쌀도 물도 떨어졌다. 배달 앱을 열었다가 주문 버튼 위에서 손이 멈췄다.</p>
     <p>학교를 그만둔 뒤 내가 현관 밖으로 나간 건 쓰레기를 버릴 때뿐이었다. 사람이 적은 편의점도 너무 멀었다.</p>
-    <p>새라는 내 운동화와 빈 냉장고를 번갈아 봤다.</p>
+    <p>여자는 내 운동화와 빈 냉장고를 번갈아 봤다.</p>
     <div class="vn-character-card">
       <figure class="vn-character-card__portrait"><img src="../assets/images/characters/sera-neutral.png" alt="현관 앞에서 은호의 대답을 기다리는 윤새라"></figure>
       <div class="vn-character-card__body">
-        <p class="vn-character-card__name">윤새라 · 아직 이름을 말하기 전</p>
+        <p class="vn-character-card__name">이름 모르는 여자</p>
         <p class="vn-character-card__line">“제가 다녀올까요?”</p>
         <p class="vn-character-card__line">“아니면… 문 앞까지만 같이 갈래요?”</p>
       </div>
     </div>
     <div class="vn-choices">
-      <<link "사람이 적은 밤을 기다렸다가 새라와 골목 끝까지 걷는다.">>
+      <<link "사람이 적은 밤을 기다렸다가 여자와 골목 끝까지 걷는다.">>
         <<set $chapter1.eunhoWentOutside = true>>
         <<set $dangerousAffection.sera += 10>>
         <<set $affectionNotice = "♥ 윤새라 관계도 +10 · 서로를 끌지 않고 같은 속도로 걸었다">>
@@ -165,13 +165,13 @@
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
     <<if $chapter1.eunhoWentOutside>>
-      <p>편의점까지 가는 동안 새라는 한 번도 앞서 걷지 않았다. 내가 멈추면 진열장을 보는 척했고, 다시 움직이면 반 걸음 뒤에서 따라왔다.</p>
-      <p>돌아오는 길에는 내가 물병을, 새라가 달걀을 들었다. 골목은 여전히 불편했지만 집으로 돌아갈 방향은 알고 있었다.</p>
+      <p>편의점까지 가는 동안 여자는 한 번도 앞서 걷지 않았다. 내가 멈추면 진열장을 보는 척했고, 다시 움직이면 반 걸음 뒤에서 따라왔다.</p>
+      <p>돌아오는 길에는 내가 물병을, 여자가 달걀을 들었다. 골목은 여전히 불편했지만 집으로 돌아갈 방향은 알고 있었다.</p>
     <<else>>
       <p>배달 기사가 엘리베이터에서 내리는 소리에 심장이 먼저 빨라졌다. 새라는 대신 문을 열지 않고 내 옆에서 기다렸다.</p>
       <p>나는 손을 뻗어 봉투를 받았다. 현관 밖에 선 시간은 십 초가 전부였지만, 혼자였을 때보다 오래 버틸 수 있었다.</p>
     <</if>>
-    <p class="vn-beat">새라를 재워 준다고 생각했다. 실제로는 새라를 핑계로 내가 문턱을 다시 밟고 있었다.</p>
+    <p class="vn-beat">여자를 재워 준다고 생각했다. 실제로는 그 사람을 핑계로 내가 문턱을 다시 밟고 있었다.</p>
     [[닷새째 밤이 온다->1장 · 욕실 불빛]]
   </div>
 </section>

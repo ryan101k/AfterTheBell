@@ -18,6 +18,9 @@
   "existingNamed": false,
   "contextHonest": false,
   "concreteInvite": false,
+  "chaewonVoice": false,
+  "yunaVoice": false,
+  "soheeVoice": false,
   "firstSeat": "",
   "chaewonRoom": false,
   "yunaSpace": false,
@@ -94,15 +97,12 @@
 <section class="vn-scene vn-scene--room">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
-    <p>새라와 유진, 채린이 있는 방에 먼저 말했다. 게임에서 알게 된 세 사람에게 호감이 생겼고, 현실에서 만난 뒤에도 그 가능성을 숨기고 싶지 않다고.</p>
-    <p>새라는 바로 괜찮다고 하지 않았다.</p>
-    <p>“싫어요. 그래도 싫다는 이유로 은호 씨가 모르는 척하게 만들고 싶지는 않아요. 돌아올 날짜는 말해 줘요.”</p>
-    <p>유진은 세 사람을 조사해도 되느냐고 묻지 않았다. 대신 그쪽도 기존 관계를 알고 있느냐고 물었다.</p>
-    <p>채린은 한참 답이 없었다.</p>
-    <p>“내 허락을 받았다고 말하지 마요. 나는 허락한 적도, 막을 권리도 없으니까. 그 사람들한테 우리 셋이 있다는 것부터 말해요.”</p>
-    <p>나는 다시 게임 단체방으로 돌아가, 현실에서 만나기 전에 이미 연애 중인 세 사람이 있고 이번 만남을 친구라는 말로만 감출 생각도 없다고 밝혔다.</p>
-    <p>막차요정은 `그럼 더 천천히 보자`고 했고, 무보정은 세 사람이 전부 알고 있느냐고 확인했다. 쉼표는 자기가 친구로만 남아도 괜찮은지 물었다.</p>
-    <p class="vn-beat">누구도 축하하지 않았다. 그래도 누구도 모르는 상태로 다음 장면에 들어가지는 않았다.</p>
+    <p>새라와 유진, 채린이 있는 방에 먼저 말했다. 몇 달 동안 같이 게임한 세 사람이 있고, 서비스가 닫히기 전에 마지막 작전을 해 보려 한다고.</p>
+    <p>새라는 귀가 시간을 물었다. 유진은 실제로 만날 때는 장소를 알려 달라고 했다. 채린은 한참 뒤에 답했다.</p>
+    <p>“게임 한 판마다 보고받고 싶지는 않아요. 대신 만나게 되면 그쪽에도 우리 셋이 있다는 건 말해요.”</p>
+    <p>나는 게임 단체방에도 연애 중인 사람이 있다고 밝혔다. 아직 얼굴도 모르는 사이에 새 관계를 약속할 생각은 없고, 마지막 파티를 친구로 끝낼지 그 뒤에도 만날지는 천천히 정하고 싶다고 했다.</p>
+    <p>막차요정은 잠깐 조용해졌다가 출발 가능 시간을 올렸다. 무보정은 현실에서 만난다면 사진을 찍지 않는 조건을 붙였다. 쉼표는 명단에서 자기 이름을 지우지 않았다.</p>
+    <p class="vn-beat">축하도 허락도 없었다. 대신 여섯 사람 모두가 모르는 척하지는 않았다.</p>
     [[알고도 마지막 파티에 남을지 기다린다->4장 · 목소리만 아는 사람들]]
   </div>
 </section>
@@ -111,7 +111,7 @@
 <section class="vn-scene vn-scene--room">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--phone">
-    <p>사흘 뒤 세 사람이 다시 음성 채널에 들어왔다. 관계에 동의했다는 뜻은 아니었다. 적어도 서비스가 끝날 때까지 자기 대답을 직접 고르겠다는 뜻이었다.</p>
+    <p>사흘 뒤 세 사람이 다시 음성 채널에 들어왔다. 막차요정은 평소처럼 먼저 인사했고, 무보정은 마이크 잡음을 지적했고, 쉼표는 비어 있던 내 자리를 그대로 뒀다.</p>
     <div class="vn-character-card">
       <figure class="vn-character-card__portrait"><img src="../assets/images/event-freedom-chat-chaewon.png" alt="마지막 파티 일정을 확인하는 막차요정"></figure>
       <div class="vn-character-card__body">
@@ -123,19 +123,67 @@
     <div class="vn-choices">
       <<link "각자 가능한 시간을 말하게 하고, 가장 짧게 겹치는 한 시간을 등록한다.">>
         <<set $freedom.concreteInvite = true>>
-        <<set $affection.chaewon += 6>><<set $affection.yuna += 6>><<set $affection.sohee += 6>>
-        <<set $affectionNotice = "♥ 전원 호감도 +6 · 남는 사람이 아니라 원하는 시간을 물었다">>
+        <<set $affection.chaewon += 4>><<set $affection.yuna += 4>><<set $affection.sohee += 4>>
+        <<set $affectionNotice = "♥ 전원 호감도 +4">>
         <<set $playerPattern.face += 1>>
-        <<goto "4장 · 마지막 파티 등록">>
+        <<goto "4장 · 막차 전 이십 분">>
       <</link>>
       <<link "내 일정은 비워 둘 테니 세 사람이 편한 날을 정해 달라고 한다.">>
         <<set $freedom.concreteInvite = false>>
         <<set $affection.chaewon += 2>><<set $affection.yuna += 2>><<set $affection.sohee += 2>>
-        <<set $affectionNotice = "♥ 전원 호감도 +2 · 배려처럼 보였지만 결정은 다시 미뤘다">>
+        <<set $affectionNotice = "♥ 전원 호감도 +2">>
         <<set $playerPattern.avoid += 1>>
-        <<goto "4장 · 마지막 파티 등록">>
+        <<goto "4장 · 막차 전 이십 분">>
       <</link>>
     </div>
+  </div>
+</section>
+
+:: 4장 · 막차 전 이십 분 [chapter4 autosave nobr]
+<<set $freedom.chaewonVoice = true>>
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--phone">
+    <p>첫 주 화요일, 작전은 자정이 가까워져도 끝나지 않았다.</p>
+    <p>막차요정에게 남은 셔틀은 이십 분 뒤 한 대뿐이었다. 무보정과 쉼표가 먼저 나가라고 했고, 나도 오늘은 여기까지 하자고 말했다.</p>
+    <p>“그럼 도망가는 것 같잖아요.”</p>
+    <p>막차요정은 웃다가 접속 종료 버튼 앞에서 잠깐 멈췄다.</p>
+    <p>“아니지. 가는 거랑 안 돌아오는 건 다른 거니까. 도착하면 메시지 할게요.”</p>
+    <p>사십 분 뒤 단체방에 버스 창문 사진이 올라왔다. 설명은 한 줄이었다.</p>
+    <div class="phone-message"><b>막차요정</b><span>도착. 다음 화요일에도 와요.</span></div>
+    <p>그 뒤로 나는 막차요정이 나간 시간이 아니라 돌아왔다고 말할 시간을 기다리게 됐다.</p>
+    [[다음 목소리를 기다린다->4장 · 추측하지 않는 밤]]
+  </div>
+</section>
+
+:: 4장 · 추측하지 않는 밤 [chapter4 autosave nobr]
+<<set $freedom.yunaVoice = true>>
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--phone">
+    <p>두 번째 주에는 내 마이크가 십 분 넘게 꺼졌다. 현관 쪽에서 소리가 났지만 자리에서 일어나지는 못했다.</p>
+    <p>막차요정이 무슨 일인지 묻자 무보정이 말을 잘랐다.</p>
+    <p>“말 안 한 사정은 우리가 모르는 사정이에요. 대신 지금 듣고 있으면 화면 한 번만 눌러요.”</p>
+    <p>나는 준비 완료 표시를 켰다.</p>
+    <p>“됐어요. 다음 판 할 수 있어요?”</p>
+    <p>괜찮다는 말도, 믿는다는 말도 없었다. 내가 하지 않은 설명을 대신 만들어 주지 않는 목소리였다.</p>
+    [[마지막까지 남은 목소리를 듣는다->4장 · 끝났다는 말]]
+  </div>
+</section>
+
+:: 4장 · 끝났다는 말 [chapter4 autosave nobr]
+<<set $freedom.soheeVoice = true>>
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--phone">
+    <p>세 번째 주 토요일에는 같은 구간에서 여섯 번 실패했다.</p>
+    <p>막차요정이 먼저 나갔고 무보정도 녹화를 끈 뒤, 나는 물을 가지러 자리를 비웠다. 돌아와 보니 쉼표만 음성 채널에 남아 있었다.</p>
+    <p>“아직 있었습니까?”</p>
+    <p>“끝났다는 말을 못 들었으니까요.”</p>
+    <p>잠깐 뒤 쉼표가 아주 작은 소리로 방금 틀린 구간의 박자를 흥얼거렸다. 나는 듣고만 있었다.</p>
+    <p>“다음 주에 다시 해요.”</p>
+    <p>그 말을 들은 뒤에야 쉼표는 접속을 끊었다. 침묵을 채우지 않고도 같이 남을 수 있는 사람이었다.</p>
+    [[세 목소리를 고정 명단에 올린다->4장 · 마지막 파티 등록]]
   </div>
 </section>
 
@@ -148,12 +196,9 @@
     <<else>>
       <p>쉼표가 사흘 뒤 가장 덜 불편해 보이는 시간을 골랐다. 모두 괜찮다고 했지만 누구도 자기가 원한 시간이라고 말하지 않았다.</p>
     <</if>>
-    <p>그 뒤 삼 주 동안 우리는 일주일에 두 번씩 접속했다.</p>
-    <p>막차요정은 매번 가장 먼저 나갔지만 다음 접속 시간을 남겼다. 무보정은 추측으로 작전을 시작하지 않고 모르는 건 다시 물었다. 쉼표는 실패한 날에도 음성 채널을 끄지 않고 마지막 사람까지 기다렸다.</p>
-    <p>나는 밝아서 막차요정을 좋아한 게 아니었다. 떠난 뒤 돌아올 시간을 말하는 사람이어서 기다리게 됐다.</p>
-    <p>무보정의 얼굴은 몰랐지만, 내가 말하지 않은 사정을 마음대로 완성하지 않는 태도가 좋았다.</p>
-    <p>쉼표와는 말이 없어도 불편하지 않았다. 침묵을 대신 채우지 않고도 같은 자리에 남을 수 있었다.</p>
-    <p class="vn-beat">좋아한다는 마음은 직업과 얼굴보다 먼저 목소리에 붙었다.</p>
+    <p>고정 명단에는 아직 닉네임 네 개만 있었다.</p>
+    <p>막차요정이 먼저 나간 밤에는 도착 메시지를 기다렸고, 무보정이 질문하면 대답할 수 있는 만큼은 말하게 됐다. 쉼표와 둘이 남은 침묵은 더 이상 불편하지 않았다.</p>
+    <p>좋아한다는 이름을 붙이기에는 아직 얼굴도 몰랐다. 다만 세 목소리 중 하나가 없는 날이면 빈자리가 먼저 들렸다.</p>
     [[게임이 닫히기 전에 얼굴을 한 번 보기로 한다->4장 · 사진 없는 정모]]
   </div>
 </section>
@@ -175,17 +220,17 @@
     <div class="vn-choices">
       <<link "먼저 떠날 시간을 계속 확인하는 채원의 옆에 앉는다.">>
         <<set $freedom.firstSeat = "chaewon">><<set $affection.chaewon += 6>>
-        <<set $affectionNotice = "♥ 채원 호감도 +6 · 떠나는 시간보다 돌아올 말을 기다렸다">>
+        <<set $affectionNotice = "♥ 채원 호감도 +6">>
         <<goto "4장 · 세 번의 작별">>
       <</link>>
       <<link "엎어 둔 카메라를 시야 밖으로 밀어 주며 유나 맞은편에 앉는다.">>
         <<set $freedom.firstSeat = "yuna">><<set $affection.yuna += 6>>
-        <<set $affectionNotice = "♥ 유나 호감도 +6 · 보이는 얼굴보다 숨기고 싶은 것을 먼저 봤다">>
+        <<set $affectionNotice = "♥ 유나 호감도 +6">>
         <<goto "4장 · 세 번의 작별">>
       <</link>>
       <<link "말없이 비워 둔 소희의 옆자리에 앉는다.">>
         <<set $freedom.firstSeat = "sohee">><<set $affection.sohee += 6>>
-        <<set $affectionNotice = "♥ 소희 호감도 +6 · 말하지 않은 초대를 알아봤다">>
+        <<set $affectionNotice = "♥ 소희 호감도 +6">>
         <<goto "4장 · 세 번의 작별">>
       <</link>>
     </div>
@@ -206,13 +251,28 @@
       <figure class="vn-cutscene"><img src="../assets/images/sohee-evnet-4.png" alt="신분을 드러내지 않은 채 첫 정모에 나온 소희"></figure>
       <p>소희는 빈 의자를 보며 말했다. “비워 둔 거, 어떻게 알았어요?”</p>
     <</if>>
-    <p>한 시간이 지나자 세 사람은 거의 동시에 괜찮다고 말했다. 채원은 먼저 나가도, 유나는 사진이 찍혀도, 소희는 다음 정모에 빠져도 괜찮다고 했다.</p>
-    <p>그 말은 세 사람 모두에게서 다른 방식으로 불편하게 들렸다.</p>
+    <p>한 시간이 지나자 채원이 먼저 자리에서 일어났다. 미안하다는 말을 세 번 하다가, 마지막에는 다음 접속 시간을 직접 정했다.</p>
+    <p>유나는 카페 밖에서 누가 휴대전화를 들면 얼굴을 돌렸다. 소희는 다음 정모 날짜를 정리하면서도 자기 일정만 빈칸으로 뒀다.</p>
     <<if $freedomMode is "after_harem">>
       <p>집으로 돌아가는 길에 새라는 오늘 몇 시에 돌아오느냐고 물었고, 유진은 신상을 확인하지 않겠다고 먼저 말했다. 채린은 즐거웠느냐는 질문을 쓰고 한참 뒤에 보냈다.</p>
       <p>질투를 없던 일로 만들지 않으면서도 아무도 내 다음 약속을 취소하지 않았다.</p>
     <</if>>
-    [[마지막 파티에서 빠지려는 첫 사람을 본다->5장 · 마지막 비행의 죽]]
+    [[게임 밖에서 한 번 더 만나 본다->4장 · 사진 없는 두 번째 약속]]
+  </div>
+</section>
+
+:: 4장 · 사진 없는 두 번째 약속 [chapter4 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>엿새 뒤에는 예약하지 않은 분식집에서 다시 만났다. 누가 먼저 제안했는지는 단체방을 위로 올려 봐도 분명하지 않았다.</p>
+    <p>채원은 약속 시간보다 십 분 일찍 와서도 먼저 가야 할 시간을 말하지 않았다. 유나는 모자를 벗지 않았지만 메뉴판 뒤로 숨지도 않았다. 소희는 네 사람 몫을 주문하려다 각자 먹고 싶은 것을 물었다.</p>
+    <p>게임 이야기가 끊기자 처음에는 젓가락 소리만 났다.</p>
+    <p>채원이 오늘 탄 비행기의 진상 승객 이야기를 꺼냈고, 유나는 촬영장에서 자기 얼굴을 못 알아본 아이 이야기를 했다. 소희는 공연에서 가사를 잊었는데 관객이 대신 불러 준 일을 말했다.</p>
+    <p>직업은 그렇게 들켰다. 명함을 내미는 사람은 없었다.</p>
+    <p>헤어질 때 채원은 다음 주 비행 일정을 확인했고, 유나는 뒷문으로 먼저 나가겠다고 했다. 소희는 마지막 작전 공략표를 완성해 오겠다고 말했다.</p>
+    <p>서로 다른 약속처럼 들렸지만 셋 다 자기가 빠져도 되는 방법을 함께 준비하고 있었다.</p>
+    [[서비스 종료까지 남은 이 주를 보낸다->5장 · 마지막 비행의 죽]]
   </div>
 </section>
 
@@ -224,7 +284,7 @@
   <div class="vn-dialogue vn-dialogue--narration">
     <p class="vn-label">CHAPTER 5 · 먼저 빠지는 사람들</p>
     <figure class="vn-cutscene"><img src="../assets/images/event-chaewon-7.png" alt="장거리 비행을 앞두고 공항에서 뒤돌아보는 채원"></figure>
-    <p>정모에서 직업을 밝히지 않았던 채원은 서비스 종료 열흘 전 공항 사진을 보냈다. 마지막 작전 당일 장거리 비행이 잡혔다고 했다.</p>
+    <p>서비스 종료 열나흘 전, 채원은 공항 대기실 사진을 보냈다. 마지막 작전 당일 장거리 비행이 잡혔다고 했다.</p>
     <p>채원은 이미 대체 파티원까지 구해 두었다.</p>
     <p>“저 때문에 시간을 바꾸면 다른 세 사람이 묶이잖아요. 저는 어디서든 또 게임 찾으면 돼요.”</p>
     <p>하지만 대기실 유리에는 로그아웃하지 못한 채 파티 명단을 보고 있는 채원의 얼굴이 비쳤다.</p>
@@ -239,14 +299,14 @@
     <div class="phone-message"><b>채원</b><span>대체 인원은 구했어요. 답장 안 해도 돼요. 이게 제일 편할 거예요.</span></div>
     <p>`입력 중`이 한 번 더 떴다가 사라졌다.</p>
     <div class="vn-choices">
-      <<link "비행에서 돌아오는 시각을 알려 달라고 한다. 마지막 작전 시간은 그 뒤에 다시 정하겠다고 말한다.">>
-        <<set $freedom.chaewonRoom = true>><<set $affection.chaewon += 12>>
-        <<set $affectionNotice = "♥ 채원 호감도 +12 · 붙잡는 대신 돌아올 시간을 물었다">>
+      <<link "대체 인원은 보류하고, 돌아온 뒤 합류할지 새 날짜를 잡을지 채원이 정해 달라고 한다.">>
+        <<set $freedom.chaewonRoom = true>><<set $affection.chaewon += 10>>
+        <<set $affectionNotice = "♥ 채원 호감도 +10">>
         <<goto "5장 · 비행 없는 아침">>
       <</link>>
-      <<link "고정 파티를 지키는 것도 채원의 선택이라 생각하고 대체 인원을 받는다.">>
-        <<set $freedom.chaewonRoom = false>><<set $affection.chaewon += 3>>
-        <<set $affectionNotice = "♥ 채원 호감도 +3 · 선택을 존중했지만 남고 싶은지는 묻지 않았다">>
+      <<link "원래 일정은 지키고, 채원이 돌아온 날 둘이 마지막 구간을 한 번 더 보기로 한다.">>
+        <<set $freedom.chaewonRoom = false>><<set $affection.chaewon += 6>>
+        <<set $affectionNotice = "♥ 채원 호감도 +6">>
         <<goto "5장 · 비행 없는 아침">>
       <</link>>
     </div>
@@ -259,13 +319,27 @@
   <div class="vn-dialogue vn-dialogue--narration">
     <<if $freedom.chaewonRoom>>
       <figure class="vn-cutscene"><img src="../assets/images/event-chaewon-9.png" alt="비행에서 돌아온 뒤 도착 시간을 직접 보내는 채원"></figure>
-      <p>채원은 한참 뒤 도착 예정 시각을 보냈다. 파티 시간은 자정에서 새벽 두 시로 옮겨졌다.</p>
+      <p>채원은 한참 뒤 도착 예정 시각을 보냈다. 돌아온 뒤 세 사람에게 직접 묻고, 파티 시간을 자정에서 새벽 두 시로 옮겼다.</p>
       <p>“기다려 달라는 말, 생각보다 무겁네요. 그래도 이번에는 지우지 않을게요.”</p>
     <<else>>
-      <p>대체 인원이 명단에 들어왔다. 채원은 고맙다는 이모티콘을 남기고 파티방에서 나갔다.</p>
-      <p>비행은 예정대로 돌아왔지만 귀가 메시지는 오지 않았다.</p>
+      <p>대체 인원이 명단에 들어갔다. 채원은 파티방을 나가지 않고 자기 이름 옆에 `귀국 다음 날`이라고 적었다.</p>
+      <p>“넷이 같은 날이어야만 마지막은 아니잖아요. 대신 그날은 정말 기다려 줘요.”</p>
     <</if>>
-    [[두 번째 사람이 자기 기록을 지운다->5장 · 렌즈가 꺼진 뒤]]
+    [[채원이 돌아온 뒤 한 시간을 보낸다->5장 · 돌아온 채원의 한 시간]]
+  </div>
+</section>
+
+:: 5장 · 돌아온 채원의 한 시간 [chapter5 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--phone">
+    <p>채원은 예정보다 한 시간 늦게 귀국했다. 목소리는 쉬어 있었고 캐릭터는 벽에 두 번 부딪혔다.</p>
+    <p>유나가 오늘은 쉬라고 했고, 소희는 공략표 첫 장을 덮었다.</p>
+    <p>채원은 웃지 않았다.</p>
+    <p>“지금 나가면 또 잘 빠져 줬다고 할 것 같아요. 십 분만 있다가, 제가 먼저 끝났다고 말하고 갈게요.”</p>
+    <p>우리는 작전을 시작하지 않고 공항에서 산 과자 얘기만 들었다. 십 분 뒤 채원은 자기가 정한 시간에 접속을 끊었다.</p>
+    <p>서비스 종료까지 열사흘. 고정 파티 명단에는 여전히 네 이름이 있었다.</p>
+    [[며칠 뒤 카페 사진이 올라온다->5장 · 렌즈가 꺼진 뒤]]
   </div>
 </section>
 
@@ -275,7 +349,7 @@
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
     <figure class="vn-cutscene"><img src="../assets/images/event-yuna-1.png" alt="잡지 표지 속 관리된 얼굴과 현실의 관계 사이에 선 유나"></figure>
-    <p>정모 때 카페 밖에서 찍힌 사진이 서비스 종료를 여드레 남기고 뒤늦게 짧은 기사로 올라왔다.</p>
+    <p>정모 때 카페 밖에서 찍힌 사진이 서비스 종료를 열이틀 남기고 뒤늦게 짧은 기사로 올라왔다.</p>
     <p>모델 유나와 신원을 알 수 없는 남자, 얼굴이 흐린 두 여자. 제목은 네 사람의 관계를 마음대로 정해 놓고 있었다.</p>
     <p>유나는 기사보다 먼저 게임 프로필 사진을 지웠다. 다음은 대화 기록, 마지막은 고정 파티 탈퇴 버튼이었다.</p>
     <p>“설명해도 사람들은 보고 싶은 것만 봐요. 내가 빠지면 나머지 셋은 기사에서 사라져요.”</p>
@@ -288,14 +362,14 @@
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--phone">
     <div class="vn-choices">
-      <<link "사진 속 사실과 내 관계를 한 번만 보내고, 유나가 묻기 전까지 공개 대응은 하지 않는다.">>
-        <<set $freedom.yunaSpace = true>><<set $affection.yuna += 12>>
-        <<set $affectionNotice = "♥ 유나 호감도 +12 · 대신 결론 내리지 않고 질문할 자리를 남겼다">>
+      <<link "기사 링크만 보내고, 어떤 대응을 원하는지 유나가 정할 때까지 기다린다.">>
+        <<set $freedom.yunaSpace = true>><<set $affection.yuna += 10>>
+        <<set $affectionNotice = "♥ 유나 호감도 +10">>
         <<goto "5장 · 공개되지 않은 일요일">>
       <</link>>
-      <<link "다른 세 사람을 보호하려면 빨리 끝내야 한다고 판단하고 내 이름으로 정정문을 공개한다.">>
-        <<set $freedom.yunaSpace = false>><<set $affection.yuna -= 3>>
-        <<set $affectionNotice = "♡ 유나 호감도 -3 · 사실은 바로잡았지만 유나의 선택도 대신했다">>
+      <<link "나머지 셋의 노출을 줄일 정정문 초안을 만들고, 공개하기 전에 유나에게 보낸다.">>
+        <<set $freedom.yunaSpace = false>><<set $affection.yuna += 6>>
+        <<set $affectionNotice = "♥ 유나 호감도 +6">>
         <<goto "5장 · 공개되지 않은 일요일">>
       <</link>>
     </div>
@@ -313,10 +387,23 @@
       <p>믿는다고 말하지는 않았다. 그래도 답을 듣기 전에는 기록을 지우지 않았다.</p>
     <<else>>
       <figure class="vn-cutscene"><img src="../assets/images/event-yuna-4.png" alt="정정문 뒤 혼자 촬영장 복도에 선 유나"></figure>
-      <p>정정문은 빠르게 퍼졌고 기사는 내려갔다. 유나는 보호받았지만 자기 이야기에 자기 문장이 하나도 없다는 사실을 오래 봤다.</p>
-      <p>고정 파티 명단에서 `무보정`이 사라졌다.</p>
+      <p>유나는 초안에서 자기 직업과 세 사람의 관계를 설명한 문장을 전부 지웠다. 남은 건 사진이 사적인 모임에서 촬영됐다는 한 줄뿐이었다.</p>
+      <p>“이번에는 초안을 먼저 봤으니까 보내도 돼요. 다음에는 내가 물을 때까지 쓰지 말고요.”</p>
     <</if>>
-    [[세 번째 사람이 자기 대체자를 준비한다->5장 · 박수가 끝난 객석]]
+    [[사진을 지우지 않은 저녁을 보낸다->5장 · 지우지 않은 사진]]
+  </div>
+</section>
+
+:: 5장 · 지우지 않은 사진 [chapter5 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>기사가 내려간 날 유나는 처음 정모 때 찍지 못한 사진 대신, 카페 영수증 네 장을 탁자에 늘어놓은 사진을 보냈다.</p>
+    <p>채원은 자기 영수증이 가장 구겨졌다고 웃었고, 소희는 사진에 계정 정보가 비치지 않았는지 한 번 확인했다.</p>
+    <p>유나는 사진을 지우지 않았다.</p>
+    <p>“사람들이 멋대로 본다고 내가 먼저 없앨 필요는 없겠죠.”</p>
+    <p>서비스 종료까지 열흘. 그날 음성 채널은 기사 이야기가 아니라 마지막 작전의 틀린 구간으로 돌아갔다.</p>
+    [[마지막 자리를 비워 둔 사람을 본다->5장 · 박수가 끝난 객석]]
   </div>
 </section>
 
@@ -326,7 +413,7 @@
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
     <figure class="vn-cutscene"><img src="../assets/images/sohee-evnet-1.png" alt="무대에서 노래하며 자기 자리를 지키는 소희"></figure>
-    <p>소희의 직업은 마지막 작전 연습 날 알게 됐다. 낮 공연 영상에서 들었던 목소리가 밤의 음성 채널과 같았다.</p>
+    <p>서비스 종료 여드레 전, 낮 공연 영상에서 들었던 목소리가 밤의 음성 채널과 같다는 걸 알았다.</p>
     <p>그날 소희는 공연에서 한 음을 놓쳤고, 작전에서도 같은 순간 지시를 늦게 했다.</p>
     <p>다음 날 단체방에 공략표와 대체 지휘자 연락처가 올라왔다.</p>
     <p>“제가 없어도 진행되게 해 뒀어요. 마지막 날까지 망치면 안 되니까.”</p>
@@ -340,14 +427,14 @@
   <div class="vn-dialogue vn-dialogue--narration">
     <figure class="vn-cutscene"><img src="../assets/images/sohee-evnet-7.png" alt="은호가 남고 싶은지 묻자 놀라 휴대전화를 보는 소희"></figure>
     <div class="vn-choices">
-      <<link "대체자를 부르기 전에 소희가 정말 나가고 싶은지 음성으로 답해 달라고 한다.">>
-        <<set $freedom.soheePresence = true>><<set $affection.sohee += 12>>
-        <<set $affectionNotice = "♥ 소희 호감도 +12 · 완벽한 공략보다 남고 싶은 사람을 먼저 물었다">>
+      <<link "대체자도 연습에 부르고, 마지막 지휘는 당일 소희가 직접 정하게 한다.">>
+        <<set $freedom.soheePresence = true>><<set $affection.sohee += 10>>
+        <<set $affectionNotice = "♥ 소희 호감도 +10">>
         <<goto "5장 · 보내지 않은 데모">>
       <</link>>
-      <<link "공연에 집중할 수 있도록 대체 명단을 받아들이고 공략표를 완성한다.">>
-        <<set $freedom.soheePresence = false>><<set $affection.sohee -= 3>>
-        <<set $affectionNotice = "♡ 소희 호감도 -3 · 부담은 덜었지만 자기 자리를 지울 이유도 완성했다">>
+      <<link "공략표는 함께 쓰되, 공연 다음 날 상태를 보고 소희가 참여 여부를 정하게 한다.">>
+        <<set $freedom.soheePresence = false>><<set $affection.sohee += 6>>
+        <<set $affectionNotice = "♥ 소희 호감도 +6">>
         <<goto "5장 · 보내지 않은 데모">>
       <</link>>
     </div>
@@ -364,7 +451,8 @@
       <p>“나가고 싶지는 않아요. 민폐가 되기 전에 나가는 게 맞다고 생각했을 뿐이에요.”</p>
       <p>대체 명단은 삭제되지 않았지만 소희의 이름도 남았다.</p>
     <<else>>
-      <p>대체 지휘자는 실수 없이 연습을 끝냈다. 소희는 잘 부탁한다는 말을 남기고 음성 채널에서 나갔다.</p>
+      <p>대체 지휘자는 실수 없이 연습을 끝냈다. 소희는 공연 다음 날까지 대답을 미뤘다.</p>
+      <p>마지막 밤, 접속 상태는 켰지만 지휘자 자리는 대체자에게 넘겼다. 자기 이름을 지우지는 않았고, 남겠다는 말도 끝내 하지 못했다.</p>
     <</if>>
     <p>채원은 떠날 준비를 했고, 유나는 기록을 지웠으며, 소희는 자기 자리를 교체했다.</p>
     <p>각자 다른 이유였지만 결론은 같았다. 남고 싶다는 말을 하기 전에, 없어져도 되는 방법부터 만들었다.</p>
@@ -379,25 +467,27 @@
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
     <p class="vn-label">CHAPTER 6 · 아무도 붙잡지 않은 사흘</p>
-    <p>서비스 종료까지 일주일. 마지막 메시지 뒤로 단체방이 사흘 동안 멈췄다.</p>
+    <p>서비스 종료까지 닷새. 마지막 메시지 뒤로 단체방이 사흘 동안 멈췄다.</p>
     <p>첫날에는 각자 생각할 시간을 주는 거라고 여겼다. 둘째 날에는 먼저 연락하면 부담을 줄 것 같았다. 셋째 날에는 접속 종료 날짜만 보였다.</p>
-    <p>광기 3인은 나가지 못하게 만드는 위험을 가졌다. 이 세 사람은 문을 활짝 열어 둔 채 자기가 먼저 사라졌다.</p>
     <<if $freedomMode is "after_harem">>
+      <p>새라와 유진, 채린은 나를 나가지 못하게 만드는 쪽으로 위험해졌다. 채원과 유나, 소희는 문을 열어 둔 채 자기가 먼저 사라지는 사람들이었다.</p>
       <p>새라는 솔직히 세 사람이 돌아오지 않았으면 좋겠다고 말했다. 그러고도 내 대답을 대신하지는 않았다.</p>
       <p>“나는 싫다고 말했어요. 은호 씨도 보고 싶으면 보고 싶다고 말해요.”</p>
       <p>유진은 연락처를 알아내 주겠다고 하지 않았고, 채린은 새 게임을 사 주겠다고 하지 않았다. 질투하면서도 내가 선택할 빈자리를 남겼다.</p>
+    <<else>>
+      <p>세 사람은 아무도 문을 잠그지 않았다. 대신 남고 싶다는 말을 하기 전에, 자기가 없어도 되는 자리를 만들어 놓았다.</p>
     <</if>>
     <div class="vn-choices">
       <<link "내일 아침 일곱 시부터 한 시간. 참석 여부와 상관없이 내가 먼저 기다리겠다고 쓴다.">>
         <<set $freedom.morningPromise = true>>
-        <<set $affection.chaewon += 8>><<set $affection.yuna += 8>><<set $affection.sohee += 8>>
-        <<set $affectionNotice = "♥ 전원 호감도 +8 · 돌아오라고 명령하지 않고 기다릴 시간을 밝혔다">>
+        <<set $affection.chaewon += 6>><<set $affection.yuna += 6>><<set $affection.sohee += 6>>
+        <<set $affectionNotice = "♥ 전원 호감도 +6">>
         <<goto "6장 · 한 시간짜리 아침">>
       <</link>>
       <<link "각자 정리되면 편할 때 돌아오라고 쓴다.">>
         <<set $freedom.morningPromise = false>>
-        <<set $affection.chaewon += 1>><<set $affection.yuna += 1>><<set $affection.sohee += 1>>
-        <<set $affectionNotice = "♥ 전원 호감도 +1 · 자유는 남겼지만 기다리는 사람은 말하지 않았다">>
+        <<set $affection.chaewon += 2>><<set $affection.yuna += 2>><<set $affection.sohee += 2>>
+        <<set $affectionNotice = "♥ 전원 호감도 +2">>
         <<goto "6장 · 한 시간짜리 아침">>
       <</link>>
     </div>
@@ -413,7 +503,7 @@
       <p>채원은 공항 대기실에서, 유나는 밤샘 촬영 뒤 차 안에서, 소희는 빈 연습실에서 접속했다.</p>
       <p>한 시간은 짧았지만 누구도 우연히 들어온 척하지 않았다.</p>
     <<else>>
-      <p>편한 시간이 생기기까지 나흘이 더 걸렸다. 종료까지 남은 시간은 사흘이었다.</p>
+      <p>편한 시간이 생기기까지 이틀이 더 걸렸다. 종료까지 남은 시간은 사흘이었다.</p>
       <p>세 사람은 돌아왔지만, 누가 기다렸는지는 여전히 알 수 없었다.</p>
     <</if>>
     [[게임 밖에서도 남으려면 알아야 할 말을 꺼낸다->6장 · 말하지 않은 기존 관계]]
@@ -426,19 +516,21 @@
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
     <<if $freedomMode is "after_harem">>
-      <p>세 사람은 새라와 유진, 채린이 있다는 사실은 알고 있었다. 하지만 `모두 알고 있다`는 한 문장만으로는 무엇을 선택하는지 알 수 없었다.</p>
-      <p>유나가 물었다. “우리가 그 세 사람 사이로 들어가는 거예요, 아니면 당신이 별도 관계를 만드는 거예요?”</p>
+      <p>처음에는 오래 알던 게임 친구라고 소개했다. 지금은 그 말만으로 끝내면 거짓말이었다.</p>
+      <p>“세 사람에게 마음이 생겼어요. 새라와 유진, 채린에게도 말했습니다.”</p>
+      <p>채원이 웃지 않은 채 물었다. “그분들이 괜찮다고 했어요?”</p>
+      <p>“괜찮다고 한 사람은 없습니다. 싫다고 했고, 그래도 내 대답까지 대신하지는 않겠다고 했어요.”</p>
       <div class="vn-choices">
-        <<link "네 사람의 주소와 약속, 질투와 금지선을 숨기지 않고 말한다. 이 관계가 자동으로 하나의 하렘에 합쳐지는 일도 없다고 한다.">>
+        <<link "기존 세 사람의 질투와 내 마음을 숨기지 않고, 누구도 한꺼번에 같은 관계가 되는 것은 아니라고 말한다.">>
           <<set $freedom.contextHonest = true>><<set $freedom.disclosedExisting = true>>
-          <<set $affection.chaewon += 8>><<set $affection.yuna += 8>><<set $affection.sohee += 8>>
-          <<set $affectionNotice = "♥ 전원 호감도 +8 · 허락받았다는 말 대신 실제 관계를 보여 줬다">>
+          <<set $affection.chaewon += 6>><<set $affection.yuna += 6>><<set $affection.sohee += 6>>
+          <<set $affectionNotice = "♥ 전원 호감도 +6">>
           <<goto "6장 · 말한 뒤의 자리">>
         <</link>>
-        <<link "광기 3인이 이미 알고 동의했으니 자세한 사정은 두 관계 사이에 남겨 두겠다고 한다.">>
+        <<link "기존 세 사람도 알고 있으니 자세한 이야기는 나중에 해도 된다고 말한다.">>
           <<set $freedom.contextHonest = false>><<set $freedom.disclosedExisting = false>>
           <<set $affection.chaewon -= 6>><<set $affection.yuna -= 6>><<set $affection.sohee -= 6>>
-          <<set $affectionNotice = "♡ 전원 호감도 -6 · 선택에 필요한 정보를 기존 관계의 허락으로 대신했다">>
+          <<set $affectionNotice = "♡ 전원 호감도 -6">>
           <<goto "6장 · 말한 뒤의 자리">>
         <</link>>
       </div>
@@ -449,16 +541,16 @@
         <p>기존 연인은 없었다. 새라와 유진, 채린을 좋아하고도 누구와도 시작하지 않기로 정한 시간이 있었다.</p>
       <</if>>
       <div class="vn-choices">
-        <<link "아무것도 요구하지 않는 관계가 편해서 세 사람 곁에 숨었던 시간까지 말한다.">>
+        <<link "아무것도 묻지 않는 세 사람 곁에 숨었던 시간과, 지금은 세 사람 모두를 보고 싶다는 마음을 말한다.">>
           <<set $freedom.contextHonest = true>><<set $freedom.disclosedExisting = true>>
-          <<set $affection.chaewon += 8>><<set $affection.yuna += 8>><<set $affection.sohee += 8>>
-          <<set $affectionNotice = "♥ 전원 호감도 +8 · 자유를 회피의 다른 이름으로 쓰지 않았다">>
+          <<set $affection.chaewon += 6>><<set $affection.yuna += 6>><<set $affection.sohee += 6>>
+          <<set $affectionNotice = "♥ 전원 호감도 +6">>
           <<goto "6장 · 말한 뒤의 자리">>
         <</link>>
         <<link "지금 연인이 없다는 사실만 말하고 이전 이야기는 지나간 일로 남긴다.">>
           <<set $freedom.contextHonest = false>><<set $freedom.disclosedExisting = false>>
           <<set $affection.chaewon -= 6>><<set $affection.yuna -= 6>><<set $affection.sohee -= 6>>
-          <<set $affectionNotice = "♡ 전원 호감도 -6 · 가장 편한 부분만 현재라고 불렀다">>
+          <<set $affectionNotice = "♡ 전원 호감도 -6">>
           <<goto "6장 · 말한 뒤의 자리">>
         <</link>>
       </div>
@@ -477,13 +569,15 @@
       <<else>>
         <figure class="vn-cutscene"><img src="../assets/images/event-chaewon-5.png" alt="유나와 소희를 향한 은호의 마음을 듣고도 외로움을 숨기려는 채원"></figure>
       <</if>>
-      <p>채원은 자기가 기다려 달라고 하면 이미 있는 사람들의 시간을 빼앗는지 물었다. 유나는 여섯 사람이 서로의 존재를 같은 수준으로 알고 있는지 확인했다. 소희는 친구로 남겠다는 말을 배려처럼 먼저 꺼내지 않았다.</p>
       <<if $freedomMode is "after_harem">>
-        <p>나는 자유인 세 사람을 광기 3인의 새 구성원으로 초대한 것이 아니라고 말했다. 두 관계는 서로를 자동으로 대표하지 않고, 누구도 다른 사람 몫의 허락을 줄 수 없었다.</p>
-        <p>그리고 세 사람에게도 마음이 간다고 말했다. 이미 있는 관계를 이유로 감정을 숨기지도, 기존 세 사람이 동의했다는 말로 지금 대답을 재촉하지도 않았다.</p>
-        <p>새라와 유진, 채린도 이 대화에 들어와 심사하지 않았다. 질투와 거절 가능성을 가진 채 자기 자리에서 답을 기다렸다.</p>
+        <p>채원은 자기가 기다려 달라고 하면 이미 있는 사람들의 시간을 빼앗는지 물었다. 유나는 여섯 사람이 서로의 존재를 어느 정도까지 알고 있는지 확인했다.</p>
+        <p>소희는 한참 침묵하다 말했다. “친구로 남겠다는 말부터 하면, 또 제가 먼저 빠지는 거죠?”</p>
+        <p>“누구도 다른 사람 몫까지 대답하지 않았어요. 나도 여섯 사람을 한 관계로 묶을 생각은 없습니다.”</p>
+        <p>새라와 유진, 채린은 이 통화에 들어오지 않았다. 질투하면서도 자기 자리에서 내가 돌아오기를 기다렸다.</p>
       <<else>>
-        <p>나는 세 사람 모두에게 마음이 간다고 말하되, 서비스 종료 때문에 지금 답을 달라고 요구하지 않았다.</p>
+        <p>채원은 내가 셋 중 누구를 가장 좋아하느냐고 물었다가 질문을 거뒀다. 유나는 자기들끼리 같은 답을 내야 하는지 확인했다.</p>
+        <p>소희는 친구로 남겠다는 말을 꺼내려다 멈췄다.</p>
+        <p>“세 사람이 같은 대답을 할 필요는 없어요. 나도 오늘 당장 답을 달라고 하지는 않을 겁니다.”</p>
       <</if>>
     <<else>>
       <p>가장 중요한 부분을 비워 둔 채 이야기를 끝냈다.</p>
@@ -505,6 +599,9 @@
       <<set $freedom.chaewonAsked = true>>
       <p>채원은 출국 직전 처음으로 괜찮다는 말을 고쳤다.</p>
       <p>“먼저 가도 돼요가 아니라…… 도착했다고 보낼 때까지 기다려 줘요.”</p>
+      <p>채원은 잠깐 숨을 고른 뒤 다음 달 귀국 날짜를 보냈다.</p>
+      <p>“그다음 일요일은 게임 말고 저녁 먹어요. 이번에는 데이트라고 부를게요.”</p>
+      <<if $freedomMode is "after_harem">><p>“다른 세 분한테도 내가 그렇게 말한 건 알려 줘요. 허락받으라는 뜻은 아니고, 숨기지는 말라는 뜻이에요.”</p><</if>>
     <<else>>
       <p>“오래 걸릴 거예요. 먼저 가도 돼요.”</p>
       <p>비행은 돌아왔지만 도착 메시지는 오지 않았다.</p>
@@ -522,7 +619,9 @@
       <<set $freedom.yunaClarified = true>>
       <p>유나는 기사와 다른 관계를 추측하는 대신 전화를 걸었다.</p>
       <p>“내가 생각한 뜻과 같은지 확인할게요. 당신은 내가 남았으면 해요?”</p>
-      <p>유나는 믿는다고 하지 않았다. 대신 대답을 듣기 전에는 끊지 않았다.</p>
+      <p>“네. 유나 씨가 직접 물어보는 사람으로 남았으면 합니다.”</p>
+      <p>유나는 한동안 대답하지 않았다.</p>
+      <p>“그럼 서버 닫힌 다음 수요일에 걸어요. 카메라는 가져가지 않을게요.”</p>
     <<else>>
       <p>“전화 잘못 걸었어요.”</p>
       <p>프로필과 대화 기록이 차례로 사라졌다.</p>
@@ -540,6 +639,8 @@
       <<set $freedom.soheeStayed = true>>
       <p>소희는 대체자 이름을 지우지 않았다. 대신 그 옆에 자기 이름을 다시 썼다.</p>
       <p>“실수하면 바꿔 달라는 말 말고, 이번에는 끝까지 곁에 있어 달라고 할게요.”</p>
+      <p>소희는 완성하지 못한 데모 파일과 금요일 연습실 주소를 함께 보냈다.</p>
+      <p>“다 듣고도 오고 싶으면 와요. 그때는 손님 자리 말고 제 옆에 앉혀 둘게요.”</p>
     <<else>>
       <p>“이 편성이면 제가 없어도 괜찮아요.”</p>
       <p>마지막 작전 당일, 소희의 자리는 다른 사람으로 채워졌다.</p>
@@ -564,12 +665,12 @@
       <<link "다음 토요일 밤 아홉 시, 게임 밖 음성 채널에서 다시 만나자고 한다.">>
         <<set $freedom.nextMeetingChosen = true>>
         <<set $affection.chaewon += 5>><<set $affection.yuna += 5>><<set $affection.sohee += 5>>
-        <<set $affectionNotice = "♥ 전원 호감도 +5 · 종료 뒤의 시간을 약속했다">>
+        <<set $affectionNotice = "♥ 전원 호감도 +5">>
         <<goto "7장 · 돌아갈 집이 네 곳">>
       <</link>>
       <<link "연락처는 있으니 각자 편할 때 다시 보자고 한다.">>
         <<set $freedom.nextMeetingChosen = false>>
-        <<set $affectionNotice = "호감도 변화 없음 · 자유는 남았지만 다음 시간은 아무에게도 없었다">>
+        <<set $affectionNotice = "호감도 변화 없음">>
         <<goto "7장 · 마지막 접속">>
       <</link>>
     </div>
@@ -590,18 +691,18 @@
       <figure class="vn-cutscene"><img src="../assets/images/event-freedom-true-next-meeting.png" alt="게임이 끝난 뒤 현실의 약속으로 다시 모인 채원, 유나, 소희"></figure>
       <<set $clearedEndings.freedomTrue = true>>
       <<if $freedomMode is "after_harem">>
-        <p>채원과 유나, 소희는 광기 3인의 빈자리를 채우지 않았다. 새라와 유진, 채린도 자유인 3인을 자기 관계 안으로 흡수하지 않았다.</p>
-        <p>서로의 존재와 질투, 거절할 권리를 알고도 두 관계는 각자의 약속을 가졌다.</p>
-        <p>서비스 종료 뒤 한 달 동안 채원·유나·소희는 서로 다른 날 은호와 단둘이 만났다. 누구도 여섯 사람 몫의 대답을 한꺼번에 하지 않았고, 각자가 원한 관계에 각자 동의했다.</p>
-        <p>새라는 내가 돌아올 시간을 받았고, 유진은 비상 연락의 범위를 다시 물었으며, 채린은 싫다는 말을 숨기지 않은 채 금요일 저녁을 부탁했다.</p>
-        <p>토요일에는 채원이 기다려 달라고 했고, 유나는 지우기 전에 물었으며, 소희는 자기 자리를 남겼다.</p>
+        <p>첫 토요일에는 게임 없는 음성 채널에 네 사람이 모였다. 채원은 호텔에서, 유나는 집에서, 소희는 연습실에서 접속했다.</p>
+        <p>다음 날 채원과 저녁을 먹었고, 수요일에는 유나와 카메라 없이 걸었다. 금요일에는 소희의 미완성 데모를 끝까지 들었다.</p>
+        <p>새라는 돌아올 시간을 받았고, 유진은 내가 안전한지가 아니라 즐거웠는지를 물었다. 채린은 질투 난다는 말을 지우지 않고 자기 금요일을 다시 부탁했다.</p>
+        <p>여섯 사람은 서로의 존재를 알았다. 누구도 다른 사람의 연인이나 친구가 되는 일까지 한꺼번에 약속하지 않았다.</p>
         <p class="chapter-end">TRUE END · 두 개의 다음 접속</p>
         <p class="chapter-end__next">하나로 합치지 않아도, 서로를 숨기지 않는 관계.</p>
       <<else>>
-        <p>채원은 떠나면서 기다려 달라고 했고, 유나는 지우기 전에 물었으며, 소희는 자기 자리를 남겨 달라고 말했다.</p>
-        <p>나도 편안함이라는 이름으로 세 사람을 방치하지 않았다. 좋아한다는 말 뒤에 실제 날짜를 붙였다.</p>
-        <p>한 번의 공동 고백으로 관계를 묶지는 않았다. 다음 두 달 동안 세 사람은 서로 다른 날 은호를 만났고, 각자 자기 관계의 이름과 거절선을 직접 정했다.</p>
-        <p>우리는 함께 살지 않았다. 돌아갈 집이 네 곳이라서 돌아온다는 말도 각자의 것이 됐다.</p>
+        <p>첫 토요일에는 게임 없는 음성 채널에 네 사람이 모였다. 화면 공유 대신 서로의 방에서 들리는 생활 소리를 들었다.</p>
+        <p>다음 날 채원과 저녁을 먹었다. 채원은 먼저 자리에서 일어나면서도 귀국 날짜를 지우지 않았다.</p>
+        <p>수요일에는 유나와 카메라 없이 걸었다. 유나는 내 대답을 추측하지 않고 다음 약속을 직접 물었다.</p>
+        <p>금요일에는 소희의 연습실에서 미완성 데모를 끝까지 들었다. 소희는 틀린 음을 다시 녹음하지 않았다.</p>
+        <p>세 관계의 이름은 아직 같지 않았다. 그래도 누구도 편할 때 보자는 말 뒤로 숨지 않았다.</p>
         <p class="chapter-end">TRUE END · 다음 접속</p>
         <p class="chapter-end__next">붙잡지 않아도 사라지지 않는 사람들.</p>
       <</if>>
