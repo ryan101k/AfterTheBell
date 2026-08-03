@@ -423,6 +423,7 @@
 
 :: 3장 · 돌아갈 곳이 네 군데 [chapter3 autosave nobr]
 <<set $dangerousOutcome = "harem_true">>
+<<set $freedomOrigin = "after-dangerous">>
 <<set $clearedEndings.dangerousHaremTrue = true>>
 <section class="vn-scene vn-scene--room vn-scene--ending">
   <div class="vn-scene__shade"></div>

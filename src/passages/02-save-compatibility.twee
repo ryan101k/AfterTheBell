@@ -22,6 +22,7 @@
 }, $routeUnlocks ?? {})>>
 <<set $dangerousOutcome = $dangerousOutcome ?? "unresolved">>
 <<set $freedomMode = $freedomMode ?? "locked">>
+<<set $freedomOrigin = $freedomOrigin ?? "">>
 <<set $affection = Object.assign({
   "chaewon": 0,
   "yuna": 0,
@@ -56,7 +57,11 @@
 <<set $affectionNotice = $affectionNotice ?? "">>
 <<set $dialogueLog = Array.isArray($dialogueLog) ? $dialogueLog : []>>
 <<set $freedom = Object.assign({
+  "existingNamed": false,
+  "contextHonest": false,
+  "serviceDays": 0,
   "concreteInvite": false,
+  "firstSeat": "",
   "chaewonRoom": false,
   "yunaSpace": false,
   "soheePresence": false,

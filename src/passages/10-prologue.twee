@@ -262,6 +262,7 @@
 
 :: 프롤로그 · 화면 안의 사람들 [prologue autosave nobr]
 <<set $dangerousOutcome = "none">>
+<<set $freedomOrigin = "direct">>
 <section class="vn-scene vn-scene--room vn-scene--ending">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">

@@ -710,6 +710,7 @@
 
 :: 광기 3인 · 아직 먼 계절 [chapter2 nobr]
 <<set $dangerousOutcome = "none">>
+<<set $freedomOrigin = "after-dangerous">>
 <section class="vn-scene vn-scene--room vn-scene--ending">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">

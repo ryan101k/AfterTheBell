@@ -14,9 +14,9 @@
 | 상태 | 의미 | 자유인 3인 등장 | 자유인 연애 |
 |---|---|---:|---:|
 | `harem_true` | 위험한 3인 공동 관계 성공 | O | O |
-| `solo_true_sera` | 윤새라 순애 성공 | O | X · 친구 고정 |
-| `solo_true_yujin` | 강유진 순애 성공 | O | X · 친구 고정 |
-| `solo_true_chaerin` | 한채린 순애 성공 | O | X · 친구 고정 |
+| `solo_true_sera` | 윤새라 순애 성공 | X | X |
+| `solo_true_yujin` | 강유진 순애 성공 | X | X |
+| `solo_true_chaerin` | 한채린 순애 성공 | X | X |
 | `none` | 누구와도 연애하지 않음 | O | O |
 | `father_captive` | 새라 사건을 아버지에게 넘기고 은호의 생활까지 다시 관리됨 | X | X |
 | `harem_captive` | 위험한 3인의 공동 감금 | X | X |
@@ -37,8 +37,17 @@
 
 `$routeUnlocks.freedom`이 참일 때만 아래 판정을 수행한다.
 
-- `harem_true`, `none` → `$freedomMode = "romance"`
-- `solo_true_*` → `$freedomMode = "friend"`
+- `none` → `$freedomMode = "unattached"`
+- `harem_true` → `$freedomMode = "after_harem"`
+- `solo_true_*` → `$freedomMode = "locked"`
 - `father_captive`, 감금 엔딩 및 그 밖의 상태 → `$freedomMode = "locked"`
 
-순애 이후 자유인 3인은 은호의 게임 친구로 남는다. 기존 연애를 숨긴 채 새 연애를 여는 분기는 만들지 않는다.
+자유인 3인 본편은 무연애와 광기 3인 공동 관계 성공의 두 상태에서만 열린다. 순애 이후에는 게임 친구였다는 사실만 남고 본편으로 진입하지 않는다.
+
+### 무연애 모드
+
+은호가 요구 없는 관계를 자유라고 착각하며 화면 안에 숨는 데서 시작한다. 게임 서비스 종료와 마지막 4인 작전이 닥친 뒤, 세 사람에게 구체적인 다음 시간을 부탁하는 것이 핵심 성장이다.
+
+### 광기 3인 하렘 이후 모드
+
+은호는 현실에서 만나기 전에 광기 3인과 자유인 3인 양쪽에 다른 관계의 존재를 알린다. 광기 3인은 질투를 직접 말하지만 조사·구매·침투로 만남을 막지 않는다. 자유인 3인은 기존 하렘에 자동으로 편입되지 않으며, 두 관계는 서로를 대표하거나 대신 허락하지 않는다.

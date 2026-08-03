@@ -22,6 +22,7 @@
 }>>
 <<set $dangerousOutcome = "unresolved">>
 <<set $freedomMode = "locked">>
+<<set $freedomOrigin = "">>
 <<set $affection = {
   "chaewon": 0,
   "yuna": 0,
@@ -50,7 +51,11 @@
 }>>
 <<set $affectionNotice = "">>
 <<set $freedom = {
+  "existingNamed": false,
+  "contextHonest": false,
+  "serviceDays": 0,
   "concreteInvite": false,
+  "firstSeat": "",
   "chaewonRoom": false,
   "yunaSpace": false,
   "soheePresence": false,
