@@ -60,6 +60,7 @@
   "existingNamed": false,
   "contextHonest": false,
   "serviceDays": 0,
+  "afterTopic": "",
   "concreteInvite": false,
   "firstSeat": "",
   "chaewonRoom": false,
@@ -143,6 +144,8 @@
   "firstMeeting": false,
   "rivalsMetAlone": false,
   "rulesWritten": false,
-  "newHomeCrossed": false
+  "newHomeCrossed": false,
+  "boundaryCount": 0,
+  "repairScore": 0
 }, $chapter3 ?? {})>>
 <<set $clearedEndings = $clearedEndings ?? {}>>

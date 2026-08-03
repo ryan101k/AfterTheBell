@@ -428,6 +428,24 @@ body.vn-backlog-open {
   background-image: url("../assets/images/title-after-closing-bell-v1.png");
 }
 
+.vn-scene--riverside {
+  background-image:
+    linear-gradient(180deg, rgba(65, 96, 119, 0.2), rgba(9, 19, 28, 0.84)),
+    linear-gradient(155deg, #6f8c9d 0 38%, #294958 39% 55%, #17242b 56% 100%);
+}
+
+.vn-scene--studio {
+  background-image:
+    radial-gradient(circle at 28% 38%, rgba(221, 178, 106, 0.24), transparent 22%),
+    linear-gradient(135deg, #372b30 0 36%, #17171d 37% 70%, #2b2026 71% 100%);
+}
+
+.vn-scene--restaurant {
+  background-image:
+    radial-gradient(circle at 72% 24%, rgba(242, 193, 122, 0.3), transparent 18%),
+    linear-gradient(145deg, #4d382f 0 34%, #211b1b 35% 72%, #332820 73% 100%);
+}
+
 .vn-scene__shade {
   position: absolute;
   inset: 0;

@@ -54,6 +54,7 @@
   "existingNamed": false,
   "contextHonest": false,
   "serviceDays": 0,
+  "afterTopic": "",
   "concreteInvite": false,
   "firstSeat": "",
   "chaewonRoom": false,
@@ -132,6 +133,8 @@
   "rulesWritten": false,
   "newHomeCrossed": false,
   "eunhoDisappeared": false,
+  "boundaryCount": 0,
+  "repairScore": 0,
   "acceptedResponsibility": false
 }>>
 <<set $clearedEndings = {}>>

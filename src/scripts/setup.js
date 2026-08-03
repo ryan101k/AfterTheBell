@@ -321,7 +321,7 @@ $(document).on(':passagedisplay.vnui', function () {
   $('[data-vn-chapter]').text(chapter);
 
   const freedomAffection = State.variables.affection || {};
-  const freedomMode = chapter >= 4 && chapter <= 7 && State.variables.freedomMode !== 'locked';
+  const freedomMode = chapter >= 4 && chapter <= 7 && !['locked', 'friend'].includes(State.variables.freedomMode);
   const showAffection = freedomMode;
   const cast = [['채원', freedomAffection.chaewon], ['유나', freedomAffection.yuna], ['소희', freedomAffection.sohee]];
   const $hud = $('[data-affection-hud]');

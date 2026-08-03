@@ -9,6 +9,20 @@
   </div>
 </section>
 
+:: 자유인 · 친구로 남은 파티 [chapter4 autosave nobr]
+<<set _partner = $dangerousOutcome is "solo_true_sera" ? "새라" : ($dangerousOutcome is "solo_true_yujin" ? "유진" : "채린")>>
+<section class="vn-scene vn-scene--room vn-scene--ending">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>친구 목록에는 `막차요정`, `무보정`, `쉼표`가 그대로 남아 있었다.</p>
+    <p>나는 음성 채널에 들어가자마자 <<print _partner>>와 만나고 있다고 말했다. 세 사람은 잠깐 조용해졌지만, 누구도 축하를 핑계로 자세한 사정을 묻지는 않았다.</p>
+    <p>마지막 작전은 네 명이서 끝냈다. 서비스 종료 뒤에는 게임 이름이 없는 단체방을 하나 만들었고, 첫 약속은 연애가 아니라 친구끼리 먹는 저녁으로 정했다.</p>
+    <p>서로의 본명은 그날 처음 알았다. 그래도 누구도 빈자리를 연인의 자리로 착각하지 않았다.</p>
+    <p class="chapter-end">FRIEND ROUTE · 남겨 둔 파티</p>
+    <p class="chapter-end__next">연애가 아니어도 다음 접속을 약속할 수 있었다.</p>
+  </div>
+</section>
+
 :: 4장 · 다음 접속 [chapter4 autosave nobr]
 <<set $chapter = 4>>
 <<set $scene = "freedom-online">>
@@ -32,7 +46,8 @@
   "yunaClarified": false,
   "soheeStayed": false,
   "nextMeetingChosen": false,
-  "serviceDays": 0
+  "serviceDays": 0,
+  "afterTopic": ""
 }>>
 <<if !$routeUnlocks.freedom>>
   <<set $freedomMode = "locked">>
@@ -40,6 +55,9 @@
 <<elseif $dangerousOutcome is "harem_true">>
   <<set $freedomMode = "after_harem">>
   <<set $freedomOrigin = "after-dangerous">>
+<<elseif $dangerousOutcome is "solo_true_sera" || $dangerousOutcome is "solo_true_yujin" || $dangerousOutcome is "solo_true_chaerin">>
+  <<set $freedomMode = "friend">>
+  <<goto "자유인 · 친구로 남은 파티">>
 <<elseif $dangerousOutcome is "none">>
   <<set $freedomMode = "unattached">>
 <<else>>
@@ -130,8 +148,8 @@
       <</link>>
       <<link "내 일정은 비워 둘 테니 세 사람이 편한 날을 정해 달라고 한다.">>
         <<set $freedom.concreteInvite = false>>
-        <<set $affection.chaewon += 2>><<set $affection.yuna += 2>><<set $affection.sohee += 2>>
-        <<set $affectionNotice = "♥ 전원 호감도 +2">>
+        <<set $affection.chaewon += 3>><<set $affection.yuna += 3>><<set $affection.sohee += 3>>
+        <<set $affectionNotice = "♥ 전원 호감도 +3">>
         <<set $playerPattern.avoid += 1>>
         <<goto "4장 · 막차 전 이십 분">>
       <</link>>
@@ -750,7 +768,7 @@
 </section>
 
 :: 7장 · 카메라 없는 산책 [chapter7 autosave nobr]
-<section class="vn-scene vn-scene--room">
+<section class="vn-scene vn-scene--riverside">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
     <p>수요일 저녁, 유나는 정말 카메라를 가져오지 않았다. 대신 주머니가 비어 어색하다며 몇 번이나 손을 넣었다 뺐다.</p>
@@ -759,6 +777,14 @@
     <p>“편해서요.”</p>
     <p>“그 대답, 믿어도 돼요?”</p>
     <p>“다른 뜻이면 다시 말하겠습니다.”</p>
+    [[해석 대신 허락을 묻는 순간으로 간다->7장 · 손을 잡아도 되는지]]
+  </div>
+</section>
+
+:: 7장 · 손을 잡아도 되는지 [chapter7 autosave nobr]
+<section class="vn-scene vn-scene--riverside">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
     <p>유나는 확인할 사진이 없어서 내 대답을 그대로 두었다. 횡단보도 앞에서 손등이 스쳤을 때도 의미를 해석하지 않고 물었다.</p>
     <p>“지금 잡아도 돼요?”</p>
     <p>내가 손을 내밀자 유나는 신호가 바뀐 뒤에도 놓지 않았다.</p>
@@ -770,7 +796,7 @@
 </section>
 
 :: 7장 · 틀린 음의 연습실 [chapter7 autosave nobr]
-<section class="vn-scene vn-scene--room">
+<section class="vn-scene vn-scene--studio">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
     <p>금요일 연습실에는 의자가 두 개 붙어 있었다. 소희는 손님용 의자를 치우지 못한 대신, 자기 의자를 그 옆으로 옮겨 둔 모양이었다.</p>
@@ -778,6 +804,14 @@
     <p>“알겠습니다.”</p>
     <p>“아니, 들었는지도 말해 줘요. 모른 척은 취소.”</p>
     <p>소희는 완성하지 않은 데모를 재생했다. 삼 분 십칠 초쯤 건반 하나가 박자를 놓쳤다. 소희의 손이 정지 버튼 위로 갔지만 누르지는 않았다.</p>
+    [[틀린 음 다음까지 듣는다->7장 · 틀린 음 다음의 사람]]
+  </div>
+</section>
+
+:: 7장 · 틀린 음 다음의 사람 [chapter7 autosave nobr]
+<section class="vn-scene vn-scene--studio">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
     <p>곡이 끝난 뒤 내가 말했다. “들었습니다. 그래도 그다음 마디가 더 좋았습니다.”</p>
     <p>소희는 다시 녹음하는 대신 의자 등받이에 몸을 기댔다. 잠시 뒤 어깨가 내 쪽으로 닿았다.</p>
     <p>“이렇게 있어도 친구라고 생각해요?”</p>
@@ -789,7 +823,7 @@
 </section>
 
 :: 7장 · 도착한 뒤의 저녁 [chapter7 autosave nobr]
-<section class="vn-scene vn-scene--room">
+<section class="vn-scene vn-scene--restaurant">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
     <p>한 달 뒤, 채원은 착륙하자마자 도착했다는 두 글자를 보냈다. 약속 시간보다 세 시간이나 빨랐지만 먼저 보자는 말은 덧붙이지 않았다.</p>
@@ -800,6 +834,14 @@
     <p>채원은 메뉴를 고르면서 두 번이나 아무거나 괜찮다고 했다. 세 번째에는 말을 고쳤다.</p>
     <p>“아무거나 말고, 따뜻한 국물 먹고 싶어요. 비행기에서 제대로 못 먹었거든요.”</p>
     <p>식사를 마친 뒤에도 채원은 먼저 일어났다. 이번에는 미안하다고 웃지 않고 가방 손잡이를 세웠다.</p>
+    [[먼저 돌아가겠다는 말을 듣는다->7장 · 돌아오는 날의 약속]]
+  </div>
+</section>
+
+:: 7장 · 돌아오는 날의 약속 [chapter7 autosave nobr]
+<section class="vn-scene vn-scene--restaurant">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
     <p>“나 먼저 갈게요. 피곤한 건 참지 않기로 했으니까.”</p>
     <p>“다음 약속은요?”</p>
     <p>채원이 휴대전화를 꺼내 다음 출국일과 돌아오는 날을 함께 보여 줬다.</p>

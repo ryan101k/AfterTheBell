@@ -261,13 +261,31 @@
     <p>이번에는 안심과 퇴로 중 무엇을 남길지 분명히 골라야 했다.</p>
     <div class="vn-choices">
       <<link "한 달 동안 각자의 집에서 지낸 뒤, 동거 여부를 다시 묻는다.">>
-        <<set $dangerousSolo.seraRisk = 1>>
-        <<goto "3S · 임시가 아닌 주소">>
+        <<if $dangerousSolo.seraRisk lte 2>>
+          <<set $dangerousSolo.seraRisk = 1>>
+          <<goto "3S · 임시가 아닌 주소">>
+        <<else>>
+          <<goto "3S · 서로 다른 주소">>
+        <</if>>
       <</link>>
       <<link "두 열쇠를 모두 받아 오늘부터 서로의 집을 구분하지 않는다.">>
         <<goto "3S · 서로의 감금">>
       <</link>>
     </div>
+  </div>
+</section>
+
+:: 3S · 서로 다른 주소 [chapter3 autosave nobr]
+<<set $dangerousOutcome = "solo_fragile_sera">>
+<<set $clearedEndings.dangerousSeraFragile = true>>
+<section class="vn-scene vn-scene--room vn-scene--ending">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>한 달 떨어져 있자는 말은 너무 늦게 나왔다. 새라는 내 물건을 돌려줬지만, 혼자 있는 동안에도 내 생활표를 지우지 못했다.</p>
+    <p>나 역시 마지막에 선을 그었다는 이유로 그전의 허락들을 없던 일로 만들 수 없었다.</p>
+    <p>우리는 서로의 열쇠를 돌려주고 연애를 멈췄다. 다시 만날 날짜는 정하지 않았다.</p>
+    <p class="chapter-end">FRAGILE END · 서로 다른 주소</p>
+    <p class="chapter-end__next">마지막에 문을 열어도, 오래 잠가 둔 시간까지 사라지지는 않았다.</p>
   </div>
 </section>
 
@@ -298,6 +316,9 @@
     <p>새라는 열쇠를 하나만 가졌다. 복사하지 않는 대신, 매달 마지막 날 계속 살지 다시 물었다.</p>
     <p class="chapter-end">SOLO TRUE · 임시가 아닌 주소</p>
     <p class="chapter-end__next">남는 일도 매번 다시 고를 수 있었다.</p>
+    <<if $routeUnlocks.freedom>>
+      [[연애 밖에 남아 있던 게임 친구들의 안부를 확인한다->4장 · 다음 접속]]
+    <</if>>
   </div>
 </section>
 
@@ -563,13 +584,31 @@
     <p>유진은 부정하지 못했다.</p>
     <div class="vn-choices">
       <<link "신청서를 폐기하고 한 달간 보호와 연애를 모두 쉬었다가 다시 만난다.">>
-        <<set $dangerousSolo.yujinRisk = 1>>
-        <<goto "3Y · 사건 없는 내일">>
+        <<if $dangerousSolo.yujinRisk lte 2>>
+          <<set $dangerousSolo.yujinRisk = 1>>
+          <<goto "3Y · 사건 없는 내일">>
+        <<else>>
+          <<goto "3Y · 보호가 끝난 뒤">>
+        <</if>>
       <</link>>
       <<link "유진만 주소를 아는 곳으로 데려가 달라고 한다.">>
         <<goto "3Y · 안전가옥">>
       <</link>>
     </div>
+  </div>
+</section>
+
+:: 3Y · 보호가 끝난 뒤 [chapter3 autosave nobr]
+<<set $dangerousOutcome = "solo_fragile_yujin">>
+<<set $clearedEndings.dangerousYujinFragile = true>>
+<section class="vn-scene vn-scene--room vn-scene--ending">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>유진은 신청서를 폐기했다. 그러나 내가 보이지 않는 밤이면 관할 기록을 확인하는 버릇까지 한 달 안에 멈추지는 못했다.</p>
+    <p>나는 마지막에 거절했다는 이유로, 그전까지 보호받는 편안함을 골랐던 일을 지울 수 없었다.</p>
+    <p>우리는 보호와 연애를 함께 끝냈다. 유진은 내 이름이 없는 근무표로, 나는 확인 전화가 오지 않는 집으로 돌아갔다.</p>
+    <p class="chapter-end">FRAGILE END · 보호가 끝난 뒤</p>
+    <p class="chapter-end__next">구조 요청이 없어진 뒤에도 남을 관계를 너무 늦게 물었다.</p>
   </div>
 </section>
 
@@ -586,6 +625,9 @@
     <p>유진은 비상 연락망 첫 줄에서 내 이름을 내렸다. 대신 퇴근 뒤 약속표 첫 줄에 내 이름을 적었다.</p>
     <p class="chapter-end">SOLO TRUE · 사건 없는 내일</p>
     <p class="chapter-end__next">필요하지 않은 날에도 만나는 사람.</p>
+    <<if $routeUnlocks.freedom>>
+      [[연애 밖에 남아 있던 게임 친구들의 안부를 확인한다->4장 · 다음 접속]]
+    <</if>>
   </div>
 </section>
 
@@ -874,13 +916,31 @@
     <p>“채린 씨가 만든 시험에 답하는 동안에는 같은 일이 반복됩니다.”</p>
     <div class="vn-choices">
       <<link "계약을 채린 손으로 철회하게 하고 한 달간 사적 명령 없이 다시 만난다.">>
-        <<set $dangerousSolo.chaerinRisk = 1>>
-        <<goto "3C · 왕관을 내려놓은 밤">>
+        <<if $dangerousSolo.chaerinRisk lte 2>>
+          <<set $dangerousSolo.chaerinRisk = 1>>
+          <<goto "3C · 왕관을 내려놓은 밤">>
+        <<else>>
+          <<goto "3C · 계약이 끝난 자리">>
+        <</if>>
       <</link>>
       <<link "계약을 받아들이고 앞으로의 조건도 채린에게 맡긴다.">>
         <<goto "3C · 황금감옥">>
       <</link>>
     </div>
+  </div>
+</section>
+
+:: 3C · 계약이 끝난 자리 [chapter3 autosave nobr]
+<<set $dangerousOutcome = "solo_fragile_chaerin">>
+<<set $clearedEndings.dangerousChaerinFragile = true>>
+<section class="vn-scene vn-scene--room vn-scene--ending">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>채린은 자기 손으로 계약을 철회했다. 하지만 거절당하기 위해 더 큰 조건을 내미는 버릇까지 계약서와 함께 사라지지는 않았다.</p>
+    <p>나도 마지막 중단 신호를 지켰다는 이유로, 그전의 도발과 굴욕을 서로 원한 일이라고 덮을 수 없었다.</p>
+    <p>채린은 남들 앞에서 고개를 들고 돌아갔다. 닫힌 문 안에서 다시 만날 약속은 남기지 않았다.</p>
+    <p class="chapter-end">FRAGILE END · 계약이 끝난 자리</p>
+    <p class="chapter-end__next">떠나지 않는지 시험하는 동안, 남을 이유를 먼저 잃었다.</p>
   </div>
 </section>
 
@@ -898,6 +958,9 @@
     <p>남들 앞에서는 여전히 누구에게도 고개를 숙이지 않았다. 닫힌 문 안에서만 자기가 원하는 지시를 직접 부탁했고, 나는 멈추라는 말을 지킨 뒤에도 곁에 남았다.</p>
     <p class="chapter-end">SOLO TRUE · 내려놓은 왕관</p>
     <p class="chapter-end__next">통제권을 맡기는 일조차 자기 선택으로 남긴 사람.</p>
+    <<if $routeUnlocks.freedom>>
+      [[연애 밖에 남아 있던 게임 친구들의 안부를 확인한다->4장 · 다음 접속]]
+    <</if>>
   </div>
 </section>
 
