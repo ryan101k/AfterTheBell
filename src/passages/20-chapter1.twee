@@ -20,7 +20,7 @@
     <p>나는 이름을 묻지 않았다. 여자는 왜 문밖에 있었는지 말하지 않았다.</p>
     <p>젖은 양말 끝에서 물이 한 방울씩 떨어졌다.</p>
     <div class="vn-character-card">
-      <figure class="vn-character-card__portrait"><img src="../assets/images/event-sera-doorstep.png" alt="검은 가방을 안은 채 현관에 선 윤새라"></figure>
+      <figure class="vn-character-card__portrait"><img src="../assets/images/characters/sera.png" alt="검은 가방을 안은 채 현관에 선 이름 모르는 여자"></figure>
       <div class="vn-character-card__body">
         <p class="vn-character-card__name">이름 모르는 여자</p>
         <p class="vn-character-card__line">“폐 끼치지 않을게요.”</p>
@@ -367,12 +367,14 @@
 <section class="vn-scene vn-scene--room">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
-    <p>새라는 계약이 끊긴 공동 작업실에 남은 그림 도구를 찾으러 갔다.</p>
-    <p>건물 관리인은 이미 출입 카드를 막아 두었다. 새라는 문 앞에서 여섯 시간을 기다렸다.</p>
+    <p>새라는 주거 겸 공동 작업실에 남은 그림 도구를 찾으러 갔다.</p>
+    <p>건물 관리인은 이미 출입 카드를 막아 두었다. 밀린 사용료를 내기 전에는 들어갈 수 없다는 말뿐이었다.</p>
     <figure class="vn-cutscene"><img src="../assets/images/event-sera-story.png" alt="닫힌 작업실 앞에 앉아 있는 윤새라"></figure>
-    <p>유진은 문을 강제로 열지 않았다. 관리인에게 확인하고, 새라가 자기 물건만 가져가는 과정을 기록했다.</p>
+    <p>새라는 사용료를 밀린 적이 없다고 했다. 대신 자기 그림의 권리를 넘긴다는 서류에 서명하지 않았다.</p>
+    <p>유진은 문을 강제로 열지 않았다. 관리인의 말을 녹음하고, 새라가 자기 물건 일부만 가져가는 과정을 기록했다.</p>
     <p>나는 새라의 가방을 들었고 유진은 젖은 우산을 들었다.</p>
-    <p class="vn-beat">세 사람 중 누구도 아직 서로를 좋아하지 않았다. 다만 다음에 연락할 이유가 하나씩 생겼다.</p>
+    <p>새라의 가장 큰 스케치북과 컴퓨터는 안에 남았다. 관리인은 다음 달이면 남은 물건을 처분한다고 했다.</p>
+    <p class="vn-beat">나는 남의 사정에 다시는 끼어들지 않기로 했었다. 그날은 가방만 들었다. 아직은 그 정도라고 생각했다.</p>
     [[열나흘째 집으로 돌아온다->1장 · 처음 저장한 번호]]
   </div>
 </section>
@@ -387,6 +389,6 @@
     <p>그래도 처음 밤과 달라진 게 하나 있었다.</p>
     <div class="phone-message"><b>윤새라</b><span>늦어지면 연락할게요. 돌아오지 않는 건 아니에요.</span></div>
     <p class="chapter-end">CHAPTER 1 · 이름을 묻지 않은 열나흘</p>
-    [[각자의 방문 시간이 생긴다->2장 · 서로 다른 방문 시간]]
+    [[주소가 없는 일곱째 주로 간다->2장 · 돌아갈 주소]]
   </div>
 </section>

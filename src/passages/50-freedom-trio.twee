@@ -33,7 +33,7 @@
   <<goto "자유인 · 닫힌 초대">>
 <<elseif $dangerousOutcome is "harem_true">>
   <<set $freedomMode = "romance">>
-<<elseif $dangerousOutcome is "none" && !$routeUnlocks.dangerous>>
+<<elseif $dangerousOutcome is "none">>
   <<set $freedomMode = "romance">>
 <<elseif String($dangerousOutcome).indexOf("solo_true_") is 0>>
   <<set $freedomMode = "friend">>

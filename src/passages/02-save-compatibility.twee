@@ -83,6 +83,17 @@
 }, $chapter1 ?? {})>>
 <<set $chapter2 = Object.assign({
   "trioRoute": false,
+  "seraPath": "",
+  "yujinPath": "",
+  "chaerinPath": "",
+  "seraBoundary": false,
+  "yujinBoundary": false,
+  "chaerinBoundary": false,
+  "recognizedMethod": false,
+  "usedFather": false,
+  "galaAttended": false,
+  "chaerinKnewIdentity": false,
+  "chaerinSlapped": false,
   "seraWorkTrusted": false,
   "seraSpokeForHerself": false,
   "eunhoWaitedForSera": "",
@@ -110,11 +121,18 @@
   "eunhoFeelingsNamed": false
 }, $chapter2 ?? {})>>
 <<set $chapter3 = Object.assign({
+  "seraAnswered": false,
+  "yujinAnswered": false,
+  "chaerinAnswered": false,
+  "eunhoDisappeared": false,
+  "acceptedResponsibility": false,
   "answerStyle": "",
   "seraBoundaryStyle": "",
   "yujinBoundaryStyle": "",
   "chaerinBoundaryStyle": "",
   "conversationStyle": "",
-  "rivalsMetAlone": false
+  "rivalsMetAlone": false,
+  "rulesWritten": false,
+  "newHomeCrossed": false
 }, $chapter3 ?? {})>>
 <<set $clearedEndings = $clearedEndings ?? {}>>

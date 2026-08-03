@@ -10,6 +10,8 @@
 | 사업 4인 | 박지수·한이슬·차서윤·오혜린 | 고용·지분·비밀과 애정의 분리 | [`BUSINESS_QUARTET.md`](./BUSINESS_QUARTET.md) |
 | 독립 | 나래 | 정답을 대신 고르지 않는 신뢰 | [`NARAE.md`](./NARAE.md) |
 
+은호의 비공개 가족 배경, 아버지 회사의 악명, 새라 사건에서 강유진이 맡는 법적 역할은 [`EUNHO_BACKGROUND.md`](./EUNHO_BACKGROUND.md)를 정본으로 사용한다.
+
 세계관 연결은 [`STORY_ORIGIN_BRIDGE.md`](./STORY_ORIGIN_BRIDGE.md)를 따른다. 주식게임 원형의 장부·차명계좌·기업 사건을 유지하되 랜덤 세력전은 사용하지 않는다.
 
 ## 집착 강도의 방향

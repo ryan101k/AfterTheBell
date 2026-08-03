@@ -1,133 +1,144 @@
 :: 3장 · 세 번의 고백 [chapter3 autosave nobr]
 <<set $chapter = 3>>
-<<set $scene = "separate-confessions">>
+<<set $scene = "three-confessions">>
 <<set $chapter3 = {
-  "answerStyle": "",
-  "seraBoundaryStyle": "",
-  "yujinBoundaryStyle": "",
-  "chaerinBoundaryStyle": "",
-  "conversationStyle": "",
-  "rivalsMetAlone": false
+  "seraAnswered": false,
+  "yujinAnswered": false,
+  "chaerinAnswered": false,
+  "rivalsMetAlone": false,
+  "rulesWritten": false,
+  "newHomeCrossed": false,
+  "acceptedResponsibility": false
 }>>
 <section class="vn-scene vn-scene--room">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
-    <p class="vn-label">CHAPTER 3 · 서로 다른 날의 같은 대답</p>
-    <p>세 사람을 같은 날 부르지 않았다. 예전처럼 모두를 한자리에 세워 놓고 대답하면, 또 선택의 책임을 사람 수로 나누게 될 것 같았다.</p>
-    <p>가장 오래 함께 산 사람부터, 내가 먼저 연락하게 된 사람, 가장 늦게 기다리는 법을 배운 사람의 순서로 만났다.</p>
-    [[새라가 돌아오는 금요일을 기다린다->3장 · 새라에게 한 고백]]
+    <p class="vn-label">CHAPTER 3 · 네 사람이 돌아갈 곳</p>
+    <p>나는 세 사람을 한자리에 세워 놓고 모두를 사랑한다고 통보하지 않았다.</p>
+    <p>새라에게는 식탁에서, 유진에게는 근무가 끝난 강변에서, 채린에게는 문이 열린 개인실에서 따로 말했다.</p>
+    <p>“다른 두 사람에게도 같은 종류의 마음이 있습니다.”</p>
+    <p>“누구도 포기하지 않겠다는 말이 아닙니다. 셋 중 누구에게도 숨긴 채 시작하지 않겠다는 말입니다.”</p>
+    <p>세 사람 모두 그날은 대답하지 않았다.</p>
+    <p>한 달 동안 나도 답을 재촉하지 않았다. 새라는 자기 작업실에서 지냈고, 유진은 사건 없는 안부를 두 번 보냈고, 채린은 약속하지 않은 차를 보내지 않았다.</p>
+    <p>기다리는 동안 내가 할 수 있는 건 세 사람의 결론을 대신 예상하지 않는 일이었다.</p>
+    [[새라의 대답을 기다린다->3장 · 새라가 돌려준 열쇠]]
   </div>
 </section>
 
-:: 3장 · 새라에게 한 고백 [chapter3 autosave nobr]
+:: 3장 · 새라가 돌려준 열쇠 [chapter3 autosave nobr]
 <section class="vn-scene vn-scene--room">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
-    <figure class="vn-cutscene"><img src="../assets/images/event-trio-sera-awakening-v1.webp" alt="식탁에서 은호의 고백을 듣는 윤새라"></figure>
-    <p>새라는 금요일 여덟 시보다 삼 분 일찍 돌아왔다. 나는 식탁 맞은편 의자를 빼 두었다.</p>
-    <p>“처음에는 새라 씨가 없으면 조용해질 거라고 생각했습니다. 이제는 늦으면 기다립니다.”</p>
-    <p>“그게 불쌍해서예요?”</p>
-    <p>“불쌍한 사람의 메시지를 하루 종일 기다리지는 않아요. 좋아합니다.”</p>
-    <p>새라는 웃지 않았다. 대신 손에 쥔 열쇠를 내려놓고 오래 생각했다.</p>
-    <p>“다른 사람도 있어요?”</p>
-    <p>나는 있다고 말했다. 새라는 그 대답까지 듣고도 자리를 떠나지 않았다.</p>
-    [[유진과 사건 없는 저녁을 약속한다->3장 · 유진에게 한 고백]]
+    <figure class="vn-cutscene"><img src="../assets/images/event-trio-sera-awakening-v1.webp" alt="은호의 집 열쇠를 쥔 채 자기 욕망을 인정하는 윤새라"><figcaption>없어지지 않는 사람이 되고 싶다는 고백</figcaption></figure>
+    <p>새라는 한 달째 저녁에 찾아와 내 집 열쇠를 식탁에 내려놓았다.</p>
+    <p>“같이 있고 싶어요. 아주 많이.”</p>
+    <p>새라는 손을 펴고도 열쇠에서 눈을 떼지 못했다.</p>
+    <p>“그런데 두 사람을 없던 사람으로 만들면, 언젠가는 은호 씨도 그렇게 만들 것 같아요.”</p>
+    <p>“열쇠는 왜 돌려줍니까?”</p>
+    <p>“이게 없어도 다시 와도 되는 사람인지 알고 싶어서요.”</p>
+    <p>그 말은 성장인 동시에 경고였다. 새라는 열쇠 없이 돌아오는 법을 배우고 싶어 했고, 여전히 열쇠를 갖고 싶은 사람이었다.</p>
+    <<set $chapter3.seraAnswered = true>>
+    [[새라가 자기 주소를 보여 준다->3장 · 하나뿐인 열쇠]]
   </div>
 </section>
 
-:: 3장 · 유진에게 한 고백 [chapter3 autosave nobr]
+:: 3장 · 하나뿐인 열쇠 [chapter3 autosave nobr]
 <section class="vn-scene vn-scene--room">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
-    <figure class="vn-cutscene"><img src="../assets/images/event-trio-yujin-awakening-v1.webp" alt="제복 없이 은호의 고백을 듣는 강유진"></figure>
-    <p>유진에게는 밖에서 만나자고 했다. 사람이 적은 강변을 걷다가 내가 먼저 걸음을 멈췄다.</p>
-    <p>“위험하지 않은 날에도 유진 씨가 오기를 기다립니다.”</p>
-    <p>“보호가 필요 없다는 뜻입니까?”</p>
-    <p>“필요하지 않아도 만나고 싶다는 뜻입니다. 좋아합니다.”</p>
-    <p>유진은 즉답하지 않았다. 경찰이라면 확인할 질문을 다섯 개쯤 삼키는 얼굴이었다.</p>
-    <p>다른 두 사람이 있다고 말하자 유진은 집까지 혼자 걸어가겠다고 했다. 다음 날 아침, 생각할 시간을 달라는 답장이 왔다.</p>
-    [[채린이 기다린 토요일로 간다->3장 · 채린에게 한 고백]]
+    <figure class="vn-cutscene"><img src="../assets/images/event-trio-sera-single-key.png" alt="각자 다른 자리에서 하나뿐인 열쇠를 지키는 윤새라, 강유진, 한채린"><figcaption>열쇠는 하나 · 돌아올 사람은 넷</figcaption></figure>
+    <p>새라는 돌려받은 보증금으로 계약한 작업실 주소를 보여 줬다.</p>
+    <p>현관 열쇠는 하나뿐이었다. 복사하지 않았다는 말을 증명하려고 영수증까지 내밀지는 않았다.</p>
+    <p>“이제 은호 씨가 없어도 잘 수 있는 곳이 있어요.”</p>
+    <p>잠깐 침묵한 뒤 새라가 덧붙였다.</p>
+    <p>“그래도 가끔은 은호 씨가 있는 곳으로 돌아오고 싶어요. 허락받고.”</p>
+    <p>나는 다음 주 저녁에 오라고 했다. 영원히 머물라는 말 대신 날짜를 정했다.</p>
+    [[유진의 대답을 듣는다->3장 · 사건 없는 대답]]
   </div>
 </section>
 
-:: 3장 · 채린에게 한 고백 [chapter3 autosave nobr]
+:: 3장 · 사건 없는 대답 [chapter3 autosave nobr]
 <section class="vn-scene vn-scene--room">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
-    <figure class="vn-cutscene"><img src="../assets/images/event-trio-chaerin-awakening-v1.webp" alt="예약 없는 자리에서 은호의 고백을 듣는 한채린"></figure>
-    <p>채린에게는 내가 고른 작은 식당 주소를 보냈다. 채린은 수행원 없이 십 분 먼저 와 있었다.</p>
-    <p>“거절해도 다시 초대할 겁니까?”</p>
-    <p>“한 번은 더 물을 겁니다. 채린 씨가 기다리는 날을 제가 기다리게 됐으니까.”</p>
-    <p>“고백이 형편없네요.”</p>
-    <p>“좋아합니다.”</p>
-    <p>채린은 웃다가, 다른 두 사람의 존재를 듣고 웃음을 멈췄다.</p>
-    <p>“내가 이길 수 있다는 말은 안 할게요. 그런 말을 하면 당신은 또 도망갈 테니까.”</p>
-    [[세 사람의 대답을 기다린다->3장 · 대답이 없던 한 달]]
+    <figure class="vn-cutscene"><img src="../assets/images/event-trio-yujin-awakening-v1.webp" alt="제복을 입은 채 처음 은호에게 기대는 강유진"><figcaption>구조하지 않고 기대는 법</figcaption></figure>
+    <p>유진은 야간 근무가 끝난 뒤 나를 빈 조사실로 불렀다.</p>
+    <p>“세 사람 모두를 지키겠다는 말이라면 거절하겠습니다. 그 말은 결국 누구에게도 당신을 거절할 기회를 주지 않으니까.”</p>
+    <p>“그럼 유진 씨는 왜 남습니까?”</p>
+    <p>유진은 대답하기 전에 내 어깨에 이마를 잠깐 기댔다. 누구를 붙잡아 세우는 손이 아니라, 자기 무게를 맡기는 사람이었다.</p>
+    <p>“당신이 멀쩡한 날에도 만나고 싶었습니다.”</p>
+    <p>“그 말이면 충분합니다.”</p>
+    <p>유진은 비상 연락망에서 내 이름을 내린 화면을 보여 줬다. 그 뒤에야 다음 주 저녁을 물었다.</p>
+    <<set $chapter3.yujinAnswered = true>>
+    [[유진이 새로운 신호를 제안한다->3장 · 첫째가 없는 비상 신호]]
   </div>
 </section>
 
-:: 3장 · 대답이 없던 한 달 [chapter3 autosave nobr]
+:: 3장 · 첫째가 없는 비상 신호 [chapter3 autosave nobr]
 <section class="vn-scene vn-scene--room">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
-    <p>고백했다고 바로 관계가 생기지는 않았다.</p>
-    <p>새라는 작업실에서 일주일을 보냈다. 유진은 사적인 연락을 멈췄다. 채린은 정해 둔 토요일을 비워 둔 채 초대하지 않았다.</p>
-    <p>나는 세 사람을 잃을 수 있다는 시간을 처음으로 견뎠다. 재촉하지 않았고, 대신 숨지도 않았다.</p>
-    <p>한 달 뒤 세 사람에게 각각 같은 내용을 보냈다.</p>
-    <div class="phone-message"><b>최은호</b><span>서로를 모르는 채 대답하게 하고 싶지 않습니다. 만나기 싫으면 오지 않아도 됩니다. 저는 토요일 저녁 집에 있겠습니다.</span></div>
-    <p>토요일이 되자 초인종이 세 번, 서로 다른 간격으로 울렸다.</p>
-    [[처음으로 세 사람을 같은 방에 들인다->3장 · 첫 번째 교차]]
+    <figure class="vn-cutscene"><img src="../assets/images/event-trio-yujin-shared-signal.png" alt="새라와 채린 앞에서 독점하지 않는 비상 신호를 설명하는 강유진"><figcaption>누구도 첫 번째 보호자가 아닌 연락망</figcaption></figure>
+    <p>유진은 새라와 채린에게도 같은 제안을 보냈다.</p>
+    <p>위험할 때 사용할 한 문장. 받은 사람이 혼자 출동하지 않고 다른 두 사람에게도 알린다. 위치는 은호가 직접 보낸 경우에만 확인한다.</p>
+    <p>“가장 먼저 불리는 사람이 되고 싶은 건 맞습니다.”</p>
+    <p>유진은 그 욕망을 숨기지 않았다.</p>
+    <p>“그래서 순서를 없애겠습니다. 제가 첫째가 되지 않아도 기록은 남게.”</p>
+    <p>새라는 연락 문구를 짧게 고쳤고, 채린은 자기 경호 인력을 자동 호출 목록에서 뺐다.</p>
+    <p>세 사람이 은호 없이 같은 규칙을 고친 건 그때가 처음이었다.</p>
+    [[채린의 대답을 받는다->3장 · 고개를 들고 한 부탁]]
   </div>
 </section>
 
-:: 3장 · 첫 번째 교차 [chapter3 autosave nobr]
-<<set $scene = "first-crossing">>
+:: 3장 · 고개를 들고 한 부탁 [chapter3 autosave nobr]
 <section class="vn-scene vn-scene--room">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
-    <figure class="vn-cutscene"><img src="../assets/images/event-trio-first-crossing.webp" alt="처음 같은 거실에 선 윤새라, 강유진, 한채린"></figure>
-    <p>새라는 부엌 쪽에 섰고, 유진은 출입문이 보이는 자리를 골랐다. 채린은 남은 의자를 직접 옮겨 앉았다.</p>
-    <p>셋은 서로의 이름과 직업을 이미 나에게 들었다. 그래도 직접 마주친 얼굴은 예상보다 불편해 보였다.</p>
-    <p>새라는 내가 싫어하는 반찬을 치웠다. 유진은 내가 잠을 못 잔 날의 버릇을 말했다. 채린은 다음 주에 비어 있는 내 시간을 알고 있었다.</p>
-    <p>셋은 고백에 답하는 대신, 누가 나를 더 많이 아는지부터 확인했다.</p>
-    [[차갑게 식은 저녁을 시작한다->3장 · 같은 마음의 모양]]
+    <figure class="vn-cutscene"><img src="../assets/images/event-trio-chaerin-awakening-v1.webp" alt="사교회에서 맞은 뺨을 만지며 욕망을 인정하는 한채린"><figcaption>화를 내야 하는데 다시 떠올린 순간</figcaption></figure>
+    <p>채린은 수행원을 전부 물리고도 개인실 문을 열어 뒀다.</p>
+    <p>“당신이 때린 건 잘못이에요.”</p>
+    <p>“알고 있습니다.”</p>
+    <p>“내가 그 말을 듣고도 다시 같은 반응을 끌어내고 싶었던 것도 잘못이고.”</p>
+    <p>채린은 변명하지 않았다. 사람들 앞에서는 고개를 더 높이 들었다가, 둘만 남자 장식 없는 목소리로 말했다.</p>
+    <p>“남들 앞에서는 내 체면을 세워 줘요. 둘만 있을 때는 내가 그만하라고 할 때까지만 당신이 정해 줬으면 해.”</p>
+    <p>“그 부탁이 다른 두 사람을 몰래 이기기 위한 거라면 안 됩니다.”</p>
+    <p>채린은 화를 삼킨 뒤 고개를 들었다.</p>
+    <p>“그럼 셋 다 있는 자리에서 다시 말하죠.”</p>
+    <<set $chapter3.chaerinAnswered = true>>
+    [[세 사람 앞에서 채린의 부탁을 듣는다->3장 · 숨기지 않은 검은 끈]]
   </div>
 </section>
 
-:: 3장 · 같은 마음의 모양 [chapter3 autosave nobr]
+:: 3장 · 숨기지 않은 검은 끈 [chapter3 autosave nobr]
 <section class="vn-scene vn-scene--room">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
-    <figure class="vn-cutscene"><img src="../assets/images/event-trio-meeting-2.png" alt="식탁에서 서로를 견제하는 세 사람"></figure>
-    <p>“우리 셋에게 같은 말을 한 이유가 뭐죠?” 채린이 물었다.</p>
-    <p>한 사람을 더 사랑한다고 말하면 누군가는 떠날 것이다. 똑같이 사랑한다고 말하면 세 사람이 가진 차이를 지우게 된다.</p>
-    <div class="vn-choices">
-      <<link "“세 사람을 같은 순위에 놓고 싶지 않습니다. 비교하지 않고 각각 좋아합니다.”  [각자의 자리]">>
-        <<set $chapter3.answerStyle = "separate">>
-        <<set $affectionNotice = "관계의 방식 · 같은 순위가 아니라 각자의 자리를 택했다">>
-        <<goto "3장 · 사랑과 순위">>
-      <</link>>
-      <<link "“좋아하는 모양은 다르지만 책임의 무게는 같게 지고 싶습니다.”  [같은 책임]">>
-        <<set $chapter3.answerStyle = "equal">>
-        <<set $affectionNotice = "관계의 방식 · 다른 감정에 같은 책임을 약속했다">>
-        <<goto "3장 · 사랑과 순위">>
-      <</link>>
-    </div>
+    <figure class="vn-cutscene"><img src="../assets/images/event-trio-chaerin-direct-request.png" alt="새라와 유진 앞에서 검은 목걸이와 자기 욕망을 내놓은 한채린"><figcaption>도발이 아니라 직접 건넨 부탁</figcaption></figure>
+    <p>채린은 세 사람이 보는 앞에서 검은 가죽끈을 탁자에 올렸다.</p>
+    <p>“둘만 있을 때 이걸 차고 은호의 말을 듣고 싶어요.”</p>
+    <p>새라는 가죽끈보다 채린의 손을 봤고, 유진은 잠금 장치부터 확인했다.</p>
+    <p>“맞고 싶다는 말은 아닙니다.” 유진이 말했다.</p>
+    <p>“알아요. 맞아서 알아낸 욕망을 다시 맞는 방식으로 확인하고 싶지 않다는 뜻이에요.”</p>
+    <p>채린은 은호가 아니라 두 사람을 보며 말했다.</p>
+    <p>“내가 중단할 수 있고, 은호도 거절할 수 있고, 두 사람에게 숨기지 않는 조건으로 부탁할게요.”</p>
+    <p>나는 가죽끈을 바로 집지 않았다. 다음 만남까지 각자 취소할 수 있는 시간을 두자고 말했다.</p>
+    <p>채린은 명령을 받지 못했지만 자리를 떠나지 않았다.</p>
+    [[네 사람이 관계의 규칙을 만들기 시작한다->3장 · 첫 공동 식탁]]
   </div>
 </section>
 
-:: 3장 · 사랑과 순위 [chapter3 autosave nobr]
+:: 3장 · 첫 공동 식탁 [chapter3 autosave nobr]
 <section class="vn-scene vn-scene--room">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
-    <<if $chapter3.answerStyle is "separate">>
-      <p>새라는 생활을, 유진은 연락을, 채린은 시간을 자기 자리라고 말했다. 셋은 그 자리가 서로 바뀔 수 있다는 사실을 싫어했다.</p>
-    <<else>>
-      <p>유진은 책임을 어떻게 같게 잴 것인지 물었고, 새라는 같은 책임이 같은 시간을 뜻하는지 물었다. 채린은 감정을 회계처럼 나누지 말라고 했다.</p>
-    <</if>>
-    <p>어느 답도 셋을 즉시 안심시키지 못했다. 하지만 적어도 한 사람을 달래려고 다른 두 사람에게 거짓말하지는 않았다.</p>
-    <p>그날 정한 것은 연애가 아니라 다음 만남이었다. 이번에는 내가 없는 자리에서 셋이 먼저 이야기하겠다고 했다.</p>
-    [[세 사람이 정한 장소를 듣는다->3장 · 은호 없는 두 시간]]
+    <figure class="vn-cutscene"><img src="../assets/images/event-trio-meeting-2.png" alt="처음 관계의 규칙을 논의하는 윤새라, 강유진, 한채린"><figcaption>은호를 차지하는 순서가 아닌, 네 사람이 멈출 규칙</figcaption></figure>
+    <p>우리는 석 달 동안 관계를 시험하기로 했다.</p>
+    <p>단둘이 만난 날을 숨기지 않는다. 상대의 연락과 물건을 확인하지 않는다. 싫다는 말은 다수결로 덮지 않는다. 각자의 주소를 없애지 않는다.</p>
+    <p>채린은 모든 문장을 계약서처럼 고치려 했고, 유진은 위험 상황의 예외를 달고 싶어 했다. 새라는 `허락 없이 열쇠를 만들지 않는다`는 문장을 가장 먼저 적었다.</p>
+    <p>나는 마지막 줄을 썼다.</p>
+    <p><em>세 사람이 원하는 것을 알면서도 대답을 미뤄 경쟁하게 만들지 않는다.</em></p>
+    <p>그 문장은 나를 위한 경계였다.</p>
+    [[세 사람이 은호 없이 따로 만난다->3장 · 은호 없는 두 시간]]
   </div>
 </section>
 
@@ -136,221 +147,192 @@
 <section class="vn-scene vn-scene--room">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
-    <figure class="vn-cutscene"><img src="../assets/images/event-trio-meeting-3.png" alt="은호 없이 카페에서 마주 앉은 윤새라, 강유진, 한채린"></figure>
-    <p>셋은 일요일 오후 카페에서 두 시간을 보냈다. 나는 초대받지 않았다.</p>
-    <p>나중에 들은 이야기는 서로 달랐다. 새라는 채린이 너무 많이 물었다고 했고, 채린은 유진이 질문을 기록처럼 정리했다고 했다. 유진은 새라가 중요한 순간마다 침묵했다고 말했다.</p>
-    <p>그래도 셋이 함께 정한 문장은 하나였다.</p>
-    <div class="phone-message"><b>새라 · 유진 · 채린</b><span>서로의 연락과 약속을 은호를 통해 몰래 확인하지 않는다.</span></div>
-    <p class="vn-beat">나를 두고 싸우는 사람들이, 처음으로 나 없이 자기 규칙을 만들었다.</p>
-    [[각자 단둘이 정할 규칙으로 간다->3장 · 하나뿐인 열쇠]]
+    <figure class="vn-cutscene"><img src="../assets/images/event-trio-meeting-3.png" alt="은호 없이 서로의 위험한 습관을 확인하는 윤새라, 강유진, 한채린"><figcaption>연적이 아니라 서로의 사각지대를 보는 사람들</figcaption></figure>
+    <p>첫 주가 끝나기 전, 세 사람은 나 없이 따로 만났다.</p>
+    <p>나를 통해 서로를 떠보지 않기 위해서였다.</p>
+    <p>유진은 새라에게 내 귀가 시간을 묻지 않았다. 채린은 유진에게 내 과거 기록을 요구하지 않았다. 새라는 채린에게 내가 개인실에서 무슨 명령을 했는지 묻지 않았다.</p>
+    <p>대신 각자가 가장 먼저 넘을 선을 말했다.</p>
+    <p>“저는 은호 씨 생활을 전부 알고 싶어질 거예요.” 새라가 말했다.</p>
+    <p>“저는 위험하다고 판단하면 허락보다 먼저 움직일 겁니다.” 유진이 말했다.</p>
+    <p>“나는 거절당하고 싶어서 거절할 일을 만들겠죠.” 채린이 말했다.</p>
+    <p>세 사람은 서로를 치료하겠다고 약속하지 않았다. 선을 넘는 순간 은호 대신 먼저 말해 주기로 했다.</p>
+    [[세 사람이 적은 규칙을 확인한다->3장 · 세 개의 서명]]
   </div>
 </section>
 
-:: 3장 · 하나뿐인 열쇠 [chapter3 autosave nobr]
+:: 3장 · 세 개의 서명 [chapter3 autosave nobr]
+<<set $chapter3.rulesWritten = true>>
 <section class="vn-scene vn-scene--room">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
-    <figure class="vn-cutscene"><img src="../assets/images/event-trio-sera-single-key.png" alt="하나뿐인 열쇠를 쥔 윤새라"></figure>
-    <p>새라는 작업실 근처에 혼자 지낼 집을 구했다. 짐을 옮기는 마지막 날, 내 집 열쇠를 식탁 위에 놓았다.</p>
-    <p>“열쇠가 없으면 돌아오지 못할 것 같고, 가지고 있으면 내가 멋대로 들어올 것 같아요.”</p>
+    <figure class="vn-cutscene"><img src="../assets/images/event-trio-647.png" alt="사진과 규칙표를 사이에 두고 각자의 책임을 적는 윤새라, 강유진, 한채린"><figcaption>누가 은호를 갖는지가 아니라, 누가 무엇을 하지 않을지</figcaption></figure>
+    <p>세 사람은 수정한 규칙표에 각자 이름을 썼다.</p>
+    <p>새라는 내 일정표를 만들지 않는다. 유진은 동의 없는 보호 등록을 하지 않는다. 채린은 거절당하기 위해 권력을 사용하지 않는다.</p>
+    <p>나는 세 사람에게 결정을 떠넘기지 않고, 혼자 사라지지 않고, 필요받는 기분 때문에 경계를 늦추지 않는다고 썼다.</p>
+    <p>누구도 잘 지킬 거라고 장담하지 않았다.</p>
+    <p>규칙은 착한 사람이 되었다는 증명서가 아니라, 잘못했을 때 모른 척하지 않기 위한 기록이었다.</p>
+    [[석 달 동안 각자의 밤을 보낸다->3장 · 각자의 밤]]
+  </div>
+</section>
+
+:: 3장 · 각자의 밤 [chapter3 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <figure class="vn-cutscene"><img src="../assets/images/event-trio-meeting-5.png" alt="낮의 거실에서 각자의 일을 하며 함께 머무는 윤새라, 강유진, 한채린"><figcaption>사건도 경쟁도 없는 첫 달</figcaption></figure>
+    <p>첫 달에는 지나치게 잘 지켰다.</p>
+    <p>새라는 유진이 두고 간 캔커피를 버리지 않았다. 유진은 채린의 차가 집 앞에 서 있어도 차량 번호를 조회하지 않았다. 채린은 새라의 머그잔 옆에 자기 컵을 주문하지 않았다.</p>
+    <p>둘째 달에는 서운함이 생겼다.</p>
+    <p>새라는 내가 없는 저녁을 견뎠고, 유진은 아프지 않은 나에게 먼저 전화했고, 채린은 부탁을 거절당한 뒤에도 공개된 자리에서 웃었다.</p>
+    <p>나도 약속을 나눠 잡고 끝나는 시각을 직접 말했다. 누구의 표정이 상할지 계산하다 답장을 지우는 대신, 오늘은 누구를 만나고 누구는 만나지 않는지 적었다.</p>
+    <p>셋째 달, 새라는 작업실 위층의 작은 방을 자기 이름으로 계약했다.</p>
+    <div class="phone-message"><b>윤새라</b><span>이번에는 제 이름으로 된 주소예요. 토요일에 셋 다 와 줄래요?</span></div>
+    <p>새라가 쫓겨난 일로 만난 네 사람이, 처음으로 새라가 고른 집에 모이게 됐다.</p>
+    [[새라의 새집으로 간다->3장 · 네 사람의 집들이]]
+  </div>
+</section>
+
+:: 3장 · 네 사람의 집들이 [chapter3 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <figure class="vn-cutscene"><img src="../assets/images/event-trio-meeting-5_2.png" alt="새라의 새집에서 각자 가져온 물건을 풀어놓는 윤새라, 강유진, 한채린"><figcaption>새라가 자기 이름으로 처음 초대한 집</figcaption></figure>
+    <p>방은 좁았지만 현관에는 새라 이름이 붙어 있었다.</p>
+    <p>유진은 소화기를 가져왔고, 채린은 포장하지 않은 작은 화분을 들고 왔다. 나는 첫날 함께 샀던 것과 같은 달걀 여섯 개를 냉장고에 넣었다.</p>
+    <p>새라는 자기 창문으로 들어오는 빛을 설명했다. 유진은 쉬는 날 본 영화를 이야기했고, 채린은 국이 매워도 호텔 주방을 부르지 않았다.</p>
+    <p>누구도 사건 해결에 기여한 몫을 말하지 않았다. 그 집은 보상도 보호 시설도 아닌 새라의 집이었다.</p>
+    [[해가 질 때까지 함께 머문다->3장 · 새라의 창가]]
+  </div>
+</section>
+
+:: 3장 · 새라의 창가 [chapter3 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <figure class="vn-cutscene"><img src="../assets/images/event-trio-meeting-6.png" alt="해가 진 뒤 새라의 방에 편하게 기대어 앉은 윤새라, 강유진, 한채린"><figcaption>돌아갈 곳을 걱정하지 않은 저녁</figcaption></figure>
+    <p>식사 뒤 새라는 새 그림의 초안을 보여 줬다.</p>
+    <p>유진은 소파 팔걸이에 기대 졸았고, 채린은 재킷을 벗어 의자에 걸었다. 셋 다 언제 돌아가야 할지 먼저 묻지 않았다.</p>
+    <p>나는 설거지를 했고 새라는 물기를 닦았다.</p>
+    <p>“오늘은 여기서 자고 가도 돼요?”</p>
+    <p>새라는 나만 보지 않고 두 사람에게도 물었다.</p>
+    <p>우리는 침대와 소파와 바닥을 나눠 썼다. 누구도 한자리에서 관계의 순서를 증명하지 않았다.</p>
+    <p>새벽에 물을 마시러 일어났을 때, 싱크대 위에서 익숙한 물건들이 보였다.</p>
+    [[새라가 먼저 마련한 자리를 확인한다->3장 · 옮겨진 생활]]
+  </div>
+</section>
+
+:: 3장 · 옮겨진 생활 [chapter3 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>내 칫솔과 약, 옷 한 벌이 가지런히 놓여 있었다.</p>
+    <p>새 열쇠 고리에는 새라의 집 열쇠와 내가 준 적 없는 내 집 열쇠가 함께 달려 있었다.</p>
+    <p>“여기서도 은호 씨가 불편하지 않게 해 뒀어요.”</p>
+    <p>“언제 가져왔습니까?”</p>
+    <p>“한 번에 가져오면 들킬 것 같아서, 올 때마다 하나씩.”</p>
+    <p>새라는 숨기려 한 사실까지 차분하게 말했다.</p>
+    <p>자기 주소를 얻고도 안심하지 못했다. 나를 초대하는 것으로는 부족해서, 내가 이미 사는 사람처럼 흔적을 옮겼다.</p>
+    <p>“은호 씨 생활에 제가 없던 자리로 돌아가기 싫었어요.”</p>
+    <p>새라는 사랑을 고백한 것이 아니라, 내가 거절하기 전에 생활을 완성해 놓았다.</p>
+    [[유진이 창문과 열쇠를 확인한다->3장 · 안전하지 않아야 하는 집]]
+  </div>
+</section>
+
+:: 3장 · 안전하지 않아야 하는 집 [chapter3 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <figure class="vn-cutscene"><img src="../assets/images/event-trio-emergency.png" alt="새라의 집 앞 복도에서 보호 조치를 두고 충돌하는 윤새라, 강유진, 한채린"><figcaption>위험을 발견한 것이 아니라 먼저 확정한 사람</figcaption></figure>
+    <p>유진은 창틀의 긁힌 흔적을 오래 보고 있었다.</p>
+    <p>“잠금 장치가 기준에 안 맞습니다. 오늘은 여기서 자면 안 됩니다.”</p>
+    <p>새라가 계약 전에 보수 확인을 받았다고 하자 유진은 휴대전화를 내밀었다.</p>
+    <p>이미 관할 안전센터에 임시 보호 거처 요청이 들어가 있었다. 보호 대상에는 새라와 내 이름이 함께 적혀 있었다.</p>
+    <p>“두 사람이 며칠만 제 관할 숙소에 있으면 됩니다. 제가 확인할 수 있는 곳으로요.”</p>
+    <p>“확인한 다음에는요?”</p>
+    <p>유진은 바로 답하지 못했다.</p>
+    <p>사건 없는 석 달을 견딘 끝에, 유진은 다시 자기가 필요한 위험을 먼저 만들고 있었다.</p>
+    <p>“공권력이 못 지켰던 건 압니다. 그래서 유진 씨가 내 허락까지 대신할 수 있는 건 아니에요.”</p>
+    <p>유진은 보호 신청 화면을 끄지 못했다.</p>
+    [[채린이 가져온 서류를 본다->3장 · 값을 치른 사람]]
+  </div>
+</section>
+
+:: 3장 · 값을 치른 사람 [chapter3 autosave nobr]
+<<set $chapter3.newHomeCrossed = true>>
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <figure class="vn-cutscene"><img src="../assets/images/event-trio-private-room-lite.webp" alt="검은 목걸이와 건물 서류를 앞에 두고 은호의 명령을 기다리는 세 사람"><figcaption>거절당하기 위해 먼저 사 버린 집</figcaption></figure>
+    <p>채린은 두 사람의 말을 듣고도 놀라지 않았다.</p>
+    <p>화분 밑에서 얇은 서류 봉투를 꺼냈다. 건물 인수 의향서였다.</p>
+    <p>“안전 문제도 집주인 문제도 내가 없애면 되죠. 계약이 끝나면 이 건물은 내 재단 소유가 됩니다.”</p>
+    <p>새라의 얼굴에서 피가 가셨다. 자기 이름으로 되찾은 첫 주소가 다시 누군가의 호의 안으로 들어가고 있었다.</p>
+    <p>채린은 사람들 앞에서는 태연하게 물잔을 들었다. 식탁 아래에서는 내 손을 잡아 자기 무릎 위에 올려놓았다.</p>
+    <p>“하지 말라고 명령해요.”</p>
+    <p>“내가 막아 주길 원해서 남의 집을 샀습니까?”</p>
+    <p>“당신이 나를 꺾고도 떠나지 않는 걸 확인하고 싶어서.”</p>
+    <p>채린은 다시 거절할 수밖에 없는 일을 만들고, 그 거절을 명령처럼 받으려 했다.</p>
+    [[세 사람의 행동과 내 침묵을 함께 본다->3장 · 네 번째 사람의 광기]]
+  </div>
+</section>
+
+:: 3장 · 네 번째 사람의 광기 [chapter3 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <figure class="vn-cutscene"><img src="../assets/images/event-trio-meeting-7.png" alt="새라의 집 문 앞에서 서로의 통제를 마주한 윤새라, 강유진, 한채린"><figcaption>세 사람의 광기와 그것을 늦게 멈춘 네 번째 사람</figcaption></figure>
+    <p>“셋 다 멈춰요.”</p>
+    <p>새라가 열쇠를 움켜쥐었다. 유진은 절차를 설명하려 했고, 채린은 내 손을 놓지 않았다.</p>
+    <p>나는 한 사람씩 이름을 불렀다.</p>
+    <p>“윤새라 씨는 내 물건과 열쇠를 허락 없이 가져왔어요.”</p>
+    <p>“강유진 씨는 우리가 위험하다는 결정을 먼저 내렸고요.”</p>
+    <p>“한채린 씨는 거절당하려고 남의 집을 사려 했습니다.”</p>
+    <p>세 사람의 얼굴이 차례로 굳었다.</p>
+    <p>“그리고 나는 알고도 늦게 말했습니다.”</p>
+    <p>새라가 내 칫솔을 준비한 걸 보고 필요받는 기분을 즐겼다. 유진이 창문을 살필 때 안심했다. 채린이 내 명령을 기다리는 순간에는 가장 강한 사람이 나한테만 약해졌다는 사실이 좋았다.</p>
+    <p>아버지는 타인의 선택지를 없애서 문제를 해결했다. 나는 아무 결정도 하지 않은 채 세 사람이 내 선택지를 가져가게 두었다.</p>
+    <p>방식은 반대였지만 결과는 같았다.</p>
+    <p>새라는 생활을 맡고, 유진은 이동을 정하고, 채린은 돈과 집을 책임질 것이다. 나는 누구도 거절하지 않은 채 모두에게 필요한 사람이 될 수 있다.</p>
+    <p>그 상태를 사랑이라고 부를지, 여기서 직접 끝낼지 내가 정해야 했다.</p>
+    [[이 집에서 네 사람의 다음을 결정한다->3장 · 네 개의 주소]]
+  </div>
+</section>
+
+:: 3장 · 네 개의 주소 [chapter3 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
     <div class="vn-choices">
-      <<link "열쇠는 돌려받고, 돌아올 요일을 둘이 정한다.  [약속으로 여는 문]">>
-        <<set $chapter3.seraBoundaryStyle = "schedule">>
-        <<set $affectionNotice = "윤새라와의 방식 · 열쇠 대신 반복되는 약속을 택했다">>
-        <<goto "3장 · 새라가 여는 문">>
+      <<link "각자 넘은 선을 자기 이름으로 되돌리고, 네 사람의 주소를 모두 남긴다.">>
+        <<set $chapter3.acceptedResponsibility = true>>
+        <<set $playerPattern.face += 1>>
+        <<goto "3장 · 돌아갈 곳이 네 군데">>
       <</link>>
-      <<link "손님용 열쇠를 주되 들어오기 전에 서로 연락하기로 한다.  [신뢰로 맡긴 문]">>
-        <<set $chapter3.seraBoundaryStyle = "guest-key">>
-        <<set $affectionNotice = "윤새라와의 방식 · 열쇠와 사용 규칙을 함께 맡겼다">>
-        <<goto "3장 · 새라가 여는 문">>
-      <</link>>
-    </div>
-  </div>
-</section>
-
-:: 3장 · 새라가 여는 문 [chapter3 autosave nobr]
-<section class="vn-scene vn-scene--room">
-  <div class="vn-scene__shade"></div>
-  <div class="vn-dialogue vn-dialogue--narration">
-    <<if $chapter3.seraBoundaryStyle is "schedule">>
-      <p>새라는 금요일마다 초인종을 눌렀다. 못 오는 날에는 취소가 아니라 다음 날짜를 먼저 보냈다.</p>
-    <<else>>
-      <p>새라는 열쇠를 가졌지만 한 번도 예고 없이 문을 열지 않았다. 가끔 현관 앞에서 메시지를 보내고 내가 열 때까지 기다렸다.</p>
-    <</if>>
-    <p>두 방식 모두 새라가 돌아올 수 있게 했고, 나도 문을 열지 못하는 날을 말할 수 있게 했다.</p>
-    [[유진과 비상 연락 순서를 정한다->3장 · 비상 연락망의 첫째]]
-  </div>
-</section>
-
-:: 3장 · 비상 연락망의 첫째 [chapter3 autosave nobr]
-<section class="vn-scene vn-scene--room">
-  <div class="vn-scene__shade"></div>
-  <div class="vn-dialogue vn-dialogue--narration">
-    <figure class="vn-cutscene"><img src="../assets/images/event-trio-yujin-shared-signal.png" alt="비상 연락 순서를 보여주는 강유진"></figure>
-    <p>유진은 내 휴대전화에 비상 연락처를 등록해 주겠다고 했다. 첫 번째가 되고 싶은 마음과 실제 안전 절차가 같은 화면에 있었다.</p>
-    <div class="vn-choices">
-      <<link "상황별 연락처를 나누고, 평소 위치 공유는 모두 끈다.  [나뉜 역할]">>
-        <<set $chapter3.yujinBoundaryStyle = "situations">>
-        <<set $affectionNotice = "강유진과의 방식 · 위험의 종류에 따라 도움을 고르기로 했다">>
-        <<goto "3장 · 유진에게 보내는 신호">>
-      <</link>>
-      <<link "실제 비상시에는 유진을 첫 번째로 두되, 평소 확인은 문자로만 한다.  [맡긴 역할]">>
-        <<set $chapter3.yujinBoundaryStyle = "first-call">>
-        <<set $affectionNotice = "강유진과의 방식 · 전문성을 믿되 일상 감시는 허용하지 않았다">>
-        <<goto "3장 · 유진에게 보내는 신호">>
-      <</link>>
-    </div>
-  </div>
-</section>
-
-:: 3장 · 유진에게 보내는 신호 [chapter3 autosave nobr]
-<section class="vn-scene vn-scene--room">
-  <div class="vn-scene__shade"></div>
-  <div class="vn-dialogue vn-dialogue--narration">
-    <<if $chapter3.yujinBoundaryStyle is "situations">>
-      <p>유진은 자기가 첫 번째가 아닌 항목을 오래 봤다. 그래도 목록을 고치지 않았다. 대신 자기 차례가 아닐 때도 걱정한다고 말할 수 있게 됐다.</p>
-    <<else>>
-      <p>유진의 이름은 비상 연락 첫 줄에 남았다. 대신 위치 공유 표시는 꺼졌고, 유진은 모르면 먼저 묻기로 했다.</p>
-    <</if>>
-    <p>필요해서 부르는 날과 보고 싶어서 부르는 날이 같은 번호에 생겼다.</p>
-    [[채린과 비어 있는 주말을 본다->3장 · 비어 있지 않은 일정표]]
-  </div>
-</section>
-
-:: 3장 · 비어 있지 않은 일정표 [chapter3 autosave nobr]
-<section class="vn-scene vn-scene--room">
-  <div class="vn-scene__shade"></div>
-  <div class="vn-dialogue vn-dialogue--narration">
-    <figure class="vn-cutscene"><img src="../assets/images/event-trio-chaerin-direct-request.png" alt="미리 채운 일정표를 내미는 한채린"></figure>
-    <p>채린은 다음 달 주말 네 번을 전부 비워 두었다. 선점하고 싶은 마음을 숨기지는 않았지만, 내 일정에는 아직 넣지 않았다.</p>
-    <div class="vn-choices">
-      <<link "원하는 하루를 말로 부탁하게 하고 그날을 함께 고른다.  [부탁한 시간]">>
-        <<set $chapter3.chaerinBoundaryStyle = "request">>
-        <<set $affectionNotice = "한채린과의 방식 · 확보하지 않고 원하는 날을 부탁했다">>
-        <<goto "3장 · 채린이 비운 토요일">>
-      <</link>>
-      <<link "채린이 먼저 고른 하루 하나를 받고, 나머지는 비워 둔다.  [나눠 가진 시간]">>
-        <<set $chapter3.chaerinBoundaryStyle = "one-reservation">>
-        <<set $affectionNotice = "한채린과의 방식 · 준비를 받되 모든 시간을 넘기지는 않았다">>
-        <<goto "3장 · 채린이 비운 토요일">>
-      <</link>>
-    </div>
-  </div>
-</section>
-
-:: 3장 · 채린이 비운 토요일 [chapter3 autosave nobr]
-<section class="vn-scene vn-scene--room">
-  <div class="vn-scene__shade"></div>
-  <div class="vn-dialogue vn-dialogue--narration">
-    <<if $chapter3.chaerinBoundaryStyle is "request">>
-      <p>채린은 둘째 토요일을 부탁했다. 이유는 좋은 레스토랑이 아니라, 그날 자기가 외롭다고 처음부터 말했다.</p>
-    <<else>>
-      <p>채린이 먼저 고른 토요일에는 전시를 봤고, 다음 약속은 내가 골랐다. 일정표에는 서로 다른 색 두 개가 나란히 남았다.</p>
-    <</if>>
-    <p>채린은 얻지 못한 세 번의 주말을 실패라고 부르지 않았다.</p>
-    [[네 사람이 다시 같은 식탁에 앉는다->3장 · 연적들의 저녁]]
-  </div>
-</section>
-
-:: 3장 · 연적들의 저녁 [chapter3 autosave nobr]
-<section class="vn-scene vn-scene--room">
-  <div class="vn-scene__shade"></div>
-  <div class="vn-dialogue vn-dialogue--narration">
-    <figure class="vn-cutscene"><img src="../assets/images/event-trio-meeting-5.png" alt="다시 같은 식탁에 앉은 윤새라, 강유진, 한채린"></figure>
-    <p>식탁 위에는 새라의 케이크와 유진의 캔커피, 채린이 예약하지 않고 사 온 와인이 있었다.</p>
-    <p>셋은 여전히 자기가 나를 가장 잘 안다고 생각했다. 이번에는 그 말을 내게 판정해 달라고 하지 않았다.</p>
-    <p>대신 앞으로 불편한 일이 생겼을 때 누가 먼저 말할지를 물었다.</p>
-    <div class="vn-choices">
-      <<link "내가 먼저 원하는 것과 싫은 것을 말한 뒤, 세 사람의 말을 차례로 듣는다.  [먼저 여는 대화]">>
-        <<set $chapter3.conversationStyle = "lead">>
-        <<set $affectionNotice = "대화의 방식 · 내 몫의 책임부터 꺼냈다">>
-        <<goto "3장 · 세 사람이 싫어하는 규칙">>
-      <</link>>
-      <<link "세 사람의 말을 먼저 끝까지 듣고, 마지막에 내 경계를 더한다.  [듣고 잇는 대화]">>
-        <<set $chapter3.conversationStyle = "listen">>
-        <<set $affectionNotice = "대화의 방식 · 위임하지 않고 들은 뒤 내 말을 보탰다">>
-        <<goto "3장 · 세 사람이 싫어하는 규칙">>
-      <</link>>
-    </div>
-  </div>
-</section>
-
-:: 3장 · 세 사람이 싫어하는 규칙 [chapter3 autosave nobr]
-<section class="vn-scene vn-scene--room">
-  <div class="vn-scene__shade"></div>
-  <div class="vn-dialogue vn-dialogue--narration">
-    <figure class="vn-cutscene"><img src="../assets/images/event-trio-meeting-7.png" alt="서로 싫어하는 경계를 직접 말하는 네 사람"></figure>
-    <<if $chapter3.conversationStyle is "lead">>
-      <p>나는 연락하지 못하는 날과 혼자 자고 싶은 밤, 한 사람과 단둘이 있고 싶은 시간을 먼저 말했다.</p>
-    <<else>>
-      <p>새라는 사라지는 연락을, 유진은 거짓말을, 채린은 공개된 자리에서 모르는 사람 취급받는 일을 싫다고 했다. 나는 그 말을 들은 뒤 혼자 있고 싶은 날도 필요하다고 보탰다.</p>
-    <</if>>
-    <p>누가 먼저 말했든 목록에는 네 사람의 문장이 모두 들어갔다. 좋아하는 것보다 싫어하는 것을 먼저 합의한 관계였다.</p>
-    [[그 규칙으로 한 달을 살아 본다->3장 · 네 사람의 평일]]
-  </div>
-</section>
-
-:: 3장 · 네 사람의 평일 [chapter3 autosave nobr]
-<section class="vn-scene vn-scene--room">
-  <div class="vn-scene__shade"></div>
-  <div class="vn-dialogue vn-dialogue--narration">
-    <figure class="vn-cutscene"><img src="../assets/images/event-trio-meeting-5_2.png" alt="각자의 일상을 유지하며 같은 아침을 보내는 세 사람"></figure>
-    <p>네 사람이 매일 함께 산 것은 아니었다.</p>
-    <p>새라는 자기 작업실에서 사흘을 보냈고, 유진은 비번인 날에만 왔다. 채린은 비어 있는 토요일을 정말 비워 둔 채 기다렸다.</p>
-    <p>때로는 둘만 만났고, 때로는 넷이 밥을 먹었다. 질투는 사라지지 않았지만 사건·안전·일정으로 위장하지 않았다.</p>
-    <p>한 달 뒤, 나는 처음 고백했던 세 사람에게 다시 대답을 물었다. 이번에는 셋도 각자의 말로 남겠다고 답했다.</p>
-    [[이 관계의 이름을 고른다->3장 · 네 번째 자리]]
-  </div>
-</section>
-
-:: 3장 · 네 번째 자리 [chapter3 autosave nobr]
-<section class="vn-scene vn-scene--room">
-  <div class="vn-scene__shade"></div>
-  <div class="vn-dialogue vn-dialogue--narration">
-    <p>처음 만난 날과 같은 식탁이었다. 이번에는 네 번째 의자가 누구의 소유도 아니었다.</p>
-    <div class="vn-choices">
-      <<link "셋 다 사랑한다고 말하고, 각자의 퇴로와 단둘의 시간을 계속 다시 묻겠다고 약속한다.">>
-        <<goto "3장 · 네 개의 퇴로">>
-      <</link>>
-      <<link "지금은 함께하되 질투가 커지면 규칙을 다시 정하자고 한다.">>
-        <<goto "3장 · 흔들리는 네 번째 자리">>
-      <</link>>
-      <<link "내가 정하면 누군가 다친다며 앞으로의 결정을 세 사람에게 맡긴다.">>
+      <<link "다시는 누구도 쫓겨나지 않도록 한집에서 서로의 생활을 전부 맡긴다.">>
+        <<set $chapter3.acceptedResponsibility = false>>
+        <<set $playerPattern.avoid += 1>>
         <<goto "3장 · 잠긴 네 번째 자리">>
       <</link>>
     </div>
   </div>
 </section>
 
-:: 3장 · 네 개의 퇴로 [chapter3 autosave nobr]
+:: 3장 · 돌아갈 곳이 네 군데 [chapter3 autosave nobr]
 <<set $dangerousOutcome = "harem_true">>
 <<set $clearedEndings.dangerousHaremTrue = true>>
 <section class="vn-scene vn-scene--room vn-scene--ending">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
-    <figure class="vn-cutscene"><img src="../assets/images/event-trio-secure-home-ending.png" alt="각자의 열쇠와 퇴로를 가진 채 함께 남은 네 사람"><figcaption>네 사람 · 네 개의 퇴로</figcaption></figure>
-    <p>새라는 자기 방식으로 돌아왔고, 유진은 모르는 시간을 견뎠고, 채린은 비어 있는 시간을 남겼다.</p>
-    <p>세 사람은 여전히 서로를 좋아하지 않았다. 그래도 나를 이기기 위한 상품으로 만들지 않았고, 나 없이도 자기 규칙을 정할 수 있었다.</p>
-    <p>나는 여자들이 늘어나는 흐름에 떠밀려 모두를 고른 것이 아니었다. 세 번 따로 고백했고, 세 번 기다렸고, 떠날 수 있는 대답을 세 번 들었다.</p>
-    <p class="chapter-end">TRUE END · 네 개의 퇴로</p>
-    <p class="chapter-end__next">사랑해서 붙잡은 것이 아니라, 떠날 수 있어도 돌아온 사람들.</p>
+    <figure class="vn-cutscene"><img src="../assets/images/event-trio-secure-home-ending.png" alt="각자의 열쇠와 퇴로를 가진 채 함께 남은 네 사람"><figcaption>네 사람 · 네 개의 주소</figcaption></figure>
+    <p>새라는 내 물건을 가방에 담아 돌려주고 복사한 열쇠를 부쉈다. 유진은 보호 신청을 취소하고 사적인 권한 사용을 보고했다. 채린은 건물 인수 의향서를 찢고, 거절당하고 싶었다는 말을 자기 입으로 인정했다.</p>
+    <p>나도 세 사람의 집착이 좋았다는 사실을 숨기지 않았다. 좋았기 때문에 더 일찍 멈췄어야 했다고 말했다.</p>
+    <p>그날 밤 우리는 각자의 집으로 돌아갔다.</p>
+    <p>다음 날 새라는 자기 집에서 아침 사진을 보냈고, 유진은 쉬는 날 점심을 물었고, 채린은 금요일 저녁을 부탁했다. 누구도 열쇠와 명령으로 대답을 대신하지 않았다.</p>
+    <p>사랑해서 한집에 갇힌 사람들이 아니었다. 돌아갈 곳이 네 군데나 있는데도 다시 만난 사람들이었다.</p>
+    <p class="chapter-end">TRUE END · 돌아갈 곳이 네 군데</p>
     <<if $routeUnlocks.freedom>>
       [[각자의 밤을 지키며 다음 접속을 기다린다->4장 · 다음 접속]]
     <</if>>
-  </div>
-</section>
-
-:: 3장 · 흔들리는 네 번째 자리 [chapter3 autosave nobr]
-<<set $dangerousOutcome = "harem_fragile">>
-<<set $clearedEndings.dangerousHaremFragile = true>>
-<section class="vn-scene vn-scene--room vn-scene--ending">
-  <div class="vn-scene__shade"></div>
-  <div class="vn-dialogue vn-dialogue--narration">
-    <figure class="vn-cutscene"><img src="../assets/images/event-trio-647.png" alt="아직 정해지지 않은 규칙 아래 함께 있는 네 사람"><figcaption>같은 식탁 · 계속 고쳐 쓰는 규칙</figcaption></figure>
-    <p>넷은 함께하기로 했다. 다만 질투가 생길 때마다 규칙을 뒤로 미뤘다.</p>
-    <p>예전처럼 침묵하지는 않았지만, 말한 뒤 무엇을 양보할지는 아직 배우는 중이었다.</p>
-    <p class="chapter-end">FRAGILE END · 흔들리는 네 번째 자리</p>
-    <p class="chapter-end__next">관계는 시작됐고, 연적들의 싸움도 끝나지 않았다.</p>
   </div>
 </section>
 
@@ -360,10 +342,13 @@
 <section class="vn-scene vn-scene--room vn-scene--ending">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
-    <figure class="vn-cutscene"><img src="../assets/images/event-trio-bed-ending.png" alt="서로의 퇴로를 지운 채 같은 공간에 남은 네 사람"><figcaption>모두의 사람 · 아무것도 고르지 않은 사람</figcaption></figure>
-    <p>내가 결정을 넘기자 세 사람은 가장 잘하는 방식으로 나를 나눴다.</p>
-    <p>새라는 집을 맡았고, 유진은 연락을 맡았고, 채린은 시간을 맡았다. 아무도 전부를 가지지 못했지만 내게 남은 것도 없었다.</p>
+    <figure class="vn-cutscene"><img src="../assets/images/event-trio-bed-ending.png" alt="서로의 퇴로를 지운 채 같은 공간에 남은 네 사람"><figcaption>모두의 집 · 아무의 주소도 아닌 곳</figcaption></figure>
+    <p>채린은 건물을 샀고, 유진은 보호 거처로 등록했고, 새라는 네 사람분의 생활표를 만들었다.</p>
+    <p>내 방에는 필요한 것이 전부 있었다. 새라는 식사 시간을 알았고, 유진은 외출 시간을 허가했고, 채린은 돌아올 차를 보냈다.</p>
+    <p>나는 세 사람이 원하는 답을 고르는 일을 그만뒀다. 아버지에게서 도망친 끝에, 더 다정한 세 사람에게 같은 권한을 넘겼다.</p>
+    <p>누구도 다시 쫓겨나지 않았다. 대신 누구도 혼자 나갈 수 없었다.</p>
+    <p>문은 세 사람이 번갈아 잠갔다. 나는 누가 열쇠를 가졌는지 묻지 않았다.</p>
     <p class="chapter-end">BAD END · 잠긴 네 번째 자리</p>
-    <p class="chapter-end__next">고르지 않으면 모두를 지킬 수 있다는 믿음이, 이번에도 나부터 지웠다.</p>
+    <p class="chapter-end__next">집을 잃지 않는 가장 쉬운 방법은, 나갈 수 없는 집을 만드는 것이었다.</p>
   </div>
 </section>

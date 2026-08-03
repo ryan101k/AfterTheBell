@@ -321,37 +321,24 @@ $(document).on(':passagedisplay.vnui', function () {
   $('[data-vn-chapter]').text(chapter);
 
   const freedomAffection = State.variables.affection || {};
-  const dangerousAffection = State.variables.dangerousAffection || {};
   const freedomMode = chapter >= 4 && chapter <= 7 && State.variables.freedomMode !== 'locked';
-  const dangerousMode = chapter >= 1 && chapter <= 3 && State.variables.dangerousOutcome !== 'none';
-  const showAffection = freedomMode || dangerousMode;
-  const cast = dangerousMode
-    ? [['새라', dangerousAffection.sera], ['유진', dangerousAffection.yujin], ['채린', dangerousAffection.chaerin]]
-    : [['채원', freedomAffection.chaewon], ['유나', freedomAffection.yuna], ['소희', freedomAffection.sohee]];
+  const showAffection = freedomMode;
+  const cast = [['채원', freedomAffection.chaewon], ['유나', freedomAffection.yuna], ['소희', freedomAffection.sohee]];
   const $hud = $('[data-affection-hud]');
   $hud.prop('hidden', !showAffection);
-  $hud.attr('data-mode', dangerousMode ? 'dangerous' : 'freedom');
+  $hud.attr('data-mode', 'freedom');
   cast.forEach(function (character, index) {
     $('[data-affection-label="' + index + '"]').text(character[0]);
     $('[data-affection-value="' + index + '"]').text(Math.min(100, character[1] || 0));
-    $('[data-affection-stage="' + index + '"]').text(dangerousMode ? setup.dangerousAffectionStage(character[1]) : '');
+    $('[data-affection-stage="' + index + '"]').text('');
   });
 
   const notice = State.variables.affectionNotice;
-  if (notice) {
+  if (notice && freedomMode) {
     const $toast = $('[data-affection-toast]');
     window.clearTimeout(setup.affectionToastTimer);
     window.clearTimeout(setup.affectionToastHideTimer);
     let noticeText = notice;
-    if (dangerousMode) {
-      const noticeCharacter = cast.find(function (character) {
-        return notice.indexOf(character[0]) !== -1;
-      });
-      if (noticeCharacter) {
-        const score = Math.min(100, noticeCharacter[1] || 0);
-        noticeText += ' · 현재 ' + score + '/100 ' + setup.dangerousAffectionStage(score);
-      }
-    }
     $toast.stop(true, true).text(noticeText).prop('hidden', false).addClass('is-visible');
     setup.affectionToastTimer = window.setTimeout(function () {
       $toast.removeClass('is-visible');
@@ -359,6 +346,8 @@ $(document).on(':passagedisplay.vnui', function () {
         $toast.prop('hidden', true);
       }, 220);
     }, 1600);
+  }
+  if (notice) {
     State.variables.affectionNotice = '';
   }
 

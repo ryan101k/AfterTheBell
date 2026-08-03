@@ -77,6 +77,17 @@
 }>>
 <<set $chapter2 = {
   "trioRoute": false,
+  "seraPath": "",
+  "yujinPath": "",
+  "chaerinPath": "",
+  "seraBoundary": false,
+  "yujinBoundary": false,
+  "chaerinBoundary": false,
+  "recognizedMethod": false,
+  "usedFather": false,
+  "galaAttended": false,
+  "chaerinKnewIdentity": false,
+  "chaerinSlapped": false,
   "seraWorkTrusted": false,
   "seraSpokeForHerself": false,
   "eunhoWaitedForSera": "",
@@ -102,6 +113,16 @@
   "chaerinRejectedChoice": "",
   "chaerinUmbrellaChoice": "",
   "eunhoFeelingsNamed": false
+}>>
+<<set $chapter3 = {
+  "seraAnswered": false,
+  "yujinAnswered": false,
+  "chaerinAnswered": false,
+  "rivalsMetAlone": false,
+  "rulesWritten": false,
+  "newHomeCrossed": false,
+  "eunhoDisappeared": false,
+  "acceptedResponsibility": false
 }>>
 <<set $clearedEndings = {}>>
 
