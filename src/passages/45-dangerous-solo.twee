@@ -2,6 +2,8 @@
 <<set $chapter = 3>>
 <<set $scene = "sera-solo">>
 <<set $dangerousSolo.route = "sera">>
+<<set $dangerousSolo.seraRisk = 0>>
+<<if $chapter2.seraPath is "indulge">><<set $dangerousSolo.seraRisk = 1>><</if>>
 <<set $dangerousSolo.seraBoundary = false>>
 <<set $dangerousSolo.seraAsked = false>>
 <<set $dangerousSolo.seraReturnedByChoice = false>>
@@ -13,7 +15,9 @@
       <img src="../assets/images/event-sera-1.png" alt="폐업 계약서 곁에서 비를 맞고 주저앉은 윤새라">
       <figcaption>새라가 문 앞에 오기 전</figcaption>
     </figure>
-    <p class="vn-beat">새라는 처음 찾아온 밤의 이야기를 처음부터 다시 했다. 권리 양도를 거절한 날, 허위 체납으로 잠긴 작업실, 돌아갈 주소가 사라진 밤.</p>
+    <p>사건이 끝난 뒤 두 달, 나는 다른 두 사람에게 연애를 시작하지 않겠다고 말하고 새라를 골랐다.</p>
+    <p>새라는 바로 내 집으로 돌아오지 않았다. 자기 작업실에서 삼 주를 더 지낸 뒤, 내가 왜 자기를 좋아하는지 처음부터 듣고 싶다고 했다.</p>
+    <p class="vn-beat">새라는 처음 찾아온 밤의 이야기를 다시 꺼냈다. 권리 양도를 거절한 날, 허위 체납으로 잠긴 작업실, 돌아갈 주소가 사라진 밤.</p>
     <p>그때의 새라는 도움을 청한 것이 아니라 마지막으로 쫓겨날 문을 고르고 있었다.</p>
     [[처음 고른 문을 다시 본다->3S · 처음 고른 문]]
   </div>
@@ -69,6 +73,7 @@
       <</link>>
       <<link "오늘은 새라의 불안을 먼저 멈추기 위해 계속 손을 잡는다.">>
         <<set $dangerousSolo.seraBoundary = false>>
+        <<set $dangerousSolo.seraRisk += 1>>
         <<set $dangerousAffection.sera += 3>>
         <<set $affectionNotice = "♥ 새라 호감도 +3 · 불안은 멎었지만 혼자 걷지는 못했다">>
         <<goto "3S · 돌아오는 약속">>
@@ -129,6 +134,7 @@
       <</link>>
       <<link "새라가 더는 그 장면을 보지 않도록 빈 의자를 치워 버린다.">>
         <<set $dangerousSolo.seraAsked = false>>
+        <<set $dangerousSolo.seraRisk += 1>>
         <<set $dangerousAffection.sera -= 4>>
         <<set $affectionNotice = "♡ 새라 호감도 -4 · 불안을 없애는 대신 숨겼다">>
         <<goto "3S · 빈집의 하루">>
@@ -159,6 +165,7 @@
       <</link>>
       <<link "이번 일은 거절하고 여기서 함께 작업하자고 한다.">>
         <<set $dangerousSolo.seraReturnedByChoice = false>>
+        <<set $dangerousSolo.seraRisk += 1>>
         <<set $dangerousAffection.sera += 3>>
         <<set $affectionNotice = "♥ 새라 호감도 +3 · 곁은 지켰지만 빈집을 견디지는 못했다">>
         <<goto "3S · 혼자 돌아온 밤">>
@@ -228,15 +235,36 @@
       <<link "좋아한다고 말하되, 서로의 문과 생활은 대신 잠그지 않겠다고 한다.">>
         <<set $dangerousAffection.sera += 8>>
         <<set $affectionNotice = "♥ 새라 호감도 +8 · 사랑과 퇴로를 함께 약속했다">>
-        <<if $dangerousSolo.seraBoundary && $dangerousSolo.seraAsked && $dangerousSolo.seraReturnedByChoice && $dangerousAffection.sera gte 80>>
+        <<if $dangerousSolo.seraRisk lte 1 && $dangerousAffection.sera gte 80>>
           <<goto "3S · 임시가 아닌 주소">>
         <<else>>
-          <<goto "3S · 서로의 감금">>
+          <<goto "3S · 마지막 열쇠">>
         <</if>>
       <</link>>
       <<link "나도 새라 없이는 살 수 없으니 서로의 전부가 되자고 한다.">>
         <<set $dangerousAffection.sera += 2>>
         <<set $affectionNotice = "♥ 새라 호감도 +2 · 가장 듣고 싶고 가장 위험한 대답">>
+        <<goto "3S · 서로의 감금">>
+      <</link>>
+    </div>
+  </div>
+</section>
+
+:: 3S · 마지막 열쇠 [chapter3 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>좋아한다는 대답만으로 우리가 반복한 일을 지울 수는 없었다.</p>
+    <p>새라는 이미 내 옷과 약을 자기 작업실로 절반쯤 옮겨 둔 상태였다. 나는 새라의 불안을 빨리 멈추려 할 때마다 그 준비를 모른 척했다.</p>
+    <p>새라가 두 개의 열쇠를 내 앞에 놓았다.</p>
+    <p>“지금 같이 살면 다시는 떨어지지 않아도 돼요. 아니면 한 달 동안 서로 집에 들어가지 말아요.”</p>
+    <p>이번에는 안심과 퇴로 중 무엇을 남길지 분명히 골라야 했다.</p>
+    <div class="vn-choices">
+      <<link "한 달 동안 각자의 집에서 지낸 뒤, 동거 여부를 다시 묻는다.">>
+        <<set $dangerousSolo.seraRisk = 1>>
+        <<goto "3S · 임시가 아닌 주소">>
+      <</link>>
+      <<link "두 열쇠를 모두 받아 오늘부터 서로의 집을 구분하지 않는다.">>
         <<goto "3S · 서로의 감금">>
       <</link>>
     </div>
@@ -296,6 +324,8 @@
 <<set $chapter = 3>>
 <<set $scene = "yujin-solo">>
 <<set $dangerousSolo.route = "yujin">>
+<<set $dangerousSolo.yujinRisk = 0>>
+<<if $chapter2.yujinPath is "indulge">><<set $dangerousSolo.yujinRisk = 1>><</if>>
 <<set $dangerousSolo.yujinEqual = false>>
 <<set $dangerousSolo.yujinReleased = false>>
 <<set $dangerousSolo.yujinReturnedOffDuty = false>>
@@ -307,7 +337,8 @@
       <img src="../assets/images/event-yujin-rain-rescue.png" alt="빗속 현장에서 은호를 찾아낸 강유진">
       <figcaption>유진이 가장 익숙한 방식 · 구조</figcaption>
     </figure>
-    <p>새라 사건이 끝난 뒤에도 유진은 내가 연락을 늦게 본 밤마다 가장 먼저 도착했다.</p>
+    <p>사건이 끝난 뒤 두 달, 나는 유진에게 다른 두 사람과 연애를 시작하지 않겠다고 말하고 정식으로 다음 약속을 물었다.</p>
+    <p>유진은 한 달 동안 사건 없는 약속을 네 번 지켰다. 그런데 내가 연락을 늦게 본 밤이면 연인이 아니라 구조자로 가장 먼저 도착했다.</p>
     <p>그날은 빗길에서 넘어진 나를 발견하고, 다친 곳이 없다는 말을 세 번 확인한 뒤에야 우산을 접었다.</p>
     <p>유진: “제가 한발 늦었으면 어떻게 됐을지 압니까?”</p>
     <p>“다친 데는 없습니다. 그런데 유진 씨는 내가 다치지 않은 날에도 구조할 이유부터 찾습니다.”</p>
@@ -338,8 +369,8 @@
       <img src="../assets/images/event-yujin-guardian-rank.webp" alt="은호를 비상 보호 최우선 순위에 올린 강유진의 기록">
       <figcaption>비상 보호 우선순위 1 · 최은호</figcaption>
     </figure>
-    <p>유진은 수사 대상도 신고인도 아닌 내 이름을 내부 보호 순위 첫 줄에 올렸다.</p>
-    <p>사건이 끝나면 지워야 할 이름이었다. 유진은 끝난 사건보다 내 이름을 더 오래 붙잡았다.</p>
+    <p>유진은 해제했던 내부 보호 등록을 되살리지는 않았다. 대신 자기 수첩의 비공식 보호 순위 첫 줄에 내 이름을 올렸다.</p>
+    <p>공권력의 기록은 아니었지만 사고가 나면 누구보다 먼저 개입하겠다는 개인 계획이었다. 유진은 끝난 사건보다 내 이름을 더 오래 붙잡았다.</p>
     [[업무가 끝난 뒤에도 남은 확인을 본다->3Y · 업무가 끝난 뒤]]
   </div>
 </section>
@@ -355,14 +386,15 @@
     <p>“내가 안전하면 유진 씨는 안심합니까?”</p>
     <p>유진은 대답하지 못했다. 내가 안전한 것보다 자기가 나를 찾을 수 있는 상태에서 더 편안해지는 사람이었다.</p>
     <div class="vn-choices">
-      <<link "내 이름을 보호 순위에서 내리고, 만나고 싶을 때는 사적으로 연락하라고 한다.">>
+      <<link "내 이름을 개인 보호 순위에서 내리고, 만나고 싶을 때는 사적으로 연락하라고 한다.">>
         <<set $dangerousSolo.yujinEqual = true>>
         <<set $dangerousAffection.yujin += 10>>
         <<set $affectionNotice = "♥ 유진 호감도 +10 · 보호 대상이 아니라 동등한 사람">>
         <<goto "3Y · 필요의 이름">>
       <</link>>
-      <<link "무슨 일이 있어도 유진이 가장 먼저 올 수 있게 보호 순위를 유지한다.">>
+      <<link "무슨 일이 있어도 유진이 가장 먼저 올 수 있게 개인 보호 순위를 유지한다.">>
         <<set $dangerousSolo.yujinEqual = false>>
+        <<set $dangerousSolo.yujinRisk += 1>>
         <<set $dangerousAffection.yujin += 3>>
         <<set $affectionNotice = "♥ 유진 호감도 +3 · 필요한 사람이라는 중독">>
         <<goto "3Y · 필요의 이름">>
@@ -405,6 +437,7 @@
       <</link>>
       <<link "유진 없이는 아무것도 못 하겠다고 말해 계속 필요한 사람이 되게 한다.">>
         <<set $dangerousSolo.yujinReleased = false>>
+        <<set $dangerousSolo.yujinRisk += 1>>
         <<set $dangerousAffection.yujin -= 4>>
         <<set $affectionNotice = "♡ 유진 호감도 -4 · 가장 위험한 보상">>
         <<goto "3Y · 꺼진 위치 공유">>
@@ -425,20 +458,21 @@
       <</if>>
       <div class="vn-character-card__body">
         <p class="vn-character-card__name">강유진 · 휴무일의 긴급 전화</p>
-        <p class="vn-character-card__line">“지금 가면 약속을 어기고, 안 가면 누군가 다칠 수 있습니다.”</p>
-        <p class="vn-beat">처음으로 유진은 명령도 판단도 하지 않고 내 대답을 기다렸다.</p>
+        <p class="vn-character-card__line">“비번인데, 놓친 피의자와 닮은 사람을 봤다는 제보가 왔습니다.”</p>
+        <p class="vn-beat">유진은 제복도 무전기도 없는 상태에서 직접 움직이고 싶어 했다.</p>
       </div>
     </div>
-    <p>한 달 전 놓친 피의자가 같은 구역에서 목격됐다. 유진은 제복도 무전기도 없는 손으로 휴대전화를 쥐고 있었다.</p>
+    <p>한 달 전 놓친 피의자와 닮은 사람이 같은 구역에서 목격됐다. 확인되지 않은 시민 제보였고 당직팀은 이미 출동 중이었다.</p>
     <div class="vn-choices">
-      <<link "현장에는 가되, 끝나면 보고가 아니라 약속 장소로 돌아오라고 한다.">>
+      <<link "당직팀에 제보 위치를 넘기고 현장에 개입하지 않은 뒤 약속 장소로 돌아오라고 한다.">>
         <<set $dangerousSolo.yujinReturnedOffDuty = true>>
         <<set $dangerousAffection.yujin += 8>>
         <<set $affectionNotice = "♥ 유진 호감도 +8 · 임무가 끝난 뒤 돌아올 사람을 남겼다">>
         <<goto "3Y · 돌아온 사람">>
       <</link>>
-      <<link "오늘은 전화를 끄고 내 곁에 남아 달라고 한다.">>
+      <<link "당직팀의 답을 기다리지 말고 유진이 직접 뒤쫓게 둔다.">>
         <<set $dangerousSolo.yujinReturnedOffDuty = false>>
+        <<set $dangerousSolo.yujinRisk += 1>>
         <<set $dangerousAffection.yujin += 3>>
         <<set $affectionNotice = "♥ 유진 호감도 +3 · 곁에 남았지만 역할 밖의 자신은 고르지 못했다">>
         <<goto "3Y · 돌아온 사람">>
@@ -459,8 +493,8 @@
           <p class="vn-character-card__line">“만나기로 한 사람이 있어서 왔습니다.”</p>
         </div>
       </div>
-      <p>자정이 조금 넘어 유진이 처음 정한 약속 장소로 돌아왔다. 사건 보고서는 차 안에 두고, 편의점 봉투만 들고 있었다.</p>
-      <p>유진: “구조가 끝나서 온 게 아닙니다. 만나기로 한 사람이 있어서 온 겁니다.”</p>
+      <p>유진은 제보를 당직팀에 넘긴 뒤 처음 정한 약속 장소로 돌아왔다. 사건 보고서는 쓰지 않았고 편의점 봉투만 들고 있었다.</p>
+      <p>유진: “제가 해결하지 않아도 절차는 움직였습니다. 만나기로 한 사람이 있어서 돌아왔고요.”</p>
       <p class="vn-beat">유진은 처음으로 임무의 끝과 관계의 시작을 다른 문장으로 말했다.</p>
     <<else>>
       <div class="vn-character-card">
@@ -470,8 +504,8 @@
           <p class="vn-character-card__line">“이 선택도 누군가의 명령이었던 걸까요.”</p>
         </div>
       </div>
-      <p>유진은 전화를 껐지만 창밖의 사이렌마다 고개를 들었다. 내 곁에 있으면서도, 돌아오지 못한 사람처럼 보였다.</p>
-      <p>유진: “제가 남은 건 선택이었을까요. 아니면 또 다른 보호 명령이었을까요.”</p>
+      <p>유진은 비번인 채 제보자를 뒤쫓았다. 당직팀이 도착했을 때는 이미 골목 안으로 들어간 뒤였다.</p>
+      <p>사람은 피의자가 아니었다. 유진은 아무도 다치지 않았다는 보고보다, 자기가 먼저 확인했다는 사실에 안도했다.</p>
     <</if>>
     [[제복을 벗은 유진과 걷는다->3Y · 풀린 넥타이]]
   </div>
@@ -506,15 +540,36 @@
       <<link "순찰도 보호도 없이 걷고, 다음 약속도 사건과 무관하게 정한다.">>
         <<set $dangerousAffection.yujin += 8>>
         <<set $affectionNotice = "♥ 유진 호감도 +8 · 사건 없는 약속">>
-        <<if $dangerousSolo.yujinEqual && $dangerousSolo.yujinReleased && $dangerousSolo.yujinReturnedOffDuty && $dangerousAffection.yujin gte 80>>
+        <<if $dangerousSolo.yujinRisk lte 1 && $dangerousAffection.yujin gte 80>>
           <<goto "3Y · 사건 없는 내일">>
         <<else>>
-          <<goto "3Y · 안전가옥">>
+          <<goto "3Y · 마지막 보호 명령">>
         <</if>>
       <</link>>
       <<link "유진만 나를 찾을 수 있는 안전가옥으로 데려가 달라고 한다.">>
         <<set $dangerousAffection.yujin += 2>>
         <<set $affectionNotice = "♥ 유진 호감도 +2 · 보호라는 이름의 격리">>
+        <<goto "3Y · 안전가옥">>
+      <</link>>
+    </div>
+  </div>
+</section>
+
+:: 3Y · 마지막 보호 명령 [chapter3 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>사건 없는 약속을 정했지만 우리는 여러 번 구조와 사랑을 같은 말로 불렀다.</p>
+    <p>유진은 자기 이름으로 빌린 안전가옥 신청서를 내놓았다. 경찰 보호 시설이 아니라, 유진만 주소를 알고 출입을 관리하는 개인 거처였다.</p>
+    <p>“여기 있으면 제가 필요할 때 바로 갈 수 있습니다.”</p>
+    <p>“내가 안전한 것보다 유진 씨가 나를 찾을 수 있는 게 더 중요한 겁니까?”</p>
+    <p>유진은 부정하지 못했다.</p>
+    <div class="vn-choices">
+      <<link "신청서를 폐기하고 한 달간 보호와 연애를 모두 쉬었다가 다시 만난다.">>
+        <<set $dangerousSolo.yujinRisk = 1>>
+        <<goto "3Y · 사건 없는 내일">>
+      <</link>>
+      <<link "유진만 주소를 아는 곳으로 데려가 달라고 한다.">>
         <<goto "3Y · 안전가옥">>
       <</link>>
     </div>
@@ -560,6 +615,8 @@
 <<set $chapter = 3>>
 <<set $scene = "chaerin-solo">>
 <<set $dangerousSolo.route = "chaerin">>
+<<set $dangerousSolo.chaerinRisk = 0>>
+<<if $chapter2.chaerinPath is "indulge">><<set $dangerousSolo.chaerinRisk = 1>><</if>>
 <<set $dangerousSolo.chaerinPublicBoundary = false>>
 <<set $dangerousSolo.chaerinStop = false>>
 <<set $dangerousSolo.chaerinAcceptedConsequence = false>>
@@ -571,7 +628,9 @@
       <img src="../assets/images/event-chaerin-1.png" alt="은호가 찢은 계약서를 바라보는 한채린">
       <figcaption>값을 매길 수 없게 된 첫 사람</figcaption>
     </figure>
-    <p>채린은 내가 찢은 계약서를 한참 내려다봤다. 화를 내거나 사람을 부르는 대신, 찢어진 조각의 순서를 맞췄다.</p>
+    <p>사건이 끝난 뒤 두 달, 나는 다른 두 사람과 연애를 시작하지 않겠다고 말하고 채린에게 다음 저녁을 부탁했다.</p>
+    <p>세 주 동안 채린은 계약도 차도 보내지 않았다. 네 번째 주, 내가 먼저 개인실을 찾았을 때 채린은 예전에 찢은 계약서를 꺼냈다.</p>
+    <p>채린은 종이 조각의 순서를 맞췄다. 화를 내거나 사람을 부르지는 않았다.</p>
     <p>채린: “다들 조건을 더 달라고 했어요. 당신만 종이를 없애 버렸고.”</p>
     <p>“내 대답까지 계약서에 써 두면, 채린 씨는 거절당할 일이 없으니까요.”</p>
     [[채린이 다시 만든 계약서를 본다->3C · 세 번째 계약]]
@@ -627,6 +686,7 @@
       <</link>>
       <<link "사람들 앞에서 다시 뺨을 때려 도발에 응한다.">>
         <<set $dangerousSolo.chaerinPublicBoundary = false>>
+        <<set $dangerousSolo.chaerinRisk += 2>>
         <<set $dangerousAffection.chaerin -= 5>>
         <<set $affectionNotice = "♡ 채린 호감도 -5 · 원하는 굴욕을 보상으로 줬다">>
         <<goto "3C · 박수 없는 퇴장">>
@@ -677,6 +737,7 @@
       <</link>>
       <<link "법무팀이 계약과 돈으로 영상을 내리게 둔다.">>
         <<set $dangerousSolo.chaerinAcceptedConsequence = false>>
+        <<set $dangerousSolo.chaerinRisk += 1>>
         <<set $dangerousAffection.chaerin += 3>>
         <<set $affectionNotice = "♥ 채린 호감도 +3 · 관계의 상처를 다시 비용으로 처리했다">>
         <<goto "3C · 남은 검색어">>
@@ -793,16 +854,36 @@
         <<set $dangerousSolo.chaerinStop = true>>
         <<set $dangerousAffection.chaerin += 10>>
         <<set $affectionNotice = "♥ 채린 호감도 +10 · 중단권이 실제 규칙이 됐다">>
-        <<if $dangerousSolo.chaerinPublicBoundary && $dangerousSolo.chaerinStop && $dangerousSolo.chaerinAcceptedConsequence && $dangerousAffection.chaerin gte 80>>
+        <<if $dangerousSolo.chaerinRisk lte 1 && $dangerousAffection.chaerin gte 80>>
           <<goto "3C · 왕관을 내려놓은 밤">>
         <<else>>
-          <<goto "3C · 황금감옥">>
+          <<goto "3C · 마지막 계약">>
         <</if>>
       <</link>>
       <<link "먼저 부탁한 건 채린이라며 중단 신호를 무시한다.">>
         <<set $dangerousSolo.chaerinStop = false>>
         <<set $dangerousAffection.chaerin -= 5>>
         <<set $affectionNotice = "♡ 채린 호감도 -5 · 부탁을 또 굴욕으로 바꿨다">>
+        <<goto "3C · 황금감옥">>
+      <</link>>
+    </div>
+  </div>
+</section>
+
+:: 3C · 마지막 계약 [chapter3 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>중단 신호는 지켰지만 그전의 폭력과 기록 삭제가 사라진 것은 아니었다.</p>
+    <p>채린은 내 집 임대권과 남은 채무를 함께 인수하는 계약서를 가져왔다. 내가 거절하기 어려운 상황을 만든 뒤, 또 자기를 멈춰 달라고 기다리고 있었다.</p>
+    <p>“이걸 찢으라고 해요. 그러고도 떠나지 않을 건지 보게.”</p>
+    <p>“채린 씨가 만든 시험에 답하는 동안에는 같은 일이 반복됩니다.”</p>
+    <div class="vn-choices">
+      <<link "계약을 채린 손으로 철회하게 하고 한 달간 사적 명령 없이 다시 만난다.">>
+        <<set $dangerousSolo.chaerinRisk = 1>>
+        <<goto "3C · 왕관을 내려놓은 밤">>
+      <</link>>
+      <<link "계약을 받아들이고 앞으로의 조건도 채린에게 맡긴다.">>
         <<goto "3C · 황금감옥">>
       <</link>>
     </div>
@@ -839,7 +920,11 @@
       <img src="../assets/images/event-chaerin-golden-cage-ending.png" alt="은호가 나갈 수 없는 펜트하우스의 열쇠를 든 한채린">
       <figcaption>모든 것을 살 수 있는 사람이 산 마지막 관계</figcaption>
     </figure>
-    <p>중단 신호가 지켜지지 않은 뒤 채린은 다시 가장 익숙한 방법으로 돌아갔다. 내 빚과 집, 일정과 연락처를 모두 사들여 이제는 자기가 관계의 모든 조건을 정했다.</p>
+    <<if $dangerousSolo.chaerinStop>>
+      <p>중단 신호는 지켜졌지만, 우리는 그전의 폭력과 기록 삭제를 돈으로 덮는 선택을 반복했다. 채린은 가장 익숙한 방법으로 돌아가 내 빚과 집, 일정과 연락처를 모두 사들였다.</p>
+    <<else>>
+      <p>중단 신호가 지켜지지 않은 뒤 채린은 다시 가장 익숙한 방법으로 돌아갔다. 내 빚과 집, 일정과 연락처를 모두 사들여 이제는 자기가 관계의 모든 조건을 정했다.</p>
+    <</if>>
     <p>자기가 통제권을 맡기고 싶다는 욕망은 사라지지 않았다. 다만 믿고 맡길 사람이 없다고 결론 내린 순간, 채린은 나부터 소유해 도망치지 못하게 만들었다.</p>
     <p class="chapter-end">SOLO BAD · 황금감옥</p>
     <p class="chapter-end__next">가장 비싼 열쇠는 안에서 문을 열지 못했다.</p>

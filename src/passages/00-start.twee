@@ -35,12 +35,15 @@
 <<set $dangerousAffectionVersion = 2>>
 <<set $dangerousSolo = {
   "route": "",
+  "seraRisk": 0,
   "seraBoundary": false,
   "seraAsked": false,
   "seraReturnedByChoice": false,
+  "yujinRisk": 0,
   "yujinEqual": false,
   "yujinReleased": false,
   "yujinReturnedOffDuty": false,
+  "chaerinRisk": 0,
   "chaerinPublicBoundary": false,
   "chaerinStop": false,
   "chaerinAcceptedConsequence": false
@@ -118,6 +121,8 @@
   "seraAnswered": false,
   "yujinAnswered": false,
   "chaerinAnswered": false,
+  "parallelTrial": false,
+  "firstMeeting": false,
   "rivalsMetAlone": false,
   "rulesWritten": false,
   "newHomeCrossed": false,
