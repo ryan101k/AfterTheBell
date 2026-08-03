@@ -683,29 +683,15 @@
 <<if $freedom.yunaClarified>><<set _freedomPassed += 1>><</if>>
 <<if $freedom.soheeStayed>><<set _freedomPassed += 1>><</if>>
 <<set _freedomAffinity = Math.min($affection.chaewon, $affection.yuna, $affection.sohee)>>
-<section class="vn-scene vn-scene--room vn-scene--ending">
+<section class="vn-scene vn-scene--room">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
     <p>자정, 게임 서버가 닫혔다. 네 사람의 캐릭터는 사라졌지만 토요일 밤 아홉 시라는 문장은 남았다.</p>
     <<if _freedomPassed gte 3 && $freedom.contextHonest && _freedomAffinity gte 30>>
-      <figure class="vn-cutscene"><img src="../assets/images/event-freedom-true-next-meeting.png" alt="게임이 끝난 뒤 현실의 약속으로 다시 모인 채원, 유나, 소희"></figure>
-      <<set $clearedEndings.freedomTrue = true>>
-      <<if $freedomMode is "after_harem">>
-        <p>첫 토요일에는 게임 없는 음성 채널에 네 사람이 모였다. 채원은 호텔에서, 유나는 집에서, 소희는 연습실에서 접속했다.</p>
-        <p>다음 날 채원과 저녁을 먹었고, 수요일에는 유나와 카메라 없이 걸었다. 금요일에는 소희의 미완성 데모를 끝까지 들었다.</p>
-        <p>새라는 돌아올 시간을 받았고, 유진은 내가 안전한지가 아니라 즐거웠는지를 물었다. 채린은 질투 난다는 말을 지우지 않고 자기 금요일을 다시 부탁했다.</p>
-        <p>여섯 사람은 서로의 존재를 알았다. 누구도 다른 사람의 연인이나 친구가 되는 일까지 한꺼번에 약속하지 않았다.</p>
-        <p class="chapter-end">TRUE END · 두 개의 다음 접속</p>
-        <p class="chapter-end__next">하나로 합치지 않아도, 서로를 숨기지 않는 관계.</p>
-      <<else>>
-        <p>첫 토요일에는 게임 없는 음성 채널에 네 사람이 모였다. 화면 공유 대신 서로의 방에서 들리는 생활 소리를 들었다.</p>
-        <p>다음 날 채원과 저녁을 먹었다. 채원은 먼저 자리에서 일어나면서도 귀국 날짜를 지우지 않았다.</p>
-        <p>수요일에는 유나와 카메라 없이 걸었다. 유나는 내 대답을 추측하지 않고 다음 약속을 직접 물었다.</p>
-        <p>금요일에는 소희의 연습실에서 미완성 데모를 끝까지 들었다. 소희는 틀린 음을 다시 녹음하지 않았다.</p>
-        <p>세 관계의 이름은 아직 같지 않았다. 그래도 누구도 편할 때 보자는 말 뒤로 숨지 않았다.</p>
-        <p class="chapter-end">TRUE END · 다음 접속</p>
-        <p class="chapter-end__next">붙잡지 않아도 사라지지 않는 사람들.</p>
-      <</if>>
+      <p>종료 화면이 닫힌 뒤에도 채원은 통화를 끊지 않았다. 유나는 남은 시간을 읽는 버릇대로 새 채널의 시계를 봤고, 소희는 헤드셋 너머로 건반 하나를 눌렀다.</p>
+      <p>“그럼 토요일에 봐요.”</p>
+      <p>작전이 아니라 약속을 확인하는 목소리가 차례로 돌아왔다.</p>
+      [[게임 없는 토요일 밤에 다시 접속한다->7장 · 게임 없는 토요일]]
     <<else>>
       <<set $clearedEndings.freedomFragile = true>>
       <p>날짜는 정했지만 모두가 돌아오는 법을 배운 것은 아니었다.</p>
@@ -713,6 +699,136 @@
       <p>다음 음성 채널에는 불이 들어왔다. 네 자리 중 하나가 언제까지 비어 있을지는 아무도 묻지 못했다.</p>
       <p class="chapter-end">FRAGILE END · 접속 중</p>
       <p class="chapter-end__next">약속은 생겼지만 아직 모두의 것은 아니었다.</p>
+    <</if>>
+  </div>
+</section>
+
+:: 7장 · 게임 없는 토요일 [chapter7 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>토요일 밤 아홉 시, 새 음성 채널에는 캐릭터 초상도 전투 기록도 없었다.</p>
+    <p>채원의 호텔 에어컨 소리, 유나가 컵을 내려놓는 소리, 소희의 의자가 삐걱이는 소리만 들렸다. 나는 습관처럼 게임을 켰다가 로고가 사라진 빈 화면을 보고 다시 껐다.</p>
+    <p>처음 사십 초 동안 아무도 말을 꺼내지 못했다.</p>
+    <p>“우리 원래 이렇게 재미없는 사람들이었어요?” 채원이 물었다.</p>
+    <p>유나가 웃었다. “게임이 대신 말해 준 게 많았나 봐요.”</p>
+    <p>소희는 마이크 가까이에서 건반을 세 번 눌렀다. “그럼 오늘은 뭘 해요?”</p>
+    <<if $freedomMode is "after_harem">>
+      <p>그때 휴대전화가 짧게 울렸다. 새라는 재밌게 놀다 오라고 했고, 유진은 끝나면 안부만 달라고 했다. 채린은 질투 난다는 한 줄 뒤에 자기 약속 시간을 붙였다.</p>
+      <p>나는 세 메시지를 숨기지 않고 읽었다. 채원도 유나도 소희도 괜찮은 척 웃지는 않았지만, 통화를 나가지는 않았다.</p>
+    <</if>>
+    <div class="vn-choices">
+      <<link "오늘 있었던 가장 시시한 일부터 말한다.">>
+        <<set $freedom.afterTopic = "daily">>
+        <<goto "7장 · 게임 없는 토요일의 끝">>
+      <</link>>
+      <<link "다음에 함께하고 싶은 일을 하나씩 묻는다.">>
+        <<set $freedom.afterTopic = "plans">>
+        <<goto "7장 · 게임 없는 토요일의 끝">>
+      <</link>>
+    </div>
+  </div>
+</section>
+
+:: 7장 · 게임 없는 토요일의 끝 [chapter7 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <<if $freedom.afterTopic is "daily">>
+      <p>나는 점심 라면에 물을 너무 많이 부었다는 이야기부터 했다. 채원은 호텔 세탁실에서 양말 한 짝을 잃었고, 유나는 화분에 물을 두 번 줬으며, 소희는 배달 음식을 시켜 놓고 초인종을 못 들었다.</p>
+      <p>누구도 쓸모 있는 결론을 내리지 않았다. 그래도 한 시간 뒤에는 서로의 하루에서 가장 시시한 부분을 하나씩 알고 있었다.</p>
+    <<else>>
+      <p>채원은 귀국한 다음 저녁을, 유나는 카메라 없는 산책을, 소희는 완성하지 않은 곡을 함께 듣는 일을 골랐다.</p>
+      <p>어느 것도 네 사람이 동시에 할 수 있는 일은 아니었다. 이번에는 한꺼번에 같은 대답을 만들지 않고 각자의 날짜를 달력에 남겼다.</p>
+    <</if>>
+    <p>자정이 지나자 채원이 먼저 졸리다고 말했다. 예전 같으면 통화가 끝날까 봐 괜찮다고 했을 사람이었다.</p>
+    <p>“먼저 잘게요. 다음 주에도 같은 시간 맞죠?”</p>
+    <p>세 사람이 대답했다. 채원이 나간 뒤에도 채널은 무너지지 않았고, 남은 사람들도 차례로 잘 자라는 말을 남기고 나갔다.</p>
+    <p class="vn-beat">게임이 없어도 끝나는 순서와 돌아올 시간이 있었다.</p>
+    [[수요일, 유나와 카메라 없이 걷는다->7장 · 카메라 없는 산책]]
+  </div>
+</section>
+
+:: 7장 · 카메라 없는 산책 [chapter7 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>수요일 저녁, 유나는 정말 카메라를 가져오지 않았다. 대신 주머니가 비어 어색하다며 몇 번이나 손을 넣었다 뺐다.</p>
+    <p>우리는 강변을 걸었다. 유나는 내 표정이 굳을 때마다 이유를 짐작하려는 얼굴이 됐다가, 매번 입을 열었다.</p>
+    <p>“지금 조용한 건 피곤해서예요, 불편해서예요?”</p>
+    <p>“편해서요.”</p>
+    <p>“그 대답, 믿어도 돼요?”</p>
+    <p>“다른 뜻이면 다시 말하겠습니다.”</p>
+    <p>유나는 확인할 사진이 없어서 내 대답을 그대로 두었다. 횡단보도 앞에서 손등이 스쳤을 때도 의미를 해석하지 않고 물었다.</p>
+    <p>“지금 잡아도 돼요?”</p>
+    <p>내가 손을 내밀자 유나는 신호가 바뀐 뒤에도 놓지 않았다.</p>
+    <p>“다음 주에도 만나면, 나는 이걸 연애라고 생각할 거예요.”</p>
+    <p>“다음 주에도 만납시다.”</p>
+    <p>유나는 그제야 웃었다. 사진으로 남지 않은 첫 데이트는 다음 날짜 하나만 남기고 끝났다.</p>
+    [[금요일, 소희의 미완성 곡을 들으러 간다->7장 · 틀린 음의 연습실]]
+  </div>
+</section>
+
+:: 7장 · 틀린 음의 연습실 [chapter7 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>금요일 연습실에는 의자가 두 개 붙어 있었다. 소희는 손님용 의자를 치우지 못한 대신, 자기 의자를 그 옆으로 옮겨 둔 모양이었다.</p>
+    <p>“중간에 음 하나가 틀려요. 들려도 모른 척해 줘요.”</p>
+    <p>“알겠습니다.”</p>
+    <p>“아니, 들었는지도 말해 줘요. 모른 척은 취소.”</p>
+    <p>소희는 완성하지 않은 데모를 재생했다. 삼 분 십칠 초쯤 건반 하나가 박자를 놓쳤다. 소희의 손이 정지 버튼 위로 갔지만 누르지는 않았다.</p>
+    <p>곡이 끝난 뒤 내가 말했다. “들었습니다. 그래도 그다음 마디가 더 좋았습니다.”</p>
+    <p>소희는 다시 녹음하는 대신 의자 등받이에 몸을 기댔다. 잠시 뒤 어깨가 내 쪽으로 닿았다.</p>
+    <p>“이렇게 있어도 친구라고 생각해요?”</p>
+    <p>“아뇨.”</p>
+    <p>“다행이다. 나만 고백을 노래로 대신한 줄 알았어요.”</p>
+    <p>소희는 다음 곡의 첫 청취자를 내 이름으로 적었다. 틀리면 대체할 사람이 아니라, 틀린 음 다음까지 들을 사람으로.</p>
+    [[한 달 뒤 채원의 도착 메시지를 받는다->7장 · 도착한 뒤의 저녁]]
+  </div>
+</section>
+
+:: 7장 · 도착한 뒤의 저녁 [chapter7 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>한 달 뒤, 채원은 착륙하자마자 도착했다는 두 글자를 보냈다. 약속 시간보다 세 시간이나 빨랐지만 먼저 보자는 말은 덧붙이지 않았다.</p>
+    <p>저녁 식당에 나온 채원 옆에는 아직 짐표를 떼지 않은 여행 가방이 있었다.</p>
+    <<if $freedomMode is "after_harem">>
+      <p>나는 채원을 만나러 간다는 말을 새라와 유진, 채린에게 각각 남겼다. 채원은 그 답장 내용을 묻지 않았다. 다만 숨기지 않았다는 말에 고개를 끄덕였다.</p>
+    <</if>>
+    <p>채원은 메뉴를 고르면서 두 번이나 아무거나 괜찮다고 했다. 세 번째에는 말을 고쳤다.</p>
+    <p>“아무거나 말고, 따뜻한 국물 먹고 싶어요. 비행기에서 제대로 못 먹었거든요.”</p>
+    <p>식사를 마친 뒤에도 채원은 먼저 일어났다. 이번에는 미안하다고 웃지 않고 가방 손잡이를 세웠다.</p>
+    <p>“나 먼저 갈게요. 피곤한 건 참지 않기로 했으니까.”</p>
+    <p>“다음 약속은요?”</p>
+    <p>채원이 휴대전화를 꺼내 다음 출국일과 돌아오는 날을 함께 보여 줬다.</p>
+    <p>“우리 이제 사귀는 거 맞죠?”</p>
+    <p>“네.”</p>
+    <p>“그럼 내가 먼저 가도 끝난 걸로 생각하지 말아요. 돌아오는 날 다시 말할 테니까.”</p>
+    <p>채원은 작별 인사 대신 다음 날짜를 남기고 떠났다. 나는 붙잡지 않았고, 채원은 사라지지 않았다.</p>
+    [[각자 다른 약속을 품고 다음 모임으로 간다->7장 · 다음 접속]]
+  </div>
+</section>
+
+:: 7장 · 다음 접속 [chapter7 autosave nobr]
+<<set $clearedEndings.freedomTrue = true>>
+<section class="vn-scene vn-scene--room vn-scene--ending">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <figure class="vn-cutscene"><img src="../assets/images/event-freedom-true-next-meeting.png" alt="게임이 끝난 뒤 카페에서 다시 만난 채원, 유나, 소희"><figcaption>두 달 뒤 · 접속 표시가 없는 자리</figcaption></figure>
+    <p>두 달 뒤에는 네 사람이 같은 카페에 모였다. 채원은 여행 가방을 의자 옆에 세웠고, 유나는 카메라를 가방 안에 둔 채 왔으며, 소희는 완성 전인 악보를 접어 가져왔다.</p>
+    <p>세 사람과 시작한 연애의 속도는 같지 않았다. 채원은 떠날 날짜와 돌아올 날짜를 함께 말했고, 유나는 추측이 생길 때마다 물었으며, 소희는 틀린 음을 숨기지 않았다.</p>
+    <<if $freedomMode is "after_harem">>
+      <p>새라는 저녁 사진을 기다렸고, 유진은 안전한지가 아니라 즐거웠는지를 물었다. 채린은 질투 난다는 말을 지우지 않고 자기 금요일을 다시 부탁했다.</p>
+      <p>여섯 사람은 서로의 존재를 알았다. 누구도 여섯 사람이 한 관계가 되어야 한다고 약속하지 않았고, 누구도 편의를 위해 다른 관계를 숨기지 않았다.</p>
+      <p class="chapter-end">TRUE END · 두 개의 다음 접속</p>
+      <p class="chapter-end__next">하나로 합치지 않아도, 서로를 숨기지 않는 관계.</p>
+    <<else>>
+      <p>누가 가장 오래 남을지는 정하지 않았다. 오늘 먼저 일어나는 사람이 다음 모임을 취소한 것도 아니었다.</p>
+      <p>게임처럼 같은 임무를 받을 필요도 없었다. 네 사람은 서로 다른 다음 날짜를 가진 채, 지금의 커피를 다 마실 때까지 앉아 있었다.</p>
+      <p class="chapter-end">TRUE END · 다음 접속</p>
+      <p class="chapter-end__next">붙잡지 않아도 사라지지 않는 사람들.</p>
     <</if>>
   </div>
 </section>
