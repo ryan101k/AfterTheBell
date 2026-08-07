@@ -17,7 +17,7 @@
 <<if $chapter2.seraPath is "boundary">><<set $chapter3.boundaryCount += 1>><</if>>
 <<if $chapter2.yujinPath is "boundary">><<set $chapter3.boundaryCount += 1>><</if>>
 <<if $chapter2.chaerinPath is "boundary">><<set $chapter3.boundaryCount += 1>><</if>>
-<section class="vn-scene vn-scene--room">
+<section class="vn-scene vn-scene--room" data-standees="sera:anxious,yujin:alert,chaerin:cold">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
     <p class="vn-label">CHAPTER 3 · 네 사람이 돌아갈 곳</p>
@@ -44,17 +44,20 @@
 </section>
 
 :: 3장 · 새라에게 한 고백 [chapter3 autosave nobr]
-<section class="vn-scene vn-scene--room">
+<section class="vn-scene vn-scene--room" data-standees="sera:anxious" data-focus="sera">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
     <figure class="vn-cutscene"><img src="../assets/images/event-trio-sera-awakening-v1.webp" alt="은호의 집 열쇠를 쥔 채 고백을 듣는 윤새라"><figcaption>첫 번째 고백 · 돌아오는 사람이 생긴 집</figcaption></figure>
     <p>새라에게는 화요일 저녁 식탁에서 말했다.</p>
-    <p>“새라 씨가 없는 날에는 컵이 하나 비는 게 아니라, 내가 돌아왔다는 걸 확인해 줄 사람이 없다는 생각이 듭니다.”</p>
+    <p data-speaker="최은호">“새라 씨가 없는 날에는 컵이 하나 비는 게 아니라, 내가 돌아왔다는 걸 확인해 줄 사람이 없다는 생각이 듭니다.”</p>
     <p>새라는 열쇠를 쥔 손에 힘을 줬다.</p>
-    <p>“그럼 저만 있으면 되잖아요.”</p>
+    <p data-speaker="윤새라">“그럼 저만 있으면 되잖아요.”</p>
     <p>나는 유진과 채린에게도 마음이 간다고 말했다. 새라가 모르는 곳에서 다른 사람에게 먼저 대답하고 싶지는 않았다.</p>
-    <p>“제가 부족한 거예요?”</p>
-    <p>“사람 셋을 더해서 하나를 만드는 얘기가 아닙니다. 그래서 새라 씨가 싫다고 하면 여기서 끝내야 합니다.”</p>
+    <p>새라의 손가락 사이에서 열쇠가 짧게 울렸다. 화를 낼 때보다, 아무 표정도 고르지 못할 때 새라는 더 어려 보였다.</p>
+    <p data-speaker="윤새라">“제가 부족한 거예요?”</p>
+    <p data-speaker="최은호">“아니요. 사람 셋을 더해서 하나를 만드는 얘기도 아닙니다. 그래서 새라 씨가 싫다고 하면 여기서 끝내야 합니다.”</p>
+    <p data-speaker="윤새라">“끝내도, 나중에 곤란해졌다고 다시 부르지 않을 수 있어요?”</p>
+    <p>대답하기 어려운 질문이었다. 좋아한다는 말보다 새라 없이 사는 책임을 먼저 묻는 말이었으니까.</p>
     <p>새라는 울지 않았다. 내 집 열쇠를 식탁에 내려놓고 이 주 동안 찾아오지 말라고 했다.</p>
     <p>“없어도 사는 사람인지 먼저 볼게요. 은호 씨도 제가 없을 때 뭘 좋아했던 건지 생각해요.”</p>
     [[새라가 없는 식탁을 견딘다->3장 · 비어 있는 식탁]]
@@ -74,17 +77,19 @@
 </section>
 
 :: 3장 · 유진에게 한 고백 [chapter3 autosave nobr]
-<section class="vn-scene vn-scene--room">
+<section class="vn-scene vn-scene--room" data-standees="yujin:shaken" data-focus="yujin">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
     <figure class="vn-cutscene"><img src="../assets/images/event-trio-yujin-awakening-v1.webp" alt="근무가 끝난 뒤 은호에게 기대는 강유진"><figcaption>두 번째 고백 · 구조 요청이 없는 밤</figcaption></figure>
     <p>유진에게는 금요일 야간 근무가 끝난 뒤 강변에서 말했다.</p>
-    <p>“유진 씨가 누군가를 구해서가 아니라, 내 소파에서 아무것도 지키지 않고 잠든 밤이 좋았습니다. 멀쩡한 날에도 만나고 싶고요.”</p>
+    <p data-speaker="최은호">“유진 씨가 누군가를 구해서가 아니라, 내 소파에서 아무것도 지키지 않고 잠든 밤이 좋았습니다. 멀쩡한 날에도 만나고 싶고요.”</p>
     <p>유진은 기뻐하기 전에 새라와 채린의 이름부터 확인했다.</p>
-    <p>“세 사람 모두를 지키겠다는 말입니까?”</p>
-    <p>“아닙니다. 좋아한다고 말하러 왔습니다. 싫다는 대답도 유진 씨한테 직접 들으려고요.”</p>
-    <p>“예전에도 모두를 잃기 싫어서 같은 답을 골랐다고 했죠.”</p>
+    <p data-speaker="강유진">“세 사람 모두를 지키겠다는 말입니까?”</p>
+    <p data-speaker="최은호">“아닙니다. 좋아한다고 말하러 왔습니다. 싫다는 대답도 유진 씨한테 직접 들으려고요.”</p>
+    <p data-speaker="강유진">“예전에도 모두를 잃기 싫어서 같은 답을 골랐다고 했죠.”</p>
     <p>대답할 말이 없었다. 유진은 내 손을 잡는 대신 비상 연락망에서 내 이름을 내린 화면을 보여 줬다.</p>
+    <p>삭제 확인창 위에서 유진의 엄지가 오래 멈췄다. 보호 권한을 내려놓는 동작이, 손을 잡는 것보다 더 솔직해 보였다.</p>
+    <p data-speaker="강유진">“이걸 지우고도 보고 싶은지 먼저 확인해야 합니다. 담당이 아니게 된 뒤의 마음은 저도 아직 모릅니다.”</p>
     <p>“일주일 동안 연락하지 마세요. 그 뒤에도 제가 사건 없이 보고 싶으면, 그때 대답하겠습니다.”</p>
     [[유진이 없는 일주일을 보낸다->3장 · 사건 없는 일주일]]
   </div>
@@ -104,15 +109,18 @@
 </section>
 
 :: 3장 · 채린에게 한 고백 [chapter3 autosave nobr]
-<section class="vn-scene vn-scene--room">
+<section class="vn-scene vn-scene--room" data-standees="chaerin:wounded" data-focus="chaerin">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
     <figure class="vn-cutscene"><img src="../assets/images/event-trio-chaerin-awakening-v1.webp" alt="은호의 고백을 듣고 뺨을 짚는 한채린"><figcaption>세 번째 고백 · 값을 매기지 않은 기다림</figcaption></figure>
     <p>채린에게는 문을 열어 둔 개인실에서 말했다.</p>
-    <p>“정정 공고 때문에 손해가 날 걸 알면서도 자기 이름으로 사과한 날이 좋았습니다. 나를 움직일 수 있는데 답장을 기다린 것도요.”</p>
+    <p data-speaker="최은호">“정정 공고 때문에 손해가 날 걸 알면서도 자기 이름으로 사과한 날이 좋았습니다. 나를 움직일 수 있는데 답장을 기다린 것도요.”</p>
     <p>채린의 표정이 풀린 건 새라와 유진의 이름을 말하기 전까지였다.</p>
-    <p>“셋 중 하나를 고르라는 말이 그렇게 무서워요?”</p>
-    <p>“무섭습니다. 그래도 이번에는 무서워서 거짓말하지 않으려고요.”</p>
+    <p data-speaker="한채린">“셋 중 하나를 고르라는 말이 그렇게 무서워요?”</p>
+    <p data-speaker="최은호">“무섭습니다. 그래도 이번에는 무서워서 거짓말하지 않으려고요.”</p>
+    <p>채린은 웃으려다 실패했다. 누구보다 값비싼 표정을 골라 쓰던 사람이, 그 순간에는 어떤 얼굴이 자신을 덜 초라하게 만들지 찾지 못했다.</p>
+    <p data-speaker="한채린">“내가 제일 많은 걸 줄 수 있는데도?”</p>
+    <p data-speaker="최은호">“그래서가 아니라, 아무것도 주지 못했던 십 분 때문에 좋아한다고 말하는 겁니다.”</p>
     <p>채린은 당장 하나를 고르라고 했다. 나는 고르지 않았다.</p>
     <p>“싫으면 여기서 끝내도 됩니다. 그걸 배신이라고 부르지도 않을 겁니다.”</p>
     <p>채린은 차를 부르려다 취소했다.</p>
@@ -152,7 +160,7 @@
 </section>
 
 :: 3장 · 새라가 가져온 대답 [chapter3 autosave nobr]
-<section class="vn-scene vn-scene--room">
+<section class="vn-scene vn-scene--room" data-standees="sera:relieved" data-focus="sera">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
     <p>새라는 약속한 기간을 하루 남겨 두고 작업실로 나를 불렀다. 문은 열어 줬지만 내 집 열쇠는 작업대 위에 그대로 있었다.</p>
@@ -165,7 +173,7 @@
 </section>
 
 :: 3장 · 사건 없이 온 대답 [chapter3 autosave nobr]
-<section class="vn-scene vn-scene--room">
+<section class="vn-scene vn-scene--room" data-standees="yujin:relieved" data-focus="yujin">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
     <p>유진은 근무가 끝난 뒤 강변 벤치에서 기다리고 있었다. 내가 다가가도 걸음이나 안색부터 확인하지 않았다.</p>
@@ -183,7 +191,7 @@
 <<set $chapter3.yujinAnswered = true>>
 <<set $chapter3.chaerinAnswered = true>>
 <<set $chapter3.parallelTrial = true>>
-<section class="vn-scene vn-scene--room">
+<section class="vn-scene vn-scene--room" data-standees="chaerin:relieved" data-focus="chaerin">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
     <p>채린은 자기가 정한 마지막 날에도 차를 보내지 않았다. 나는 주소를 알고도 약속 시각까지 기다렸다가 개인실로 갔다.</p>

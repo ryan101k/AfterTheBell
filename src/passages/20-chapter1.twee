@@ -12,13 +12,16 @@
   "yujinOffDutyTea": false,
   "sharedHospitalChoice": false
 }>>
-<section class="vn-scene vn-scene--room">
+<section class="vn-scene vn-scene--room" data-standees="sera:anxious" data-focus="sera">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
     <p class="vn-label">CHAPTER 1 · 이름을 묻지 않은 열나흘</p>
     <p>여자는 문턱을 넘은 뒤에도 검은 가방을 놓지 않았다.</p>
     <p>나는 이름을 묻지 않았다. 여자는 왜 문밖에 있었는지 말하지 않았다.</p>
     <p>젖은 양말 끝에서 물이 한 방울씩 떨어졌다.</p>
+    <p>수건을 내밀자 여자는 바로 받지 못했다. 내 손과 열린 현관문을 번갈아 보고서야 두 손으로 끝을 잡았다.</p>
+    <p data-speaker="이름 모르는 여자">“정말 아침까지만 있어도 돼요?”</p>
+    <p>허락을 확인하는 목소리보다, 허락이 취소될 때를 먼저 기다리는 눈이었다.</p>
     <div class="vn-character-card">
       <figure class="vn-character-card__portrait"><img src="../assets/images/characters/sera.png" alt="검은 가방을 안은 채 현관에 선 이름 모르는 여자"></figure>
       <div class="vn-character-card__body">
@@ -32,7 +35,7 @@
 </section>
 
 :: 1장 · 현관의 규칙 [chapter1 autosave nobr]
-<section class="vn-scene vn-scene--room">
+<section class="vn-scene vn-scene--room" data-standees="sera:anxious" data-focus="sera">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
     <p>손님방 문을 열어 두자 여자는 안으로 들어가지 않았다.</p>
@@ -203,7 +206,7 @@
 </section>
 
 :: 1장 · 처음 들은 이름 [chapter1 autosave nobr]
-<section class="vn-scene vn-scene--room">
+<section class="vn-scene vn-scene--room" data-standees="sera:anxious" data-focus="sera">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
     <<if $chapter1.seraWaitedOutside>>
@@ -216,6 +219,7 @@
       <p>“다음에는 대답할 때까지 기다려 주세요.”</p>
     <</if>>
     <p>그날 처음 이름을 들었다.</p>
+    <p>여자는 이름 하나를 내놓고도 너무 많은 것을 빼앗긴 사람처럼 숨을 멈췄다. 내가 바로 따라 부르자 그제야 어깨가 조금 내려갔다.</p>
     <div class="vn-character-card">
       <figure class="vn-character-card__portrait"><img src="../assets/images/event-sera-5.png" alt="자기 이름을 처음 말하는 윤새라"></figure>
       <div class="vn-character-card__body">
@@ -281,11 +285,12 @@
 
 :: 1장 · 열흘째의 초인종 [chapter1 autosave nobr]
 <<set $scene = "yujin-entry">>
-<section class="vn-scene vn-scene--room">
+<section class="vn-scene vn-scene--room" data-standees="sera:anxious,yujin:alert" data-focus="yujin">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
     <p>열흘째 오후, 초인종이 세 번 울렸다.</p>
     <p>아래층 주민이 며칠 전부터 계단에서 자던 사람을 신고했다. 주거와 안전을 확인하러 왔다는 설명이 뒤따랐다.</p>
+    <p>새라는 내 뒤로 숨지 않았다. 대신 검은 가방 손잡이를 두 손으로 쥐었다. 유진은 그 손과 내 얼굴을 한 번씩 본 뒤, 어느 쪽의 대답도 대신 정하지 않겠다는 듯 문턱 밖에 섰다.</p>
     <figure class="vn-cutscene"><img src="../assets/images/event-yujin-emergency-entry.webp" alt="현관에서 신분증을 보이는 강유진"></figure>
     <div class="vn-character-card">
       <figure class="vn-character-card__portrait"><img src="../assets/images/characters/yujin-v3.png" alt="담당 경찰 강유진"></figure>
@@ -300,7 +305,7 @@
 </section>
 
 :: 1장 · 두 개의 진술 [chapter1 autosave nobr]
-<section class="vn-scene vn-scene--room">
+<section class="vn-scene vn-scene--room" data-standees="sera:anxious,yujin:alert" data-focus="yujin">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
     <p>유진은 우리를 한 번씩 따로 불렀다.</p>
@@ -327,7 +332,7 @@
 </section>
 
 :: 1장 · 제복을 벗지 않은 차 [chapter1 autosave nobr]
-<section class="vn-scene vn-scene--room">
+<section class="vn-scene vn-scene--room" data-standees="sera:anxious,yujin:alert" data-focus="yujin">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
     <p>유진은 집 안으로 들어오지 않았다. 모자도 제복도 그대로인 채 현관선 밖에서 내 호흡만 셌다.</p>
@@ -364,7 +369,7 @@
 </section>
 
 :: 1장 · 닫힌 작업실 [chapter1 autosave nobr]
-<section class="vn-scene vn-scene--room">
+<section class="vn-scene vn-scene--room" data-standees="sera:anxious,yujin:alert" data-focus="sera">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
     <p>새라는 주거 겸 공동 작업실에 남은 그림 도구를 찾으러 갔다.</p>
@@ -380,22 +385,24 @@
 </section>
 
 :: 1장 · 젖은 우산 아래의 세 사람 [chapter1 autosave nobr]
-<section class="vn-scene vn-scene--room">
+<section class="vn-scene vn-scene--room" data-standees="sera:relieved,yujin:relieved" data-focus="yujin">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
     <p>새라가 충전 케이블을 사야 한다고 해서 셋은 편의점에 들어갔다.</p>
     <p>유진은 문 옆에 선 채 무전을 확인했다. 계산대 직원이 폐기 직전 삼각김밥을 정리하는 동안에도 식사 코너를 보지 않았다.</p>
-    <p>“오늘 먹은 게 있습니까?” 내가 물었다.</p>
-    <p>“확인할 필요 없습니다.”</p>
-    <p>“기록하려는 게 아닙니다.”</p>
+    <p data-speaker="최은호">“오늘 먹은 게 있습니까?”</p>
+    <p data-speaker="강유진">“확인할 필요 없습니다.”</p>
+    <p data-speaker="최은호">“기록하려는 게 아닙니다.”</p>
     <p>새라는 말없이 삼각김밥 하나를 더 계산했다. 유진 앞에 놓고도 먹으라고 권하지는 않았다.</p>
     <p>유진은 무전이 조용한 삼 분 동안만 의자에 앉았다. 포장을 절반 벗긴 뒤 새라에게 영수증을 달라고 했고, 새라는 고개를 저었다.</p>
-    <p>“그럼 다음 확인 때 제가 돌려드리겠습니다.”</p>
+    <p data-speaker="강유진">“그럼 다음 확인 때 제가 돌려드리겠습니다.”</p>
     <p>그러고도 무전은 한동안 조용했다. 유진은 자리에서 일어나지 않았다.</p>
-    <p>“퇴근은 언제 합니까?” 내가 물었다.</p>
-    <p>“신고가 없으면 바로요.”</p>
-    <p>“그럼 신고가 없는 날은요?”</p>
-    <p>유진은 잠깐 대답을 골랐다. “……그런 날은, 저를 어디에 둬야 할지 잘 모르겠습니다.”</p>
+    <p data-speaker="최은호">“퇴근은 언제 합니까?”</p>
+    <p data-speaker="강유진">“신고가 없으면 바로요.”</p>
+    <p data-speaker="최은호">“그럼 신고가 없는 날은요?”</p>
+    <p>유진은 대답 대신 남은 삼각김밥을 내려다봤다. 새라는 재촉하지 않고 물병 뚜껑만 느슨하게 풀어 유진 쪽으로 밀었다.</p>
+    <p data-speaker="강유진">“……그런 날은, 저를 어디에 둬야 할지 잘 모르겠습니다.”</p>
+    <p>그 말이 떨어진 뒤에도 아무도 해결책을 내놓지 않았다. 유진은 그 침묵이 불편한 듯 두 번이나 일어나려다, 결국 삼각김밥을 다 먹었다.</p>
     <p>지킬 사람이 없는 시간에 자기 자신을 어디에 세워야 할지 모르는 얼굴이었다. 나는 그 얼굴을 아는 것 같았다. 모니터가 검게 식은 내 방 유리창에 비치던 얼굴이었다.</p>
     <p>유진은 우리를 보호 대상처럼 보지 않으려 했고, 우리는 유진을 구원자처럼 대하지 않으려 했다. 그날 나눈 건 삼각김밥 하나와 젖은 우산, 그리고 서로 닮은 빈 시간 하나였다.</p>
     [[열나흘째 집으로 돌아온다->1장 · 처음 저장한 번호]]

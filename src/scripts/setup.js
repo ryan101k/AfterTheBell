@@ -44,9 +44,33 @@ setup.hideChoiceScores = function () {
 };
 
 setup.standeeCharacters = {
-  sera: { file: 'sera-neutral.png', name: '윤새라' },
-  yujin: { file: 'yujin-neutral.png', name: '강유진' },
-  chaerin: { file: 'chaerin-neutral.png', name: '한채린' },
+  sera: {
+    file: 'sera-neutral.png',
+    name: '윤새라',
+    expressions: {
+      anxious: 'sera-anxious.png',
+      relieved: 'sera-relieved.png',
+      possessive: 'sera-possessive.png'
+    }
+  },
+  yujin: {
+    file: 'yujin-neutral.png',
+    name: '강유진',
+    expressions: {
+      alert: 'yujin-alert.png',
+      shaken: 'yujin-shaken.png',
+      relieved: 'yujin-relieved.png'
+    }
+  },
+  chaerin: {
+    file: 'chaerin-neutral.png',
+    name: '한채린',
+    expressions: {
+      cold: 'chaerin-cold.png',
+      wounded: 'chaerin-wounded.png',
+      relieved: 'chaerin-relieved.png'
+    }
+  },
   chaewon: { file: 'chaewon-neutral.png', name: '서채원' },
   yuna: { file: 'yuna-neutral.png', name: '강유나' },
   sohee: { file: 'sohee-neutral.png', name: '윤소희' }
@@ -139,29 +163,56 @@ setup.resolveStandeeCharacters = function () {
   return sceneCharacter ? [sceneCharacter] : [];
 };
 
-setup.updateStandee = function () {
-  const characterKeys = setup.resolveStandeeCharacters();
-  const $scene = $('#passages .vn-scene').last();
+setup.resolveStandeeEntries = function ($scene) {
+  const explicit = ($scene.attr('data-standees') || '').trim();
+  if (!explicit) {
+    return setup.resolveStandeeCharacters().map(function (key) {
+      return { key: key, expression: 'neutral' };
+    });
+  }
 
-  if (!characterKeys.length || !$scene.length) {
+  return explicit.split(',').map(function (item) {
+    const parts = item.trim().split(':');
+    return {
+      key: parts[0],
+      expression: parts[1] || 'neutral'
+    };
+  }).filter(function (entry) {
+    return entry.key && setup.standeeCharacters[entry.key];
+  });
+};
+
+setup.updateStandee = function () {
+  const $scene = $('#passages .vn-scene').last();
+  const entries = setup.resolveStandeeEntries($scene);
+
+  if (!entries.length || !$scene.length) {
     return;
   }
 
+  const focusedCharacter = ($scene.attr('data-focus') || '').trim();
+
   const $stage = $('<div>', {
-    class: 'vn-standee-stage vn-standee-stage--count-' + characterKeys.length,
+    class: 'vn-standee-stage vn-standee-stage--count-' + entries.length,
     'aria-hidden': 'true'
   });
 
-  characterKeys.forEach(function (characterKey, index) {
+  entries.forEach(function (entry, index) {
+    const characterKey = entry.key;
     const character = setup.standeeCharacters[characterKey];
     if (!character) {
       return;
     }
+    const expressionFile = character.expressions && character.expressions[entry.expression];
+    const focusClass = focusedCharacter
+      ? (focusedCharacter === characterKey ? ' is-focused' : ' is-muted')
+      : '';
     const $standee = $('<div>', {
-      class: 'vn-standee vn-standee--' + characterKey + ' vn-standee--slot-' + index
+      class: 'vn-standee vn-standee--' + characterKey + ' vn-standee--slot-' + index + focusClass,
+      'data-expression': entry.expression
     });
     const $image = $('<img>', {
-      src: '../assets/images/standing/' + character.file,
+      src: '../assets/images/standing/' + (expressionFile || character.file),
       alt: '',
       loading: 'eager',
       decoding: 'async'
