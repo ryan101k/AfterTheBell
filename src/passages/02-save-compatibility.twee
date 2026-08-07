@@ -62,6 +62,8 @@
   "securedArchive": false,
   "namedOwnEvening": false
 }, $freeSchedule.flags ?? {})>>
+<<if $freeSchedule.optionsPassage is "2장 · 자유 일정 선택지">><<set $freeSchedule.optionsPassage = "2장 · 달력에 적을 이름">><</if>>
+<<if $freeSchedule.finishPassage is "2장 · 자유 일정이 남긴 것">><<set $freeSchedule.finishPassage = "2장 · 달력에 남은 저녁">><</if>>
 <<set $dangerousSolo = Object.assign({
   "route": "",
   "seraRisk": 0,

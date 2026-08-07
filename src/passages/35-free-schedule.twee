@@ -1,4 +1,4 @@
-:: 자유 일정 · 선택 [autosave nobr]
+:: 달력 · 오늘의 약속 [autosave nobr]
 <<set _currentWeek = Math.floor($freeSchedule.slot / 2) + 1>>
 <<set _currentPeriod = $freeSchedule.slot % 2 is 0 ? "평일 저녁" : "주말">>
 <section class="vn-scene vn-scene--room vn-scene--schedule">
@@ -6,12 +6,12 @@
   <div class="vn-dialogue vn-dialogue--narration schedule-dialogue">
     <div class="schedule-header">
       <div>
-        <p class="schedule-kicker">FREE SCHEDULE</p>
+        <p class="schedule-kicker">세 주 동안의 달력</p>
         <h2><<print $freeSchedule.title>></h2>
       </div>
-      <p class="schedule-now"><strong><<print _currentWeek>>주차</strong><span><<print _currentPeriod>></span></p>
+      <p class="schedule-now"><strong><<print ["첫째 주", "둘째 주", "셋째 주"][_currentWeek - 1]>></strong><span><<print _currentPeriod>></span></p>
     </div>
-    <ol class="schedule-timeline" aria-label="자유 일정 진행 상황">
+    <ol class="schedule-timeline" aria-label="세 주 동안 적은 약속">
       <<for _slot = 0; _slot lt $freeSchedule.totalSlots; _slot++>>
         <<set _slotWeek = Math.floor(_slot / 2) + 1>>
         <<set _slotPeriod = _slot % 2 is 0 ? "평일" : "주말">>
@@ -19,36 +19,36 @@
           <<set _slotKey = $freeSchedule.order[_slot]>>
           <li class="schedule-slot is-filled"><span><<print _slotWeek>>주 · <<print _slotPeriod>></span><strong><<print setup.freeScheduleLabels[_slotKey]>></strong></li>
         <<elseif _slot is $freeSchedule.slot>>
-          <li class="schedule-slot is-current"><span><<print _slotWeek>>주 · <<print _slotPeriod>></span><strong>이번 일정</strong></li>
+          <li class="schedule-slot is-current"><span><<print _slotWeek>>주 · <<print _slotPeriod>></span><strong>오늘</strong></li>
         <<else>>
-          <li class="schedule-slot"><span><<print _slotWeek>>주 · <<print _slotPeriod>></span><strong>비어 있음</strong></li>
+          <li class="schedule-slot"><span><<print _slotWeek>>주 · <<print _slotPeriod>></span><strong>아직 적지 않음</strong></li>
         <</if>>
       <</for>>
     </ol>
-    <p class="schedule-guide">같은 사람을 다시 만나면 앞선 약속의 다음 장면이 열린다. 쓰지 않은 시간도 이후 관계에 남는다.</p>
+    <p class="schedule-guide">한 번 적은 이름 곁에는 다음 약속이 떠올랐다. 적지 않은 이름도 마음에서 사라지지는 않았다.</p>
     <<include $freeSchedule.optionsPassage>>
   </div>
 </section>
 
-:: 자유 일정 · 복귀 [nobr]
+:: 달력 · 다음 빈칸 [nobr]
 <<if $freeSchedule.slot gte $freeSchedule.totalSlots>>
   <<set $freeSchedule.active = false>>
   <<goto $freeSchedule.finishPassage>>
 <<else>>
-  <<goto "자유 일정 · 선택">>
+  <<goto "달력 · 오늘의 약속">>
 <</if>>
 
-:: 2장 · 고백 전 자유 일정 [chapter2 autosave nobr]
+:: 2장 · 사건 뒤의 빈 달력 [chapter2 autosave nobr]
 <<set $freeSchedule = {
   "mode": "dangerous-preconfession",
   "active": true,
-  "title": "고백 전의 세 주",
+  "title": "사건이 끝난 뒤",
   "totalSlots": 6,
   "slot": 0,
   "last": "",
   "order": [],
-  "optionsPassage": "2장 · 자유 일정 선택지",
-  "finishPassage": "2장 · 자유 일정이 남긴 것",
+  "optionsPassage": "2장 · 달력에 적을 이름",
+  "finishPassage": "2장 · 달력에 남은 저녁",
   "visits": {
     "sera": 0,
     "yujin": 0,
@@ -67,13 +67,13 @@
     <p>사건이 끝난 뒤 달력에는 약속이 아니라 빈칸이 먼저 생겼다.</p>
     <p>새라는 되찾은 작업실에 있었고, 유진은 사건이 없는 비번을 맞았으며, 채린은 처음으로 목적 없는 토요일을 비워 두었다. 누구도 당장 오라고 재촉하지 않았다.</p>
     <p>시우는 나래와 사건 자료를 정리할 사람이 필요하다고 했고, 나는 아무도 만나지 않는 저녁도 한 번쯤은 약속처럼 남겨 보고 싶었다.</p>
-    <p>세 주 동안 쓸 수 있는 시간은 여섯 번이었다. 모든 부탁에 답할 수는 있었지만, 그러면 또 내가 원하는 순서만 사라질 것 같았다.</p>
+    <p>나는 앞으로 세 주의 평일 저녁과 주말에 동그라미를 쳤다. 여섯 자리였다. 모든 부탁에 답할 수는 있었지만, 그러면 또 내가 원하는 순서만 사라질 것 같았다.</p>
     <p class="vn-beat">이번에는 먼저 생긴 약속을 따라가는 대신, 누구에게 갈지 달력에 내 손으로 적기로 했다.</p>
-    [[첫 번째 빈칸을 고른다->자유 일정 · 선택]]
+    [[첫 번째 빈칸에 이름을 적는다->달력 · 오늘의 약속]]
   </div>
 </section>
 
-:: 2장 · 자유 일정 선택지 [nobr]
+:: 2장 · 달력에 적을 이름 [nobr]
 <div class="schedule-choices">
   <<if $freeSchedule.visits.sera is 0>>
     <div class="schedule-choice schedule-choice--sera">
@@ -85,7 +85,7 @@
         <<set $dangerousAffection.sera += 4>>
         <<goto "2장 · 색이 마르는 오후">>
       <</link>>
-      <small>고쳐 줄 물건이 없어도 같은 방에 머무는 약속</small>
+      <small>고쳐 줄 물건은 없다고 했다.</small>
     </div>
   <<elseif $freeSchedule.visits.sera is 1>>
     <div class="schedule-choice schedule-choice--sera">
@@ -97,7 +97,7 @@
         <<set $dangerousAffection.sera += 4>>
         <<goto "2장 · 노란색 한 통">>
       <</link>>
-      <small>그림에 맞는 색이 아니라 두 사람이 기억할 색을 고른다</small>
+      <small>새라는 그림에 안 맞는 색을 골라 달라고 했다.</small>
     </div>
   <</if>>
 
@@ -111,7 +111,7 @@
         <<set $dangerousAffection.yujin += 4>>
         <<goto "2장 · 취소해도 남은 약속">>
       <</link>>
-      <small>구조할 사건 없이 국숫집에서 만나는 비번</small>
+      <small>이번에는 확인할 일도, 구조할 사람도 없다.</small>
     </div>
   <<elseif $freeSchedule.visits.yujin is 1>>
     <div class="schedule-choice schedule-choice--yujin">
@@ -123,7 +123,7 @@
         <<set $dangerousAffection.yujin += 4>>
         <<goto "2장 · 비번의 오락실">>
       <</link>>
-      <small>아무도 구하지 못한 날에 함께 틀리는 시간</small>
+      <small>유진은 혼자 하던 곡 하나를 남겨 뒀다.</small>
     </div>
   <</if>>
 
@@ -137,7 +137,7 @@
         <<set $dangerousAffection.chaerin += 4>>
         <<goto "2장 · 잔액이 부족한 버스">>
       <</link>>
-      <small>예약도 수행원도 없는 버스와 헌책방</small>
+      <small>차도 수행원도 부르지 않겠다고 했다.</small>
     </div>
   <<elseif $freeSchedule.visits.chaerin is 1>>
     <div class="schedule-choice schedule-choice--chaerin">
@@ -149,7 +149,7 @@
         <<set $dangerousAffection.chaerin += 4>>
         <<goto "2장 · 다 읽지 않은 첫 장">>
       <</link>>
-      <small>값을 매기지 않은 다음 버스까지의 십삼 분</small>
+      <small>책갈피는 아직 첫 장에 꽂혀 있다.</small>
     </div>
   <</if>>
 
@@ -164,7 +164,7 @@
         <<set $playerPattern.delegate += 1>>
         <<goto "2장 · 비밀번호를 묻지 않은 저녁">>
       <</link>>
-      <small>누구의 사생활도 넘기지 않는 기록 보관 작업</small>
+      <small>시우는 비밀번호를 정할 사람이 하나 더 필요하다고 했다.</small>
     </div>
   <</if>>
 
@@ -179,7 +179,7 @@
         <<set $playerPattern.face += 1>>
         <<goto "2장 · 아무도 기다리지 않은 저녁">>
       <</link>>
-      <small>연락을 피하는 밤이 아니라 내가 원하는 것을 확인하는 밤</small>
+      <small>냉장고에는 내가 고르지 않은 재료가 남아 있다.</small>
     </div>
   <</if>>
 </div>
@@ -201,7 +201,7 @@
     <p>“저는 남에게 맞추라고 말한 적 없습니다.” 나래는 잠시 생각하다 자기 명함 뒤에 근처 식당 이름을 적었다. “그러니 다음에는 각자 먹고 싶은 걸 고르죠.”</p>
     <p>두 사람 모두 약속이라고 부르지 않았다. 그래도 시우는 명함을 지갑의 투명한 칸에 넣었다.</p>
     <p>돌아오는 길에 나는 암호 키가 든 봉투를 만졌다. 서로를 믿는다는 이유로 하나의 비밀번호를 공유하지 않는 관계도 있었다.</p>
-    [[달력의 다음 빈칸으로 돌아간다->자유 일정 · 복귀]]
+    [[달력의 다음 빈칸으로 돌아간다->달력 · 다음 빈칸]]
   </div>
 </section>
 
@@ -217,15 +217,15 @@
     <p>잠들기 전 달력의 빈칸에 짧게 적었다.</p>
     <p class="vn-beat">매운 볶음밥. 싼 맥주. 혼자 하는 게임도 싫지 않음.</p>
     <p>아무도 읽지 않을 문장이었지만 지우지 않았다. 다음에 누군가 내 취향을 알아맞히려 할 때, 먼저 말할 답이 하나 생겼다.</p>
-    [[달력의 다음 빈칸으로 돌아간다->자유 일정 · 복귀]]
+    [[달력의 다음 빈칸으로 돌아간다->달력 · 다음 빈칸]]
   </div>
 </section>
 
-:: 2장 · 자유 일정이 남긴 것 [chapter2 autosave nobr]
+:: 2장 · 달력에 남은 저녁 [chapter2 autosave nobr]
 <section class="vn-scene vn-scene--room">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
-    <p>세 번째 주말이 끝나자 여섯 칸이 전부 다른 순서로 채워져 있었다.</p>
+    <p>세 번째 주말이 끝나자 처음에는 비어 있던 여섯 자리에 서로 다른 저녁이 남아 있었다.</p>
     <<if $freeSchedule.visits.sera is 2>>
       <p>새라의 칸에는 작업실의 빈 의자와 노란 물감이 남았다. 새라는 쓸모를 부탁하지 않았고, 나는 그림에 맞지 않는 색을 골랐다.</p>
     <<elseif $freeSchedule.visits.sera is 1>>
@@ -253,7 +253,23 @@
     <<if $freeSchedule.flags.namedOwnEvening>>
       <p>혼자 쓴 한 칸에는 내 취향만 적혀 있었다. 누군가를 기다리지 않은 시간이 관계의 빈칸은 아니었다.</p>
     <</if>>
-    <p>만난 횟수는 마음의 순위가 아니었다. 다만 누구에게 먼저 갔고, 누구의 다음을 미뤘는지는 내가 실제로 고른 시간이었다.</p>
+    <p>달력을 오래 보아도 누구를 더 좋아하는지는 적혀 있지 않았다. 다만 내가 먼저 찾아간 저녁과 다음으로 미룬 약속만은 지워지지 않았다.</p>
     [[달력에 남은 마음을 읽는다->2장 · 세 사람에게서 배운 취향]]
   </div>
 </section>
+
+/% 3bef301 이전 저장의 현재 패시지와 동적 패시지 이름을 새 달력 장면으로 이관한다. %/
+:: 자유 일정 · 선택 [nobr]
+<<goto "달력 · 오늘의 약속">>
+
+:: 자유 일정 · 복귀 [nobr]
+<<goto "달력 · 다음 빈칸">>
+
+:: 2장 · 고백 전 자유 일정 [nobr]
+<<goto "2장 · 사건 뒤의 빈 달력">>
+
+:: 2장 · 자유 일정 선택지 [nobr]
+<<include "2장 · 달력에 적을 이름">>
+
+:: 2장 · 자유 일정이 남긴 것 [nobr]
+<<goto "2장 · 달력에 남은 저녁">>

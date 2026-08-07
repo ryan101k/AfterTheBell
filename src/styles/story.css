@@ -804,6 +804,7 @@ body.vn-backlog-open {
 
 .schedule-dialogue {
   width: min(1040px, 100%);
+  background-image: linear-gradient(rgba(212, 169, 110, 0.025), rgba(212, 169, 110, 0.025));
 }
 
 .schedule-header {
@@ -824,10 +825,11 @@ body.vn-backlog-open {
 }
 
 .schedule-kicker {
-  color: var(--accent);
-  font-size: 0.68rem;
-  font-weight: 800;
-  letter-spacing: 0.18em;
+  color: var(--muted);
+  font-family: "Noto Serif KR", serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
 }
 
 .schedule-now {
@@ -862,9 +864,10 @@ body.vn-backlog-open {
   align-content: center;
   gap: 2px;
   padding: 9px 11px;
-  border: 1px solid rgba(255, 255, 255, 0.09);
-  border-radius: 5px;
-  background: rgba(255, 255, 255, 0.025);
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.11);
+  border-radius: 0;
+  background: transparent;
 }
 
 .schedule-slot span {
@@ -883,8 +886,8 @@ body.vn-backlog-open {
 }
 
 .schedule-slot.is-filled {
-  border-color: rgba(212, 169, 110, 0.26);
-  background: rgba(212, 169, 110, 0.065);
+  border-color: rgba(212, 169, 110, 0.3);
+  background: transparent;
 }
 
 .schedule-slot.is-filled strong {
@@ -893,8 +896,8 @@ body.vn-backlog-open {
 
 .schedule-slot.is-current {
   border-color: var(--accent);
-  background: rgba(212, 169, 110, 0.13);
-  box-shadow: inset 0 0 0 1px rgba(212, 169, 110, 0.08);
+  background: linear-gradient(90deg, rgba(212, 169, 110, 0.1), transparent);
+  box-shadow: none;
 }
 
 .schedule-slot.is-current strong {
@@ -917,16 +920,17 @@ body.vn-backlog-open {
   display: grid;
   align-content: start;
   overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 6px;
-  background: rgba(255, 255, 255, 0.035);
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 0;
+  background: transparent;
   transition: border-color 160ms ease, background 160ms ease, transform 160ms ease;
 }
 
 .schedule-choice:hover {
   border-color: rgba(212, 169, 110, 0.62);
-  background: rgba(212, 169, 110, 0.08);
-  transform: translateY(-1px);
+  background: linear-gradient(90deg, rgba(212, 169, 110, 0.075), transparent);
+  transform: translateX(2px);
 }
 
 .schedule-choice .link-internal,
@@ -943,27 +947,28 @@ body.vn-backlog-open {
   padding: 0 14px 13px;
   color: var(--muted);
   font-size: 0.7rem;
+  font-style: italic;
   line-height: 1.55;
 }
 
 .schedule-choice--sera {
-  border-left: 3px solid #b98a90;
+  border-left: 0;
 }
 
 .schedule-choice--yujin {
-  border-left: 3px solid #6689b8;
+  border-left: 0;
 }
 
 .schedule-choice--chaerin {
-  border-left: 3px solid #aa8b62;
+  border-left: 0;
 }
 
 .schedule-choice--side {
-  border-left: 3px solid #7f8c86;
+  border-left: 0;
 }
 
 .schedule-choice--alone {
-  border-left: 3px solid #77727d;
+  border-left: 0;
 }
 
 .prologue-hook {
