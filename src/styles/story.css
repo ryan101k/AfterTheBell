@@ -537,8 +537,36 @@ body.vn-backlog-open {
   animation-delay: 160ms;
 }
 
+.vn-standee-stage--count-4 {
+  width: min(66vw, 950px);
+}
+
+.vn-standee-stage--count-4 .vn-standee {
+  width: 40%;
+}
+
+.vn-standee-stage--count-4 .vn-standee--slot-0 {
+  right: 60%;
+}
+
+.vn-standee-stage--count-4 .vn-standee--slot-1 {
+  right: 40%;
+  animation-delay: 70ms;
+}
+
+.vn-standee-stage--count-4 .vn-standee--slot-2 {
+  right: 20%;
+  animation-delay: 140ms;
+}
+
+.vn-standee-stage--count-4 .vn-standee--slot-3 {
+  right: 0;
+  animation-delay: 210ms;
+}
+
 .vn-standee-stage--count-2 .vn-standee img,
-.vn-standee-stage--count-3 .vn-standee img {
+.vn-standee-stage--count-3 .vn-standee img,
+.vn-standee-stage--count-4 .vn-standee img {
   height: min(84vh, 860px);
 }
 
@@ -554,6 +582,10 @@ body.vn-backlog-open {
 
   .vn-scene.has-standee .vn-dialogue {
     width: min(720px, 58vw);
+  }
+
+  .vn-scene:has(.vn-standee-stage--count-4) .vn-dialogue {
+    width: min(520px, 42vw);
   }
 }
 
@@ -934,7 +966,8 @@ body.vn-backlog-open {
   }
 
   .vn-standee-stage--count-2,
-  .vn-standee-stage--count-3 {
+  .vn-standee-stage--count-3,
+  .vn-standee-stage--count-4 {
     right: -12%;
     width: 116vw;
     height: min(37svh, 315px);
@@ -942,7 +975,8 @@ body.vn-backlog-open {
   }
 
   .vn-standee-stage--count-2 .vn-standee img,
-  .vn-standee-stage--count-3 .vn-standee img {
+  .vn-standee-stage--count-3 .vn-standee img,
+  .vn-standee-stage--count-4 .vn-standee img {
     height: min(38svh, 320px);
   }
 

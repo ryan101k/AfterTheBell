@@ -9,6 +9,7 @@
 - [`docs/characters/CHILDHOOD_FIVE.md`](./docs/characters/CHILDHOOD_FIVE.md): 예린·보라·서연·나영·미래
 - [`docs/characters/BUSINESS_QUARTET.md`](./docs/characters/BUSINESS_QUARTET.md): 박지수·한이슬·차서윤·오혜린
 - [`docs/characters/NARAE.md`](./docs/characters/NARAE.md): 독립 히로인 나래
+- [`docs/characters/SIWOO.md`](./docs/characters/SIWOO.md): 은호의 회피 책임을 아는 친구 시우
 - [`docs/characters/EUNHO_BACKGROUND.md`](./docs/characters/EUNHO_BACKGROUND.md): 은호의 비공개 가족 배경과 아버지 회사
 - [`docs/characters/STORY_ORIGIN_BRIDGE.md`](./docs/characters/STORY_ORIGIN_BRIDGE.md): 주식게임 원형과 현재 사건의 연결
 
@@ -55,6 +56,7 @@
 - 갈등을 피하는 동안 다섯 명은 일정·식사·약·평판·이동·계좌와 비밀번호를 `보호 계획`이라는 이름으로 나누어 관리했다.
 - 은호의 잘못은 다섯을 속인 것이 아니라, 편리함과 필요받는 감각을 누리며 위험을 알면서도 결론을 미룬 것이다.
 - 파국 뒤 누구의 말이 맞는지 확인할 용기조차 내지 못하고 방 안으로 숨었다.
+- 시우는 이 과거를 전부 알지는 못하지만, 은호가 돌봄의 편리함과 필요받는 감각을 누리며 확인을 미뤘다는 바깥의 징후를 본 유일한 현재 친구다.
 
 ### 장점
 

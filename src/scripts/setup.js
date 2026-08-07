@@ -71,6 +71,24 @@ setup.standeeCharacters = {
       relieved: 'chaerin-relieved.png'
     }
   },
+  narae: {
+    file: '../characters/narae-v2-neutral.webp',
+    name: '나래',
+    expressions: {
+      angry: '../characters/narae-v2-angry.webp',
+      happy: '../characters/narae-v2-happy.webp',
+      sad: '../characters/narae-v2-sad.webp'
+    }
+  },
+  siwoo: {
+    file: '../characters/siwoo-v2-neutral.webp',
+    name: '시우',
+    expressions: {
+      angry: '../characters/siwoo-v2-angry.webp',
+      happy: '../characters/siwoo-v2-happy.webp',
+      sad: '../characters/siwoo-v2-sad.webp'
+    }
+  },
   chaewon: { file: 'chaewon-neutral.png', name: '서채원' },
   yuna: { file: 'yuna-neutral.png', name: '강유나' },
   sohee: { file: 'sohee-neutral.png', name: '윤소희' }
