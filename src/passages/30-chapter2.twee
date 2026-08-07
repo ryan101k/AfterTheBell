@@ -32,7 +32,8 @@
   "yujinRevealChoice": "",
   "chaerinRevealChoice": "",
   "chaerinHeardNo": false,
-  "chaerinWalked": false
+  "chaerinWalked": false,
+  "eunhoInvitationChoice": ""
 }>>
 <section class="vn-scene vn-scene--room">
   <div class="vn-scene__shade"></div>
@@ -1155,13 +1156,6 @@
 </section>
 
 :: 2장 · 사건 뒤에 남은 사람들 [chapter2 autosave nobr]
-<<set $chapter2.eunhoFeelingsNamed = true>>
-<<set $dangerousAffection.sera = Math.min(100, $dangerousAffection.sera)>>
-<<set $dangerousAffection.yujin = Math.min(100, $dangerousAffection.yujin)>>
-<<set $dangerousAffection.chaerin = Math.min(100, $dangerousAffection.chaerin)>>
-<<set $romanceOpen.sera = $chapter2.seraPath isnot "distance" && $dangerousAffection.sera gte 80>>
-<<set $romanceOpen.yujin = $chapter2.yujinPath isnot "distance" && $dangerousAffection.yujin gte 80>>
-<<set $romanceOpen.chaerin = $chapter2.chaerinPath isnot "distance" && $dangerousAffection.chaerin gte 80>>
 <section class="vn-scene vn-scene--room">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
@@ -1170,6 +1164,55 @@
     <p>새라는 식탁 위에 내 집 열쇠를 올려놓았다. 그리고 가방에서 반찬통을 꺼내 그 옆에 뒀다.</p>
     <p>“열쇠 없이도 저녁 먹으러 와도 돼요?”</p>
     <p>초인종을 누르고, 대답이 없으면 자기 집으로 돌아가겠다고 새라가 먼저 덧붙였다. 나는 열쇠 대신 다음 주 저녁 날짜를 건넸다.</p>
+    [[새라가 되찾은 작업실에 처음 놀러 간다->2장 · 색이 마르는 오후]]
+  </div>
+</section>
+
+:: 2장 · 색이 마르는 오후 [chapter2 autosave nobr]
+<section class="vn-scene vn-scene--studio" data-standees="sera:relieved" data-focus="sera">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>새 작업실에 간 첫날, 새라는 나를 위해 의자를 닦아 두지 않았다.</p>
+    <p>창가에는 마르지 않은 캔버스가 세 장 있었고 바닥에는 물감 튜브와 택배 상자가 뒤섞여 있었다. 예전 같으면 내가 오기 전 흔적부터 지웠을 사람이었다.</p>
+    <p>“정리가 안 됐어요.”</p>
+    <p>“작업실이니까 그렇겠죠.”</p>
+    <p>새라는 사과 대신 바닥의 신문지를 한 장 밀어 내가 발 디딜 곳만 만들었다.</p>
+    <p>나는 선반을 조립해 주려고 드라이버를 들었다. 새라가 손을 뻗다가 멈췄다.</p>
+    <p>“오늘은 그거 부탁하려고 부른 거 아니에요.”</p>
+    <p>“그럼 왜 불렀습니까?”</p>
+    <p>새라는 대답하지 못하고 작업대 위 스케치북을 펼쳤다. 빈 페이지가 한 장 있었다.</p>
+    <p>“그냥 여기 앉아 있어 줘요. 그림 그리는 동안 말 안 해도 되는 사람이 필요해서.”</p>
+    <p>나는 드라이버를 내려놓고 창가 의자에 앉았다. 새라는 내 얼굴 대신 주전자와 창틀, 의자에 걸친 내 손을 그렸다.</p>
+    <p>연필 긁는 소리가 삼십 분쯤 이어졌다. 새라가 물을 마실 때 나는 게임 화면을 확인했고, 내가 자세를 바꿔도 새라는 처음 위치로 돌아가라고 하지 않았다.</p>
+    <p>해가 기울자 새라는 스케치북을 보여 줬다. 사람은 없고 빈 의자와 손 그림자만 있었다.</p>
+    <p>“나를 그린 겁니까?”</p>
+    <p>“있었다는 것만 그렸어요.”</p>
+    <p>그날 나는 선반 하나도 고치지 않았다. 새라도 아무 대가 없이 두 시간을 써 버린 걸 불안해하지 않았다.</p>
+    <p class="vn-beat">쓸모가 아니라 자리를 부탁받은 건, 우리 둘 모두에게 처음이었다.</p>
+    [[마른 그림을 보러 다시 간다->2장 · 노란색 한 통]]
+  </div>
+</section>
+
+:: 2장 · 노란색 한 통 [chapter2 autosave nobr]
+<section class="vn-scene vn-scene--studio" data-standees="sera:relieved" data-focus="sera">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>며칠 뒤 새라는 동네 화방에 같이 가 달라고 했다. 무거운 걸 들어 달라는 말이 따라붙을 줄 알았는데, 필요한 건 물감 한 통뿐이었다.</p>
+    <p>진열대 앞에서 새라는 파란색 열두 개를 꺼냈다 넣었다. 상품명은 전부 달랐지만 내 눈에는 같은 색이었다.</p>
+    <p>“그림에 쓸 색을 내가 어떻게 고릅니까?”</p>
+    <p>“그림 말고, 저녁에 창문으로 들어왔으면 하는 색을 골라 줘요.”</p>
+    <p>나는 파란색 진열대가 아니라 옆 칸의 노란색을 집었다. 처음 함께 산 칫솔과 같은, 조금 촌스러운 노란색이었다.</p>
+    <p>새라는 물감과 내 얼굴을 번갈아 봤다.</p>
+    <p>“그걸 기억했어요?”</p>
+    <p>“욕실에서 매일 보는데 잊기가 더 어렵죠.”</p>
+    <p>새라는 노란 물감을 장바구니에 넣었다. 파란색은 하나도 사지 않았다.</p>
+    <p>화방을 나온 뒤 길거리 붕어빵을 샀다. 새라는 꼬리부터 먹었고 나는 머리부터 먹었다. 서로 반대쪽을 먹는 모습을 보고 동시에 이상하다고 말했다.</p>
+    <p>“꼬리가 바삭하잖아요.”</p>
+    <p>“팥이 없잖아요.”</p>
+    <p>새라는 자기 몫의 마지막 꼬리를 내 봉투에 넣고 내 붕어빵의 팥 많은 부분을 가져갔다. 누구도 양보했다고 말하지 않았다.</p>
+    <p>그날 밤 새라는 노란색이 들어간 창문 그림을 보냈다. 그림 구석의 의자에는 사람이 없었지만, 팔걸이 위에 붕어빵 봉투가 놓여 있었다.</p>
+    <div class="phone-message"><b>윤새라</b><span>다음에는 파란색도 같이 골라 줘요. 오늘처럼 그림에 안 맞는 걸로.</span></div>
+    <p>나는 다음에 가겠다고 답했다. 선반을 고쳐 주겠다는 말은 붙이지 않았다.</p>
     [[사건이 없는 유진의 비번으로 간다->2장 · 취소해도 남은 약속]]
   </div>
 </section>
@@ -1186,21 +1229,213 @@
     <p>“취소해도 다음이 남아 있네요.”</p>
     <p>“다음까지 취소하면 화낼 겁니다.”</p>
     <p>유진은 안심한 뒤에야 메뉴를 펼쳤다.</p>
-    [[채린이 고친 정정문을 확인한다->2장 · 비워 둔 토요일]]
+    [[유진이 말하지 않았던 취미를 따라간다->2장 · 비번의 오락실]]
   </div>
 </section>
 
-:: 2장 · 비워 둔 토요일 [chapter2 autosave nobr]
-<section class="vn-scene vn-scene--room">
+:: 2장 · 비번의 오락실 [chapter2 autosave nobr]
+<section class="vn-scene vn-scene--restaurant" data-standees="yujin:relieved" data-focus="yujin">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>국숫집에서 나온 유진은 지하철역 반대편으로 걸었다.</p>
+    <p>순찰 동선도, 집으로 가는 길도 아니었다. 네온 간판이 켜진 오래된 오락실 앞에서 유진은 걸음을 늦췄다.</p>
+    <p>“들어가고 싶습니까?”</p>
+    <p>“소음이 커서 오래 있으면 피곤합니다.”</p>
+    <p>거절인 줄 알고 지나치자 유진이 두 걸음 뒤에서 멈췄다.</p>
+    <p>“그래도 비번마다 한 번은 옵니다.”</p>
+    <p>오락실 안에서 유진은 출입구와 비상구를 확인한 뒤 가장 구석의 리듬 게임 앞으로 갔다. 화면에는 경찰 제복과 어울리지 않는 분홍색 캐릭터가 춤추고 있었다.</p>
+    <p>유진은 지갑 안쪽에서 낡은 적립 카드를 꺼냈다. 도장이 절반쯤 찍혀 있었다.</p>
+    <p>“잘합니까?”</p>
+    <p>“아닙니다.”</p>
+    <p>노래가 시작되자 그 말이 사실이라는 걸 바로 알 수 있었다. 유진은 정확한 박자를 눈으로 따라가면서도 손은 늘 반 박자 늦었다. 순찰 중 작은 소리도 놓치지 않는 사람이 화면의 화살표는 계속 놓쳤다.</p>
+    <p>한 곡이 끝나자 점수표에 낮은 등급이 떴다. 유진은 사건 보고를 잘못 쓴 사람처럼 화면 앞에 서 있었다.</p>
+    <p>내가 웃음을 참지 못하자 유진이 돌아봤다.</p>
+    <p>“현행범입니다.”</p>
+    <p>“무슨 혐의인데요?”</p>
+    <p>“경찰관의 건전한 여가를 비웃은 혐의.”</p>
+    <p>유진의 입가도 이미 올라가 있었다. 나는 옆 기계에 동전을 넣었다.</p>
+    <p>“그럼 공범으로 합시다.”</p>
+    [[둘이 같은 곡에서 박자를 놓친다->2장 · 틀린 박자의 사람]]
+  </div>
+</section>
+
+:: 2장 · 틀린 박자의 사람 [chapter2 autosave nobr]
+<section class="vn-scene vn-scene--restaurant" data-standees="yujin:relieved" data-focus="yujin">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>나는 유진보다 더 못했다.</p>
+    <p>첫 곡이 끝나기도 전에 화면에서 관객이 전부 사라졌다. 유진은 처음에는 조용히 지켜보다가 내가 좌우 버튼을 동시에 누르는 순간 고개를 숙이고 웃었다.</p>
+    <p>무전기 너머로 듣던 짧은 웃음과 달랐다. 참을 이유가 없는 사람의 웃음은 생각보다 컸다.</p>
+    <p>“방금 기록하지 않았죠?” 내가 물었다.</p>
+    <p>“이미 기억했습니다.”</p>
+    <p>두 번째 곡은 협동 모드로 골랐다. 점수는 더 낮아졌지만 중간에 게임이 끝나지는 않았다. 유진은 내가 놓친 왼쪽 버튼을 대신 눌렀고, 나는 유진이 늦게 보는 오른쪽 화살표를 소리 내 알려 줬다.</p>
+    <p>게임이 끝난 뒤 상품 교환권 두 장이 나왔다. 유진은 사탕 대신 작은 플라스틱 별을 골랐다.</p>
+    <p>“그걸 어디에 씁니까?”</p>
+    <p>“쓸 데 없는 걸 고르러 온 겁니다.”</p>
+    <p>유진은 별을 휴대전화에 달려다가 끈이 짧아 포기했다. 내가 지갑 지퍼에 달아 주자 손을 떼지 못하고 한참 바라봤다.</p>
+    <p>오락실을 나왔을 때 유진의 휴대전화가 울렸다. 둘 다 반사적으로 화면을 봤지만 긴급 호출이 아니라 통신사 광고였다.</p>
+    <p>유진은 알림을 지우고 내게 휴대전화를 보여 줬다.</p>
+    <p>“다음 비번에도 연락해도 됩니까. 확인할 일은 없습니다.”</p>
+    <p>“곡 연습은 해 오세요.”</p>
+    <p>“그건 약속 못 합니다.”</p>
+    <p>유진은 별이 달린 지갑을 주머니에 넣었다. 다음에 만날 이유가 사건이 아니라 틀린 박자 하나라는 사실을 몇 번이나 확인하는 얼굴이었다.</p>
+    [[채린이 비워 둔 토요일을 확인한다->2장 · 잔액이 부족한 버스]]
+  </div>
+</section>
+
+:: 2장 · 잔액이 부족한 버스 [chapter2 autosave nobr]
+<section class="vn-scene vn-scene--restaurant" data-standees="chaerin:cold" data-focus="chaerin">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--phone">
     <p>채린이 다시 낸 정정 공고에는 `지원`이라는 말이 없었다. 재단이 알고도 승인한 날짜와 윤새라의 이름, 채린 자신의 직함이 그대로 들어갔다.</p>
     <p>그날 오후 채린에게서 일정표 사진이 왔다. 토요일 한 칸만 비어 있었다.</p>
     <div class="phone-message"><b>한채린</b><span>계약도 회의도 없어요. 비워 두긴 했는데, 만나 달라는 뜻입니다.</span></div>
-    <p>남들 앞에서 채린은 사과문을 읽고도 고개를 숙이지 않았다. 그러나 둘만 보는 화면에서는 부탁을 명령처럼 꾸미지 못했다.</p>
+    <p>나는 호텔이 아니라 강 건너 헌책방 주소를 보냈다. 차로 가면 골목에 들어오지 못하니 버스 정류장에서 만나자고 했다.</p>
+    <p>토요일, 채린은 수행원을 보내고도 혼자 버스를 타겠다고 고집했다. 정류장에 도착한 버스 앞에서 처음 보는 교통카드를 꺼냈다.</p>
+    <p>단말기가 짧게 울렸다.</p>
+    <p><em>잔액이 부족합니다.</em></p>
+    <p>뒤에 선 사람들이 움직이자 채린의 얼굴이 굳었다. 비서를 부르거나 버스를 세울 권한이 없는 곳에서, 천 원이 모자란 사람은 그냥 길을 막은 사람이었다.</p>
+    <p>내가 두 사람 몫을 찍었다. 채린은 버스가 출발한 뒤에도 손잡이를 잡지 않고 서 있었다.</p>
+    <p>“앉아요. 넘어집니다.”</p>
+    <p>“그건 명령이에요?”</p>
+    <p>“버스 기사도 같은 생각일 겁니다.”</p>
+    <p>차가 크게 흔들리자 채린은 결국 내 소매를 잡고 자리에 앉았다. 손을 놓은 뒤에는 창밖만 봤다.</p>
+    <p>“얼마였어요?”</p>
+    <p>“다음에 내면 됩니다.”</p>
+    <p>채린이 즉시 휴대전화를 들자 나는 계좌번호를 알려 주지 않았다.</p>
+    <p>“다음 버스에서 직접 찍어요. 그게 갚는 겁니다.”</p>
+    <p>채린은 불만스러운 얼굴로 교통카드를 쥐었다. 그런데 다음 정류장에서 내리는 동안 수행원을 부르지는 않았다.</p>
+    [[예약하지 않은 장소로 들어간다->2장 · 예약하지 않은 서점]]
+  </div>
+</section>
+
+:: 2장 · 예약하지 않은 서점 [chapter2 autosave nobr]
+<section class="vn-scene vn-scene--studio" data-standees="chaerin:relieved" data-focus="chaerin">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>헌책방에는 개인실도 안내 직원도 없었다.</p>
+    <p>채린은 먼지가 묻은 책등을 손끝으로 밀며 걸었다. 처음에는 가격표부터 봤지만, 대부분 오천 원을 넘지 않는다는 걸 알고 나서는 제목을 읽기 시작했다.</p>
+    <p>“여기 책은 누가 읽었는지 모르잖아요.”</p>
+    <p>“그래서 헌책이죠.”</p>
+    <p>채린은 다른 사람의 밑줄이 남은 책을 싫어했다. 몇 장을 넘길 때마다 이전 주인의 메모가 나오면 바로 제자리에 꽂았다.</p>
+    <p>여행 서가 앞에서 손이 멈췄다. 표지가 바랜 얇은 기행문이었다. 유명한 호텔이나 미술관 대신 종점과 작은 시장만 돌아다닌 기록이었다.</p>
+    <p>첫 장에는 연필로 한 문장이 적혀 있었다.</p>
+    <p><em>목적 없이 탄 버스에서도 내릴 곳은 생긴다.</em></p>
+    <p>채린은 그 문장을 오래 보더니 책을 덮지 않았다.</p>
+    <p>“누가 써 놓은지 모르는 말도 살 가치가 있어요?”</p>
+    <p>“책보다 그 문장이 마음에 들면 그런 거겠죠.”</p>
+    <p>채린은 계산대에 책 한 권만 올렸다. 사장은 비닐 포장도 영수증 봉투도 없이 책과 잔돈을 건넸다.</p>
+    <p>밖으로 나온 채린은 오천 원짜리 책을 양손으로 들고 있었다. 행사장에서 수억짜리 작품을 넘길 때보다 조심스러웠다.</p>
+    <p>“이제 어디로 가요?”</p>
+    <p>“정한 데 없습니다.”</p>
+    <p>채린은 예전처럼 다음 장소를 예약하자고 하지 않았다. 대신 책 첫 장을 다시 펼쳤다.</p>
+    [[채린이 먼저 한 장을 읽을 때까지 기다린다->2장 · 다 읽지 않은 첫 장]]
+  </div>
+</section>
+
+:: 2장 · 다 읽지 않은 첫 장 [chapter2 autosave nobr]
+<section class="vn-scene vn-scene--riverside" data-standees="chaerin:relieved" data-focus="chaerin">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>강변 정류장 벤치에 앉아 채린은 책을 읽었다.</p>
+    <p>세 페이지를 넘기는 동안 두 번 휴대전화가 울렸다. 첫 전화에는 회의가 아니라는 걸 확인한 뒤 거절했고, 두 번째 알림은 화면도 보지 않고 껐다.</p>
+    <p>나는 옆에서 자판기 커피를 마셨다. 채린에게 책 내용이 어떤지 묻지 않았다. 읽는 속도가 느리다는 말도 하지 않았다.</p>
+    <p>십 분 뒤 채린이 첫 장을 덮었다.</p>
+    <p>“집에 책은 많아요. 초판이나 한정판으로. 그런데 끝까지 읽은 건 별로 없어요.”</p>
+    <p>“왜 샀습니까?”</p>
+    <p>“가지고 있으면 읽은 사람처럼 보이니까.”</p>
+    <p>채린은 자기 대답이 마음에 들지 않는지 책 모서리를 문질렀다.</p>
+    <p>“이건 다 읽을 겁니까?”</p>
+    <p>“모르겠어요. 그래도 오늘 첫 장은 읽었잖아요.”</p>
+    <p>버스가 두 대 지나갔다. 채린은 집에 가야 한다고 말하면서도 일어나지 않았다.</p>
+    <p>“조금만 더 있어 달라고 하면, 대가를 물을 거예요?”</p>
+    <p>“얼마나요?”</p>
+    <p>“다음 버스 올 때까지.”</p>
+    <p>나는 정류장 전광판을 봤다. 십삼 분이 남아 있었다.</p>
+    <p>“그 정도면 됩니다.”</p>
+    <p>채린은 고맙다고 말하지 않았다. 대신 책갈피를 내 손에 맡기고 다시 책을 펼쳤다. 다음 버스가 왔을 때는 교통카드를 직접 찍었다.</p>
+    <p>단말기가 정상적으로 울리자 채린이 돌아봤다. 큰 계약을 성사시킨 사람보다 더 자랑스러운 얼굴이었다.</p>
+    <p class="vn-beat">나는 그 표정을 다시 보고 싶다고 생각했다. 누구를 이기거나 굴복시킨 얼굴이 아닌 쪽을.</p>
+    [[서로 다른 세 사람을 기다리기 시작한다->2장 · 세 사람에게서 배운 취향]]
+  </div>
+</section>
+
+:: 2장 · 세 사람에게서 배운 취향 [chapter2 autosave nobr]
+<<set $chapter2.eunhoFeelingsNamed = true>>
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>사건이 끝난 뒤의 달력에는 빈칸이 많았다.</p>
+    <p>전에는 빈 날이 생기면 안도했다. 답하지 않아도 되고, 누구를 실망시킬 일도 없는 날이었다. 그런데 요즘은 빈칸마다 다른 사람이 떠올랐다.</p>
+    <p>화요일 저녁이면 새라의 작업실 창문에 노란색이 얼마나 말랐는지 궁금했다. 붕어빵을 사면 꼬리를 남겨 둬야 할 것 같았다.</p>
+    <p>금요일에는 유진의 비번을 알지 못하면서도 오락실 앞을 천천히 지나갔다. 지갑 지퍼에 달린 플라스틱 별이 아직 붙어 있는지 확인하고 싶었다.</p>
+    <p>토요일 오후에는 채린이 헌책의 둘째 장을 읽었는지 생각났다. 정류장에서 잔액 부족 소리가 나지 않았는지도.</p>
+    <p>세 사람을 좋아한다는 결론부터 내리려 하자 머리가 복잡해졌다. 예전에도 나는 결론을 한꺼번에 만들어 놓고 각자의 대답을 그 안에 밀어 넣었다.</p>
+    <p>그래서 결론 대신 그리움의 모양부터 적어 봤다.</p>
+    <p>새라와는 말없이 같은 방에 있고 싶었다. 유진과는 아무도 구하지 못한 날을 웃으며 낭비하고 싶었다. 채린과는 값이 없는 다음 십삼 분을 보고 싶었다.</p>
+    <p>셋은 같은 자리를 세 조각으로 나눈 사람이 아니었다. 내가 기다리는 방식부터 달랐다.</p>
+    <p>그리고 기다리고만 있는 것도 다시 내 오래된 버릇이었다.</p>
+    <p class="vn-beat">마음이 생긴 증거는 세 사람이 나를 찾아온 횟수가 아니라, 내가 먼저 다음을 만들고 싶어진 횟수였다.</p>
+    [[각자에게 먼저 메시지를 쓴다->2장 · 먼저 보낸 세 문장]]
+  </div>
+</section>
+
+:: 2장 · 먼저 보낸 세 문장 [chapter2 autosave nobr]
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--phone">
+    <p>대화창 세 개를 열었다.</p>
+    <p>새라에게는 화방에 같이 가자는 말을, 유진에게는 다음 리듬 게임 곡을 골라 뒀다는 말을, 채린에게는 기행문의 둘째 장이 어땠는지 묻는 말을 쓰고 싶었다.</p>
+    <p>세 문장을 따로 보내면 세 사람에게 다른 기대를 만들게 된다. 같은 문장을 보내면 아무도 특별히 선택하지 않은 척할 수 있었다. 아예 보내지 않으면 세 사람이 먼저 연락할 때까지 안전했다.</p>
+    <div class="vn-choices">
+      <<link "세 사람에게 기억하고 있던 다음 약속을 각각 다르게 보낸다.">>
+        <<set $chapter2.eunhoInvitationChoice = "specific">>
+        <<set $dangerousAffection.sera += 4>>
+        <<set $dangerousAffection.yujin += 4>>
+        <<set $dangerousAffection.chaerin += 4>>
+        <<set $playerPattern.face += 1>>
+        <<goto "2장 · 비워 둔 토요일">>
+      <</link>>
+      <<link "세 사람 모두에게 `시간 되면 만나요`라는 같은 문장을 보낸다.">>
+        <<set $chapter2.eunhoInvitationChoice = "same">>
+        <<set $playerPattern.avoid += 1>>
+        <<goto "2장 · 비워 둔 토요일">>
+      <</link>>
+      <<link "문장을 임시 저장하고 세 사람이 먼저 연락할 때까지 기다린다.">>
+        <<set $chapter2.eunhoInvitationChoice = "draft">>
+        <<set $playerPattern.avoid += 1>>
+        <<goto "2장 · 비워 둔 토요일">>
+      <</link>>
+    </div>
+  </div>
+</section>
+
+:: 2장 · 비워 둔 토요일 [chapter2 autosave nobr]
+<<set $dangerousAffection.sera = Math.min(100, $dangerousAffection.sera)>>
+<<set $dangerousAffection.yujin = Math.min(100, $dangerousAffection.yujin)>>
+<<set $dangerousAffection.chaerin = Math.min(100, $dangerousAffection.chaerin)>>
+<<set $romanceOpen.sera = $chapter2.seraPath isnot "distance" && $dangerousAffection.sera gte 80>>
+<<set $romanceOpen.yujin = $chapter2.yujinPath isnot "distance" && $dangerousAffection.yujin gte 80>>
+<<set $romanceOpen.chaerin = $chapter2.chaerinPath isnot "distance" && $dangerousAffection.chaerin gte 80>>
+<section class="vn-scene vn-scene--room">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--phone">
+    <<if $chapter2.eunhoInvitationChoice is "specific">>
+      <div class="phone-message"><b>최은호 → 윤새라</b><span>다음 화방은 언제 갑니까. 이번에는 파란색을 골라 보겠습니다.</span></div>
+      <div class="phone-message"><b>최은호 → 강유진</b><span>다음 비번에 할 곡을 골랐습니다. 연습은 안 해도 됩니다.</span></div>
+      <div class="phone-message"><b>최은호 → 한채린</b><span>둘째 장은 읽었습니까. 안 읽었어도 다음 버스까지는 같이 기다릴 수 있습니다.</span></div>
+      <p>새라는 파란 물감 사진을, 유진은 비번 날짜를, 채린은 접힌 둘째 장을 답으로 보냈다. 세 사람 모두 다른 문장을 받았고, 다른 기대를 돌려줬다.</p>
+    <<elseif $chapter2.eunhoInvitationChoice is "same">>
+      <div class="phone-message"><b>최은호</b><span>시간 되면 만나요.</span></div>
+      <p>같은 문장을 세 번 복사하자 안전했다. 새라는 어느 날이 좋은지 물었고, 유진은 만나는 목적을 확인했으며, 채린은 세 사람에게 똑같이 보냈느냐고 바로 알아챘다.</p>
+      <p>나는 결국 세 대화창에 다시 들어가 서로 다른 이유를 한 줄씩 덧붙였다.</p>
+    <<else>>
+      <p>문장은 임시 저장함에 남았다. 다음 날 새라가 먼저 화방 사진을 보냈고, 유진은 비번을 알려 왔으며, 채린은 둘째 장을 읽었다는 메시지를 보냈다.</p>
+      <p>나는 기다리면 관계가 저절로 이어진다는 안도감을 누렸다. 그러고는 세 사람의 연락에 답하면서, 먼저 쓰지 못한 문장도 하나씩 보냈다.</p>
+    <</if>>
     <p>새라와 유진은 사건 현장에서 서로를 몇 번 봤지만, 채린까지 셋이 한자리에 앉은 적은 없었다. 새라는 채린의 봉투만 알았고, 채린은 회의 자료에서 두 사람의 이름만 읽었다. 나는 누구의 말을 다른 사람에게 전하지 않았다.</p>
-    <p>나도 달라졌다. 새라의 일에 손을 댄 뒤 세상 모든 사람을 책임지게 된 건 아니었다. 다만 누군가 부탁했을 때, 두렵다는 이유로 그 부탁 자체를 지우지는 않게 됐다.</p>
-    <p>좋아한다는 마음은 조정실에서 생기지 않았다. 오지 않는 날을 알아보고, 사건이 끝난 뒤에도 다음 약속을 기다리게 된 뒤에야 이름을 붙일 수 있었다.</p>
+    <p>좋아한다는 마음은 조정실에서 생기지 않았다. 노란 물감과 틀린 박자와 읽다 만 둘째 장처럼, 사건이 끝나도 버리지 못한 것들 사이에서 생겼다.</p>
+    <p>이제 남은 것은 그 마음을 세 사람에게 한꺼번에 통보하지 않고, 각자가 거절할 수 있는 자리에서 따로 말하는 일이었다.</p>
     <div class="vn-choices">
       <<if $romanceOpen.sera>>
         <<link "새라와 단둘이, 감시가 아닌 생활을 다시 선택한다.">><<set $dangerousSolo.route = "sera">><<goto "3S · 비가 그친 뒤">><</link>>

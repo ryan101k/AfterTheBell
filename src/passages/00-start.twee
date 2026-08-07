@@ -121,6 +121,7 @@
   "chaerinBusChoice": "",
   "chaerinRejectedChoice": "",
   "chaerinUmbrellaChoice": "",
+  "eunhoInvitationChoice": "",
   "eunhoFeelingsNamed": false
 }>>
 <<set $chapter3 = {
