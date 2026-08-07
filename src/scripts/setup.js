@@ -106,6 +106,14 @@ setup.dangerousAffectionStage = function (value) {
   return '낯섦';
 };
 
+setup.freeScheduleLabels = {
+  sera: '새라 · 작업실',
+  yujin: '유진 · 비번',
+  chaerin: '채린 · 빈 일정',
+  siwooNarae: '시우·나래 · 자료 정리',
+  alone: '은호 · 혼자 있는 저녁'
+};
+
 setup.standeeScenes = {
   'sera-entry': 'sera',
   'sera-test': 'sera',

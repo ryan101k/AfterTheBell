@@ -39,6 +39,29 @@
   <<set $dangerousAffection.chaerin = Math.min(100, Math.round($dangerousAffection.chaerin * 100 / 30))>>
   <<set $dangerousAffectionVersion = 2>>
 <</if>>
+<<set $freeSchedule = Object.assign({
+  "mode": "",
+  "active": false,
+  "title": "",
+  "totalSlots": 0,
+  "slot": 0,
+  "last": "",
+  "order": [],
+  "optionsPassage": "",
+  "finishPassage": ""
+}, $freeSchedule ?? {})>>
+<<set $freeSchedule.order = Array.isArray($freeSchedule.order) ? $freeSchedule.order : []>>
+<<set $freeSchedule.visits = Object.assign({
+  "sera": 0,
+  "yujin": 0,
+  "chaerin": 0,
+  "siwooNarae": 0,
+  "alone": 0
+}, $freeSchedule.visits ?? {})>>
+<<set $freeSchedule.flags = Object.assign({
+  "securedArchive": false,
+  "namedOwnEvening": false
+}, $freeSchedule.flags ?? {})>>
 <<set $dangerousSolo = Object.assign({
   "route": "",
   "seraRisk": 0,
@@ -127,8 +150,16 @@
   "chaerinBusChoice": "",
   "chaerinRejectedChoice": "",
   "chaerinUmbrellaChoice": "",
+  "eunhoInvitationChoice": "",
   "eunhoFeelingsNamed": false
 }, $chapter2 ?? {})>>
+/% 자유 일정 도입 전, 고백 직전까지 진행한 저장은 기존 고정 일상을 모두 본 것으로 이관한다. %/
+<<if $freeSchedule.mode is "" && $chapter2.eunhoFeelingsNamed>>
+  <<set $freeSchedule.mode = "legacy-pre-schedule">>
+  <<set $freeSchedule.visits.sera = Math.max(1, $freeSchedule.visits.sera)>>
+  <<set $freeSchedule.visits.yujin = Math.max(1, $freeSchedule.visits.yujin)>>
+  <<set $freeSchedule.visits.chaerin = Math.max(1, $freeSchedule.visits.chaerin)>>
+<</if>>
 <<set $chapter3 = Object.assign({
   "seraAnswered": false,
   "yujinAnswered": false,

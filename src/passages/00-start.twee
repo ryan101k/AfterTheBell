@@ -34,6 +34,28 @@
   "chaerin": 0
 }>>
 <<set $dangerousAffectionVersion = 2>>
+<<set $freeSchedule = {
+  "mode": "",
+  "active": false,
+  "title": "",
+  "totalSlots": 0,
+  "slot": 0,
+  "last": "",
+  "order": [],
+  "optionsPassage": "",
+  "finishPassage": "",
+  "visits": {
+    "sera": 0,
+    "yujin": 0,
+    "chaerin": 0,
+    "siwooNarae": 0,
+    "alone": 0
+  },
+  "flags": {
+    "securedArchive": false,
+    "namedOwnEvening": false
+  }
+}>>
 <<set $dangerousSolo = {
   "route": "",
   "seraRisk": 0,
