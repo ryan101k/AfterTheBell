@@ -12,9 +12,14 @@
   "newHomeCrossed": false,
   "boundaryCount": 0,
   "repairScore": 0,
+  "pairUnderstanding": 0,
   "seraResponse": "",
   "yujinResponse": "",
   "chaerinResponse": "",
+  "seraYujinChoice": "",
+  "seraChaerinChoice": "",
+  "yujinChaerinChoice": "",
+  "groupChatChoice": "",
   "acceptedResponsibility": false
 }>>
 <<if $chapter2.seraPath is "boundary">><<set $chapter3.boundaryCount += 1>><</if>>
@@ -520,7 +525,260 @@
     <p>“오늘 알았어요.” 새라가 말했다. “그래서 아직 안 닫았고요.”</p>
     <p>채린은 물잔을 내려놓았다. “그럼 다음에 닫아도 되는지는 그 사람한테 물으면 되겠네요.”</p>
     <p>대화는 거기서 끝났다. 내가 돌아왔을 때 셋은 친해지지도, 서로의 위험을 이해한 척하지도 않았다. 다만 다음에 확인할 문장이 하나씩 생긴 얼굴이었다.</p>
-    [[각자의 집으로 돌아간다->3장 · 우선순위 없는 비상 신호]]
+    [[각자의 집으로 돌아간다->3장 · 닫히지 않은 창문]]
+  </div>
+</section>
+
+:: 3장 · 닫히지 않은 창문 [chapter3 autosave nobr]
+<section class="vn-scene vn-scene--room" data-standees="sera:anxious,yujin:alert" data-focus="sera">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>첫 식사에서 일주일이 지난 뒤, 유진은 사건 기록에 잘못 남은 새라의 옛 주소를 정정하러 왔다.</p>
+    <p>서류는 십 분 만에 끝났다. 문제는 창문이었다. 바람이 불 때마다 잠금쇠가 얇게 울렸고, 유진은 대화를 멈춘 채 창가로 갔다.</p>
+    <p data-speaker="강유진">“잠금 장치가 헐겁습니다. 밖에서 힘을 주면 열릴 수도 있어요.”</p>
+    <p>유진이 창틀에 손을 대자 새라가 먼저 그 앞을 막았다.</p>
+    <p data-speaker="윤새라">“손대지 마세요. 제가 열어 둔 거예요.”</p>
+    <p data-speaker="강유진">“일부러 위험하게 둔다는 뜻입니까?”</p>
+    <p>새라의 얼굴이 굳었다. 유진은 위험을 발견했고, 새라는 자기 집에서 또 결정권을 빼앗길 거라고 들었다.</p>
+    <div class="vn-choices">
+      <<link "새라에게 창문을 어떻게 두고 싶은지 직접 말해 달라고 한다.">>
+        <<set $chapter3.seraYujinChoice = "ask-sera">>
+        <<set $chapter3.pairUnderstanding += 1>>
+        <<set $playerPattern.face += 1>>
+        <<goto "3장 · 허락받은 점검">>
+      <</link>>
+      <<link "유진에게 당장 창문에서 물러나라고 말한다.">>
+        <<set $chapter3.seraYujinChoice = "stop-yujin">>
+        <<set $playerPattern.face += 1>>
+        <<goto "3장 · 허락받은 점검">>
+      <</link>>
+      <<link "안전 문제이니 이번에는 유진의 판단을 따르자고 새라를 설득한다.">>
+        <<set $chapter3.seraYujinChoice = "trust-yujin">>
+        <<set $playerPattern.delegate += 1>>
+        <<goto "3장 · 허락받은 점검">>
+      <</link>>
+    </div>
+  </div>
+</section>
+
+:: 3장 · 허락받은 점검 [chapter3 autosave nobr]
+<section class="vn-scene vn-scene--room" data-standees="sera:anxious,yujin:alert" data-focus="yujin">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <<if $chapter3.seraYujinChoice is "ask-sera">>
+      <p data-speaker="최은호">“새라 씨 집이니까 새라 씨가 정해요. 닫아 둘지, 점검만 받을지, 아무것도 하지 않을지.”</p>
+      <p>새라는 내 표정을 확인하려다 멈추고 유진을 봤다.</p>
+      <p data-speaker="윤새라">“고치지는 말고, 어디가 위험한지만 설명해 주세요. 결정은 제가 할게요.”</p>
+    <<elseif $chapter3.seraYujinChoice is "stop-yujin">>
+      <p data-speaker="최은호">“유진 씨, 일단 창문에서 물러나 주세요.”</p>
+      <p>유진은 바로 손을 뗐다. 그런데 새라는 고맙다고 하지 않았다.</p>
+      <p data-speaker="윤새라">“내가 싫다고 말했어요. 은호 씨가 대신 허락을 취소할 필요는 없어요.”</p>
+    <<else>>
+      <p data-speaker="최은호">“안전 문제니까 이번에는 유진 씨 판단을 따르는 게 좋겠습니다.”</p>
+      <p>새라는 내 쪽을 봤다. 처음 쫓겨났던 날, 자기 방의 잠금을 남들이 바꾸던 때와 같은 눈이었다.</p>
+      <p data-speaker="윤새라">“그 말이면, 이 집도 결국 내 주소가 아니네요.”</p>
+    <</if>>
+    <p>나는 물을 끓이겠다고 부엌으로 물러났다. 이번에는 두 사람 사이의 대답까지 맡지 않았다.</p>
+    <p data-speaker="윤새라">“문이 잘 잠겨야 안전한 사람도 있겠죠. 나는 안에서 언제든 열 수 있어야 안전해요.”</p>
+    <p>유진은 창문이 아니라 새라를 봤다.</p>
+    <p data-speaker="강유진">“그러면 잠그지 않겠습니다. 대신 바깥에서 열리는지 확인해도 됩니까? 손대기 전에 매번 묻겠습니다.”</p>
+    <p data-speaker="윤새라">“오늘은 설명만 해 주세요. 다음에 내가 필요하면 연락할게요.”</p>
+    <p>유진은 공구함을 열지 않았다. 창틀에서 두 걸음 떨어진 채 나사가 느슨해진 위치만 가리켰다.</p>
+    <p>돌아가기 전 새라는 유진에게 자기 번호를 직접 저장해 줬다. 비상 연락처가 아니라, 창문을 고치고 싶을 때 물어볼 사람의 이름으로.</p>
+    [[두 사람이 정한 거리를 기억한다->3장 · 값이 붙지 않은 화분]]
+  </div>
+</section>
+
+:: 3장 · 값이 붙지 않은 화분 [chapter3 autosave nobr]
+<section class="vn-scene vn-scene--room" data-standees="sera:anxious,chaerin:cold" data-focus="chaerin">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>창문 점검이 있던 다음 주, 채린은 새라에게 직접 연락했다. 첫 식사에 가져온 화분이 작업실 빛에 맞는지 묻겠다는 이유였다.</p>
+    <p>하지만 채린이 들고 온 것은 화분 설명서가 아니라 매입 제안서였다. 새라의 미발표 그림 세 점과 앞으로 완성할 두 점의 우선 구매권이 적혀 있었다.</p>
+    <p data-speaker="한채린">“시세보다 세 배예요. 전시 여부도 윤새라 씨가 정하고, 이름도 그대로 남겨요.”</p>
+    <p data-speaker="윤새라">“아직 그리지도 않은 그림에는 이름이 없어요.”</p>
+    <p data-speaker="한채린">“그러니까 먼저 지켜 두겠다는 거죠. 다른 사람이 다시 빼앗지 못하게.”</p>
+    <p>새라는 계약서를 받지 않았다. 채린에게는 가장 안전한 도움처럼 보였지만, 새라에게는 아직 태어나지 않은 그림의 출구까지 먼저 정하는 일이었다.</p>
+    <p>두 사람이 동시에 나를 봤다. 채린은 제안이 공정한지, 새라는 자기가 거절해도 내가 실망하지 않을지를 묻는 얼굴이었다.</p>
+    <div class="vn-choices">
+      <<link "새라에게 지금 원하는 도움이 무엇인지 직접 말해 달라고 한다.">>
+        <<set $chapter3.seraChaerinChoice = "ask-sera">>
+        <<set $chapter3.pairUnderstanding += 1>>
+        <<set $playerPattern.face += 1>>
+        <<goto "3장 · 사지 않은 다음 그림">>
+      <</link>>
+      <<link "채린에게 제안서를 당장 폐기하라고 대신 요구한다.">>
+        <<set $chapter3.seraChaerinChoice = "reject-for-sera">>
+        <<set $playerPattern.face += 1>>
+        <<goto "3장 · 사지 않은 다음 그림">>
+      <</link>>
+      <<link "이 정도 조건이면 새라에게도 좋은 기회라고 설득한다.">>
+        <<set $chapter3.seraChaerinChoice = "take-deal">>
+        <<set $playerPattern.delegate += 1>>
+        <<goto "3장 · 사지 않은 다음 그림">>
+      <</link>>
+    </div>
+  </div>
+</section>
+
+:: 3장 · 사지 않은 다음 그림 [chapter3 autosave nobr]
+<section class="vn-scene vn-scene--room" data-standees="sera:anxious,chaerin:wounded" data-focus="sera">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <<if $chapter3.seraChaerinChoice is "ask-sera">>
+      <p data-speaker="최은호">“새라 씨가 지금 받고 싶은 도움을 직접 말해요. 계약이 아니어도 됩니다.”</p>
+      <p>새라는 빈 서명란을 보지 않고 채린을 마주 봤다.</p>
+      <p data-speaker="윤새라">“완성한 뒤에 보여 줄게요. 사고 싶으면 그때 물어봐요. 다음 그림까지 미리 사지는 말고.”</p>
+    <<elseif $chapter3.seraChaerinChoice is "reject-for-sera">>
+      <p data-speaker="최은호">“그 제안서는 폐기해요. 새라 씨한테 필요한 계약이 아닙니다.”</p>
+      <p>채린은 종이를 접었지만 새라는 내 쪽을 보며 낮게 말했다.</p>
+      <p data-speaker="윤새라">“싫다고 말할 사람은 나예요. 대신 화내 주면, 다음에도 은호 씨 표정부터 보게 돼요.”</p>
+    <<else>>
+      <p data-speaker="최은호">“조건은 충분히 좋아 보입니다. 새라 씨한테도 다시 오기 힘든 기회일 수 있어요.”</p>
+      <p>새라의 손이 자기 작업대 가장자리를 짚었다.</p>
+      <p data-speaker="윤새라">“내 그림이 다시 남의 좋은 기회가 되기 시작하면, 지난번이랑 뭐가 달라요?”</p>
+    <</if>>
+    <p>채린은 계약서를 가방에 넣지 않았다. 새라 앞에서 두 장을 찢어, 글자가 보이지 않게 다시 접었다.</p>
+    <p data-speaker="한채린">“돈을 쓰지 않으면 어떻게 도와야 하는지 잘 몰라요.”</p>
+    <p>새라는 창가의 화분을 가리켰다. 채린이 처음 가져왔던, 가격표도 포장도 없던 작은 식물이었다.</p>
+    <p data-speaker="윤새라">“저거 이름부터 물어봐 줘요. 나도 모르고 키우고 있으니까.”</p>
+    <p>채린은 검색 결과를 바로 보내는 대신 화분 사진을 찍어도 되느냐고 먼저 물었다. 새라가 고개를 끄덕인 뒤에야 휴대전화를 들었다.</p>
+    <p>며칠 뒤 채린은 식물 이름 하나와 물 주는 주기만 보냈다. 새 그림의 진행 상황은 묻지 않았다.</p>
+    [[돈으로 사지 않은 도움을 기억한다->3장 · 조회되지 않은 번호판]]
+  </div>
+</section>
+
+:: 3장 · 조회되지 않은 번호판 [chapter3 autosave nobr]
+<section class="vn-scene vn-scene--room" data-standees="yujin:alert,chaerin:cold" data-focus="chaerin">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <p>채린이 유진에게 직접 만나자고 한 것은 그로부터 사흘 뒤였다. 내 집 근처에 같은 차가 두 번 서 있었다는 경호팀 보고서가 이유였다.</p>
+    <p>사진에는 흐린 번호판과 시간, 내가 편의점에 다녀온 동선까지 적혀 있었다.</p>
+    <p data-speaker="한채린">“차량 명의와 출입 기록을 조회해 줘요. 필요한 결재가 있으면 내가 책임질게요.”</p>
+    <p data-speaker="강유진">“당신이 책임진다고 경찰 조회 권한이 생기는 건 아닙니다. 신고도 피해 진술도 없어요.”</p>
+    <p data-speaker="한채린">“실제로 무슨 일이 생긴 다음에야 움직이겠다는 말이에요?”</p>
+    <p>유진의 손이 보고서 위에서 멈췄다. 평소라면 먼저 조회하고 나중에 절차를 고민했을 사람에게, 채린의 명령은 거절하기 어려운 유혹이었다.</p>
+    <p>채린은 유진이 할 수 있는데 하지 않는다고 생각했고, 유진은 채린이 책임질 수 없는 권한까지 돈으로 사려 한다고 생각했다.</p>
+    <div class="vn-choices">
+      <<link "채린에게는 자료만 건네고, 조회 여부는 유진이 판단하게 하자고 말한다.">>
+        <<set $chapter3.yujinChaerinChoice = "separate">>
+        <<set $chapter3.pairUnderstanding += 1>>
+        <<set $playerPattern.face += 1>>
+        <<goto "3장 · 명령이 아닌 정보">>
+      <</link>>
+      <<link "이번 한 번만 유진에게 번호판을 조회해 달라고 부탁한다.">>
+        <<set $chapter3.yujinChaerinChoice = "use-authority">>
+        <<set $playerPattern.delegate += 1>>
+        <<goto "3장 · 명령이 아닌 정보">>
+      <</link>>
+      <<link "경찰 대신 채린의 경호팀이 계속 추적하게 한다.">>
+        <<set $chapter3.yujinChaerinChoice = "private-watch">>
+        <<set $playerPattern.avoid += 1>>
+        <<goto "3장 · 명령이 아닌 정보">>
+      <</link>>
+    </div>
+  </div>
+</section>
+
+:: 3장 · 명령이 아닌 정보 [chapter3 autosave nobr]
+<section class="vn-scene vn-scene--room" data-standees="yujin:alert,chaerin:wounded" data-focus="yujin">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <<if $chapter3.yujinChaerinChoice is "separate">>
+      <p data-speaker="최은호">“채린 씨는 본 걸 자료로 건네고, 조회할 근거가 되는지는 유진 씨가 판단해요. 책임을 대신 사지는 말고요.”</p>
+      <p>채린은 마음에 들지 않는다는 표정을 숨기지 않았지만, 보고서를 유진 쪽으로 밀고 손을 뗐다.</p>
+    <<elseif $chapter3.yujinChaerinChoice is "use-authority">>
+      <p data-speaker="최은호">“이번 한 번만 확인해 줄 수 있습니까? 아무 일인지 아닌지만 알고 싶습니다.”</p>
+      <p>유진은 내 부탁을 들은 순간 더 단호하게 화면을 잠갔다.</p>
+      <p data-speaker="강유진">“당신 부탁이라서 허용되는 조회라면, 내가 가장 먼저 넘지 말아야 할 선입니다.”</p>
+    <<else>>
+      <p data-speaker="최은호">“경찰이 못 한다면 경호팀이 계속 확인하게 하죠.”</p>
+      <p>채린은 바로 전화를 들었고 유진이 그 손을 막지는 않았다.</p>
+      <p data-speaker="강유진">“그러면 수사 대신 사적인 감시가 남습니다. 안전해지는 게 아니라 감시자를 고르는 겁니다.”</p>
+    <</if>>
+    <p>잠시 뒤 유진은 보고서 첫 장만 복사했다. 번호판 조회가 아니라, 반복 촬영과 미행 가능성을 상담 기록으로 남기기 위해서였다.</p>
+    <p data-speaker="강유진">“이건 명령이 아니라 정보 제공으로 접수합니다. 실제 접근이나 연락이 있으면 은호 씨가 신고 여부를 결정해요.”</p>
+    <p data-speaker="한채린">“그동안 아무것도 안 하고 기다리라고요?”</p>
+    <p data-speaker="강유진">“기다리는 동안 당사자한테 먼저 물을 수는 있습니다. 경호팀이 따라붙기 전에 오늘 그 차를 봤는지 묻는 것부터요.”</p>
+    <p>채린은 나를 보지 않고 유진에게 다시 물었다.</p>
+    <p data-speaker="한채린">“그러면 다음에는 보고서를 보내기 전에, 이 사람한테 계속 확인해도 되는지 묻겠습니다. 당신한테는 판단을 요구하지 않고 자료만 보내고.”</p>
+    <p data-speaker="강유진">“그렇게 보내면, 내 권한 안에서 무엇을 할 수 있는지 내가 답하겠습니다.”</p>
+    <p>두 사람은 서로를 좋아하지 않았다. 그래도 명령하는 사람과 집행하는 사람이 되는 대신, 정보를 건네는 사람과 거절할 수 있는 사람으로 헤어졌다.</p>
+    [[권한과 명령을 나눈다->3장 · 초대되지 않은 네 번째 사람]]
+  </div>
+</section>
+
+:: 3장 · 초대되지 않은 네 번째 사람 [chapter3 autosave nobr]
+<section class="vn-scene vn-scene--room" data-standees="sera:anxious,yujin:alert,chaerin:cold">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--phone">
+    <p>차량 보고서를 정리한 그날 밤, 새라는 나를 넣지 않은 단체방을 만들었다.</p>
+    <div class="phone-message"><b>윤새라</b><span>은호 씨한테 물어보기 전에 두 분한테 먼저 물을게요. 이 관계를 계속 시험해 볼 생각이 있어요?</span></div>
+    <div class="phone-message"><b>강유진</b><span>두 분을 좋아하지는 않습니다. 그래도 위험 대상으로 분류해서 은호 씨 결정을 대신하지는 않겠습니다.</span></div>
+    <div class="phone-message"><b>한채린</b><span>공평하게 나눌 생각도 없어요. 다만 둘을 없애야만 얻는 자리라면, 그 사람이 또 숨을 테니까 그 방식은 쓰지 않겠어요.</span></div>
+    <p>세 사람은 내 대답을 전달하지 않았다. 각자 자기가 계속할 수 있는 범위만 말했다.</p>
+    <div class="phone-message"><b>윤새라</b><span>나는 두 분이 싫어질 때 은호 씨한테 먼저 말하지 않고, 당사자한테 말해 볼게요.</span></div>
+    <div class="phone-message"><b>강유진</b><span>상대가 답하지 않는다는 이유로 위치나 일정을 조회하지 않겠습니다.</span></div>
+    <div class="phone-message"><b>한채린</b><span>시간과 호의를 돈으로 정산하지 않겠습니다. 못 지키면 이 방에서 먼저 말할게요.</span></div>
+    <p>서른여덟 번째 메시지에서야 채린이 내 이름을 꺼냈다.</p>
+    <div class="phone-message"><b>한채린</b><span>이제 최은호도 초대해요? 아니면 우리 셋이 정한 뒤 통보할까요.</span></div>
+    <p>새라는 초대 링크를 만들었다. 이전 대화 기록은 공개하지 않는 설정이었다.</p>
+    [[세 사람이 보낸 초대를 받는다->3장 · 읽지 않은 대화 기록]]
+  </div>
+</section>
+
+:: 3장 · 읽지 않은 대화 기록 [chapter3 autosave nobr]
+<section class="vn-scene vn-scene--room" data-standees="sera:anxious,yujin:alert,chaerin:cold">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--phone">
+    <div class="phone-message"><b>새라 · 유진 · 채린</b><span>세 사람이 회원님을 대화에 초대했습니다. 이전 메시지 38개는 표시되지 않습니다.</span></div>
+    <p>내 이야기를 했다는 사실보다, 내가 없는 곳에서 세 사람이 관계를 계속할지 먼저 결정했다는 사실이 낯설었다.</p>
+    <p>예전의 나는 다섯 사람이 나 없이 나눈 말을 견디지 못했다. 모르는 대화가 생기면 내 자리가 줄어든다고 생각했다.</p>
+    <div class="vn-choices">
+      <<link "이전 기록은 요구하지 않고, 지금부터 지킬 규칙만 알려 달라고 한다.">>
+        <<set $chapter3.groupChatChoice = "join-boundary">>
+        <<set $chapter3.pairUnderstanding += 1>>
+        <<set $playerPattern.face += 1>>
+        <<goto "3장 · 세 사람이 고른 규칙">>
+      <</link>>
+      <<link "내 이야기와 관련된 대화이니 이전 기록도 전부 공유해 달라고 한다.">>
+        <<set $chapter3.groupChatChoice = "request-history">>
+        <<set $playerPattern.delegate += 1>>
+        <<goto "3장 · 세 사람이 고른 규칙">>
+      <</link>>
+      <<link "세 사람 사이의 대화에는 참여하지 않고 관계를 각각 따로 유지하겠다고 한다.">>
+        <<set $chapter3.groupChatChoice = "stay-out">>
+        <<set $playerPattern.avoid += 1>>
+        <<goto "3장 · 세 사람이 고른 규칙">>
+      <</link>>
+    </div>
+  </div>
+</section>
+
+:: 3장 · 세 사람이 고른 규칙 [chapter3 autosave nobr]
+<section class="vn-scene vn-scene--room" data-standees="sera:relieved,yujin:relieved,chaerin:relieved">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--phone">
+    <<if $chapter3.groupChatChoice is "join-boundary">>
+      <div class="phone-message"><b>최은호</b><span>이전 기록은 보여 주지 않아도 됩니다. 지금부터 내가 지켜야 할 규칙만 알려 주세요.</span></div>
+      <p>새라가 가장 먼저 읽었지만 답은 유진이 먼저 보냈다.</p>
+      <div class="phone-message"><b>강유진</b><span>이 방은 당신을 감시하기 위한 연락망이 아닙니다. 우리 셋이 당신 대답을 대신 해석하지 않기 위한 방입니다.</span></div>
+    <<elseif $chapter3.groupChatChoice is "request-history">>
+      <div class="phone-message"><b>최은호</b><span>내 이야기와 관련된 대화라면 이전 기록도 전부 확인하고 싶습니다.</span></div>
+      <p>한동안 아무 표시도 뜨지 않았다. 새라가 먼저 답했다.</p>
+      <div class="phone-message"><b>윤새라</b><span>내가 쓴 말은 보여 줄 수 있어요. 하지만 두 사람이 쓴 말까지 은호 씨한테 넘길 권리는 나한테 없어요.</span></div>
+      <p>유진과 채린도 자기 메시지는 직접 설명하겠지만 방 전체를 제출하지는 않겠다고 했다.</p>
+    <<else>>
+      <div class="phone-message"><b>최은호</b><span>나는 이 방에 들어가지 않겠습니다. 세 사람과의 관계는 각각 따로 유지하고 싶어요.</span></div>
+      <p>채린이 즉시 입력했고, 이번에는 지우지 않았다.</p>
+      <div class="phone-message"><b>한채린</b><span>당신이 안 들어오는 건 선택이에요. 그렇다고 우리가 서로 말하지 않는 관계로 돌아가지는 않을 거고.</span></div>
+      <p>단체방은 세 사람만 남은 채 유지됐다. 나는 공통으로 정한 내용만 각자에게 전달받기로 했다.</p>
+    <</if>>
+    <p>세 사람이 정한 규칙은 세 줄이었다.</p>
+    <div class="phone-message"><b>공통 규칙</b><span>한 사람의 말을 다른 사람을 설득하는 증거로 쓰지 않는다.<br>불편한 일은 은호를 거치기 전에 당사자에게 먼저 말한다.<br>답이 늦다는 이유로 위치·일정·재산을 조회하지 않는다.</span></div>
+    <p>규칙 아래에는 서명 대신 각자의 현재 위치가 아닌 저녁 메뉴가 하나씩 올라왔다. 새라는 계란말이, 유진은 편의점 샌드위치, 채린은 맵지 않은 국수였다.</p>
+    <p>세 사람은 나 때문에 만들어진 방에서, 처음으로 나와 관계없는 이야기를 이어 갔다.</p>
+    [[네 사람이 아닌 세 사람의 대화를 남겨 둔다->3장 · 우선순위 없는 비상 신호]]
   </div>
 </section>
 
@@ -530,6 +788,11 @@
   <div class="vn-dialogue vn-dialogue--narration">
     <figure class="vn-cutscene"><img src="../assets/images/event-trio-yujin-shared-signal.png" alt="독점하지 않는 비상 신호를 설명하는 강유진"><figcaption>누구도 첫 번째 보호자가 아닌 연락망</figcaption></figure>
     <p>두 번째로 만난 것은 삼 주 뒤였다. 약속 장소로 가던 내 휴대전화가 꺼졌고, 고장 난 전동차 안에서 사십 분을 늦었다.</p>
+    <<if $chapter3.pairUnderstanding gte 3>>
+      <p>연락이 끊긴 뒤 세 사람은 단체방에 자기가 하려는 일을 먼저 적었다. 서로가 어디까지 움직이는지 알았지만, 오래된 불안은 메시지보다 빨랐다.</p>
+    <<else>>
+      <p>연락이 끊긴 동안 단체방은 조용했다. 각자 상대가 과하게 움직일 거라고 생각하면서도, 자기 행동부터 알리지는 않았다.</p>
+    <</if>>
     <p>도착했을 때 새라는 역무실 번호를 찾아 둔 상태였다. 유진은 관할 순찰차 위치를 확인했고, 채린은 기사를 두 대 불렀다가 한 대를 취소하지 못하고 있었다.</p>
     <p>아무 일도 아니었다는 말을 듣자 셋은 서로가 어디까지 갔는지를 먼저 봤다. 첫날 식탁에서 삼킨 질문이 그제야 돌아왔다.</p>
     <p>“저는 연락이 끊기면 은호 씨 일정을 전부 알고 싶어져요.” 새라가 먼저 말했다.</p>
@@ -765,7 +1028,10 @@
 </section>
 
 :: 3장 · 네 개의 주소 [chapter3 autosave nobr]
-<<set _haremRepairReadiness = $chapter3.boundaryCount + $chapter3.repairScore>>
+<<set _pairRepair = $chapter3.pairUnderstanding || 0>>
+<<set _chatRepair = 0>>
+<<if $chapter3.groupChatChoice is "join-boundary">><<set _chatRepair = 1>><</if>>
+<<set _haremRepairReadiness = $chapter3.boundaryCount + $chapter3.repairScore + _pairRepair + _chatRepair>>
 <section class="vn-scene vn-scene--room">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
@@ -773,7 +1039,7 @@
       <<link "각자 넘은 선을 자기 이름으로 되돌리고, 네 사람의 주소를 모두 남긴다.">>
         <<set $chapter3.acceptedResponsibility = true>>
         <<set $playerPattern.face += 1>>
-        <<if _haremRepairReadiness gte 4>>
+        <<if _haremRepairReadiness gte 8>>
           <<goto "3장 · 되돌리는 세 주">>
         <<else>>
           <<goto "3장 · 비워 둔 네 번째 자리">>
