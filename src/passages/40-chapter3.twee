@@ -12,6 +12,9 @@
   "newHomeCrossed": false,
   "boundaryCount": 0,
   "repairScore": 0,
+  "seraResponse": "",
+  "yujinResponse": "",
+  "chaerinResponse": "",
   "acceptedResponsibility": false
 }>>
 <<if $chapter2.seraPath is "boundary">><<set $chapter3.boundaryCount += 1>><</if>>
@@ -57,9 +60,45 @@
     <p data-speaker="윤새라">“제가 부족한 거예요?”</p>
     <p data-speaker="최은호">“아니요. 사람 셋을 더해서 하나를 만드는 얘기도 아닙니다. 그래서 새라 씨가 싫다고 하면 여기서 끝내야 합니다.”</p>
     <p data-speaker="윤새라">“끝내도, 나중에 곤란해졌다고 다시 부르지 않을 수 있어요?”</p>
-    <p>대답하기 어려운 질문이었다. 좋아한다는 말보다 새라 없이 사는 책임을 먼저 묻는 말이었으니까.</p>
+    <p>좋아한다는 말보다 새라 없이 사는 책임을 먼저 묻는 질문이었다.</p>
+    <div class="vn-choices">
+      <<link "외로워도 새라를 해결책처럼 다시 부르지 않겠다고 약속한다.">>
+        <<set $chapter3.seraResponse = "independent">>
+        <<set $chapter3.repairScore += 1>>
+        <<set $playerPattern.face += 1>>
+        <<goto "3장 · 새라의 열쇠 앞에서">>
+      <</link>>
+      <<link "연락하고 싶어질 수는 있지만, 그 마음의 책임을 새라에게 넘기지 않겠다고 말한다.">>
+        <<set $chapter3.seraResponse = "honest">>
+        <<set $chapter3.repairScore += 1>>
+        <<set $playerPattern.face += 1>>
+        <<goto "3장 · 새라의 열쇠 앞에서">>
+      <</link>>
+      <<link "그렇게 곤란해질 일은 없을 거라고 안심시킨다.">>
+        <<set $chapter3.seraResponse = "reassure">>
+        <<set $playerPattern.avoid += 1>>
+        <<goto "3장 · 새라의 열쇠 앞에서">>
+      <</link>>
+    </div>
+  </div>
+</section>
+
+:: 3장 · 새라의 열쇠 앞에서 [chapter3 autosave nobr]
+<section class="vn-scene vn-scene--room" data-standees="sera:anxious" data-focus="sera">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <<if $chapter3.seraResponse is "independent">>
+      <p data-speaker="최은호">“곤란하겠죠. 그래도 그때 새라 씨를 내 생활을 고치는 사람으로 부르지는 않겠습니다.”</p>
+      <p>새라는 약속의 내용보다, 곤란할 거라는 말을 숨기지 않은 쪽을 오래 바라봤다.</p>
+    <<elseif $chapter3.seraResponse is "honest">>
+      <p data-speaker="최은호">“연락하고 싶을 겁니다. 하지만 그 외로움을 새라 씨가 해결해야 할 의무로 만들지는 않겠습니다.”</p>
+      <p>새라는 대답을 믿겠다는 대신 확인해 보겠다고 말했다. 그 편이 새라다운 동의였다.</p>
+    <<else>>
+      <p data-speaker="최은호">“그렇게 곤란해질 일은 없을 겁니다.”</p>
+      <p>새라는 안심하지 않았다. 내가 미래의 외로움까지 대신 결정한 말이, 새라가 하던 약속과 너무 닮아 있었다.</p>
+    <</if>>
     <p>새라는 울지 않았다. 내 집 열쇠를 식탁에 내려놓고 이 주 동안 찾아오지 말라고 했다.</p>
-    <p>“없어도 사는 사람인지 먼저 볼게요. 은호 씨도 제가 없을 때 뭘 좋아했던 건지 생각해요.”</p>
+    <p data-speaker="윤새라">“없어도 사는 사람인지 먼저 볼게요. 은호 씨도 제가 없을 때 뭘 좋아했던 건지 생각해요.”</p>
     [[새라가 없는 식탁을 견딘다->3장 · 비어 있는 식탁]]
   </div>
 </section>
@@ -85,7 +124,40 @@
     <p data-speaker="최은호">“유진 씨가 누군가를 구해서가 아니라, 내 소파에서 아무것도 지키지 않고 잠든 밤이 좋았습니다. 멀쩡한 날에도 만나고 싶고요.”</p>
     <p>유진은 기뻐하기 전에 새라와 채린의 이름부터 확인했다.</p>
     <p data-speaker="강유진">“세 사람 모두를 지키겠다는 말입니까?”</p>
-    <p data-speaker="최은호">“아닙니다. 좋아한다고 말하러 왔습니다. 싫다는 대답도 유진 씨한테 직접 들으려고요.”</p>
+    <div class="vn-choices">
+      <<link "누구를 지키겠다는 게 아니라, 각자가 나를 선택하거나 거절할 수 있게 하려는 거라고 답한다.">>
+        <<set $chapter3.yujinResponse = "choice">>
+        <<set $chapter3.repairScore += 1>>
+        <<set $playerPattern.face += 1>>
+        <<goto "3장 · 비상 연락망에서 내린 이름">>
+      <</link>>
+      <<link "위험할 때 유진의 도움은 필요하지만, 내 판단까지 맡기지는 않겠다고 답한다.">>
+        <<set $chapter3.yujinResponse = "boundary">>
+        <<set $chapter3.repairScore += 1>>
+        <<set $playerPattern.face += 1>>
+        <<goto "3장 · 비상 연락망에서 내린 이름">>
+      <</link>>
+      <<link "유진이라면 세 사람 모두를 안전하게 지킬 수 있다고 답한다.">>
+        <<set $chapter3.yujinResponse = "protector">>
+        <<set $playerPattern.delegate += 1>>
+        <<goto "3장 · 비상 연락망에서 내린 이름">>
+      <</link>>
+    </div>
+  </div>
+</section>
+
+:: 3장 · 비상 연락망에서 내린 이름 [chapter3 autosave nobr]
+<section class="vn-scene vn-scene--room" data-standees="yujin:shaken" data-focus="yujin">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <<if $chapter3.yujinResponse is "choice">>
+      <p data-speaker="최은호">“지키겠다는 말이 아닙니다. 세 사람 모두 내 제안을 거절할 수 있게 하려는 겁니다. 싫다는 대답도 직접 듣고요.”</p>
+    <<elseif $chapter3.yujinResponse is "boundary">>
+      <p data-speaker="최은호">“위험할 때 유진 씨 도움이 필요할 수는 있습니다. 그래도 누구를 만날지까지 보호 판단으로 넘기지는 않겠습니다.”</p>
+    <<else>>
+      <p data-speaker="최은호">“유진 씨라면 우리 모두를 안전하게 지킬 수 있다고 생각했습니다.”</p>
+      <p>유진의 얼굴이 굳었다. 고백을 하러 와서 다시 직무를 건넨 셈이었다.</p>
+    <</if>>
     <p data-speaker="강유진">“예전에도 모두를 잃기 싫어서 같은 답을 골랐다고 했죠.”</p>
     <p>대답할 말이 없었다. 유진은 내 손을 잡는 대신 비상 연락망에서 내 이름을 내린 화면을 보여 줬다.</p>
     <p>삭제 확인창 위에서 유진의 엄지가 오래 멈췄다. 보호 권한을 내려놓는 동작이, 손을 잡는 것보다 더 솔직해 보였다.</p>
@@ -117,7 +189,40 @@
     <p data-speaker="최은호">“정정 공고 때문에 손해가 날 걸 알면서도 자기 이름으로 사과한 날이 좋았습니다. 나를 움직일 수 있는데 답장을 기다린 것도요.”</p>
     <p>채린의 표정이 풀린 건 새라와 유진의 이름을 말하기 전까지였다.</p>
     <p data-speaker="한채린">“셋 중 하나를 고르라는 말이 그렇게 무서워요?”</p>
-    <p data-speaker="최은호">“무섭습니다. 그래도 이번에는 무서워서 거짓말하지 않으려고요.”</p>
+    <div class="vn-choices">
+      <<link "고르지 않은 결과로 누군가 떠나는 일까지 내가 감당해야 한다고 답한다.">>
+        <<set $chapter3.chaerinResponse = "consequence">>
+        <<set $chapter3.repairScore += 1>>
+        <<set $playerPattern.face += 1>>
+        <<goto "3장 · 값을 붙이지 않은 대답">>
+      <</link>>
+      <<link "채린이 줄 수 있는 것과 채린을 좋아하는 이유를 분리해서 말한다.">>
+        <<set $chapter3.chaerinResponse = "reason">>
+        <<set $chapter3.repairScore += 1>>
+        <<set $playerPattern.face += 1>>
+        <<goto "3장 · 값을 붙이지 않은 대답">>
+      <</link>>
+      <<link "한 달만 세 사람을 만나 보고 그 뒤에 한 사람을 고르겠다고 제안한다.">>
+        <<set $chapter3.chaerinResponse = "trial">>
+        <<set $playerPattern.delegate += 1>>
+        <<goto "3장 · 값을 붙이지 않은 대답">>
+      <</link>>
+    </div>
+  </div>
+</section>
+
+:: 3장 · 값을 붙이지 않은 대답 [chapter3 autosave nobr]
+<section class="vn-scene vn-scene--room" data-standees="chaerin:wounded" data-focus="chaerin">
+  <div class="vn-scene__shade"></div>
+  <div class="vn-dialogue vn-dialogue--narration">
+    <<if $chapter3.chaerinResponse is "consequence">>
+      <p data-speaker="최은호">“무섭습니다. 그래도 고르지 않은 결과로 누군가 떠나면, 이번에는 그 결과까지 내가 받아들여야 합니다.”</p>
+    <<elseif $chapter3.chaerinResponse is "reason">>
+      <p data-speaker="최은호">“채린 씨가 가장 많은 걸 줄 수 있다는 사실과, 내가 채린 씨를 좋아하는 이유는 따로 두고 싶습니다.”</p>
+    <<else>>
+      <p data-speaker="최은호">“한 달만 만나 보고, 그 뒤에 누구를 고를지 정하면 안 됩니까?”</p>
+      <p>채린은 웃었다. 내가 사람의 마음을 시험 기간과 결과표로 바꾼 방식이 자기 집과 닮았다는 걸 알아본 웃음이었다.</p>
+    <</if>>
     <p>채린은 웃으려다 실패했다. 누구보다 값비싼 표정을 골라 쓰던 사람이, 그 순간에는 어떤 얼굴이 자신을 덜 초라하게 만들지 찾지 못했다.</p>
     <p data-speaker="한채린">“내가 제일 많은 걸 줄 수 있는데도?”</p>
     <p data-speaker="최은호">“그래서가 아니라, 아무것도 주지 못했던 십 분 때문에 좋아한다고 말하는 겁니다.”</p>
@@ -164,6 +269,13 @@
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
     <p>새라는 약속한 기간을 하루 남겨 두고 작업실로 나를 불렀다. 문은 열어 줬지만 내 집 열쇠는 작업대 위에 그대로 있었다.</p>
+    <<if $chapter3.seraResponse is "reassure">>
+      <p>“곤란해질 일은 없다고 했죠. 그 말은 아직 못 믿겠어요. 곤란해져도 나를 쓰지 않는 사람이 되는지는 볼게요.”</p>
+    <<elseif $chapter3.seraResponse is "honest">>
+      <p>“연락하고 싶을 거라고 말한 건 좋았어요. 필요 없는 척하는 것보다, 필요를 내 의무로 만들지 않는 쪽이 더 믿을 만하니까.”</p>
+    <<else>>
+      <p>“혼자 장을 보고 밥을 해 먹었다고 들었어요. 나 없이 완벽해서가 아니라, 곤란해도 나를 해결책으로 부르지 않은 건 믿어 볼게요.”</p>
+    <</if>>
     <p>“두 사람을 좋아하지는 않아요. 그래도 없던 사람으로 만들지는 않을게요. 두 달 동안은 서로 만나게 하지 말아요.”</p>
     <p>“그동안 새라 씨 집에는 와도 됩니까?”</p>
     <p>“내가 초대한 날만요. 은호 씨 집에도 마음대로 안 갈 거예요.”</p>
@@ -177,6 +289,13 @@
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
     <p>유진은 근무가 끝난 뒤 강변 벤치에서 기다리고 있었다. 내가 다가가도 걸음이나 안색부터 확인하지 않았다.</p>
+    <<if $chapter3.yujinResponse is "protector">>
+      <p>“그날은 나한테 세 사람을 지켜 달라고 했죠. 그 말부터 취소하지 않으면 대답할 수 없습니다.”</p>
+    <<elseif $chapter3.yujinResponse is "boundary">>
+      <p>“도움은 구하되 판단은 넘기지 않겠다는 말, 기억하고 있습니다. 실제로 그 선을 지키는지는 더 보겠습니다.”</p>
+    <<else>>
+      <p>“거절할 수 있게 하겠다는 말은 이해했습니다. 그래서 오늘은 담당자가 아니라 내 대답을 하러 왔습니다.”</p>
+    <</if>>
     <p>“당신이 멀쩡한 날에도 보고 싶었습니다. 그건 확인했습니다. 다른 두 사람까지 좋아할 수 있는지는 아직 모르겠어요.”</p>
     <p>“좋아할 필요는 없습니다.”</p>
     <p>“그럼 제가 두 사람을 위험으로 판단하는 순간에는요?”</p>
@@ -195,6 +314,13 @@
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
     <p>채린은 자기가 정한 마지막 날에도 차를 보내지 않았다. 나는 주소를 알고도 약속 시각까지 기다렸다가 개인실로 갔다.</p>
+    <<if $chapter3.chaerinResponse is "trial">>
+      <p>“한 달 뒤에 한 사람을 고르겠다는 제안은 취소해요. 사람 셋을 비교표에 올리는 계약에는 서명하지 않을 거니까.”</p>
+    <<elseif $chapter3.chaerinResponse is "reason">>
+      <p>“내가 줄 수 있는 것과 나를 분리하겠다는 말은 마음에 들었어요. 아직 당신이 정말 그렇게 할 수 있는지는 모르겠지만.”</p>
+    <<else>>
+      <p>“누가 떠나도 감당하겠다고 했죠. 그러면 내가 지금 정하는 조건도 흥정하지 말고 들어요.”</p>
+    <</if>>
     <p>책상 위에는 계약서 대신 빈 일정표가 있었다.</p>
     <p>“공평하게 나누자는 말은 싫어요. 내가 보고 싶은 날은 내가 말할게요. 두 사람한테 숨기지만 마요.”</p>
     <p>“거절하면요?”</p>
@@ -607,12 +733,11 @@
     <p>셋은 서로를 변호하지 않았다. 그렇다고 그 말만으로 끝낼 수도 없었다.</p>
     <div class="vn-choices">
       <<link "각자 자기 행동과 되돌릴 일을 먼저 말하게 한 뒤, 내 책임을 마지막에 말한다.">>
-        <<set $chapter3.repairScore = 2>>
+        <<set $chapter3.repairScore += 2>>
         <<set $playerPattern.face += 1>>
         <<goto "3장 · 네 번째 사람의 광기">>
       <</link>>
       <<link "내가 세 사람의 잘못과 해결 순서를 정리하고, 그대로 따를 수 있는지 묻는다.">>
-        <<set $chapter3.repairScore = 0>>
         <<set $playerPattern.delegate += 1>>
         <<goto "3장 · 네 번째 사람의 광기">>
       <</link>>
@@ -648,7 +773,7 @@
       <<link "각자 넘은 선을 자기 이름으로 되돌리고, 네 사람의 주소를 모두 남긴다.">>
         <<set $chapter3.acceptedResponsibility = true>>
         <<set $playerPattern.face += 1>>
-        <<if _haremRepairReadiness gte 3>>
+        <<if _haremRepairReadiness gte 4>>
           <<goto "3장 · 되돌리는 세 주">>
         <<else>>
           <<goto "3장 · 비워 둔 네 번째 자리">>

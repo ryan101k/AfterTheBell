@@ -7,7 +7,7 @@
 <<set $dangerousSolo.seraBoundary = false>>
 <<set $dangerousSolo.seraAsked = false>>
 <<set $dangerousSolo.seraReturnedByChoice = false>>
-<section class="vn-scene vn-scene--room">
+<section class="vn-scene vn-scene--room" data-standees="sera:anxious" data-focus="sera">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
     <p class="vn-label">CHAPTER 3S · 임시가 아닌 주소</p>
@@ -86,7 +86,7 @@
 </section>
 
 :: 3S · 돌아오는 약속 [chapter3 autosave nobr]
-<section class="vn-scene vn-scene--room">
+<section class="vn-scene vn-scene--room" data-standees="sera:relieved" data-focus="sera">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
     <figure class="vn-cutscene">
@@ -178,7 +178,7 @@
 </section>
 
 :: 3S · 혼자 돌아온 밤 [chapter3 autosave nobr]
-<section class="vn-scene vn-scene--room">
+<section class="vn-scene vn-scene--room" data-standees="sera:anxious" data-focus="sera">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
     <<if $dangerousSolo.seraReturnedByChoice>>
@@ -208,7 +208,7 @@
 </section>
 
 :: 3S · 어깨 위의 고백 [chapter3 autosave nobr]
-<section class="vn-scene vn-scene--room">
+<section class="vn-scene vn-scene--room" data-standees="sera:relieved" data-focus="sera">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
     <figure class="vn-cutscene">
@@ -254,7 +254,7 @@
 </section>
 
 :: 3S · 마지막 열쇠 [chapter3 autosave nobr]
-<section class="vn-scene vn-scene--room">
+<section class="vn-scene vn-scene--room" data-standees="sera:possessive" data-focus="sera">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
     <p>좋아한다는 대답만으로 우리가 반복한 일을 지울 수는 없었다.</p>
@@ -281,7 +281,7 @@
 :: 3S · 서로 다른 주소 [chapter3 autosave nobr]
 <<set $dangerousOutcome = "solo_fragile_sera">>
 <<set $clearedEndings.dangerousSeraFragile = true>>
-<section class="vn-scene vn-scene--room vn-scene--ending">
+<section class="vn-scene vn-scene--room vn-scene--ending" data-standees="sera:anxious" data-focus="sera">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
     <p>한 달 떨어져 있자는 말은 너무 늦게 나왔다. 새라는 내 물건을 돌려줬지만, 혼자 있는 동안에도 내 생활표를 지우지 못했다.</p>
@@ -309,7 +309,7 @@
 :: 3S · 잠그지 않은 밤 [chapter3 autosave nobr]
 <<set $dangerousOutcome = "solo_true_sera">>
 <<set $clearedEndings.dangerousSeraTrue = true>>
-<section class="vn-scene vn-scene--room vn-scene--ending">
+<section class="vn-scene vn-scene--room vn-scene--ending" data-standees="sera:relieved" data-focus="sera">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
     <figure class="vn-cutscene">
@@ -328,7 +328,7 @@
 :: 3S · 서로의 감금 [chapter3 autosave nobr]
 <<set $dangerousOutcome = "solo_captive_sera">>
 <<set $clearedEndings.dangerousSeraCaptive = true>>
-<section class="vn-scene vn-scene--room vn-scene--ending">
+<section class="vn-scene vn-scene--room vn-scene--ending" data-standees="sera:possessive" data-focus="sera">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
     <figure class="vn-cutscene">
@@ -350,7 +350,7 @@
 <<set $dangerousSolo.yujinEqual = false>>
 <<set $dangerousSolo.yujinReleased = false>>
 <<set $dangerousSolo.yujinReturnedOffDuty = false>>
-<section class="vn-scene vn-scene--room">
+<section class="vn-scene vn-scene--room" data-standees="yujin:alert" data-focus="yujin">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
     <p class="vn-label">CHAPTER 3Y · 구조하지 않는 밤</p>
@@ -403,7 +403,7 @@
 </section>
 
 :: 3Y · 빗속의 확인 [chapter3 autosave nobr]
-<section class="vn-scene vn-scene--room">
+<section class="vn-scene vn-scene--room" data-standees="yujin:shaken" data-focus="yujin">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
     <figure class="vn-cutscene">
@@ -448,7 +448,7 @@
 </section>
 
 :: 3Y · 보호 순위 [chapter3 autosave nobr]
-<section class="vn-scene vn-scene--room">
+<section class="vn-scene vn-scene--room" data-standees="yujin:alert" data-focus="yujin">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
     <figure class="vn-cutscene">
@@ -496,7 +496,7 @@
 </section>
 
 :: 3Y · 필요의 이름 [chapter3 autosave nobr]
-<section class="vn-scene vn-scene--room">
+<section class="vn-scene vn-scene--room" data-standees="yujin:shaken" data-focus="yujin">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
     <figure class="vn-cutscene">
@@ -626,7 +626,7 @@
 </section>
 
 :: 3Y · 강변의 부탁 [chapter3 autosave nobr]
-<section class="vn-scene vn-scene--room">
+<section class="vn-scene vn-scene--room" data-standees="yujin:relieved" data-focus="yujin">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
     <figure class="vn-cutscene">
@@ -656,7 +656,7 @@
 </section>
 
 :: 3Y · 마지막 보호 명령 [chapter3 autosave nobr]
-<section class="vn-scene vn-scene--room">
+<section class="vn-scene vn-scene--room" data-standees="yujin:alert" data-focus="yujin">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
     <p>사건 없는 약속을 정했지만 우리는 여러 번 구조와 사랑을 같은 말로 불렀다.</p>
@@ -683,7 +683,7 @@
 :: 3Y · 보호가 끝난 뒤 [chapter3 autosave nobr]
 <<set $dangerousOutcome = "solo_fragile_yujin">>
 <<set $clearedEndings.dangerousYujinFragile = true>>
-<section class="vn-scene vn-scene--room vn-scene--ending">
+<section class="vn-scene vn-scene--room vn-scene--ending" data-standees="yujin:relieved" data-focus="yujin">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
     <p>유진은 신청서를 폐기했다. 그러나 내가 보이지 않는 밤이면 관할 기록을 확인하는 버릇까지 한 달 안에 멈추지는 못했다.</p>
@@ -697,7 +697,7 @@
 :: 3Y · 사건 없는 내일 [chapter3 autosave nobr]
 <<set $dangerousOutcome = "solo_true_yujin">>
 <<set $clearedEndings.dangerousYujinTrue = true>>
-<section class="vn-scene vn-scene--room vn-scene--ending">
+<section class="vn-scene vn-scene--room vn-scene--ending" data-standees="yujin:relieved" data-focus="yujin">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
     <figure class="vn-cutscene">
@@ -716,7 +716,7 @@
 :: 3Y · 안전가옥 [chapter3 autosave nobr]
 <<set $dangerousOutcome = "solo_captive_yujin">>
 <<set $clearedEndings.dangerousYujinCaptive = true>>
-<section class="vn-scene vn-scene--room vn-scene--ending">
+<section class="vn-scene vn-scene--room vn-scene--ending" data-standees="yujin:alert" data-focus="yujin">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
     <figure class="vn-cutscene">
@@ -738,7 +738,7 @@
 <<set $dangerousSolo.chaerinPublicBoundary = false>>
 <<set $dangerousSolo.chaerinStop = false>>
 <<set $dangerousSolo.chaerinAcceptedConsequence = false>>
-<section class="vn-scene vn-scene--room">
+<section class="vn-scene vn-scene--room" data-standees="chaerin:cold" data-focus="chaerin">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
     <p class="vn-label">CHAPTER 3C · 왕관을 내려놓는 법</p>
@@ -790,7 +790,7 @@
 </section>
 
 :: 3C · 공개된 도발 [chapter3 autosave nobr]
-<section class="vn-scene vn-scene--room">
+<section class="vn-scene vn-scene--room" data-standees="chaerin:cold" data-focus="chaerin">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
     <figure class="vn-cutscene">
@@ -869,7 +869,7 @@
 </section>
 
 :: 3C · 남은 검색어 [chapter3 autosave nobr]
-<section class="vn-scene vn-scene--room">
+<section class="vn-scene vn-scene--room" data-standees="chaerin:wounded" data-focus="chaerin">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
     <<if $dangerousSolo.chaerinAcceptedConsequence>>
@@ -887,7 +887,7 @@
 </section>
 
 :: 3C · 값 없는 저녁 [chapter3 autosave nobr]
-<section class="vn-scene vn-scene--room">
+<section class="vn-scene vn-scene--room" data-standees="chaerin:relieved" data-focus="chaerin">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
     <figure class="vn-cutscene">
@@ -947,7 +947,7 @@
 </section>
 
 :: 3C · 멈추라는 말 [chapter3 autosave nobr]
-<section class="vn-scene vn-scene--room">
+<section class="vn-scene vn-scene--room" data-standees="chaerin:cold" data-focus="chaerin">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
     <figure class="vn-cutscene">
@@ -961,7 +961,7 @@
 </section>
 
 :: 3C · 직접 한 부탁 [chapter3 autosave nobr]
-<section class="vn-scene vn-scene--room">
+<section class="vn-scene vn-scene--room" data-standees="chaerin:wounded" data-focus="chaerin">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
     <figure class="vn-cutscene">
@@ -993,7 +993,7 @@
 </section>
 
 :: 3C · 마지막 계약 [chapter3 autosave nobr]
-<section class="vn-scene vn-scene--room">
+<section class="vn-scene vn-scene--room" data-standees="chaerin:cold" data-focus="chaerin">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
     <p>중단 신호는 지켰지만 그전의 폭력과 기록 삭제가 사라진 것은 아니었다.</p>
@@ -1019,7 +1019,7 @@
 :: 3C · 계약이 끝난 자리 [chapter3 autosave nobr]
 <<set $dangerousOutcome = "solo_fragile_chaerin">>
 <<set $clearedEndings.dangerousChaerinFragile = true>>
-<section class="vn-scene vn-scene--room vn-scene--ending">
+<section class="vn-scene vn-scene--room vn-scene--ending" data-standees="chaerin:relieved" data-focus="chaerin">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
     <p>채린은 자기 손으로 계약을 철회했다. 하지만 거절당하기 위해 더 큰 조건을 내미는 버릇까지 계약서와 함께 사라지지는 않았다.</p>
@@ -1033,7 +1033,7 @@
 :: 3C · 왕관을 내려놓은 밤 [chapter3 autosave nobr]
 <<set $dangerousOutcome = "solo_true_chaerin">>
 <<set $clearedEndings.dangerousChaerinTrue = true>>
-<section class="vn-scene vn-scene--room vn-scene--ending">
+<section class="vn-scene vn-scene--room vn-scene--ending" data-standees="chaerin:relieved" data-focus="chaerin">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
     <figure class="vn-cutscene">
@@ -1053,7 +1053,7 @@
 :: 3C · 황금감옥 [chapter3 autosave nobr]
 <<set $dangerousOutcome = "solo_captive_chaerin">>
 <<set $clearedEndings.dangerousChaerinCaptive = true>>
-<section class="vn-scene vn-scene--room vn-scene--ending">
+<section class="vn-scene vn-scene--room vn-scene--ending" data-standees="chaerin:cold" data-focus="chaerin">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
     <figure class="vn-cutscene">

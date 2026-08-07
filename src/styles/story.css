@@ -892,19 +892,35 @@ body.vn-backlog-open {
   }
 
   .vn-scene {
-    padding: 82px 12px 18px;
+    min-height: 100svh;
+    padding: 78px 12px 18px;
+    background-position: center top;
+  }
+
+  .vn-scene--room {
+    background-image: url("../assets/images/title-after-closing-bell-mobile-v1.png");
+  }
+
+  .vn-scene.has-standee {
+    align-items: flex-start;
+    padding-top: min(43svh, 360px);
   }
 
   .vn-dialogue {
+    width: 100%;
+    max-width: none;
     padding: 20px 18px;
     font-size: 0.92rem;
+    line-height: 1.72;
   }
 
   .vn-standee-stage {
-    right: -22%;
-    width: 88vw;
-    height: calc(100% - 54px);
-    opacity: 0.42;
+    top: 54px;
+    right: -5%;
+    bottom: auto;
+    width: 76vw;
+    height: min(39svh, 330px);
+    opacity: 0.88;
   }
 
   .vn-standee {
@@ -912,20 +928,36 @@ body.vn-backlog-open {
   }
 
   .vn-standee img {
-    bottom: -1%;
-    height: min(78vh, 720px);
+    bottom: -2%;
+    height: min(40svh, 340px);
     filter: drop-shadow(-10px 12px 20px rgba(0, 0, 0, 0.38));
   }
 
   .vn-standee-stage--count-2,
   .vn-standee-stage--count-3 {
-    right: -10%;
-    width: 112vw;
-    opacity: 0.3;
+    right: -12%;
+    width: 116vw;
+    height: min(37svh, 315px);
+    opacity: 0.82;
+  }
+
+  .vn-standee-stage--count-2 .vn-standee img,
+  .vn-standee-stage--count-3 .vn-standee img {
+    height: min(38svh, 320px);
   }
 
   .vn-scene.has-standee .vn-dialogue {
-    background: rgba(13, 15, 20, 0.93);
+    background: rgba(13, 15, 20, 0.96);
+    box-shadow: 0 -16px 42px rgba(0, 0, 0, 0.32);
+  }
+
+  .vn-choices .link-internal,
+  .vn-choices a.link-internal {
+    display: flex;
+    min-height: 46px;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 12px 13px;
   }
 
   .affection-hud {
@@ -981,11 +1013,19 @@ body.vn-backlog-open {
 
   .vn-toolbar__actions {
     justify-self: stretch;
-    justify-content: flex-end;
+    justify-content: space-between;
+    gap: 4px;
   }
 
   .vn-toolbar__actions button {
-    flex: 0 1 auto;
+    min-height: 40px;
+    flex: 1 1 auto;
+    padding: 7px 5px;
+    white-space: nowrap;
+  }
+
+  .vn-toolbar__actions .vn-bgm-toggle {
+    min-width: 50px;
   }
 }
 

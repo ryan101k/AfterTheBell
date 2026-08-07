@@ -29,6 +29,8 @@
   "yujinConvenienceChoice": "",
   "yujinCancelledChoice": "",
   "yujinSickChoice": "",
+  "yujinRevealChoice": "",
+  "chaerinRevealChoice": "",
   "chaerinHeardNo": false,
   "chaerinWalked": false
 }>>
@@ -420,9 +422,27 @@
     <p>유진의 손이 접힌 담요 위에서 멈췄다. 현장 보고를 읽을 때는 한 번도 흔들리지 않던 손가락이, 자기 이야기를 하는 동안에는 접힌 모서리를 세 번이나 다시 눌렀다.</p>
     <p data-speaker="최은호">“오늘은 아무 일도 없었습니다. 그래도 여기 온 걸 후회하지 않아요.”</p>
     <p>유진은 바로 대답하지 못했다. 누군가의 무사함이 자기 자리를 지우지 않는다는 문장을 처음 듣는 얼굴이었다.</p>
-    <p>사건이 끝날 때마다 유진은 관계에서도 밀려났다. 감사 인사를 받고, 담당이 바뀌고, 다시 낯선 사람이 됐다. 그래서 유진에게 사건의 끝은 안도가 아니라 상실이었다. 누군가 무너져 있어야만 자기 자리가 생기는 사람이 된 것이다.</p>
-    <p>유진은 담요를 정확히 접어 두고 현관에 섰다. 나는 문이 닫히기 전에 휴대전화를 들었다.</p>
-    [[이번에는 은호가 먼저 연락한다->2장 · 먼저 보낸 영화 제목]]
+    <p>사건이 끝날 때마다 유진은 관계에서도 밀려났다. 감사 인사를 받고, 담당이 바뀌고, 다시 낯선 사람이 됐다.</p>
+    <div class="vn-choices">
+      <<link "다음 사건이 없어도 오늘 쉬었던 자리는 사라지지 않는다고 말한다.">>
+        <<set $chapter2.yujinRevealChoice = "rest">>
+        <<set $dangerousAffection.yujin += 7>>
+        <<set $playerPattern.face += 1>>
+        <<goto "2장 · 먼저 보낸 영화 제목">>
+      <</link>>
+      <<link "나는 갑자기 사라지지 않겠다고 약속한다.">>
+        <<set $chapter2.yujinRevealChoice = "promise">>
+        <<set $dangerousAffection.yujin += 8>>
+        <<set $playerPattern.delegate += 1>>
+        <<goto "2장 · 먼저 보낸 영화 제목">>
+      <</link>>
+      <<link "그 사람을 구하지 못한 책임까지 유진 혼자 가질 필요는 없다고 말한다.">>
+        <<set $chapter2.yujinRevealChoice = "guilt">>
+        <<set $dangerousAffection.yujin += 6>>
+        <<set $playerPattern.face += 1>>
+        <<goto "2장 · 먼저 보낸 영화 제목">>
+      <</link>>
+    </div>
   </div>
 </section>
 
@@ -430,6 +450,13 @@
 <section class="vn-scene vn-scene--room" data-standees="yujin:relieved" data-focus="yujin">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--phone">
+    <<if $chapter2.yujinRevealChoice is "rest">>
+      <p>유진에게 자리가 사라지지 않는다고 말해 놓고 기다리기만 하면, 그 자리도 다시 구조 현장처럼 남을 것 같았다.</p>
+    <<elseif $chapter2.yujinRevealChoice is "promise">>
+      <p>사라지지 않겠다는 약속은 누구도 지킬 수 없었다. 대신 오늘 연락하고 싶은 이유만큼은 사건과 분리할 수 있었다.</p>
+    <<else>>
+      <p>유진의 죄책감을 말로 덜어 줄 수는 없었다. 다만 그 이야기를 들은 뒤에도 사건이 아닌 약속을 먼저 만들 수는 있었다.</p>
+    <</if>>
     <p>사건 이야기가 아닌 문장을 쓰는 데 생각보다 오래 걸렸다.</p>
     <div class="phone-message"><b>최은호</b><span>지난번 영화 속편 찾았습니다. 다음 비번에 봅니까?</span></div>
     <p>읽음 표시는 바로 떴지만 답은 오지 않았다. 삼 분 뒤, 전화가 걸려 왔다.</p>
@@ -733,6 +760,9 @@
     <p>“윤새라라는 작가 때문이죠? 경찰이 우리 하청사를 뒤지고 있다는 것도 알아요.”</p>
     <p>“알면서 왜 내버려 뒀습니까?”</p>
     <p>“내 일이 아니었으니까. 그런데 당신 일이 됐다면 얘기가 달라지죠.”</p>
+    <p>채린의 엄지가 잔의 금테를 한 번 문질렀다. 사람보다 소유 관계를 먼저 나누는 버릇처럼 보였다.</p>
+    <p data-speaker="한채린">“그 집에서는 쓸 수 있는 이름만 남겨 둔다고 들었어요. 당신은 그 이름을 버리고도 아직 버려지지 않았고.”</p>
+    <p>채린은 자기 얘기를 흘린 사람처럼 입술을 다물었다가, 곧 비웃는 표정을 골라 썼다.</p>
     <p>처음부터 새라의 그림보다 나를 보고 접근한 사람이었다.</p>
     <p>채린은 내부 보험 원본을 보여 주는 대신 다음 주 자기 개인실로 오라고 했다.</p>
     <p>“싫으면 집에 부탁해요. 경찰 하나 앞세워 다치게 할 필요도 없잖아.”</p>
@@ -985,7 +1015,26 @@
     <p>채린의 집은 사람을 자산으로 셌다. 성적, 인맥, 혼처, 회사에 얼마나 값이 되는지. 채린은 값이 높은 동안에만 사랑받았고, 오래 그게 사랑인 줄 알았다.</p>
     <p>한 번 크게 미끄러진 적이 있다고, 지나가듯 말했다. 값이 떨어지자 곁의 전부가 하루 만에 등을 돌렸다. 비난조차 하지 않고 그냥 없는 사람처럼 대했다고.</p>
     <p>그래서 채린은 확인하고 싶었던 것이다. 값을 내려놓고, 지고, 틀리고, 무너져도 떠나지 않는 사람이 하나라도 있는지. 도발은 그 질문을 던지는, 채린이 아는 유일한 방법이었다.</p>
-    [[채린이 만든 상황에 대답한다->2장 · 채린의 선]]
+    <div class="vn-choices">
+      <<link "떠나지 않는다는 증명을 도발과 폭력으로 요구받을 수는 없다고 말한다.">>
+        <<set $chapter2.chaerinRevealChoice = "boundary">>
+        <<set $dangerousAffection.chaerin += 7>>
+        <<set $playerPattern.face += 1>>
+        <<goto "2장 · 채린의 선">>
+      <</link>>
+      <<link "다음에는 멈춰 달라거나 남아 달라고 직접 부탁하라고 말한다.">>
+        <<set $chapter2.chaerinRevealChoice = "direct">>
+        <<set $dangerousAffection.chaerin += 8>>
+        <<set $playerPattern.face += 1>>
+        <<goto "2장 · 채린의 선">>
+      <</link>>
+      <<link "무너져도 떠나지 않겠다고 먼저 약속한다.">>
+        <<set $chapter2.chaerinRevealChoice = "promise">>
+        <<set $dangerousAffection.chaerin += 9>>
+        <<set $playerPattern.delegate += 1>>
+        <<goto "2장 · 채린의 선">>
+      <</link>>
+    </div>
   </div>
 </section>
 
@@ -993,6 +1042,13 @@
 <section class="vn-scene vn-scene--room">
   <div class="vn-scene__shade"></div>
   <div class="vn-dialogue vn-dialogue--narration">
+    <<if $chapter2.chaerinRevealChoice is "boundary">>
+      <p>채린은 거절을 들은 사람처럼 굳었다. 그래도 문손잡이에서 손을 떼지는 않았다. 이번에는 내가 실제 행동으로 그 선을 정해야 했다.</p>
+    <<elseif $chapter2.chaerinRevealChoice is "direct">>
+      <p>“그럼 지금 부탁하면 들어줄 건데요?” 채린이 처음으로 명령이 아닌 질문을 했다. 대답은 부탁의 내용에 달려 있었다.</p>
+    <<else>>
+      <p>떠나지 않겠다는 말이 떨어지자 채린의 표정이 편안해졌다. 그 안도에 취해 다음 요구까지 받아들이면, 약속은 곧 새 계약이 될 것이었다.</p>
+    <</if>>
     <div class="vn-choices">
       <<link "문부터 열게 하고, 원하는 것을 도발하지 말고 직접 부탁하게 한다.">>
         <<set $chapter2.chaerinPath = "boundary">>
